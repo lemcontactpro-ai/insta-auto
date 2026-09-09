@@ -1,0 +1,3070 @@
+{
+ "_meta": {
+  "mots": 317,
+  "etymologies_verifiees": 34,
+  "prenoms": 30,
+  "note": "Toutes les etymologies presentes ont ete verifiees par recherche (CNRTL, Littre, Academie francaise, Wiktionnaire). Les entrees ecartees sont listees dans _etymologies_ecartees avec le motif."
+ },
+ "mots": [
+  {
+   "ar": "صَبْر",
+   "fr": "Patience",
+   "phrase_ar": "الصَّبْرُ مِفْتَاحُ الفَرَج",
+   "phrase_fr": "La patience est la clé du soulagement",
+   "surligne_ar": "الصَّبْرُ",
+   "surligne_fr": "patience"
+  },
+  {
+   "ar": "نُور",
+   "fr": "Lumière",
+   "phrase_ar": "العِلْمُ نُورٌ وَالجَهْلُ ظَلام",
+   "phrase_fr": "Le savoir est lumière, l'ignorance est ténèbres",
+   "surligne_ar": "العِلْمُ",
+   "surligne_fr": "lumière"
+  },
+  {
+   "ar": "حُلْم",
+   "fr": "Rêve",
+   "phrase_ar": "اتَّبِعْ حُلْمَكَ وَلا تَسْتَسْلِم",
+   "phrase_fr": "Suis ton rêve et ne renonce jamais",
+   "surligne_ar": "اتَّبِعْ",
+   "surligne_fr": "rêve"
+  },
+  {
+   "ar": "قَلْب",
+   "fr": "Cœur",
+   "phrase_ar": "القَلْبُ لا يَكْذِبُ",
+   "phrase_fr": "Le cœur ne ment jamais",
+   "surligne_ar": "القَلْبُ",
+   "surligne_fr": "cœur"
+  },
+  {
+   "ar": "حِكْمَة",
+   "fr": "Sagesse",
+   "phrase_ar": "الحِكْمَةُ ضَالَّةُ المُؤمِن",
+   "phrase_fr": "La sagesse est le trésor du croyant",
+   "surligne_ar": "الحِكْمَةُ",
+   "surligne_fr": "sagesse"
+  },
+  {
+   "ar": "كِتَاب",
+   "fr": "Livre",
+   "phrase_ar": "الكِتَابُ خَيْرُ صَدِيق",
+   "phrase_fr": "Le livre est le meilleur ami",
+   "surligne_ar": "الكِتَابُ",
+   "surligne_fr": "livre"
+  },
+  {
+   "ar": "عِلْم",
+   "fr": "Savoir",
+   "phrase_ar": "العِلْمُ يرفع الإنسان",
+   "phrase_fr": "Le savoir élève l'humain",
+   "surligne_ar": "العِلْمُ",
+   "surligne_fr": "savoir"
+  },
+  {
+   "ar": "بيت",
+   "fr": "Maison",
+   "phrase_ar": "البيتُ يحتاج إلى رعاية",
+   "phrase_fr": "La maison a besoin de soin",
+   "surligne_ar": "البيتُ",
+   "surligne_fr": "maison"
+  },
+  {
+   "ar": "أُسْرَة",
+   "fr": "Famille",
+   "phrase_ar": "الأُسْرَةُ أساس المجتمع",
+   "phrase_fr": "La famille est la base de la société",
+   "surligne_ar": "الأُسْرَةُ",
+   "surligne_fr": "famille"
+  },
+  {
+   "ar": "صديق",
+   "fr": "Ami",
+   "phrase_ar": "الصديقُ نِعْمَةٌ من الله",
+   "phrase_fr": "L'ami est une bénédiction de Dieu",
+   "surligne_ar": "الصديقُ",
+   "surligne_fr": "ami"
+  },
+  {
+   "ar": "حُب",
+   "fr": "Amour",
+   "phrase_ar": "الحُبُّ يفهم بغير كلام",
+   "phrase_fr": "L'amour se comprend sans paroles",
+   "surligne_ar": "الحُبُّ",
+   "surligne_fr": "amour"
+  },
+  {
+   "ar": "أُمّ",
+   "fr": "Mère",
+   "phrase_ar": "الأُمُّ مدرسة الشعوب",
+   "phrase_fr": "La mère est l'école des peuples",
+   "surligne_ar": "الأُمُّ",
+   "surligne_fr": "mère"
+  },
+  {
+   "ar": "أب",
+   "fr": "Père",
+   "phrase_ar": "الأبُ حارسُ العائلة",
+   "phrase_fr": "Le père est le protecteur de la famille",
+   "surligne_ar": "الأبُ",
+   "surligne_fr": "père"
+  },
+  {
+   "ar": "عَمَل",
+   "fr": "Travail",
+   "phrase_ar": "العملُ عبادة",
+   "phrase_fr": "Le travail est une adoration",
+   "surligne_ar": "العملُ",
+   "surligne_fr": "travail"
+  },
+  {
+   "ar": "نَجَاح",
+   "fr": "Succès",
+   "phrase_ar": "النَّجاحُ يأتي بالجهد",
+   "phrase_fr": "Le succès vient par l'effort",
+   "surligne_ar": "النَّجاحُ",
+   "surligne_fr": "succès"
+  },
+  {
+   "ar": "فَشَل",
+   "fr": "Échec",
+   "phrase_ar": "الفشلُ ليس النهاية",
+   "phrase_fr": "L'échec n'est pas la fin",
+   "surligne_ar": "الفشلُ",
+   "surligne_fr": "échec"
+  },
+  {
+   "ar": "أمل",
+   "fr": "Espoir",
+   "phrase_ar": "الأملُ في الله أساس",
+   "phrase_fr": "L'espoir en Dieu est fondamental",
+   "surligne_ar": "الأملُ",
+   "surligne_fr": "espoir"
+  },
+  {
+   "ar": "خَوْف",
+   "fr": "Peur",
+   "phrase_ar": "الخوفُ من الله حكمة",
+   "phrase_fr": "La crainte de Dieu est sagesse",
+   "surligne_ar": "الخوفُ",
+   "surligne_fr": "peur"
+  },
+  {
+   "ar": "فَرَح",
+   "fr": "Joie",
+   "phrase_ar": "الفرحُ في طاعة الله",
+   "phrase_fr": "La joie est dans l'obéissance à Dieu",
+   "surligne_ar": "الفرحُ",
+   "surligne_fr": "joie"
+  },
+  {
+   "ar": "حُزْن",
+   "fr": "Tristesse",
+   "phrase_ar": "الحزنُ يمضي بالصبر",
+   "phrase_fr": "La tristesse s'apaise par la patience",
+   "surligne_ar": "الحزنُ",
+   "surligne_fr": "tristesse"
+  },
+  {
+   "ar": "جَمَال",
+   "fr": "Beauté",
+   "phrase_ar": "الجمالُ ليس خارجياً",
+   "phrase_fr": "La beauté n'est pas seulement extérieure",
+   "surligne_ar": "الجمالُ",
+   "surligne_fr": "beauté"
+  },
+  {
+   "ar": "قوّة",
+   "fr": "Force",
+   "phrase_ar": "القوّةُ في الوحدة",
+   "phrase_fr": "La force est dans l'union",
+   "surligne_ar": "القوّةُ",
+   "surligne_fr": "force"
+  },
+  {
+   "ar": "ضَعْف",
+   "fr": "Faiblesse",
+   "phrase_ar": "الضعفُ يمكن التغلب عليه",
+   "phrase_fr": "La faiblesse peut être surmontée",
+   "surligne_ar": "الضعفُ",
+   "surligne_fr": "faiblesse"
+  },
+  {
+   "ar": "حَق",
+   "fr": "Droit",
+   "phrase_ar": "الحقُّ واجب على الجميع",
+   "phrase_fr": "Le droit est un devoir pour tous",
+   "surligne_ar": "الحقُّ",
+   "surligne_fr": "droit"
+  },
+  {
+   "ar": "عَدْل",
+   "fr": "Justice",
+   "phrase_ar": "العدلُ أساس الملك",
+   "phrase_fr": "La justice est la base du règne",
+   "surligne_ar": "العدلُ",
+   "surligne_fr": "justice"
+  },
+  {
+   "ar": "ظُلْم",
+   "fr": "Injustice",
+   "phrase_ar": "الظلمُ لا يدوم",
+   "phrase_fr": "L'injustice ne dure pas",
+   "surligne_ar": "الظلمُ",
+   "surligne_fr": "injustice"
+  },
+  {
+   "ar": "شرف",
+   "fr": "Honneur",
+   "phrase_ar": "الشرفُ أغلى من المال",
+   "phrase_fr": "L'honneur est plus précieux que l'argent",
+   "surligne_ar": "الشرفُ",
+   "surligne_fr": "honneur"
+  },
+  {
+   "ar": "عِزّ",
+   "fr": "Gloire",
+   "phrase_ar": "العِزّةُ تأتي من الله",
+   "phrase_fr": "La gloire vient de Dieu",
+   "surligne_ar": "العِزّةُ",
+   "surligne_fr": "gloire"
+  },
+  {
+   "ar": "ذل",
+   "fr": "Humiliation",
+   "phrase_ar": "الذلُّ لا يليق بالمؤمن",
+   "phrase_fr": "L'humiliation ne convient pas au croyant",
+   "surligne_ar": "الذلُّ",
+   "surligne_fr": "humiliation"
+  },
+  {
+   "ar": "كرَم",
+   "fr": "Générosité",
+   "phrase_ar": "الكرمُ خلق من أخلاق العرب",
+   "phrase_fr": "La générosité est une vertu arabe",
+   "surligne_ar": "الكرمُ",
+   "surligne_fr": "générosité"
+  },
+  {
+   "ar": "بُخل",
+   "fr": "Avarice",
+   "phrase_ar": "البخلُ ينقص الرزق",
+   "phrase_fr": "L'avarice diminue la subsistance",
+   "surligne_ar": "البخلُ",
+   "surligne_fr": "avarice"
+  },
+  {
+   "ar": "صِدْق",
+   "fr": "Véracité",
+   "phrase_ar": "الصدقُ سلاح المؤمن",
+   "phrase_fr": "La véracité est l'arme du croyant",
+   "surligne_ar": "الصدقُ",
+   "surligne_fr": "véracité"
+  },
+  {
+   "ar": "كِذب",
+   "fr": "Mensonge",
+   "phrase_ar": "الكذبُ ينقص الإيمان",
+   "phrase_fr": "Le mensonge affaiblit la foi",
+   "surligne_ar": "الكذبُ",
+   "surligne_fr": "mensonge"
+  },
+  {
+   "ar": "أَمَانَة",
+   "fr": "Confiance",
+   "phrase_ar": "الأمانةُ تزيد الرزق",
+   "phrase_fr": "La confiance augmente la subsistance",
+   "surligne_ar": "الأمانةُ",
+   "surligne_fr": "confiance"
+  },
+  {
+   "ar": "خيَانة",
+   "fr": "Trahison",
+   "phrase_ar": "الخيانةُ من أسوأ الأفعال",
+   "phrase_fr": "La trahison est l'un des pires actes",
+   "surligne_ar": "الخيانةُ",
+   "surligne_fr": "trahison"
+  },
+  {
+   "ar": "شُجاعة",
+   "fr": "Courage",
+   "phrase_ar": "الشجاعةُ في مواجهة الحق",
+   "phrase_fr": "Le courage est dans la confrontation de la vérité",
+   "surligne_ar": "الشجاعةُ",
+   "surligne_fr": "courage"
+  },
+  {
+   "ar": "جُبْن",
+   "fr": "Lâcheté",
+   "phrase_ar": "الجبنُ ليس من أخلاق الكريم",
+   "phrase_fr": "La lâcheté n'est pas une vertu",
+   "surligne_ar": "الجبنُ",
+   "surligne_fr": "lâcheté"
+  },
+  {
+   "ar": "عِفّة",
+   "fr": "Chasteté",
+   "phrase_ar": "العفّةُ من أفضل الصفات",
+   "phrase_fr": "La chasteté est parmi les meilleures qualités",
+   "surligne_ar": "العفّةُ",
+   "surligne_fr": "chasteté"
+  },
+  {
+   "ar": "فُحْش",
+   "fr": "Obscénité",
+   "phrase_ar": "الفحشُ من الكبائر",
+   "phrase_fr": "L'obscénité est parmi les grands péchés",
+   "surligne_ar": "الفحشُ",
+   "surligne_fr": "obscénité"
+  },
+  {
+   "ar": "تَواضُع",
+   "fr": "Humilité",
+   "phrase_ar": "التواضعُ زينة الإنسان",
+   "phrase_fr": "L'humilité est l'ornement de l'humain",
+   "surligne_ar": "التواضعُ",
+   "surligne_fr": "humilité"
+  },
+  {
+   "ar": "تَكَبُّر",
+   "fr": "Orgueil",
+   "phrase_ar": "التكبّرُ يسبق السقوط",
+   "phrase_fr": "L'orgueil précède la chute",
+   "surligne_ar": "التكبّرُ",
+   "surligne_fr": "orgueil"
+  },
+  {
+   "ar": "رَحْمَة",
+   "fr": "Miséricorde",
+   "phrase_ar": "الرحمةُ من أعظم الصفات",
+   "phrase_fr": "La miséricorde est parmi les plus grandes qualités",
+   "surligne_ar": "الرحمةُ",
+   "surligne_fr": "miséricorde"
+  },
+  {
+   "ar": "قسْوة",
+   "fr": "Dureté",
+   "phrase_ar": "القسوةُ تقسي القلب",
+   "phrase_fr": "La dureté endurcie le cœur",
+   "surligne_ar": "القسوةُ",
+   "surligne_fr": "dureté"
+  },
+  {
+   "ar": "لِين",
+   "fr": "Douceur",
+   "phrase_ar": "اللينُ أفضل من العنف",
+   "phrase_fr": "La douceur est mieux que la violence",
+   "surligne_ar": "اللينُ",
+   "surligne_fr": "douceur"
+  },
+  {
+   "ar": "عنف",
+   "fr": "Violence",
+   "phrase_ar": "العنفُ ينهي السلام",
+   "phrase_fr": "La violence détruit la paix",
+   "surligne_ar": "العنفُ",
+   "surligne_fr": "violence"
+  },
+  {
+   "ar": "سلام",
+   "fr": "Paix",
+   "phrase_ar": "السلامُ أساس التقدم",
+   "phrase_fr": "La paix est la base du progrès",
+   "surligne_ar": "السلامُ",
+   "surligne_fr": "paix"
+  },
+  {
+   "ar": "حَرْب",
+   "fr": "Guerre",
+   "phrase_ar": "الحربُ تدمر الحضارات",
+   "phrase_fr": "La guerre détruit les civilisations",
+   "surligne_ar": "الحربُ",
+   "surligne_fr": "guerre"
+  },
+  {
+   "ar": "وفاء",
+   "fr": "Loyauté",
+   "phrase_ar": "الوفاءُ من أجل الصفات",
+   "phrase_fr": "La loyauté est parmi les meilleures qualités",
+   "surligne_ar": "الوفاءُ",
+   "surligne_fr": "loyauté"
+  },
+  {
+   "ar": "غدْر",
+   "fr": "Trahison",
+   "phrase_ar": "الغدرُ لا يليق بالشريف",
+   "phrase_fr": "La trahison ne convient pas au noble",
+   "surligne_ar": "الغدرُ",
+   "surligne_fr": "trahison"
+  },
+  {
+   "ar": "صُداقة",
+   "fr": "Amitié",
+   "phrase_ar": "الصداقةُ عقد من الود",
+   "phrase_fr": "L'amitié est un contrat d'affection",
+   "surligne_ar": "الصداقةُ",
+   "surligne_fr": "amitié"
+  },
+  {
+   "ar": "عداوة",
+   "fr": "Hostilité",
+   "phrase_ar": "العداوةُ تقسي القلب",
+   "phrase_fr": "L'hostilité endurcie le cœur",
+   "surligne_ar": "العداوةُ",
+   "surligne_fr": "hostilité"
+  },
+  {
+   "ar": "إخاء",
+   "fr": "Fraternité",
+   "phrase_ar": "الإخاءُ أساس الإسلام",
+   "phrase_fr": "La fraternité est la base de l'Islam",
+   "surligne_ar": "الإخاءُ",
+   "surligne_fr": "fraternité"
+  },
+  {
+   "ar": "بُغْض",
+   "fr": "Haine",
+   "phrase_ar": "البغضُ يفسد العلاقات",
+   "phrase_fr": "La haine ruine les relations",
+   "surligne_ar": "البغضُ",
+   "surligne_fr": "haine"
+  },
+  {
+   "ar": "وِدّ",
+   "fr": "Affection",
+   "phrase_ar": "الودُّ جسر بين القلوب",
+   "phrase_fr": "L'affection est un pont entre les cœurs",
+   "surligne_ar": "الودُّ",
+   "surligne_fr": "affection"
+  },
+  {
+   "ar": "غيرة",
+   "fr": "Jalousie",
+   "phrase_ar": "الغيرةُ من الانفعالات الطبيعية",
+   "phrase_fr": "La jalousie est une émotion naturelle",
+   "surligne_ar": "الغيرةُ",
+   "surligne_fr": "jalousie"
+  },
+  {
+   "ar": "حَسَد",
+   "fr": "Envie",
+   "phrase_ar": "الحسدُ من الأمراض النفسية",
+   "phrase_fr": "L'envie est une maladie psychologique",
+   "surligne_ar": "الحسدُ",
+   "surligne_fr": "envie"
+  },
+  {
+   "ar": "رِضا",
+   "fr": "Contentement",
+   "phrase_ar": "الرضاُ يريح الروح",
+   "phrase_fr": "Le contentement apaise l'âme",
+   "surligne_ar": "الرضاُ",
+   "surligne_fr": "contentement"
+  },
+  {
+   "ar": "سَخَط",
+   "fr": "Mécontentement",
+   "phrase_ar": "السخطُ يؤذي صاحبه",
+   "phrase_fr": "Le mécontentement nuit à celui qui le ressent",
+   "surligne_ar": "السخطُ",
+   "surligne_fr": "mécontentement"
+  },
+  {
+   "ar": "شُكْر",
+   "fr": "Gratitude",
+   "phrase_ar": "الشكرُ يزيد النعم",
+   "phrase_fr": "La gratitude augmente les bénédictions",
+   "surligne_ar": "الشكرُ",
+   "surligne_fr": "gratitude"
+  },
+  {
+   "ar": "كُفْران",
+   "fr": "Ingratitude",
+   "phrase_ar": "الكفرانُ ينقص الرزق",
+   "phrase_fr": "L'ingratitude diminue la subsistance",
+   "surligne_ar": "الكفرانُ",
+   "surligne_fr": "ingratitude"
+  },
+  {
+   "ar": "دعاء",
+   "fr": "Supplication",
+   "phrase_ar": "الدعاءُ سلاح المؤمن",
+   "phrase_fr": "La supplication est l'arme du croyant",
+   "surligne_ar": "الدعاءُ",
+   "surligne_fr": "supplication"
+  },
+  {
+   "ar": "أَنانيّة",
+   "fr": "Égoïsme",
+   "phrase_ar": "الأنانيّةُ تفسد الروح",
+   "phrase_fr": "L'égoïsme corrompt l'âme",
+   "surligne_ar": "الأنانيّةُ",
+   "surligne_fr": "égoïsme"
+  },
+  {
+   "ar": "إيثار",
+   "fr": "Altruisme",
+   "phrase_ar": "الإيثارُ من أجل الأخلاق",
+   "phrase_fr": "L'altruisme est une belle vertu",
+   "surligne_ar": "الإيثارُ",
+   "surligne_fr": "altruisme"
+  },
+  {
+   "ar": "نِفاق",
+   "fr": "Hypocrisie",
+   "phrase_ar": "النفاقُ من أشنع الأمراض",
+   "phrase_fr": "L'hypocrisie est la plus laide des maladies",
+   "surligne_ar": "النفاقُ",
+   "surligne_fr": "hypocrisie"
+  },
+  {
+   "ar": "إخْلاص",
+   "fr": "Sincérité",
+   "phrase_ar": "الإخلاصُ مفتاح القلب",
+   "phrase_fr": "La sincérité est la clé du cœur",
+   "surligne_ar": "الإخلاصُ",
+   "surligne_fr": "sincérité"
+  },
+  {
+   "ar": "دين",
+   "fr": "Religion",
+   "phrase_ar": "الدينُ رحمة من الله",
+   "phrase_fr": "La religion est une miséricorde de Dieu",
+   "surligne_ar": "الدينُ",
+   "surligne_fr": "religion"
+  },
+  {
+   "ar": "كُفْر",
+   "fr": "Mécréance",
+   "phrase_ar": "الكفرُ يضل الإنسان",
+   "phrase_fr": "La mécréance égare l'humain",
+   "surligne_ar": "الكفرُ",
+   "surligne_fr": "mécréance"
+  },
+  {
+   "ar": "إيمان",
+   "fr": "Foi",
+   "phrase_ar": "الإيمانُ يرفع المؤمن",
+   "phrase_fr": "La foi élève le croyant",
+   "surligne_ar": "الإيمانُ",
+   "surligne_fr": "foi"
+  },
+  {
+   "ar": "شّك",
+   "fr": "Doute",
+   "phrase_ar": "الشكُّ يسبب القلق",
+   "phrase_fr": "Le doute cause l'inquiétude",
+   "surligne_ar": "الشكُّ",
+   "surligne_fr": "doute"
+  },
+  {
+   "ar": "يقين",
+   "fr": "Certitude",
+   "phrase_ar": "اليقينُ يريح النفس",
+   "phrase_fr": "La certitude apaise l'âme",
+   "surligne_ar": "اليقينُ",
+   "surligne_fr": "certitude"
+  },
+  {
+   "ar": "خطيئة",
+   "fr": "Péché",
+   "phrase_ar": "الخطيئةُ تبعد عن الله",
+   "phrase_fr": "Le péché éloigne de Dieu",
+   "surligne_ar": "الخطيئةُ",
+   "surligne_fr": "péché"
+  },
+  {
+   "ar": "تَوْبَة",
+   "fr": "Repentance",
+   "phrase_ar": "التوبةُ باب الله المفتوح",
+   "phrase_fr": "La repentance est la porte ouverte de Dieu",
+   "surligne_ar": "التوبةُ",
+   "surligne_fr": "repentance"
+  },
+  {
+   "ar": "عِصيان",
+   "fr": "Désobéissance",
+   "phrase_ar": "العصيانُ ينقص الإيمان",
+   "phrase_fr": "La désobéissance affaiblit la foi",
+   "surligne_ar": "العصيانُ",
+   "surligne_fr": "désobéissance"
+  },
+  {
+   "ar": "طاعة",
+   "fr": "Obéissance",
+   "phrase_ar": "الطاعةُ تزيد الحسنات",
+   "phrase_fr": "L'obéissance augmente les bonnes actions",
+   "surligne_ar": "الطاعةُ",
+   "surligne_fr": "obéissance"
+  },
+  {
+   "ar": "دُعاء",
+   "fr": "Invocation",
+   "phrase_ar": "الدعاءُ من أعظم العبادات",
+   "phrase_fr": "L'invocation est parmi les plus grandes adorations",
+   "surligne_ar": "الدعاءُ",
+   "surligne_fr": "invocation"
+  },
+  {
+   "ar": "ذِكْر",
+   "fr": "Évocation",
+   "phrase_ar": "الذكرُ يطمئن القلب",
+   "phrase_fr": "L'évocation apaise le cœur",
+   "surligne_ar": "الذكرُ",
+   "surligne_fr": "évocation"
+  },
+  {
+   "ar": "قُرآن",
+   "fr": "Coran",
+   "phrase_ar": "القرآنُ نور ودليل",
+   "phrase_fr": "Le Coran est lumière et guide",
+   "surligne_ar": "القرآنُ",
+   "surligne_fr": "coran"
+  },
+  {
+   "ar": "حديث",
+   "fr": "Hadith",
+   "phrase_ar": "الحديثُ يشرح القرآن",
+   "phrase_fr": "Le Hadith explique le Coran",
+   "surligne_ar": "الحديثُ",
+   "surligne_fr": "hadith"
+  },
+  {
+   "ar": "سُنّة",
+   "fr": "Sunna",
+   "phrase_ar": "السنّةُ سبيل النجاح",
+   "phrase_fr": "La Sunna est le chemin du succès",
+   "surligne_ar": "السنّةُ",
+   "surligne_fr": "sunna"
+  },
+  {
+   "ar": "فِقْه",
+   "fr": "Jurisprudence",
+   "phrase_ar": "الفقهُ علم ودراية",
+   "phrase_fr": "La jurisprudence est science et compréhension",
+   "surligne_ar": "الفقهُ",
+   "surligne_fr": "jurisprudence"
+  },
+  {
+   "ar": "عقل",
+   "fr": "Raison",
+   "phrase_ar": "العقلُ نعمة من الله",
+   "phrase_fr": "La raison est un don de Dieu",
+   "surligne_ar": "العقلُ",
+   "surligne_fr": "raison"
+  },
+  {
+   "ar": "حِس",
+   "fr": "Sens",
+   "phrase_ar": "الحسُّ يدرك الحقائق",
+   "phrase_fr": "Le sens perçoit les réalités",
+   "surligne_ar": "الحسُّ",
+   "surligne_fr": "sens"
+  },
+  {
+   "ar": "ذوق",
+   "fr": "Goût",
+   "phrase_ar": "الذوقُ من مميزات الإنسان",
+   "phrase_fr": "Le goût est une caractéristique humaine",
+   "surligne_ar": "الذوقُ",
+   "surligne_fr": "goût"
+  },
+  {
+   "ar": "رُوح",
+   "fr": "Âme",
+   "phrase_ar": "الروحُ أغلى من الجسد",
+   "phrase_fr": "L'âme est plus précieuse que le corps",
+   "surligne_ar": "الروحُ",
+   "surligne_fr": "âme"
+  },
+  {
+   "ar": "جَسَد",
+   "fr": "Corps",
+   "phrase_ar": "الجسدُ يحتاج للعناية",
+   "phrase_fr": "Le corps a besoin de soin",
+   "surligne_ar": "الجسدُ",
+   "surligne_fr": "corps"
+  },
+  {
+   "ar": "صحّة",
+   "fr": "Santé",
+   "phrase_ar": "الصحّةُ تاج على رؤوس الأصحاء",
+   "phrase_fr": "La santé est une couronne sur la tête des bien-portants",
+   "surligne_ar": "الصحّةُ",
+   "surligne_fr": "santé"
+  },
+  {
+   "ar": "مَرَض",
+   "fr": "Maladie",
+   "phrase_ar": "المرضُ ابتلاء من الله",
+   "phrase_fr": "La maladie est une épreuve de Dieu",
+   "surligne_ar": "المرضُ",
+   "surligne_fr": "maladie"
+  },
+  {
+   "ar": "شِفاء",
+   "fr": "Guérison",
+   "phrase_ar": "الشفاءُ من عند الله",
+   "phrase_fr": "La guérison vient de Dieu",
+   "surligne_ar": "الشفاءُ",
+   "surligne_fr": "guérison"
+  },
+  {
+   "ar": "حَياة",
+   "fr": "Vie",
+   "phrase_ar": "الحياةُ أمانة",
+   "phrase_fr": "La vie est un dépôt",
+   "surligne_ar": "الحياةُ",
+   "surligne_fr": "vie"
+  },
+  {
+   "ar": "موت",
+   "fr": "Mort",
+   "phrase_ar": "الموتُ حق لا بد منه",
+   "phrase_fr": "La mort est une certitude",
+   "surligne_ar": "الموتُ",
+   "surligne_fr": "mort"
+  },
+  {
+   "ar": "يَأس",
+   "fr": "Désespoir",
+   "phrase_ar": "اليأسُ لا يقود للخير",
+   "phrase_fr": "Le désespoir ne mène à rien de bon",
+   "surligne_ar": "اليأسُ",
+   "surligne_fr": "désespoir"
+  },
+  {
+   "ar": "شَرّ",
+   "fr": "Mal",
+   "phrase_ar": "الشرُّ يضر صاحبه",
+   "phrase_fr": "Le mal nuit à celui qui le commet",
+   "surligne_ar": "الشرُّ",
+   "surligne_fr": "mal"
+  },
+  {
+   "ar": "خَير",
+   "fr": "Bien",
+   "phrase_ar": "الخيرُ يعود للمحسن",
+   "phrase_fr": "Le bien retourne au bienfaiteur",
+   "surligne_ar": "الخيرُ",
+   "surligne_fr": "bien"
+  },
+  {
+   "ar": "إحسان",
+   "fr": "Bienfaisance",
+   "phrase_ar": "الإحسانُ من أعظم الأخلاق",
+   "phrase_fr": "La bienfaisance est une grande vertu",
+   "surligne_ar": "الإحسانُ",
+   "surligne_fr": "bienfaisance"
+  },
+  {
+   "ar": "ماء",
+   "fr": "Eau",
+   "phrase_ar": "الماءُ أساس الحياة",
+   "phrase_fr": "L'eau est la base de la vie",
+   "surligne_ar": "الماءُ",
+   "surligne_fr": "eau"
+  },
+  {
+   "ar": "نَار",
+   "fr": "Feu",
+   "phrase_ar": "النارُ تحرق كل شيء",
+   "phrase_fr": "Le feu brûle tout",
+   "surligne_ar": "النارُ",
+   "surligne_fr": "feu"
+  },
+  {
+   "ar": "هَوَاء",
+   "fr": "Air",
+   "phrase_ar": "الهواءُ ضروري للتنفس",
+   "phrase_fr": "L'air est essentiel pour respirer",
+   "surligne_ar": "الهواءُ",
+   "surligne_fr": "air"
+  },
+  {
+   "ar": "تُراب",
+   "fr": "Terre",
+   "phrase_ar": "الترابُ أصل الإنسان",
+   "phrase_fr": "La terre est l'origine de l'humain",
+   "surligne_ar": "الترابُ",
+   "surligne_fr": "terre"
+  },
+  {
+   "ar": "شَمْس",
+   "fr": "Soleil",
+   "phrase_ar": "الشمسُ تضيء النهار",
+   "phrase_fr": "Le soleil illumine le jour",
+   "surligne_ar": "الشمسُ",
+   "surligne_fr": "soleil"
+  },
+  {
+   "ar": "قَمَر",
+   "fr": "Lune",
+   "phrase_ar": "القمرُ ينير الليل",
+   "phrase_fr": "La lune éclaire la nuit",
+   "surligne_ar": "القمرُ",
+   "surligne_fr": "lune"
+  },
+  {
+   "ar": "نَجْم",
+   "fr": "Étoile",
+   "phrase_ar": "النجومُ تزين السماء",
+   "phrase_fr": "Les étoiles ornent le ciel",
+   "surligne_ar": "النجومُ",
+   "surligne_fr": "étoile"
+  },
+  {
+   "ar": "سَماء",
+   "fr": "Ciel",
+   "phrase_ar": "السماءُ خلق عظيم",
+   "phrase_fr": "Le ciel est une création magnifique",
+   "surligne_ar": "السماءُ",
+   "surligne_fr": "ciel"
+  },
+  {
+   "ar": "أَرْض",
+   "fr": "Terre",
+   "phrase_ar": "الأرضُ دارُ الحياة",
+   "phrase_fr": "La terre est la demeure de la vie",
+   "surligne_ar": "الأرضُ",
+   "surligne_fr": "terre"
+  },
+  {
+   "ar": "بَحْر",
+   "fr": "Mer",
+   "phrase_ar": "البحرُ يحوي كنوزاً",
+   "phrase_fr": "La mer renferme des trésors",
+   "surligne_ar": "البحرُ",
+   "surligne_fr": "mer"
+  },
+  {
+   "ar": "جَبَل",
+   "fr": "Montagne",
+   "phrase_ar": "الجبلُ يقف شامخاً",
+   "phrase_fr": "La montagne se dresse fièrement",
+   "surligne_ar": "الجبلُ",
+   "surligne_fr": "montagne"
+  },
+  {
+   "ar": "ودَاد",
+   "fr": "Vallée",
+   "phrase_ar": "الوادي يسقيه الماء",
+   "phrase_fr": "La vallée est arrosée par l'eau",
+   "surligne_ar": "الوادي",
+   "surligne_fr": "vallée"
+  },
+  {
+   "ar": "غَابَة",
+   "fr": "Forêt",
+   "phrase_ar": "الغابةُ بيت الحيوان",
+   "phrase_fr": "La forêt est la maison de l'animal",
+   "surligne_ar": "الغابةُ",
+   "surligne_fr": "forêt"
+  },
+  {
+   "ar": "حَيَوان",
+   "fr": "Animal",
+   "phrase_ar": "الحيوانُ يستحق الرحمة",
+   "phrase_fr": "L'animal mérite la miséricorde",
+   "surligne_ar": "الحيوانُ",
+   "surligne_fr": "animal"
+  },
+  {
+   "ar": "طَائِر",
+   "fr": "Oiseau",
+   "phrase_ar": "الطائرُ يحلق في السماء",
+   "phrase_fr": "L'oiseau vole dans le ciel",
+   "surligne_ar": "الطائرُ",
+   "surligne_fr": "oiseau"
+  },
+  {
+   "ar": "سَمَك",
+   "fr": "Poisson",
+   "phrase_ar": "السمكُ يسبح في البحر",
+   "phrase_fr": "Le poisson nage dans la mer",
+   "surligne_ar": "السمكُ",
+   "surligne_fr": "poisson"
+  },
+  {
+   "ar": "نَبَات",
+   "fr": "Plante",
+   "phrase_ar": "النباتُ يحتاج للماء",
+   "phrase_fr": "La plante a besoin d'eau",
+   "surligne_ar": "النباتُ",
+   "surligne_fr": "plante"
+  },
+  {
+   "ar": "شَجَر",
+   "fr": "Arbre",
+   "phrase_ar": "الشجرُ يعطي الظل",
+   "phrase_fr": "L'arbre donne de l'ombre",
+   "surligne_ar": "الشجرُ",
+   "surligne_fr": "arbre"
+  },
+  {
+   "ar": "زَهْر",
+   "fr": "Fleur",
+   "phrase_ar": "الزهرُ يبهج القلب",
+   "phrase_fr": "La fleur égaye le cœur",
+   "surligne_ar": "الزهرُ",
+   "surligne_fr": "fleur"
+  },
+  {
+   "ar": "عِطْر",
+   "fr": "Parfum",
+   "phrase_ar": "العطرُ يطيب الرائحة",
+   "phrase_fr": "Le parfum améliore l'odeur",
+   "surligne_ar": "العطرُ",
+   "surligne_fr": "parfum"
+  },
+  {
+   "ar": "طَعْم",
+   "fr": "Goût",
+   "phrase_ar": "الطعمُ يميز الطعام",
+   "phrase_fr": "Le goût distingue la nourriture",
+   "surligne_ar": "الطعمُ",
+   "surligne_fr": "goût"
+  },
+  {
+   "ar": "رَائِحة",
+   "fr": "Odeur",
+   "phrase_ar": "الرائحةُ تنبّه الحس",
+   "phrase_fr": "L'odeur alerte les sens",
+   "surligne_ar": "الرائحةُ",
+   "surligne_fr": "odeur"
+  },
+  {
+   "ar": "صَوْت",
+   "fr": "Son",
+   "phrase_ar": "الصوتُ ينقل المعنى",
+   "phrase_fr": "Le son transmet le sens",
+   "surligne_ar": "الصوتُ",
+   "surligne_fr": "son"
+  },
+  {
+   "ar": "ضَوْء",
+   "fr": "Lumière",
+   "phrase_ar": "الضوءُ ينير الظلام",
+   "phrase_fr": "La lumière illumine l'obscurité",
+   "surligne_ar": "الضوءُ",
+   "surligne_fr": "lumière"
+  },
+  {
+   "ar": "ظِل",
+   "fr": "Ombre",
+   "phrase_ar": "الظلُّ يقي من الحر",
+   "phrase_fr": "L'ombre protège de la chaleur",
+   "surligne_ar": "الظلُّ",
+   "surligne_fr": "ombre"
+  },
+  {
+   "ar": "بَرْد",
+   "fr": "Froid",
+   "phrase_ar": "البردُ يقسي الجسم",
+   "phrase_fr": "Le froid endurcit le corps",
+   "surligne_ar": "البردُ",
+   "surligne_fr": "froid"
+  },
+  {
+   "ar": "حَرّ",
+   "fr": "Chaleur",
+   "phrase_ar": "الحرُّ ينهك الطاقة",
+   "phrase_fr": "La chaleur épuise l'énergie",
+   "surligne_ar": "الحرُّ",
+   "surligne_fr": "chaleur"
+  },
+  {
+   "ar": "رِيح",
+   "fr": "Vent",
+   "phrase_ar": "الريحُ تحمل الأخبار",
+   "phrase_fr": "Le vent porte les nouvelles",
+   "surligne_ar": "الريحُ",
+   "surligne_fr": "vent"
+  },
+  {
+   "ar": "مَطَر",
+   "fr": "Pluie",
+   "phrase_ar": "المطرُ ينعش الأرض",
+   "phrase_fr": "La pluie rafraîchit la terre",
+   "surligne_ar": "المطرُ",
+   "surligne_fr": "pluie"
+  },
+  {
+   "ar": "ثَلْج",
+   "fr": "Neige",
+   "phrase_ar": "الثلجُ يغطي الأرض",
+   "phrase_fr": "La neige couvre la terre",
+   "surligne_ar": "الثلجُ",
+   "surligne_fr": "neige"
+  },
+  {
+   "ar": "صَاعِقة",
+   "fr": "Éclair",
+   "phrase_ar": "الصاعقةُ ضربة سماوية",
+   "phrase_fr": "L'éclair est un coup du ciel",
+   "surligne_ar": "الصاعقةُ",
+   "surligne_fr": "éclair"
+  },
+  {
+   "ar": "رَعْد",
+   "fr": "Tonnerre",
+   "phrase_ar": "الرعدُ يرعد السماء",
+   "phrase_fr": "Le tonnerre gronde le ciel",
+   "surligne_ar": "الرعدُ",
+   "surligne_fr": "tonnerre"
+  },
+  {
+   "ar": "قَوْس قَزَح",
+   "fr": "Arc-en-ciel",
+   "phrase_ar": "قوسُ قزحَ علامةُ السلام",
+   "phrase_fr": "L'arc-en-ciel est un signe de paix",
+   "surligne_ar": "قوسُ",
+   "surligne_fr": "arc-en-ciel"
+  },
+  {
+   "ar": "سَحَاب",
+   "fr": "Nuage",
+   "phrase_ar": "السحابُ يحمل الماء",
+   "phrase_fr": "Le nuage porte l'eau",
+   "surligne_ar": "السحابُ",
+   "surligne_fr": "nuage"
+  },
+  {
+   "ar": "ضَبَاب",
+   "fr": "Brouillard",
+   "phrase_ar": "الضبابُ يحجب الرؤية",
+   "phrase_fr": "Le brouillard obscurcit la vue",
+   "surligne_ar": "الضبابُ",
+   "surligne_fr": "brouillard"
+  },
+  {
+   "ar": "قَوْس",
+   "fr": "Arc",
+   "phrase_ar": "القوسُ يطلق السهام",
+   "phrase_fr": "L'arc tire les flèches",
+   "surligne_ar": "القوسُ",
+   "surligne_fr": "arc"
+  },
+  {
+   "ar": "سِلاح",
+   "fr": "Arme",
+   "phrase_ar": "السلاحُ يدافع عن الوطن",
+   "phrase_fr": "L'arme défend la patrie",
+   "surligne_ar": "السلاحُ",
+   "surligne_fr": "arme"
+  },
+  {
+   "ar": "سَيْف",
+   "fr": "Épée",
+   "phrase_ar": "السيفُ رمز الشجاعة",
+   "phrase_fr": "L'épée est un symbole de courage",
+   "surligne_ar": "السيفُ",
+   "surligne_fr": "épée"
+  },
+  {
+   "ar": "رُمْح",
+   "fr": "Lance",
+   "phrase_ar": "الرمحُ سلاح قديم",
+   "phrase_fr": "La lance est une arme ancienne",
+   "surligne_ar": "الرمحُ",
+   "surligne_fr": "lance"
+  },
+  {
+   "ar": "تُرْس",
+   "fr": "Bouclier",
+   "phrase_ar": "الترسُ يحمي من الضربات",
+   "phrase_fr": "Le bouclier protège des coups",
+   "surligne_ar": "الترسُ",
+   "surligne_fr": "bouclier"
+  },
+  {
+   "ar": "خَيْل",
+   "fr": "Cheval",
+   "phrase_ar": "الخيلُ رمز الكرامة",
+   "phrase_fr": "Le cheval est un symbole de dignité",
+   "surligne_ar": "الخيلُ",
+   "surligne_fr": "cheval"
+  },
+  {
+   "ar": "ناقَة",
+   "fr": "Chamelle",
+   "phrase_ar": "الناقةُ سفينة الصحراء",
+   "phrase_fr": "La chamelle est le navire du désert",
+   "surligne_ar": "الناقةُ",
+   "surligne_fr": "chamelle"
+  },
+  {
+   "ar": "حِمار",
+   "fr": "Âne",
+   "phrase_ar": "الحمارُ حيوان مخلص",
+   "phrase_fr": "L'âne est un animal fidèle",
+   "surligne_ar": "الحمارُ",
+   "surligne_fr": "âne"
+  },
+  {
+   "ar": "كَلْب",
+   "fr": "Chien",
+   "phrase_ar": "الكلبُ صديق الإنسان",
+   "phrase_fr": "Le chien est l'ami de l'humain",
+   "surligne_ar": "الكلبُ",
+   "surligne_fr": "chien"
+  },
+  {
+   "ar": "قِطّ",
+   "fr": "Chat",
+   "phrase_ar": "القطُّ صائدُ الفئران",
+   "phrase_fr": "Le chat est un chasseur de souris",
+   "surligne_ar": "القطُّ",
+   "surligne_fr": "chat"
+  },
+  {
+   "ar": "أَسَد",
+   "fr": "Lion",
+   "phrase_ar": "الأسدُ ملك الحيوانات",
+   "phrase_fr": "Le lion est le roi des animaux",
+   "surligne_ar": "الأسدُ",
+   "surligne_fr": "lion"
+  },
+  {
+   "ar": "ذِئْب",
+   "fr": "Loup",
+   "phrase_ar": "الذئبُ مفترس خطير",
+   "phrase_fr": "Le loup est un prédateur dangereux",
+   "surligne_ar": "الذئبُ",
+   "surligne_fr": "loup"
+  },
+  {
+   "ar": "نَمِر",
+   "fr": "Tigre",
+   "phrase_ar": "النمرُ يتحرك بخفة",
+   "phrase_fr": "Le tigre se déplace légèrement",
+   "surligne_ar": "النمرُ",
+   "surligne_fr": "tigre"
+  },
+  {
+   "ar": "فِيل",
+   "fr": "Éléphant",
+   "phrase_ar": "الفيلُ أكبر الحيوانات",
+   "phrase_fr": "L'éléphant est le plus grand animal",
+   "surligne_ar": "الفيلُ",
+   "surligne_fr": "éléphant"
+  },
+  {
+   "ar": "زرافة",
+   "fr": "Girafe",
+   "phrase_ar": "الزرافةُ طويلة العنق",
+   "phrase_fr": "La girafe a un long cou",
+   "surligne_ar": "الزرافةُ",
+   "surligne_fr": "girafe"
+  },
+  {
+   "ar": "جَمَل",
+   "fr": "Chameau",
+   "phrase_ar": "الجملُ يحتمل العطش",
+   "phrase_fr": "Le chameau supporte la soif",
+   "surligne_ar": "الجملُ",
+   "surligne_fr": "chameau"
+  },
+  {
+   "ar": "ثَعْلَب",
+   "fr": "Renard",
+   "phrase_ar": "الثعلبُ ماكر وذكي",
+   "phrase_fr": "Le renard est rusé et intelligent",
+   "surligne_ar": "الثعلبُ",
+   "surligne_fr": "renard"
+  },
+  {
+   "ar": "أَرْنَب",
+   "fr": "Lapin",
+   "phrase_ar": "الأرنبُ سريع الحركة",
+   "phrase_fr": "Le lapin se meut rapidement",
+   "surligne_ar": "الأرنبُ",
+   "surligne_fr": "lapin"
+  },
+  {
+   "ar": "دِيك",
+   "fr": "Coq",
+   "phrase_ar": "الديكُ ينادي الفجر",
+   "phrase_fr": "Le coq appelle l'aube",
+   "surligne_ar": "الديكُ",
+   "surligne_fr": "coq"
+  },
+  {
+   "ar": "دَجَاجة",
+   "fr": "Poule",
+   "phrase_ar": "الدجاجةُ تبيض البيض",
+   "phrase_fr": "La poule pond les œufs",
+   "surligne_ar": "الدجاجةُ",
+   "surligne_fr": "poule"
+  },
+  {
+   "ar": "بَطّ",
+   "fr": "Canard",
+   "phrase_ar": "البطُّ يسبح في الماء",
+   "phrase_fr": "Le canard nage dans l'eau",
+   "surligne_ar": "البطُّ",
+   "surligne_fr": "canard"
+  },
+  {
+   "ar": "إوَزّ",
+   "fr": "Oie",
+   "phrase_ar": "الإوزُّ طائر مهاجر",
+   "phrase_fr": "L'oie est un oiseau migrateur",
+   "surligne_ar": "الإوزُّ",
+   "surligne_fr": "oie"
+  },
+  {
+   "ar": "عُقاب",
+   "fr": "Aigle",
+   "phrase_ar": "العقابُ طائر جارح",
+   "phrase_fr": "L'aigle est un oiseau de proie",
+   "surligne_ar": "العقابُ",
+   "surligne_fr": "aigle"
+  },
+  {
+   "ar": "صقْر",
+   "fr": "Faucon",
+   "phrase_ar": "الصقرُ سريع الطيران",
+   "phrase_fr": "Le faucon vole rapidement",
+   "surligne_ar": "الصقرُ",
+   "surligne_fr": "faucon"
+  },
+  {
+   "ar": "بُوم",
+   "fr": "Hibou",
+   "phrase_ar": "البومُ ينشط ليلاً",
+   "phrase_fr": "Le hibou est actif la nuit",
+   "surligne_ar": "البومُ",
+   "surligne_fr": "hibou"
+  },
+  {
+   "ar": "غُراب",
+   "fr": "Corbeau",
+   "phrase_ar": "الغرابُ أسود اللون",
+   "phrase_fr": "Le corbeau est noir",
+   "surligne_ar": "الغرابُ",
+   "surligne_fr": "corbeau"
+  },
+  {
+   "ar": "حَمَام",
+   "fr": "Pigeon",
+   "phrase_ar": "الحمامُ رمز السلام",
+   "phrase_fr": "Le pigeon est un symbole de paix",
+   "surligne_ar": "الحمامُ",
+   "surligne_fr": "pigeon"
+  },
+  {
+   "ar": "ببّغاء",
+   "fr": "Perroquet",
+   "phrase_ar": "الببغاءُ يقلد الأصوات",
+   "phrase_fr": "Le perroquet imite les sons",
+   "surligne_ar": "الببغاءُ",
+   "surligne_fr": "perroquet"
+  },
+  {
+   "ar": "ثعبان",
+   "fr": "Serpent",
+   "phrase_ar": "الثعبانُ زاحف خطير",
+   "phrase_fr": "Le serpent est un rampant dangereux",
+   "surligne_ar": "الثعبانُ",
+   "surligne_fr": "serpent"
+  },
+  {
+   "ar": "سُلحفاة",
+   "fr": "Tortue",
+   "phrase_ar": "السلحفاةُ بطيئة الحركة",
+   "phrase_fr": "La tortue se meut lentement",
+   "surligne_ar": "السلحفاةُ",
+   "surligne_fr": "tortue"
+  },
+  {
+   "ar": "ضفدع",
+   "fr": "Grenouille",
+   "phrase_ar": "الضفدعُ يقفز عالياً",
+   "phrase_fr": "La grenouille saute haut",
+   "surligne_ar": "الضفدعُ",
+   "surligne_fr": "grenouille"
+  },
+  {
+   "ar": "سَرطان",
+   "fr": "Crabe",
+   "phrase_ar": "السرطانُ يمشي جانباً",
+   "phrase_fr": "Le crabe marche latéralement",
+   "surligne_ar": "السرطانُ",
+   "surligne_fr": "crabe"
+  },
+  {
+   "ar": "نحلة",
+   "fr": "Abeille",
+   "phrase_ar": "النحلةُ تنتج العسل",
+   "phrase_fr": "L'abeille produit du miel",
+   "surligne_ar": "النحلةُ",
+   "surligne_fr": "abeille"
+  },
+  {
+   "ar": "فَراشة",
+   "fr": "Papillon",
+   "phrase_ar": "الفراشةُ جميلة الألوان",
+   "phrase_fr": "Le papillon a de belles couleurs",
+   "surligne_ar": "الفراشةُ",
+   "surligne_fr": "papillon"
+  },
+  {
+   "ar": "جراد",
+   "fr": "Sauterelle",
+   "phrase_ar": "الجرادُ يأكل النبات",
+   "phrase_fr": "La sauterelle mange les plantes",
+   "surligne_ar": "الجرادُ",
+   "surligne_fr": "sauterelle"
+  },
+  {
+   "ar": "نملة",
+   "fr": "Fourmi",
+   "phrase_ar": "النملةُ تعمل بجد",
+   "phrase_fr": "La fourmi travaille dur",
+   "surligne_ar": "النملةُ",
+   "surligne_fr": "fourmi"
+  },
+  {
+   "ar": "عنكبوت",
+   "fr": "Araignée",
+   "phrase_ar": "العنكبوتُ ينسج الشبكة",
+   "phrase_fr": "L'araignée tisse la toile",
+   "surligne_ar": "العنكبوتُ",
+   "surligne_fr": "araignée"
+  },
+  {
+   "ar": "ذبابة",
+   "fr": "Mouche",
+   "phrase_ar": "الذبابةُ تنشر الأمراض",
+   "phrase_fr": "La mouche propage les maladies",
+   "surligne_ar": "الذبابةُ",
+   "surligne_fr": "mouche"
+  },
+  {
+   "ar": "بعوضة",
+   "fr": "Moustique",
+   "phrase_ar": "البعوضةُ تسبب الحكة",
+   "phrase_fr": "Le moustique cause des démangeaisons",
+   "surligne_ar": "البعوضةُ",
+   "surligne_fr": "moustique"
+  },
+  {
+   "ar": "دودة",
+   "fr": "Vers",
+   "phrase_ar": "الدودةُ تعيش في التراب",
+   "phrase_fr": "Le ver vit dans la terre",
+   "surligne_ar": "الدودةُ",
+   "surligne_fr": "vers"
+  },
+  {
+   "ar": "قَرْع",
+   "fr": "Courge",
+   "phrase_ar": "القرعُ من الخضراوات",
+   "phrase_fr": "La courge est un légume",
+   "surligne_ar": "القرعُ",
+   "surligne_fr": "courge"
+  },
+  {
+   "ar": "تَمْر",
+   "fr": "Datte",
+   "phrase_ar": "التمرُ غذاء مفيد",
+   "phrase_fr": "La datte est une nourriture utile",
+   "surligne_ar": "التمرُ",
+   "surligne_fr": "datte"
+  },
+  {
+   "ar": "عِنَب",
+   "fr": "Raisin",
+   "phrase_ar": "العنبُ فاكهة لذيذة",
+   "phrase_fr": "Le raisin est un fruit délicieux",
+   "surligne_ar": "العنبُ",
+   "surligne_fr": "raisin"
+  },
+  {
+   "ar": "تُفّاح",
+   "fr": "Pomme",
+   "phrase_ar": "التفاحُ أحمر اللون",
+   "phrase_fr": "La pomme est rouge",
+   "surligne_ar": "التفاحُ",
+   "surligne_fr": "pomme"
+  },
+  {
+   "ar": "برتقال",
+   "fr": "Orange",
+   "phrase_ar": "البرتقالُ غني بالفيتامين",
+   "phrase_fr": "L'orange est riche en vitamine",
+   "surligne_ar": "البرتقالُ",
+   "surligne_fr": "orange"
+  },
+  {
+   "ar": "موز",
+   "fr": "Banane",
+   "phrase_ar": "الموزُ غني بالبوتاسيوم",
+   "phrase_fr": "La banane est riche en potassium",
+   "surligne_ar": "الموزُ",
+   "surligne_fr": "banane"
+  },
+  {
+   "ar": "ليمون",
+   "fr": "Citron",
+   "phrase_ar": "الليمونُ حامض المذاق",
+   "phrase_fr": "Le citron a un goût acide",
+   "surligne_ar": "الليمونُ",
+   "surligne_fr": "citron"
+  },
+  {
+   "ar": "رمّان",
+   "fr": "Grenade",
+   "phrase_ar": "الرمّانُ يحوي حبات",
+   "phrase_fr": "La grenade contient des grains",
+   "surligne_ar": "الرمّانُ",
+   "surligne_fr": "grenade"
+  },
+  {
+   "ar": "كمّثرى",
+   "fr": "Poire",
+   "phrase_ar": "الكمثرى فاكهة حلوة",
+   "phrase_fr": "La poire est un fruit sucré",
+   "surligne_ar": "الكمثرى",
+   "surligne_fr": "poire"
+  },
+  {
+   "ar": "خوخ",
+   "fr": "Pêche",
+   "phrase_ar": "الخوخُ له نواة",
+   "phrase_fr": "La pêche a un noyau",
+   "surligne_ar": "الخوخُ",
+   "surligne_fr": "pêche"
+  },
+  {
+   "ar": "مِشمش",
+   "fr": "Abricot",
+   "phrase_ar": "المشمشُ أصغر من الخوخ",
+   "phrase_fr": "L'abricot est plus petit que la pêche",
+   "surligne_ar": "المشمشُ",
+   "surligne_fr": "abricot"
+  },
+  {
+   "ar": "فِرَاولة",
+   "fr": "Fraise",
+   "phrase_ar": "الفراولةُ حمراء زاهية",
+   "phrase_fr": "La fraise est rouge brillant",
+   "surligne_ar": "الفراولةُ",
+   "surligne_fr": "fraise"
+  },
+  {
+   "ar": "أَناناس",
+   "fr": "Ananas",
+   "phrase_ar": "الأناناسُ استوائي",
+   "phrase_fr": "L'ananas est tropical",
+   "surligne_ar": "الأناناسُ",
+   "surligne_fr": "ananas"
+  },
+  {
+   "ar": "جَوْز الهند",
+   "fr": "Noix de coco",
+   "phrase_ar": "جوزُ الهندِ يعطي الزيت",
+   "phrase_fr": "La noix de coco donne de l'huile",
+   "surligne_ar": "جوزُ",
+   "surligne_fr": "noix de coco"
+  },
+  {
+   "ar": "تِين",
+   "fr": "Figue",
+   "phrase_ar": "التينُ مبارك",
+   "phrase_fr": "La figue est bénie",
+   "surligne_ar": "التينُ",
+   "surligne_fr": "figue"
+  },
+  {
+   "ar": "زيتون",
+   "fr": "Olive",
+   "phrase_ar": "الزيتونُ يعطي الزيت",
+   "phrase_fr": "L'olive donne de l'huile",
+   "surligne_ar": "الزيتونُ",
+   "surligne_fr": "olive"
+  },
+  {
+   "ar": "ثوم",
+   "fr": "Ail",
+   "phrase_ar": "الثومُ له رائحة قوية",
+   "phrase_fr": "L'ail a une forte odeur",
+   "surligne_ar": "الثومُ",
+   "surligne_fr": "ail"
+  },
+  {
+   "ar": "بصل",
+   "fr": "Oignon",
+   "phrase_ar": "البصلُ يطبخ مع الطعام",
+   "phrase_fr": "L'oignon se cuisine avec la nourriture",
+   "surligne_ar": "البصلُ",
+   "surligne_fr": "oignon"
+  },
+  {
+   "ar": "فِلْفِل",
+   "fr": "Poivre",
+   "phrase_ar": "الفلفلُ يضيف الطعم",
+   "phrase_fr": "Le poivre ajoute du goût",
+   "surligne_ar": "الفلفلُ",
+   "surligne_fr": "poivre"
+  },
+  {
+   "ar": "ملح",
+   "fr": "Sel",
+   "phrase_ar": "الملحُ يحفظ الطعام",
+   "phrase_fr": "Le sel conserve la nourriture",
+   "surligne_ar": "الملحُ",
+   "surligne_fr": "sel"
+  },
+  {
+   "ar": "سُكَّر",
+   "fr": "Sucre",
+   "phrase_ar": "السكرُ يحلي الطعام",
+   "phrase_fr": "Le sucre sucre la nourriture",
+   "surligne_ar": "السكرُ",
+   "surligne_fr": "sucre"
+  },
+  {
+   "ar": "عَسَل",
+   "fr": "Miel",
+   "phrase_ar": "العسلُ شفاء من الأمراض",
+   "phrase_fr": "Le miel guérit les maladies",
+   "surligne_ar": "العسلُ",
+   "surligne_fr": "miel"
+  },
+  {
+   "ar": "زبْدة",
+   "fr": "Beurre",
+   "phrase_ar": "الزبدةُ من الحليب",
+   "phrase_fr": "Le beurre vient du lait",
+   "surligne_ar": "الزبدةُ",
+   "surligne_fr": "beurre"
+  },
+  {
+   "ar": "جبن",
+   "fr": "Fromage",
+   "phrase_ar": "الجبنُ يعطي الكالسيوم",
+   "phrase_fr": "Le fromage donne du calcium",
+   "surligne_ar": "الجبنُ",
+   "surligne_fr": "fromage"
+  },
+  {
+   "ar": "لَحْم",
+   "fr": "Viande",
+   "phrase_ar": "اللحمُ غني بالبروتين",
+   "phrase_fr": "La viande est riche en protéines",
+   "surligne_ar": "اللحمُ",
+   "surligne_fr": "viande"
+  },
+  {
+   "ar": "سَمَك",
+   "fr": "Poisson",
+   "phrase_ar": "السمكُ صحي للقلب",
+   "phrase_fr": "Le poisson est bon pour le cœur",
+   "surligne_ar": "السمكُ",
+   "surligne_fr": "poisson"
+  },
+  {
+   "ar": "دَجاج",
+   "fr": "Poulet",
+   "phrase_ar": "الدجاجُ لحم بيضاء",
+   "phrase_fr": "Le poulet est une viande blanche",
+   "surligne_ar": "الدجاجُ",
+   "surligne_fr": "poulet"
+  },
+  {
+   "ar": "بيض",
+   "fr": "Œuf",
+   "phrase_ar": "البيضُ مصدر البروتين",
+   "phrase_fr": "L'œuf est une source de protéine",
+   "surligne_ar": "البيضُ",
+   "surligne_fr": "œuf"
+  },
+  {
+   "ar": "خبز",
+   "fr": "Pain",
+   "phrase_ar": "الخبزُ قوت الإنسان",
+   "phrase_fr": "Le pain est la subsistance de l'humain",
+   "surligne_ar": "الخبزُ",
+   "surligne_fr": "pain"
+  },
+  {
+   "ar": "أرز",
+   "fr": "Riz",
+   "phrase_ar": "الأرزُ غذاء أساسي",
+   "phrase_fr": "Le riz est une nourriture essentielle",
+   "surligne_ar": "الأرزُ",
+   "surligne_fr": "riz"
+  },
+  {
+   "ar": "قَمْح",
+   "fr": "Blé",
+   "phrase_ar": "القمحُ يصنع الدقيق",
+   "phrase_fr": "Le blé fait la farine",
+   "surligne_ar": "القمحُ",
+   "surligne_fr": "blé"
+  },
+  {
+   "ar": "شعير",
+   "fr": "Orge",
+   "phrase_ar": "الشعيرُ غذاء الحيوان",
+   "phrase_fr": "L'orge est la nourriture de l'animal",
+   "surligne_ar": "الشعيرُ",
+   "surligne_fr": "orge"
+  },
+  {
+   "ar": "دقيق",
+   "fr": "Farine",
+   "phrase_ar": "الدقيقُ يصنع الخبز",
+   "phrase_fr": "La farine fait le pain",
+   "surligne_ar": "الدقيقُ",
+   "surligne_fr": "farine"
+  },
+  {
+   "ar": "زيت",
+   "fr": "Huile",
+   "phrase_ar": "الزيتُ يستخدم في الطهي",
+   "phrase_fr": "L'huile s'utilise dans la cuisine",
+   "surligne_ar": "الزيتُ",
+   "surligne_fr": "huile"
+  },
+  {
+   "ar": "خل",
+   "fr": "Vinaigre",
+   "phrase_ar": "الخلُّ يحفظ الطعام",
+   "phrase_fr": "Le vinaigre conserve la nourriture",
+   "surligne_ar": "الخلُّ",
+   "surligne_fr": "vinaigre"
+  },
+  {
+   "ar": "صوص",
+   "fr": "Sauce",
+   "phrase_ar": "الصوصُ يطعم الطعام",
+   "phrase_fr": "La sauce assaisonne la nourriture",
+   "surligne_ar": "الصوصُ",
+   "surligne_fr": "sauce"
+  },
+  {
+   "ar": "حلوى",
+   "fr": "Sucrerie",
+   "phrase_ar": "الحلوى غير صحية",
+   "phrase_fr": "La sucrerie n'est pas saine",
+   "surligne_ar": "الحلوى",
+   "surligne_fr": "sucrerie"
+  },
+  {
+   "ar": "شوكولاتة",
+   "fr": "Chocolat",
+   "phrase_ar": "الشوكولاتةُ لذيذة",
+   "phrase_fr": "Le chocolat est délicieux",
+   "surligne_ar": "الشوكولاتةُ",
+   "surligne_fr": "chocolat"
+  },
+  {
+   "ar": "آيس كريم",
+   "fr": "Glace",
+   "phrase_ar": "الآيس كريم بارد",
+   "phrase_fr": "La glace est froide",
+   "surligne_ar": "الآيس",
+   "surligne_fr": "glace"
+  },
+  {
+   "ar": "قهوة",
+   "fr": "Café",
+   "phrase_ar": "القهوةُ تنشط الجسم",
+   "phrase_fr": "Le café dynamise le corps",
+   "surligne_ar": "القهوةُ",
+   "surligne_fr": "café"
+  },
+  {
+   "ar": "شاي",
+   "fr": "Thé",
+   "phrase_ar": "الشايُ يدفئ الجسم",
+   "phrase_fr": "Le thé réchauffe le corps",
+   "surligne_ar": "الشايُ",
+   "surligne_fr": "thé"
+  },
+  {
+   "ar": "لبن",
+   "fr": "Lait",
+   "phrase_ar": "اللبنُ يقوي العظام",
+   "phrase_fr": "Le lait renforce les os",
+   "surligne_ar": "اللبنُ",
+   "surligne_fr": "lait"
+  },
+  {
+   "ar": "عصير",
+   "fr": "Jus",
+   "phrase_ar": "العصيرُ من الفاكهة",
+   "phrase_fr": "Le jus vient du fruit",
+   "surligne_ar": "العصيرُ",
+   "surligne_fr": "jus"
+  },
+  {
+   "ar": "ماء",
+   "fr": "Eau",
+   "phrase_ar": "الماءُ ضروري للحياة",
+   "phrase_fr": "L'eau est essentielle à la vie",
+   "surligne_ar": "الماءُ",
+   "surligne_fr": "eau"
+  },
+  {
+   "ar": "خمر",
+   "fr": "Vin",
+   "phrase_ar": "الخمرُ محرّم في الإسلام",
+   "phrase_fr": "Le vin est interdit en Islam",
+   "surligne_ar": "الخمرُ",
+   "surligne_fr": "vin"
+  },
+  {
+   "ar": "بيرة",
+   "fr": "Bière",
+   "phrase_ar": "البيرةُ مشروب كحول",
+   "phrase_fr": "La bière est une boisson alcoolisée",
+   "surligne_ar": "البيرةُ",
+   "surligne_fr": "bière"
+  },
+  {
+   "ar": "ملابس",
+   "fr": "Vêtements",
+   "phrase_ar": "الملابسُ تحمي من البرد",
+   "phrase_fr": "Les vêtements protègent du froid",
+   "surligne_ar": "الملابسُ",
+   "surligne_fr": "vêtements"
+  },
+  {
+   "ar": "قميص",
+   "fr": "Chemise",
+   "phrase_ar": "القميصُ يلبس على الصدر",
+   "phrase_fr": "La chemise se porte sur la poitrine",
+   "surligne_ar": "القميصُ",
+   "surligne_fr": "chemise"
+  },
+  {
+   "ar": "بنطال",
+   "fr": "Pantalon",
+   "phrase_ar": "البنطالُ يغطي الأرجل",
+   "phrase_fr": "Le pantalon couvre les jambes",
+   "surligne_ar": "البنطالُ",
+   "surligne_fr": "pantalon"
+  },
+  {
+   "ar": "فستان",
+   "fr": "Robe",
+   "phrase_ar": "الفستانُ للنساء",
+   "phrase_fr": "La robe est pour les femmes",
+   "surligne_ar": "الفستانُ",
+   "surligne_fr": "robe"
+  },
+  {
+   "ar": "جاكت",
+   "fr": "Veste",
+   "phrase_ar": "الجاكتُ يدفئ الجسم",
+   "phrase_fr": "La veste réchauffe le corps",
+   "surligne_ar": "الجاكتُ",
+   "surligne_fr": "veste"
+  },
+  {
+   "ar": "معطف",
+   "fr": "Manteau",
+   "phrase_ar": "المعطفُ يحمي من الأمطار",
+   "phrase_fr": "Le manteau protège de la pluie",
+   "surligne_ar": "المعطفُ",
+   "surligne_fr": "manteau"
+  },
+  {
+   "ar": "شرابات",
+   "fr": "Chaussettes",
+   "phrase_ar": "الشراباتُ تغطي الأقدام",
+   "phrase_fr": "Les chaussettes couvrent les pieds",
+   "surligne_ar": "الشراباتُ",
+   "surligne_fr": "chaussettes"
+  },
+  {
+   "ar": "حذاء",
+   "fr": "Chaussure",
+   "phrase_ar": "الحذاءُ يحمي الأقدام",
+   "phrase_fr": "La chaussure protège les pieds",
+   "surligne_ar": "الحذاءُ",
+   "surligne_fr": "chaussure"
+  },
+  {
+   "ar": "نعل",
+   "fr": "Sandale",
+   "phrase_ar": "النعلُ خفيفة الوزن",
+   "phrase_fr": "La sandale est légère",
+   "surligne_ar": "النعلُ",
+   "surligne_fr": "sandale"
+  },
+  {
+   "ar": "قبعة",
+   "fr": "Chapeau",
+   "phrase_ar": "القبعةُ تحمي من الشمس",
+   "phrase_fr": "Le chapeau protège du soleil",
+   "surligne_ar": "القبعةُ",
+   "surligne_fr": "chapeau"
+  },
+  {
+   "ar": "عمامة",
+   "fr": "Turban",
+   "phrase_ar": "العمامةُ تقليد عربي",
+   "phrase_fr": "Le turban est une tradition arabe",
+   "surligne_ar": "العمامةُ",
+   "surligne_fr": "turban"
+  },
+  {
+   "ar": "حجاب",
+   "fr": "Voile",
+   "phrase_ar": "الحجابُ فرض في الإسلام",
+   "phrase_fr": "Le voile est une obligation en Islam",
+   "surligne_ar": "الحجابُ",
+   "surligne_fr": "voile"
+  },
+  {
+   "ar": "خمار",
+   "fr": "Foulard",
+   "phrase_ar": "الخمارُ يغطي الشعر",
+   "phrase_fr": "Le foulard couvre les cheveux",
+   "surligne_ar": "الخمارُ",
+   "surligne_fr": "foulard"
+  },
+  {
+   "ar": "جورب",
+   "fr": "Bas",
+   "phrase_ar": "الجوربُ يحمي الرجل",
+   "phrase_fr": "Le bas protège la jambe",
+   "surligne_ar": "الجوربُ",
+   "surligne_fr": "bas"
+  },
+  {
+   "ar": "قفازات",
+   "fr": "Gants",
+   "phrase_ar": "القفازاتُ تحمي اليدين",
+   "phrase_fr": "Les gants protègent les mains",
+   "surligne_ar": "القفازاتُ",
+   "surligne_fr": "gants"
+  },
+  {
+   "ar": "ربطة عنق",
+   "fr": "Cravate",
+   "phrase_ar": "ربطةُ العنقِ زينة",
+   "phrase_fr": "La cravate est un ornement",
+   "surligne_ar": "ربطةُ",
+   "surligne_fr": "cravate"
+  },
+  {
+   "ar": "حزام",
+   "fr": "Ceinture",
+   "phrase_ar": "الحزامُ يمسك البنطال",
+   "phrase_fr": "La ceinture retient le pantalon",
+   "surligne_ar": "الحزامُ",
+   "surligne_fr": "ceinture"
+  },
+  {
+   "ar": "مراية",
+   "fr": "Miroir",
+   "phrase_ar": "المراةُ تعكس الصورة",
+   "phrase_fr": "Le miroir reflète l'image",
+   "surligne_ar": "المراةُ",
+   "surligne_fr": "miroir"
+  },
+  {
+   "ar": "مشط",
+   "fr": "Peigne",
+   "phrase_ar": "المشطُ يحل تشابك الشعر",
+   "phrase_fr": "Le peigne démêle les cheveux",
+   "surligne_ar": "المشطُ",
+   "surligne_fr": "peigne"
+  },
+  {
+   "ar": "فرشاة أسنان",
+   "fr": "Brosse à dents",
+   "phrase_ar": "فرشاةُ الأسنانِ تنظف",
+   "phrase_fr": "La brosse à dents nettoie",
+   "surligne_ar": "فرشاةُ",
+   "surligne_fr": "brosse à dents"
+  },
+  {
+   "ar": "معجون أسنان",
+   "fr": "Dentifrice",
+   "phrase_ar": "معجونُ الأسنانِ ضروري",
+   "phrase_fr": "Le dentifrice est essentiel",
+   "surligne_ar": "معجونُ",
+   "surligne_fr": "dentifrice"
+  },
+  {
+   "ar": "صابون",
+   "fr": "Savon",
+   "phrase_ar": "الصابونُ ينظف الجسم",
+   "phrase_fr": "Le savon nettoie le corps",
+   "surligne_ar": "الصابونُ",
+   "surligne_fr": "savon"
+  },
+  {
+   "ar": "شامبو",
+   "fr": "Shampooing",
+   "phrase_ar": "الشامبوُ ينظف الشعر",
+   "phrase_fr": "Le shampooing nettoie les cheveux",
+   "surligne_ar": "الشامبوُ",
+   "surligne_fr": "shampooing"
+  },
+  {
+   "ar": "منشفة",
+   "fr": "Serviette",
+   "phrase_ar": "المنشفةُ تجفف الجسم",
+   "phrase_fr": "La serviette sèche le corps",
+   "surligne_ar": "المنشفةُ",
+   "surligne_fr": "serviette"
+  },
+  {
+   "ar": "حقيبة",
+   "fr": "Sac",
+   "phrase_ar": "الحقيبةُ تحمل الأغراض",
+   "phrase_fr": "Le sac porte les affaires",
+   "surligne_ar": "الحقيبةُ",
+   "surligne_fr": "sac"
+  },
+  {
+   "ar": "محفظة",
+   "fr": "Portefeuille",
+   "phrase_ar": "المحفظةُ تحفظ المال",
+   "phrase_fr": "Le portefeuille garde l'argent",
+   "surligne_ar": "المحفظةُ",
+   "surligne_fr": "portefeuille"
+  },
+  {
+   "ar": "ساعة",
+   "fr": "Montre",
+   "phrase_ar": "الساعةُ تبين الوقت",
+   "phrase_fr": "La montre indique l'heure",
+   "surligne_ar": "الساعةُ",
+   "surligne_fr": "montre"
+  },
+  {
+   "ar": "خاتم",
+   "fr": "Bague",
+   "phrase_ar": "الخاتمُ يزين الإصبع",
+   "phrase_fr": "La bague orne le doigt",
+   "surligne_ar": "الخاتمُ",
+   "surligne_fr": "bague"
+  },
+  {
+   "ar": "قلادة",
+   "fr": "Collier",
+   "phrase_ar": "القلادةُ تزين الرقبة",
+   "phrase_fr": "Le collier orne le cou",
+   "surligne_ar": "القلادةُ",
+   "surligne_fr": "collier"
+  },
+  {
+   "ar": "أسوار",
+   "fr": "Bracelets",
+   "phrase_ar": "الأساورُ تزين المعصم",
+   "phrase_fr": "Les bracelets ornent le poignet",
+   "surligne_ar": "الأساورُ",
+   "surligne_fr": "bracelets"
+  },
+  {
+   "ar": "أقراط",
+   "fr": "Boucles d'oreilles",
+   "phrase_ar": "الأقراطُ تزين الأذن",
+   "phrase_fr": "Les boucles ornent l'oreille",
+   "surligne_ar": "الأقراطُ",
+   "surligne_fr": "boucles d'oreilles"
+  },
+  {
+   "ar": "سيّارة",
+   "fr": "Voiture",
+   "phrase_ar": "السيارةُ وسيلة نقل",
+   "phrase_fr": "La voiture est un moyen de transport",
+   "surligne_ar": "السيارةُ",
+   "surligne_fr": "voiture"
+  },
+  {
+   "ar": "حافلة",
+   "fr": "Bus",
+   "phrase_ar": "الحافلةُ تقل الركاب",
+   "phrase_fr": "Le bus transporte les passagers",
+   "surligne_ar": "الحافلةُ",
+   "surligne_fr": "bus"
+  },
+  {
+   "ar": "قطار",
+   "fr": "Train",
+   "phrase_ar": "القطارُ يسير على السكك",
+   "phrase_fr": "Le train roule sur les rails",
+   "surligne_ar": "القطارُ",
+   "surligne_fr": "train"
+  },
+  {
+   "ar": "طائرة",
+   "fr": "Avion",
+   "phrase_ar": "الطائرةُ تحلق في السماء",
+   "phrase_fr": "L'avion vole dans le ciel",
+   "surligne_ar": "الطائرةُ",
+   "surligne_fr": "avion"
+  },
+  {
+   "ar": "سفينة",
+   "fr": "Navire",
+   "phrase_ar": "السفينةُ تبحر في البحر",
+   "phrase_fr": "Le navire navigue sur la mer",
+   "surligne_ar": "السفينةُ",
+   "surligne_fr": "navire"
+  },
+  {
+   "ar": "دراجة",
+   "fr": "Vélo",
+   "phrase_ar": "الدراجةُ وسيلة رخيصة",
+   "phrase_fr": "Le vélo est un moyen peu cher",
+   "surligne_ar": "الدراجةُ",
+   "surligne_fr": "vélo"
+  },
+  {
+   "ar": "مشي",
+   "fr": "Marche",
+   "phrase_ar": "المشيُ تمرين صحي",
+   "phrase_fr": "La marche est un exercice sain",
+   "surligne_ar": "المشيُ",
+   "surligne_fr": "marche"
+  },
+  {
+   "ar": "سباحة",
+   "fr": "Nage",
+   "phrase_ar": "السباحةُ رياضة مفيدة",
+   "phrase_fr": "La nage est un sport utile",
+   "surligne_ar": "السباحةُ",
+   "surligne_fr": "nage"
+  },
+  {
+   "ar": "رقص",
+   "fr": "Danse",
+   "phrase_ar": "الرقصُ فن جميل",
+   "phrase_fr": "La danse est un bel art",
+   "surligne_ar": "الرقصُ",
+   "surligne_fr": "danse"
+  },
+  {
+   "ar": "غناء",
+   "fr": "Chant",
+   "phrase_ar": "الغناءُ يفرح القلب",
+   "phrase_fr": "Le chant égaye le cœur",
+   "surligne_ar": "الغناءُ",
+   "surligne_fr": "chant"
+  },
+  {
+   "ar": "موسيقى",
+   "fr": "Musique",
+   "phrase_ar": "الموسيقى تهدئ النفس",
+   "phrase_fr": "La musique apaise l'âme",
+   "surligne_ar": "الموسيقى",
+   "surligne_fr": "musique"
+  },
+  {
+   "ar": "رسم",
+   "fr": "Dessin",
+   "phrase_ar": "الرسمُ فن تعبيري",
+   "phrase_fr": "Le dessin est un art expressif",
+   "surligne_ar": "الرسمُ",
+   "surligne_fr": "dessin"
+  },
+  {
+   "ar": "كتابة",
+   "fr": "Écriture",
+   "phrase_ar": "الكتابةُ وسيلة تواصل",
+   "phrase_fr": "L'écriture est un moyen de communication",
+   "surligne_ar": "الكتابةُ",
+   "surligne_fr": "écriture"
+  },
+  {
+   "ar": "قراءة",
+   "fr": "Lecture",
+   "phrase_ar": "القراءةُ تفتح الآفاق",
+   "phrase_fr": "La lecture ouvre les horizons",
+   "surligne_ar": "القراءةُ",
+   "surligne_fr": "lecture"
+  },
+  {
+   "ar": "تمثيل",
+   "fr": "Acting",
+   "phrase_ar": "التمثيلُ فن الأداء",
+   "phrase_fr": "Le jeu est l'art de la performance",
+   "surligne_ar": "التمثيلُ",
+   "surligne_fr": "acting"
+  },
+  {
+   "ar": "رياضة",
+   "fr": "Sport",
+   "phrase_ar": "الرياضةُ تقوي الجسم",
+   "phrase_fr": "Le sport renforce le corps",
+   "surligne_ar": "الرياضةُ",
+   "surligne_fr": "sport"
+  },
+  {
+   "ar": "كرة قدم",
+   "fr": "Football",
+   "phrase_ar": "كرةُ القدمِ رياضة شعبية",
+   "phrase_fr": "Le football est un sport populaire",
+   "surligne_ar": "كرةُ",
+   "surligne_fr": "football"
+  },
+  {
+   "ar": "كرة السلة",
+   "fr": "Basketball",
+   "phrase_ar": "كرةُ السلةِ رياضة عالمية",
+   "phrase_fr": "Le basketball est un sport mondial",
+   "surligne_ar": "كرةُ",
+   "surligne_fr": "basketball"
+  },
+  {
+   "ar": "كرة الطائرة",
+   "fr": "Volley-ball",
+   "phrase_ar": "كرةُ الطائرةِ رياضة جماعية",
+   "phrase_fr": "Le volley-ball est un sport d'équipe",
+   "surligne_ar": "كرةُ",
+   "surligne_fr": "volley-ball"
+  },
+  {
+   "ar": "تنس",
+   "fr": "Tennis",
+   "phrase_ar": "التنسُ رياضة أنيقة",
+   "phrase_fr": "Le tennis est un sport élégant",
+   "surligne_ar": "التنسُ",
+   "surligne_fr": "tennis"
+  },
+  {
+   "ar": "جمباز",
+   "fr": "Gymnastique",
+   "phrase_ar": "الجمبازُ يحتاج مرونة",
+   "phrase_fr": "La gymnastique nécessite de la flexibilité",
+   "surligne_ar": "الجمبازُ",
+   "surligne_fr": "gymnastique"
+  },
+  {
+   "ar": "حمامات",
+   "fr": "Natation",
+   "phrase_ar": "الحماماتُ في الفصل الصيفي",
+   "phrase_fr": "La baignade est en été",
+   "surligne_ar": "الحماماتُ",
+   "surligne_fr": "natation"
+  },
+  {
+   "ar": "صيد",
+   "fr": "Chasse",
+   "phrase_ar": "الصيدُ تقليد قديم",
+   "phrase_fr": "La chasse est une tradition ancienne",
+   "surligne_ar": "الصيدُ",
+   "surligne_fr": "chasse"
+  },
+  {
+   "ar": "عاب",
+   "fr": "Jeu",
+   "phrase_ar": "العابُ الأطفال متنوعة",
+   "phrase_fr": "Les jeux des enfants sont variés",
+   "surligne_ar": "العابُ",
+   "surligne_fr": "jeu"
+  },
+  {
+   "ar": "لعبة شطرنج",
+   "fr": "Échecs",
+   "phrase_ar": "لعبةُ الشطرنجِ ذكاء",
+   "phrase_fr": "Le jeu d'échecs est une question d'intelligence",
+   "surligne_ar": "لعبةُ",
+   "surligne_fr": "échecs"
+  },
+  {
+   "ar": "ورق اللعب",
+   "fr": "Cartes",
+   "phrase_ar": "ورقُ اللعبِ للترفيه",
+   "phrase_fr": "Les cartes sont pour divertissement",
+   "surligne_ar": "ورقُ",
+   "surligne_fr": "cartes"
+  },
+  {
+   "ar": "مدرسة",
+   "fr": "École",
+   "phrase_ar": "المدرسةُ بيت العلم",
+   "phrase_fr": "L'école est la maison de la science",
+   "surligne_ar": "المدرسةُ",
+   "surligne_fr": "école"
+  },
+  {
+   "ar": "جامعة",
+   "fr": "Université",
+   "phrase_ar": "الجامعةُ مركز التعليم العالي",
+   "phrase_fr": "L'université est un centre d'enseignement supérieur",
+   "surligne_ar": "الجامعةُ",
+   "surligne_fr": "université"
+  },
+  {
+   "ar": "كتب",
+   "fr": "Livres",
+   "phrase_ar": "الكتبُ كنز المعرفة",
+   "phrase_fr": "Les livres sont un trésor de connaissance",
+   "surligne_ar": "الكتبُ",
+   "surligne_fr": "livres"
+  },
+  {
+   "ar": "مكتبة",
+   "fr": "Bibliothèque",
+   "phrase_ar": "المكتبةُ منزل الكتب",
+   "phrase_fr": "La bibliothèque est la maison des livres",
+   "surligne_ar": "المكتبةُ",
+   "surligne_fr": "bibliothèque"
+  },
+  {
+   "ar": "قلم",
+   "fr": "Stylo",
+   "phrase_ar": "القلمُ أداة الكتابة",
+   "phrase_fr": "Le stylo est un outil d'écriture",
+   "surligne_ar": "القلمُ",
+   "surligne_fr": "stylo"
+  },
+  {
+   "ar": "ورقة",
+   "fr": "Feuille",
+   "phrase_ar": "الورقةُ تحمل الكتابة",
+   "phrase_fr": "La feuille porte l'écriture",
+   "surligne_ar": "الورقةُ",
+   "surligne_fr": "feuille"
+  },
+  {
+   "ar": "دفتر",
+   "fr": "Carnet",
+   "phrase_ar": "الدفترُ يجمع الأوراق",
+   "phrase_fr": "Le carnet rassemble les feuilles",
+   "surligne_ar": "الدفترُ",
+   "surligne_fr": "carnet"
+  },
+  {
+   "ar": "كومبيوتر",
+   "fr": "Ordinateur",
+   "phrase_ar": "الكومبيوترُ أداة حديثة",
+   "phrase_fr": "L'ordinateur est un outil moderne",
+   "surligne_ar": "الكومبيوترُ",
+   "surligne_fr": "ordinateur"
+  },
+  {
+   "ar": "هاتف",
+   "fr": "Téléphone",
+   "phrase_ar": "الهاتفُ وسيلة اتصال",
+   "phrase_fr": "Le téléphone est un moyen de communication",
+   "surligne_ar": "الهاتفُ",
+   "surligne_fr": "téléphone"
+  },
+  {
+   "ar": "تلفاز",
+   "fr": "Télévision",
+   "phrase_ar": "التلفازُ يعرض الأخبار",
+   "phrase_fr": "La télévision affiche les nouvelles",
+   "surligne_ar": "التلفازُ",
+   "surligne_fr": "télévision"
+  },
+  {
+   "ar": "راديو",
+   "fr": "Radio",
+   "phrase_ar": "الراديوُ ينقل البرامج",
+   "phrase_fr": "La radio diffuse des programmes",
+   "surligne_ar": "الراديوُ",
+   "surligne_fr": "radio"
+  },
+  {
+   "ar": "إنترنت",
+   "fr": "Internet",
+   "phrase_ar": "الإنترنتُ يربط العالم",
+   "phrase_fr": "Internet relie le monde",
+   "surligne_ar": "الإنترنتُ",
+   "surligne_fr": "internet"
+  },
+  {
+   "ar": "بريد",
+   "fr": "Courrier",
+   "phrase_ar": "البريدُ ينقل الرسائل",
+   "phrase_fr": "Le courrier transporte les lettres",
+   "surligne_ar": "البريدُ",
+   "surligne_fr": "courrier"
+  },
+  {
+   "ar": "مستشفى",
+   "fr": "Hôpital",
+   "phrase_ar": "المستشفى مكان الشفاء",
+   "phrase_fr": "L'hôpital est un lieu de guérison",
+   "surligne_ar": "المستشفى",
+   "surligne_fr": "hôpital"
+  },
+  {
+   "ar": "صيدلية",
+   "fr": "Pharmacie",
+   "phrase_ar": "الصيدليةُ تبيع الدواء",
+   "phrase_fr": "La pharmacie vend des médicaments",
+   "surligne_ar": "الصيدليةُ",
+   "surligne_fr": "pharmacie"
+  },
+  {
+   "ar": "طبيب",
+   "fr": "Médecin",
+   "phrase_ar": "الطبيبُ يعالج المرضى",
+   "phrase_fr": "Le médecin soigne les malades",
+   "surligne_ar": "الطبيبُ",
+   "surligne_fr": "médecin"
+  },
+  {
+   "ar": "ممرضة",
+   "fr": "Infirmière",
+   "phrase_ar": "الممرضةُ تساعد الطبيب",
+   "phrase_fr": "L'infirmière aide le médecin",
+   "surligne_ar": "الممرضةُ",
+   "surligne_fr": "infirmière"
+  },
+  {
+   "ar": "دواء",
+   "fr": "Médicament",
+   "phrase_ar": "الدواءُ يشفي من المرض",
+   "phrase_fr": "Le médicament guérit la maladie",
+   "surligne_ar": "الدواءُ",
+   "surligne_fr": "médicament"
+  },
+  {
+   "ar": "حقنة",
+   "fr": "Injection",
+   "phrase_ar": "الحقنةُ تعطى في الجسم",
+   "phrase_fr": "L'injection est donnée au corps",
+   "surligne_ar": "الحقنةُ",
+   "surligne_fr": "injection"
+  },
+  {
+   "ar": "عملية جراحية",
+   "fr": "Opération",
+   "phrase_ar": "العمليةُ الجراحيةُ حل طبي",
+   "phrase_fr": "L'opération est une solution médicale",
+   "surligne_ar": "العمليةُ",
+   "surligne_fr": "opération"
+  },
+  {
+   "ar": "مرض",
+   "fr": "Maladie",
+   "phrase_ar": "المرضُ ابتلاء",
+   "phrase_fr": "La maladie est une épreuve",
+   "surligne_ar": "المرضُ",
+   "surligne_fr": "maladie"
+  },
+  {
+   "ar": "ألم",
+   "fr": "Douleur",
+   "phrase_ar": "الألمُ يختبر الصبر",
+   "phrase_fr": "La douleur teste la patience",
+   "surligne_ar": "الألمُ",
+   "surligne_fr": "douleur"
+  },
+  {
+   "ar": "حمى",
+   "fr": "Fièvre",
+   "phrase_ar": "الحمى ارتفاع درجة الحرارة",
+   "phrase_fr": "La fièvre est une élévation de température",
+   "surligne_ar": "الحمى",
+   "surligne_fr": "fièvre"
+  },
+  {
+   "ar": "سعال",
+   "fr": "Toux",
+   "phrase_ar": "السعالُ علامة مرض",
+   "phrase_fr": "La toux est un signe de maladie",
+   "surligne_ar": "السعالُ",
+   "surligne_fr": "toux"
+  },
+  {
+   "ar": "زكام",
+   "fr": "Rhume",
+   "phrase_ar": "الزكامُ مرض موسمي",
+   "phrase_fr": "Le rhume est une maladie saisonnière",
+   "surligne_ar": "الزكامُ",
+   "surligne_fr": "rhume"
+  },
+  {
+   "ar": "صداع",
+   "fr": "Mal de tête",
+   "phrase_ar": "الصداعُ يسبب إزعاج",
+   "phrase_fr": "Le mal de tête cause du désagrément",
+   "surligne_ar": "الصداعُ",
+   "surligne_fr": "mal de tête"
+  },
+  {
+   "ar": "معدة",
+   "fr": "Estomac",
+   "phrase_ar": "المعدةُ تهضم الطعام",
+   "phrase_fr": "L'estomac digère la nourriture",
+   "surligne_ar": "المعدةُ",
+   "surligne_fr": "estomac"
+  },
+  {
+   "ar": "كبد",
+   "fr": "Foie",
+   "phrase_ar": "الكبدُ ينقي الدم",
+   "phrase_fr": "Le foie purifie le sang",
+   "surligne_ar": "الكبدُ",
+   "surligne_fr": "foie"
+  },
+  {
+   "ar": "كلى",
+   "fr": "Rein",
+   "phrase_ar": "الكليةُ تصفي النفايات",
+   "phrase_fr": "Le rein filtre les déchets",
+   "surligne_ar": "الكليةُ",
+   "surligne_fr": "rein"
+  },
+  {
+   "ar": "قلب",
+   "fr": "Cœur",
+   "phrase_ar": "القلبُ يضخ الدم",
+   "phrase_fr": "Le cœur pompe le sang",
+   "surligne_ar": "القلبُ",
+   "surligne_fr": "cœur"
+  },
+  {
+   "ar": "رئة",
+   "fr": "Poumon",
+   "phrase_ar": "الرئةُ تنقي الهواء",
+   "phrase_fr": "Le poumon purifie l'air",
+   "surligne_ar": "الرئةُ",
+   "surligne_fr": "poumon"
+  },
+  {
+   "ar": "عظم",
+   "fr": "Os",
+   "phrase_ar": "العظمُ يدعم الجسم",
+   "phrase_fr": "L'os soutient le corps",
+   "surligne_ar": "العظمُ",
+   "surligne_fr": "os"
+  },
+  {
+   "ar": "عضلة",
+   "fr": "Muscle",
+   "phrase_ar": "العضلةُ تحرك الجسم",
+   "phrase_fr": "Le muscle bouge le corps",
+   "surligne_ar": "العضلةُ",
+   "surligne_fr": "muscle"
+  },
+  {
+   "ar": "جلد",
+   "fr": "Peau",
+   "phrase_ar": "الجلدُ يحمي الجسم",
+   "phrase_fr": "La peau protège le corps",
+   "surligne_ar": "الجلدُ",
+   "surligne_fr": "peau"
+  },
+  {
+   "ar": "شعر",
+   "fr": "Cheveux",
+   "phrase_ar": "الشعرُ زينة الرأس",
+   "phrase_fr": "Les cheveux ornent la tête",
+   "surligne_ar": "الشعرُ",
+   "surligne_fr": "cheveux"
+  },
+  {
+   "ar": "عين",
+   "fr": "Oeil",
+   "phrase_ar": "العينُ نافذة الروح",
+   "phrase_fr": "L'œil est la fenêtre de l'âme",
+   "surligne_ar": "العينُ",
+   "surligne_fr": "oeil"
+  },
+  {
+   "ar": "أذن",
+   "fr": "Oreille",
+   "phrase_ar": "الأذنُ تستقبل الأصوات",
+   "phrase_fr": "L'oreille reçoit les sons",
+   "surligne_ar": "الأذنُ",
+   "surligne_fr": "oreille"
+  },
+  {
+   "ar": "أنف",
+   "fr": "Nez",
+   "phrase_ar": "الأنفُ يشم الروائح",
+   "phrase_fr": "Le nez sent les odeurs",
+   "surligne_ar": "الأنفُ",
+   "surligne_fr": "nez"
+  },
+  {
+   "ar": "فم",
+   "fr": "Bouche",
+   "phrase_ar": "الفمُ يذوق الطعام",
+   "phrase_fr": "La bouche goûte la nourriture",
+   "surligne_ar": "الفمُ",
+   "surligne_fr": "bouche"
+  },
+  {
+   "ar": "لسان",
+   "fr": "Langue",
+   "phrase_ar": "اللسانُ يتذوق ويتكلم",
+   "phrase_fr": "La langue goûte et parle",
+   "surligne_ar": "اللسانُ",
+   "surligne_fr": "langue"
+  },
+  {
+   "ar": "سن",
+   "fr": "Dent",
+   "phrase_ar": "السنُّ تمضغ الطعام",
+   "phrase_fr": "La dent mâche la nourriture",
+   "surligne_ar": "السنُّ",
+   "surligne_fr": "dent"
+  },
+  {
+   "ar": "ذقن",
+   "fr": "Menton",
+   "phrase_ar": "الذقنُ أسفل الفم",
+   "phrase_fr": "Le menton est en bas de la bouche",
+   "surligne_ar": "الذقنُ",
+   "surligne_fr": "menton"
+  },
+  {
+   "ar": "خد",
+   "fr": "Joue",
+   "phrase_ar": "الخدُّ يحمر من الخجل",
+   "phrase_fr": "La joue rougit de honte",
+   "surligne_ar": "الخدُّ",
+   "surligne_fr": "joue"
+  },
+  {
+   "ar": "جبين",
+   "fr": "Front",
+   "phrase_ar": "الجبينُ علامة الذكاء",
+   "phrase_fr": "Le front est un signe d'intelligence",
+   "surligne_ar": "الجبينُ",
+   "surligne_fr": "front"
+  },
+  {
+   "ar": "حاجب",
+   "fr": "Sourcil",
+   "phrase_ar": "الحاجبُ فوق العين",
+   "phrase_fr": "Le sourcil est au-dessus de l'oeil",
+   "surligne_ar": "الحاجبُ",
+   "surligne_fr": "sourcil"
+  }
+ ],
+ "mots_francais_arabe": [
+  {
+   "ar_origine": "الكُحْل",
+   "translitteration": "al-kuhl",
+   "intermediaire": "alcohol",
+   "intermediaire_langue": "latin médiéval",
+   "fr": "Alcool",
+   "explication": "Le kohl désignait la poudre noire dont on maquillait les yeux",
+   "verifie": true
+  },
+  {
+   "ar_origine": "الخوارزمي",
+   "translitteration": "al-Khwarizmi",
+   "intermediaire": "algorismus",
+   "intermediaire_langue": "latin médiéval",
+   "fr": "Algorithme",
+   "explication": "Du nom du mathématicien persan Al-Khwarizmi, père de l'algèbre",
+   "verifie": true
+  },
+  {
+   "ar_origine": "الجبر",
+   "translitteration": "al-jabr",
+   "intermediaire": "algebra",
+   "intermediaire_langue": "latin médiéval",
+   "fr": "Algèbre",
+   "explication": "Al-jabr signifie la réduction, la remise en place des fractures",
+   "verifie": true
+  },
+  {
+   "ar_origine": "القبّة",
+   "translitteration": "al-qubba",
+   "intermediaire": "alcoba",
+   "intermediaire_langue": "espagnol",
+   "fr": "Alcôve",
+   "explication": "Al-qubba, c'est la coupole, la petite pièce voûtée",
+   "verifie": true
+  },
+  {
+   "ar_origine": "أمير البحر",
+   "translitteration": "amir al-bahr",
+   "intermediaire": "amiralis",
+   "intermediaire_langue": "latin médiéval",
+   "fr": "Amiral",
+   "explication": "L'émir de la mer, titre des chefs de flotte à la cour normande de Sicile",
+   "verifie": true
+  },
+  {
+   "ar_origine": "المخازن",
+   "translitteration": "al-makhazin",
+   "intermediaire": "magazzino",
+   "intermediaire_langue": "italien",
+   "fr": "Magasin",
+   "explication": "Les makhazin étaient les entrepôts des marchands",
+   "verifie": true
+  },
+  {
+   "ar_origine": "سُكَّر",
+   "translitteration": "sukkar",
+   "intermediaire": "zucchero",
+   "intermediaire_langue": "italien",
+   "fr": "Sucre",
+   "explication": "Venu de l'Inde, passé par l'arabe, arrivé par Venise",
+   "verifie": true
+  },
+  {
+   "ar_origine": "شراب",
+   "translitteration": "sharab",
+   "intermediaire": "sirupus",
+   "intermediaire_langue": "latin médiéval",
+   "fr": "Sirop",
+   "explication": "Sharab veut simplement dire boisson",
+   "verifie": true
+  },
+  {
+   "ar_origine": "شراب",
+   "translitteration": "sharab",
+   "intermediaire": "şerbet",
+   "intermediaire_langue": "turc",
+   "fr": "Sorbet",
+   "explication": "Même racine que sirop, arrivée par la Turquie et Venise",
+   "verifie": true
+  },
+  {
+   "ar_origine": "سَمْت الرأس",
+   "translitteration": "samt ar-ras",
+   "intermediaire": "zenit",
+   "intermediaire_langue": "latin médiéval",
+   "fr": "Zénith",
+   "explication": "La direction au-dessus de la tête, terme des astronomes arabes",
+   "verifie": true
+  },
+  {
+   "ar_origine": "السَمْت",
+   "translitteration": "as-samt",
+   "intermediaire": "azimut",
+   "intermediaire_langue": "espagnol",
+   "fr": "Azimut",
+   "explication": "La direction : même racine que zénith",
+   "verifie": true
+  },
+  {
+   "ar_origine": "الإكسير",
+   "translitteration": "al-iksir",
+   "intermediaire": "elixir",
+   "intermediaire_langue": "latin médiéval",
+   "fr": "Élixir",
+   "explication": "La pierre philosophale des alchimistes",
+   "verifie": true
+  },
+  {
+   "ar_origine": "إسفاناخ",
+   "translitteration": "isfanakh",
+   "intermediaire": "spinachium",
+   "intermediaire_langue": "latin médiéval",
+   "fr": "Épinard",
+   "explication": "La plante venait de Perse, l'Europe ne la connaissait pas",
+   "verifie": true
+  },
+  {
+   "ar_origine": "الزعفران",
+   "translitteration": "az-za'faran",
+   "intermediaire": "safranum",
+   "intermediaire_langue": "latin médiéval",
+   "fr": "Safran",
+   "explication": "L'épice la plus chère du monde, déjà à l'époque",
+   "verifie": true
+  },
+  {
+   "ar_origine": "حشّاشين",
+   "translitteration": "hashshashin",
+   "intermediaire": "assassino",
+   "intermediaire_langue": "italien",
+   "fr": "Assassin",
+   "explication": "Nom d'une secte médiévale, rapporté par les croisés",
+   "verifie": true
+  },
+  {
+   "ar_origine": "زرافة",
+   "translitteration": "zarafa",
+   "intermediaire": "giraffa",
+   "intermediaire_langue": "italien",
+   "fr": "Girafe",
+   "explication": "Les marchands italiens ont rapporté l'animal et son nom",
+   "verifie": true
+  },
+  {
+   "ar_origine": "غزال",
+   "translitteration": "ghazal",
+   "intermediaire": "gazella",
+   "intermediaire_langue": "latin médiéval",
+   "fr": "Gazelle",
+   "explication": "Ghazal désigne aussi, en poésie, le poème d'amour",
+   "verifie": true
+  },
+  {
+   "ar_origine": "العود",
+   "translitteration": "al-'ud",
+   "intermediaire": "laüt",
+   "intermediaire_langue": "ancien provençal",
+   "fr": "Luth",
+   "explication": "Al-oud, littéralement le bois : l'instrument est encore joué",
+   "verifie": true
+  },
+  {
+   "ar_origine": "حريم",
+   "translitteration": "harim",
+   "intermediaire": "harem",
+   "intermediaire_langue": "turc ottoman",
+   "fr": "Harem",
+   "explication": "De la racine haram : ce qui est interdit, donc protégé",
+   "verifie": true
+  },
+  {
+   "ar_origine": "شيخ",
+   "translitteration": "shaykh",
+   "intermediaire": "cheikh",
+   "intermediaire_langue": "emprunt direct",
+   "fr": "Cheik",
+   "explication": "Le shaykh, c'est d'abord l'ancien, celui qui a de l'âge",
+   "verifie": true
+  },
+  {
+   "ar_origine": "جُبّة",
+   "translitteration": "jubba",
+   "intermediaire": "giubba",
+   "intermediaire_langue": "italien",
+   "fr": "Jupe",
+   "explication": "La jubba était un vêtement long porté par-dessus",
+   "verifie": true
+  },
+  {
+   "ar_origine": "صُفّة",
+   "translitteration": "suffa",
+   "intermediaire": "sofa",
+   "intermediaire_langue": "turc",
+   "fr": "Sofa",
+   "explication": "La suffa désignait la banquette de pierre le long du mur",
+   "verifie": true
+  },
+  {
+   "ar_origine": "طاسة",
+   "translitteration": "tasa",
+   "intermediaire": "tazza",
+   "intermediaire_langue": "italien",
+   "fr": "Tasse",
+   "explication": "Le récipient à boire, tout simplement",
+   "verifie": true
+  },
+  {
+   "ar_origine": "الموصل",
+   "translitteration": "al-Mawsil",
+   "intermediaire": "mussolina",
+   "intermediaire_langue": "italien",
+   "fr": "Mousseline",
+   "explication": "Du nom de Mossoul, ville d'où venait ce tissu léger",
+   "verifie": true
+  },
+  {
+   "ar_origine": "قُطن",
+   "translitteration": "qutn",
+   "intermediaire": "cotone",
+   "intermediaire_langue": "italien",
+   "fr": "Coton",
+   "explication": "La fibre et son nom sont arrivés ensemble en Méditerranée",
+   "verifie": true
+  },
+  {
+   "ar_origine": "مَطرح",
+   "translitteration": "matrah",
+   "intermediaire": "materasso",
+   "intermediaire_langue": "italien",
+   "fr": "Matelas",
+   "explication": "Matrah, c'est l'endroit où l'on jette quelque chose à terre",
+   "verifie": true
+  },
+  {
+   "ar_origine": "قهوة",
+   "translitteration": "qahwa",
+   "intermediaire": "kahve",
+   "intermediaire_langue": "turc",
+   "fr": "Café",
+   "explication": "Qahwa désignait d'abord le vin, avant de nommer la boisson noire",
+   "verifie": true
+  },
+  {
+   "ar_origine": "نارنج",
+   "translitteration": "naranj",
+   "intermediaire": "narancia",
+   "intermediaire_langue": "italien",
+   "fr": "Orange",
+   "explication": "Le n initial s'est perdu en passant dans les langues romanes",
+   "verifie": true
+  },
+  {
+   "ar_origine": "صِفر",
+   "translitteration": "sifr",
+   "intermediaire": "zefiro",
+   "intermediaire_langue": "italien",
+   "fr": "Zéro",
+   "explication": "Sifr veut dire vide : le concept et le mot viennent ensemble",
+   "verifie": true
+  },
+  {
+   "ar_origine": "صِفر",
+   "translitteration": "sifr",
+   "intermediaire": "cifra",
+   "intermediaire_langue": "latin médiéval",
+   "fr": "Chiffre",
+   "explication": "Même mot que zéro, deux destins différents en français",
+   "verifie": true
+  },
+  {
+   "ar_origine": "ديوان",
+   "translitteration": "diwan",
+   "intermediaire": "doana",
+   "intermediaire_langue": "italien",
+   "fr": "Douane",
+   "explication": "Le diwan était le bureau, le registre administratif",
+   "verifie": true
+  },
+  {
+   "ar_origine": "عنبر",
+   "translitteration": "'anbar",
+   "intermediaire": "ambra",
+   "intermediaire_langue": "latin médiéval",
+   "fr": "Ambre",
+   "explication": "Anbar désigne en arabe l'ambre gris, pas la résine",
+   "verifie": true
+  },
+  {
+   "ar_origine": "قالب",
+   "translitteration": "qalib",
+   "intermediaire": "calibre",
+   "intermediaire_langue": "italien",
+   "fr": "Calibre",
+   "explication": "Le qalib, c'est le moule dans lequel on coule le métal",
+   "verifie": true
+  },
+  {
+   "ar_origine": "طبيب",
+   "translitteration": "tabib",
+   "intermediaire": "toubib",
+   "intermediaire_langue": "emprunt direct",
+   "fr": "Toubib",
+   "explication": "Passé en français par l'Algérie au XIXe siècle",
+   "verifie": true
+  }
+ ],
+ "prenoms": [
+  {
+   "ar": "فاطمة",
+   "fr": "Fatima",
+   "sens": "celle qui s'abstient",
+   "note": "Fatima est mère des croyants"
+  },
+  {
+   "ar": "محمد",
+   "fr": "Muhammad",
+   "sens": "le loué",
+   "note": "Muhammad est le prophète"
+  },
+  {
+   "ar": "عائشة",
+   "fr": "Aïsha",
+   "sens": "vivante",
+   "note": "Aïsha était sage et savante"
+  },
+  {
+   "ar": "علي",
+   "fr": "Ali",
+   "sens": "le haut, l'élevé",
+   "note": "Ali est courageux"
+  },
+  {
+   "ar": "زهراء",
+   "fr": "Zahra",
+   "sens": "la splendide",
+   "note": "Zahra illumine par sa beauté"
+  },
+  {
+   "ar": "ليلة",
+   "fr": "Leïla",
+   "sens": "la nuit",
+   "note": "Leïla mystérieuse comme la nuit"
+  },
+  {
+   "ar": "كريم",
+   "fr": "Karim",
+   "sens": "le généreux",
+   "note": "Karim aide les nécessiteux"
+  },
+  {
+   "ar": "نور",
+   "fr": "Noor",
+   "sens": "la lumière",
+   "note": "Noor illumine les ténèbres"
+  },
+  {
+   "ar": "زينب",
+   "fr": "Zainab",
+   "sens": "qui a de la grâce",
+   "note": "Zainab possède l'élégance"
+  },
+  {
+   "ar": "عمر",
+   "fr": "Omar",
+   "sens": "la vie longue",
+   "note": "Omar vit longtemps"
+  },
+  {
+   "ar": "أمينة",
+   "fr": "Amina",
+   "sens": "la sûre",
+   "note": "Amina inspire confiance"
+  },
+  {
+   "ar": "حسن",
+   "fr": "Hassan",
+   "sens": "le bon",
+   "note": "Hassan agit avec bonté"
+  },
+  {
+   "ar": "حسين",
+   "fr": "Husseïn",
+   "sens": "le beau",
+   "note": "Husseïn possède belle allure"
+  },
+  {
+   "ar": "مريم",
+   "fr": "Maryam",
+   "sens": "la bien-aimée",
+   "note": "Maryam est honorée"
+  },
+  {
+   "ar": "جمال",
+   "fr": "Jamal",
+   "sens": "la beauté",
+   "note": "Jamal incarne la beauté"
+  },
+  {
+   "ar": "رانية",
+   "fr": "Rania",
+   "sens": "la reine",
+   "note": "Rania règne avec sagesse"
+  },
+  {
+   "ar": "ياسمين",
+   "fr": "Yasmine",
+   "sens": "le jasmin",
+   "note": "Yasmine parfume l'air"
+  },
+  {
+   "ar": "طارق",
+   "fr": "Tariq",
+   "sens": "l'étoile du matin",
+   "note": "Tariq brille à l'aube"
+  },
+  {
+   "ar": "هنا",
+   "fr": "Hana",
+   "sens": "le bonheur",
+   "note": "Hana apporte la joie"
+  },
+  {
+   "ar": "سمير",
+   "fr": "Samir",
+   "sens": "celui qui divertit",
+   "note": "Samir raconte histoires"
+  },
+  {
+   "ar": "ندى",
+   "fr": "Nadia",
+   "sens": "l'appel",
+   "note": "Nadia appelle à l'unité"
+  },
+  {
+   "ar": "أمين",
+   "fr": "Amin",
+   "sens": "le fidèle",
+   "note": "Amin demeure loyal"
+  },
+  {
+   "ar": "عادل",
+   "fr": "Adel",
+   "sens": "la justice",
+   "note": "Adel juge équitablement"
+  },
+  {
+   "ar": "ريان",
+   "fr": "Rayan",
+   "sens": "le riche, luxuriant",
+   "note": "Rayan prospère"
+  },
+  {
+   "ar": "دينا",
+   "fr": "Dina",
+   "sens": "la foi",
+   "note": "Dina croit fermement"
+  },
+  {
+   "ar": "لطيفة",
+   "fr": "Latifa",
+   "sens": "la délicate",
+   "note": "Latifa possède grâce"
+  },
+  {
+   "ar": "بسام",
+   "fr": "Bassam",
+   "sens": "celui qui sourit",
+   "note": "Bassam sourit toujours"
+  },
+  {
+   "ar": "نجيب",
+   "fr": "Najib",
+   "sens": "le noble",
+   "note": "Najib agit noblement"
+  },
+  {
+   "ar": "سارة",
+   "fr": "Sarah",
+   "sens": "la princesse",
+   "note": "Sarah règne sur cœurs"
+  },
+  {
+   "ar": "إبراهيم",
+   "fr": "Ibrahim",
+   "sens": "le père de multitudes",
+   "note": "Ibrahim est patriarche"
+  }
+ ],
+ "_etymologies_ecartees": [
+  {
+   "mot": "Jardin",
+   "raison": "Vient du francique *gardo (clôture), pas de l'arabe. Confirmé par l'Académie française et le CNRTL."
+  },
+  {
+   "mot": "Riz",
+   "raison": "Le français vient de l'italien riso < latin oryza < grec. L'arabe ar-ruzz a donné l'espagnol arroz, pas le français."
+  },
+  {
+   "mot": "Tulipe",
+   "raison": "Du persan delband via le turc ottoman tülbend. Persan, pas arabe."
+  },
+  {
+   "mot": "Moutarde",
+   "raison": "Du latin mustum (moût). Aucun lien avec l'arabe."
+  },
+  {
+   "mot": "Nacre",
+   "raison": "Étymologie contestée : arabe naqqara ou persan nakar selon les sources. Trop incertain pour publier."
+  },
+  {
+   "mot": "Tabouret",
+   "raison": "Diminutif de tabour (tambour). Le lien avec l'arabe est revendiqué par certaines sources mais absent des dictionnaires de référence."
+  },
+  {
+   "mot": "Échec",
+   "raison": "Du persan shah (roi). Transité par l'arabe mais l'origine est persane."
+  },
+  {
+   "mot": "Safari",
+   "raison": "Du swahili safari, lui-même de l'arabe safar (voyage). Passage indirect par l'anglais : chaîne trop longue pour le format."
+  }
+ ]
+}

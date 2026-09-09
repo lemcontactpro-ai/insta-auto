@@ -1,0 +1,26 @@
+# Environnement local — ne jamais committer
+.env
+*.env
+
+# Dossiers de sortie (slides générées) — temporaires, créés à l'exécution
+niches/*/sortie/
+!niches/*/sortie/.gitkeep
+
+# macOS
+.DS_Store
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+*.egg-info/
+dist/
+build/
+
+# Éditeurs
+.vscode/
+.idea/
+*.swp
+*.swo

@@ -1,0 +1,182 @@
+{
+  "_lisez_moi": "Une entrée par niche. Pour ajouter une niche, copie un bloc, change les valeurs, crée le dossier niches/<id>/ avec vocabulaire.json et fonds/. Rien d'autre à toucher dans le code.",
+
+  "niches": [
+    {
+      "id": "arabe",
+      "actif": true,
+      "dossier": "niches/arabe",
+      "compte": "@arabe.academie",
+      "horaires": ["08:00", "12:30", "19:00"],
+      "fuseau": "Europe/Paris",
+
+      "secrets": {
+        "ig_user_id": "IG_USER_ID_ARABE",
+        "ig_token": "IG_TOKEN_ARABE"
+      },
+
+      "poids_types": {
+        "mot": 70,
+        "etymologie": 15,
+        "prenom": 15
+      },
+
+      "textes": {
+        "tag_mot": "APPRENDS L'ARABE",
+        "tag_etymologie": "DE L'ARABE AU FRANÇAIS",
+        "tag_prenom": "CONNAÎTRE LE SENS DE TON NOM",
+        "cta_ligne1": "Chaque jour",
+        "cta_ligne2": "un mot, une histoire",
+        "cta_sous_titre": "EBOOK COMPLET",
+        "cta_bouton": "LIEN EN BIO"
+      },
+
+      "palette": {
+        "or": [232, 185, 122],
+        "or_fonce": [200, 149, 90],
+        "creme": [245, 230, 210],
+        "voile": [15, 10, 5],
+        "voile_alpha": 165,
+        "voile_cta": [60, 35, 12],
+        "voile_cta_alpha": 195,
+        "flou": 2
+      },
+
+      "polices": {
+        "titre": "PlayfairDisplay.ttf",
+        "etrangere": "NotoNaskhArabic.ttf",
+        "rtl": true
+      },
+
+      "hashtags_base": "#arabe #apprendrelarabe #languearabe #vocabulairearabe #coursdarabe #arabefacile #motarabe #languesetrangeres #apprentissage #culturearabe"
+    },
+
+    {
+      "id": "japonais",
+      "actif": false,
+      "_todo": "Remplir vocabulaire.json, ajouter photos dans fonds/, ajouter police NotoSansJP.ttf dans polices/, configurer secrets GitHub.",
+      "dossier": "niches/japonais",
+      "compte": "@japonais.academie",
+      "horaires": ["09:00", "13:00", "20:00"],
+      "fuseau": "Europe/Paris",
+
+      "secrets": {
+        "ig_user_id": "IG_USER_ID_JAPONAIS",
+        "ig_token": "IG_TOKEN_JAPONAIS"
+      },
+
+      "poids_types": {
+        "mot": 70,
+        "etymologie": 0,
+        "prenom": 30
+      },
+
+      "textes": {
+        "tag_mot": "APPRENDS LE JAPONAIS",
+        "tag_prenom": "LE SENS DES PRÉNOMS",
+        "cta_ligne1": "Chaque jour",
+        "cta_ligne2": "un mot, une histoire",
+        "cta_sous_titre": "EBOOK COMPLET",
+        "cta_bouton": "LIEN EN BIO"
+      },
+
+      "palette": {
+        "or": [220, 80, 80],
+        "or_fonce": [180, 40, 40],
+        "creme": [255, 245, 245],
+        "voile": [20, 5, 5],
+        "voile_alpha": 160,
+        "voile_cta": [60, 10, 10],
+        "voile_cta_alpha": 190,
+        "flou": 2
+      },
+
+      "polices": {
+        "titre": "PlayfairDisplay.ttf",
+        "etrangere": "NotoSansJP.ttf",
+        "rtl": false
+      },
+
+      "hashtags_base": "#japonais #apprendrelejaponais #languejaponaise #vocabulairejaponais #日本語 #coursjaponais #japonaisfacile #languesetrangeres #apprentissage"
+    },
+
+    {
+      "id": "coreen",
+      "actif": false,
+      "_todo": "Remplir vocabulaire.json, ajouter photos dans fonds/, ajouter police NotoSansKR.ttf dans polices/, configurer secrets GitHub.",
+      "dossier": "niches/coreen",
+      "compte": "@coreen.academie",
+      "horaires": ["09:00", "13:00", "20:00"],
+      "fuseau": "Europe/Paris",
+
+      "secrets": {
+        "ig_user_id": "IG_USER_ID_COREEN",
+        "ig_token": "IG_TOKEN_COREEN"
+      },
+
+      "poids_types": {
+        "mot": 70,
+        "etymologie": 0,
+        "prenom": 30
+      },
+
+      "textes": {
+        "tag_mot": "APPRENDS LE CORÉEN",
+        "tag_prenom": "LE SENS DES PRÉNOMS",
+        "cta_ligne1": "Chaque jour",
+        "cta_ligne2": "un mot, une histoire",
+        "cta_sous_titre": "EBOOK COMPLET",
+        "cta_bouton": "LIEN EN BIO"
+      },
+
+      "palette": {
+        "or": [70, 130, 210],
+        "or_fonce": [40, 90, 170],
+        "creme": [240, 245, 255],
+        "voile": [5, 10, 25],
+        "voile_alpha": 160,
+        "voile_cta": [10, 25, 70],
+        "voile_cta_alpha": 190,
+        "flou": 2
+      },
+
+      "polices": {
+        "titre": "PlayfairDisplay.ttf",
+        "etrangere": "NotoSansKR.ttf",
+        "rtl": false
+      },
+
+      "hashtags_base": "#coreen #apprendrelecoreen #languecoréenne #vocabulairecoréen #한국어 #courscoreen #coreenfacile #languesetrangeres #apprentissage"
+    },
+
+    {
+      "id": "maths-prepa",
+      "actif": false,
+      "_todo": "À configurer entièrement — structure de contenu à définir avec l'utilisatrice (formules, théorèmes, astuces…). Fournir fichiers et ressources.",
+      "dossier": "niches/maths-prepa",
+      "compte": "@maths.prepa",
+      "horaires": ["08:00", "12:30", "19:00"],
+      "fuseau": "Europe/Paris",
+
+      "secrets": {
+        "ig_user_id": "IG_USER_ID_MATHS_PREPA",
+        "ig_token": "IG_TOKEN_MATHS_PREPA"
+      }
+    },
+
+    {
+      "id": "chimie-prepa",
+      "actif": false,
+      "_todo": "À configurer entièrement — structure de contenu à définir avec l'utilisatrice (réactions, lois, mnémotechniques…). Fournir fichiers et ressources.",
+      "dossier": "niches/chimie-prepa",
+      "compte": "@chimie.prepa",
+      "horaires": ["08:00", "12:30", "19:00"],
+      "fuseau": "Europe/Paris",
+
+      "secrets": {
+        "ig_user_id": "IG_USER_ID_CHIMIE_PREPA",
+        "ig_token": "IG_TOKEN_CHIMIE_PREPA"
+      }
+    }
+  ]
+}
