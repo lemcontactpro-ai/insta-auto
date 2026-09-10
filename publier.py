@@ -194,6 +194,7 @@ def heberger(chemin):
         format="jpg",
         resource_type="image",
     )
+    return res["secure_url"]
 
 
 # --------------------------------------------------------------- instagram
