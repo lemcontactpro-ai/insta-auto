@@ -2495,51 +2495,51 @@
    "surligne_fr": "bouche"
   },
   {
-   "ar": "لسان",
+   "ar": "لِسَان",
    "fr": "Langue",
-   "phrase_ar": "اللسانُ يتذوق ويتكلم",
+   "phrase_ar": "اللِّسَانُ يَتَذَوَّقُ وَيَتَكَلَّمُ",
    "phrase_fr": "La langue goûte et parle",
-   "surligne_ar": "اللسانُ",
+   "surligne_ar": "اللِّسَانُ",
    "surligne_fr": "langue"
   },
   {
-   "ar": "سن",
+   "ar": "سِنّ",
    "fr": "Dent",
-   "phrase_ar": "السنُّ تمضغ الطعام",
+   "phrase_ar": "السِّنُّ تَمْضَغُ الطَّعَامَ",
    "phrase_fr": "La dent mâche la nourriture",
-   "surligne_ar": "السنُّ",
+   "surligne_ar": "السِّنُّ",
    "surligne_fr": "dent"
   },
   {
-   "ar": "ذقن",
+   "ar": "ذَقَن",
    "fr": "Menton",
-   "phrase_ar": "الذقنُ أسفل الفم",
+   "phrase_ar": "الذَّقَنُ أَسْفَلَ الفَمِ",
    "phrase_fr": "Le menton est en bas de la bouche",
-   "surligne_ar": "الذقنُ",
+   "surligne_ar": "الذَّقَنُ",
    "surligne_fr": "menton"
   },
   {
-   "ar": "خد",
+   "ar": "خَدّ",
    "fr": "Joue",
-   "phrase_ar": "الخدُّ يحمر من الخجل",
+   "phrase_ar": "الخَدُّ يَحْمَرُّ مِنَ الخَجَلِ",
    "phrase_fr": "La joue rougit de honte",
-   "surligne_ar": "الخدُّ",
+   "surligne_ar": "الخَدُّ",
    "surligne_fr": "joue"
   },
   {
-   "ar": "جبين",
+   "ar": "جَبِين",
    "fr": "Front",
-   "phrase_ar": "الجبينُ علامة الذكاء",
+   "phrase_ar": "الجَبِينُ عَلامَةُ الذَّكَاءِ",
    "phrase_fr": "Le front est un signe d'intelligence",
-   "surligne_ar": "الجبينُ",
+   "surligne_ar": "الجَبِينُ",
    "surligne_fr": "front"
   },
   {
-   "ar": "حاجب",
+   "ar": "حَاجِب",
    "fr": "Sourcil",
-   "phrase_ar": "الحاجبُ فوق العين",
+   "phrase_ar": "الحَاجِبُ فَوْقَ العَيْنِ",
    "phrase_fr": "Le sourcil est au-dessus de l'oeil",
-   "surligne_ar": "الحاجبُ",
+   "surligne_ar": "الحَاجِبُ",
    "surligne_fr": "sourcil"
   }
  ],
@@ -2554,7 +2554,7 @@
    "verifie": true
   },
   {
-   "ar_origine": "الخوارزمي",
+   "ar_origine": "الخَوَارِزْمِيّ",
    "translitteration": "al-Khwarizmi",
    "intermediaire": "algorismus",
    "intermediaire_langue": "latin médiéval",
@@ -2563,7 +2563,7 @@
    "verifie": true
   },
   {
-   "ar_origine": "الجبر",
+   "ar_origine": "الجَبْر",
    "translitteration": "al-jabr",
    "intermediaire": "algebra",
    "intermediaire_langue": "latin médiéval",
@@ -2572,7 +2572,7 @@
    "verifie": true
   },
   {
-   "ar_origine": "القبّة",
+   "ar_origine": "القُبَّة",
    "translitteration": "al-qubba",
    "intermediaire": "alcoba",
    "intermediaire_langue": "espagnol",
@@ -2581,7 +2581,7 @@
    "verifie": true
   },
   {
-   "ar_origine": "أمير البحر",
+   "ar_origine": "أَمِير البَحْر",
    "translitteration": "amir al-bahr",
    "intermediaire": "amiralis",
    "intermediaire_langue": "latin médiéval",
@@ -2590,7 +2590,7 @@
    "verifie": true
   },
   {
-   "ar_origine": "المخازن",
+   "ar_origine": "المَخَازِن",
    "translitteration": "al-makhazin",
    "intermediaire": "magazzino",
    "intermediaire_langue": "italien",
@@ -2608,7 +2608,7 @@
    "verifie": true
   },
   {
-   "ar_origine": "شراب",
+   "ar_origine": "شَرَاب",
    "translitteration": "sharab",
    "intermediaire": "sirupus",
    "intermediaire_langue": "latin médiéval",
@@ -2617,7 +2617,7 @@
    "verifie": true
   },
   {
-   "ar_origine": "شراب",
+   "ar_origine": "شَرَاب",
    "translitteration": "sharab",
    "intermediaire": "şerbet",
    "intermediaire_langue": "turc",
@@ -2626,7 +2626,7 @@
    "verifie": true
   },
   {
-   "ar_origine": "سَمْت الرأس",
+   "ar_origine": "سَمْت الرَّأْس",
    "translitteration": "samt ar-ras",
    "intermediaire": "zenit",
    "intermediaire_langue": "latin médiéval",
@@ -2635,7 +2635,7 @@
    "verifie": true
   },
   {
-   "ar_origine": "السَمْت",
+   "ar_origine": "السَّمْت",
    "translitteration": "as-samt",
    "intermediaire": "azimut",
    "intermediaire_langue": "espagnol",
@@ -2644,7 +2644,7 @@
    "verifie": true
   },
   {
-   "ar_origine": "الإكسير",
+   "ar_origine": "الإِكْسِير",
    "translitteration": "al-iksir",
    "intermediaire": "elixir",
    "intermediaire_langue": "latin médiéval",
@@ -2743,7 +2743,7 @@
    "verifie": true
   },
   {
-   "ar_origine": "طاسة",
+   "ar_origine": "طَاسَة",
    "translitteration": "tasa",
    "intermediaire": "tazza",
    "intermediaire_langue": "italien",
@@ -2815,7 +2815,7 @@
    "verifie": true
   },
   {
-   "ar_origine": "ديوان",
+   "ar_origine": "دِيوَان",
    "translitteration": "diwan",
    "intermediaire": "doana",
    "intermediaire_langue": "italien",
@@ -2853,109 +2853,109 @@
  ],
  "prenoms": [
   {
-   "ar": "فاطمة",
+   "ar": "فَاطِمَة",
    "fr": "Fatima",
    "sens": "celle qui s'abstient",
    "note": "Fatima est mère des croyants"
   },
   {
-   "ar": "محمد",
+   "ar": "مُحَمَّد",
    "fr": "Muhammad",
    "sens": "le loué",
    "note": "Muhammad est le prophète"
   },
   {
-   "ar": "عائشة",
+   "ar": "عَائِشَة",
    "fr": "Aïsha",
    "sens": "vivante",
    "note": "Aïsha était sage et savante"
   },
   {
-   "ar": "علي",
+   "ar": "عَلِيّ",
    "fr": "Ali",
    "sens": "le haut, l'élevé",
    "note": "Ali est courageux"
   },
   {
-   "ar": "زهراء",
+   "ar": "زَهْرَاء",
    "fr": "Zahra",
    "sens": "la splendide",
    "note": "Zahra illumine par sa beauté"
   },
   {
-   "ar": "ليلة",
+   "ar": "لَيْلَى",
    "fr": "Leïla",
    "sens": "la nuit",
    "note": "Leïla mystérieuse comme la nuit"
   },
   {
-   "ar": "كريم",
+   "ar": "كَرِيم",
    "fr": "Karim",
    "sens": "le généreux",
    "note": "Karim aide les nécessiteux"
   },
   {
-   "ar": "نور",
+   "ar": "نُور",
    "fr": "Noor",
    "sens": "la lumière",
    "note": "Noor illumine les ténèbres"
   },
   {
-   "ar": "زينب",
+   "ar": "زَيْنَب",
    "fr": "Zainab",
    "sens": "qui a de la grâce",
    "note": "Zainab possède l'élégance"
   },
   {
-   "ar": "عمر",
+   "ar": "عُمَر",
    "fr": "Omar",
    "sens": "la vie longue",
    "note": "Omar vit longtemps"
   },
   {
-   "ar": "أمينة",
+   "ar": "أَمِينَة",
    "fr": "Amina",
    "sens": "la sûre",
    "note": "Amina inspire confiance"
   },
   {
-   "ar": "حسن",
+   "ar": "حَسَن",
    "fr": "Hassan",
    "sens": "le bon",
    "note": "Hassan agit avec bonté"
   },
   {
-   "ar": "حسين",
+   "ar": "حُسَيْن",
    "fr": "Husseïn",
    "sens": "le beau",
    "note": "Husseïn possède belle allure"
   },
   {
-   "ar": "مريم",
+   "ar": "مَرْيَم",
    "fr": "Maryam",
    "sens": "la bien-aimée",
    "note": "Maryam est honorée"
   },
   {
-   "ar": "جمال",
+   "ar": "جَمَال",
    "fr": "Jamal",
    "sens": "la beauté",
    "note": "Jamal incarne la beauté"
   },
   {
-   "ar": "رانية",
+   "ar": "رَانِيَة",
    "fr": "Rania",
    "sens": "la reine",
    "note": "Rania règne avec sagesse"
   },
   {
-   "ar": "ياسمين",
+   "ar": "يَاسَمِين",
    "fr": "Yasmine",
    "sens": "le jasmin",
    "note": "Yasmine parfume l'air"
   },
   {
-   "ar": "طارق",
+   "ar": "طَارِق",
    "fr": "Tariq",
    "sens": "l'étoile du matin",
    "note": "Tariq brille à l'aube"
@@ -3021,13 +3021,13 @@
    "note": "Najib agit noblement"
   },
   {
-   "ar": "سارة",
+   "ar": "سَارَة",
    "fr": "Sarah",
    "sens": "la princesse",
    "note": "Sarah règne sur cœurs"
   },
   {
-   "ar": "إبراهيم",
+   "ar": "إِبْرَاهِيم",
    "fr": "Ibrahim",
    "sens": "le père de multitudes",
    "note": "Ibrahim est patriarche"
