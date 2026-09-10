@@ -147,34 +147,32 @@ def construire_legende(niche, type_post, e):
 
     if type_post == "mot":
         corps = (
-            f"{e['ar']} — {e['fr'].lower()}\n\n"
+            f"✨ {e['ar']} : {e['fr'].capitalize()}\n\n"
+            f"📖 Exemple d'utilisation :\n"
             f"{e['phrase_ar']}\n"
             f"« {e['phrase_fr']} »\n\n"
-            "Un mot par jour, et en trois mois tu lis tes premières phrases.\n"
-            "L'ebook complet est en bio."
+            "💡 Un mot par jour, et dans 3 mois tu lis tes premières phrases en arabe ! 🚀\n\n"
+            "📚 Retrouve l'ebook complet dans le lien en bio !"
         )
     elif type_post == "etymologie":
         corps = (
-            f"Tu dis « {e['fr'].lower()} » tous les jours sans savoir que le mot "
-            f"vient de l'arabe {e['ar_origine']}.\n\n"
-            f"{e['ar_origine']} → {e['intermediaire']} → {e['fr'].lower()}\n\n"
+            f"💡 Le savais-tu ? Le mot « {e['fr'].capitalize()} » vient de l'arabe {e['ar_origine']} !\n\n"
+            f"📜 Évolution : {e['ar_origine']} ➔ {e['intermediaire']} ➔ {e['fr'].lower()}\n\n"
             f"{e['explication']}\n\n"
-            "Le français en compte des centaines. L'ebook les recense.\n"
-            "Lien en bio."
+            "✨ Le français regorge de mots d'origine arabe ! Retrouve toute la liste dans notre ebook en bio 🔗"
         )
         tags += " #etymologie #histoiredesmots #languefrancaise"
     else:
         corps = (
-            f"{e['ar']} — {e['fr']}\n\n"
-            f"Signification : « {e['sens']} »\n\n"
+            f"✨ Prénom : {e['ar']} ({e['fr']})\n\n"
+            f"🤍 Signification : « {e['sens']} »\n\n"
             f"{e['note']}\n\n"
-            "Ton prénom a peut-être aussi une racine arabe. "
-            "Dis-le en commentaire, je te donne son sens.\n\n"
-            "Ebook complet en bio."
+            "👇 Ton prénom est-il d'origine arabe ? Dis-le-moi en commentaire et je te donne sa signification ! ✨\n\n"
+            "📚 Ebook complet disponible en bio !"
         )
         tags += " #prenomarabe #signification #prenom"
 
-    return f"{corps}\n\n.\n.\n.\n{tags}"
+    return f"{corps}\n\n{tags}"
 
 
 # ------------------------------------------------------------- hebergement

@@ -178,8 +178,8 @@ def _slide_mot(fond, e):
     d = ImageDraw.Draw(img)
     _cadre(d)
 
-    y = 250
-    y = _bloc(d, _TEXTES["tag_mot"], y, _f(SANS, 22), OR_FONCE) + 40
+    y = 200
+    y = _bloc(d, FILIGRANE, y, _f(SANS, 26), OR_FONCE) + 40
     y = _bloc(d, e["ar"], y, _f(NOTO, 175), OR, rtl=_RTL) + 45
     y = _bloc(d, e["fr"].upper(), y, _f(SANS, 30), OR_FONCE) + 32
 
@@ -190,7 +190,7 @@ def _slide_mot(fond, e):
                           _f(NOTO, 46), (*OR, 210), BLANC) + 24
     y = _bloc_surligne_fr(d, e["phrase_fr"], e.get("surligne_fr", ""), y,
                           _f(SERIF_I, 30), (*OR_FONCE, 200), BLANC)
-    return _filigrane(img)
+    return img
 
 
 def _slide_etymologie(fond, e):
@@ -199,7 +199,7 @@ def _slide_etymologie(fond, e):
     _cadre(d)
 
     y = 160
-    y = _bloc(d, FILIGRANE, y, _f(SANS, 30), OR_FONCE) + 40
+    y = _bloc(d, FILIGRANE, y, _f(SANS, 26), OR_FONCE) + 40
     y = _bloc(d, e["ar_origine"], y, _f(NOTO, 100), OR, rtl=_RTL) + 26
     y = _fleche(d, y, OR_FONCE) + 22
     y = _bloc(d, e["intermediaire"], y, _f(PLAYFAIR, 80), (*OR_FONCE, 210)) + 10
@@ -212,7 +212,7 @@ def _slide_etymologie(fond, e):
 
     for ligne in _couper(e["explication"], 34):
         y = _bloc(d, ligne, y, _f(SERIF_I, 32), BLANC) + 12
-    return img   # filigrane deja en tete de slide
+    return img
 
 
 def _slide_prenom(fond, e):
@@ -220,8 +220,8 @@ def _slide_prenom(fond, e):
     d = ImageDraw.Draw(img)
     _cadre(d)
 
-    y = 225
-    y = _bloc(d, _TEXTES["tag_prenom"], y, _f(SANS, 26), OR_FONCE) + 40
+    y = 190
+    y = _bloc(d, FILIGRANE, y, _f(SANS, 26), OR_FONCE) + 40
     y = _bloc(d, e["ar"], y, _f(NOTO, 165), OR, rtl=_RTL) + 40
     y = _bloc(d, e["fr"], y, _f(PLAYFAIR, 54), OR_FONCE) + 32
 
@@ -230,21 +230,19 @@ def _slide_prenom(fond, e):
 
     y = _bloc(d, f"« {e['sens']} »", y, _f(SERIF_I, 36), BLANC) + 24
     y = _bloc(d, e["note"], y, _f(SERIF_I, 30), (*OR_FONCE, 210))
-    return _filigrane(img)
+    return img
 
 
 def _slide_cta(fond, type_post):
     """Slide 2, adaptée au type de post."""
-    tag = _TEXTES[{"mot": "tag_mot", "etymologie": "tag_etymologie",
-                   "prenom": "tag_prenom"}[type_post]]
     l1, l2 = _TEXTES["cta_ligne1"], _TEXTES["cta_ligne2"]
 
     img = _voile(fond, tuple(_PALETTE["voile_cta"]), _PALETTE["voile_cta_alpha"], _PALETTE["flou"] + 2)
     d = ImageDraw.Draw(img)
     _cadre(d)
 
-    y = 300
-    y = _bloc(d, tag, y, _f(SANS, 22), OR_FONCE) + 45
+    y = 250
+    y = _bloc(d, FILIGRANE, y, _f(SANS, 26), OR_FONCE) + 45
     y = _bloc(d, l1, y, _f(PLAYFAIR, 56), CREME) + 22
     y = _bloc(d, l2, y, _f(PLAYFAIR, 56), CREME) + 55
     y = _bloc(d, _TEXTES["cta_sous_titre"], y, _f(SANS, 24), OR_FONCE) + 45
@@ -257,7 +255,7 @@ def _slide_cta(fond, type_post):
     d.rectangle([xb, y, xb + lb, y + hb], outline=OR, width=2)
     _bloc(d, texte, y + 16, pol, OR)
 
-    return _filigrane(img)
+    return img
 
 
 def _couper(texte, largeur):
@@ -307,8 +305,9 @@ def creer_post(type_post, entree, chemin_fond, dossier_sortie, niche, racine):
     s1 = fabricants[type_post](fond, entree)
     s2 = _slide_cta(fond, type_post)
 
-    p1 = dossier_sortie / "slide1.png"
-    p2 = dossier_sortie / "slide2.png"
-    s1.convert("RGB").save(p1, quality=95)
-    s2.convert("RGB").save(p2, quality=95)
+    p1 = dossier_sortie / "slide1.jpg"
+    p2 = dossier_sortie / "slide2.jpg"
+    s1.convert("RGB").save(p1, "JPEG", quality=95)
+    s2.convert("RGB").save(p2, "JPEG", quality=95)
     return p1, p2
+
