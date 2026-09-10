@@ -194,7 +194,6 @@ def heberger(chemin):
         format="jpg",
         resource_type="image",
     )
-    return res["secure_url"]
 
 
 # --------------------------------------------------------------- instagram
@@ -328,10 +327,7 @@ def main():
         sys.exit("Précise --niche <id> ou --toutes")
 
     for n in cibles:
-        try:
-            traiter(n, a.dry_run)
-        except Exception as exc:
-            print(f"[ÉCHEC] {n['id']} : {exc}")
+        traiter(n, dry_run=a.dry_run)
 
 
 if __name__ == "__main__":

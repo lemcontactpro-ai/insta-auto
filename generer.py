@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """
 Génération des slides @arabe.academie
-Reprend le template validé : empilement mesuré, filigrane vertical,
+Reprend le template validé : empilement mesuré, filigrane en haut,
 cadre doré, zone sûre Instagram.
 """
 
@@ -120,29 +120,6 @@ def _voile(img, couleur, alpha, flou=2):
     )
 
 
-def _filigrane(img, cote="left"):
-    """Filigrane vertical sur le côté."""
-    police = _f(SANS, 26)
-    tmp = Image.new("RGBA", (10, 10))
-    bb = ImageDraw.Draw(tmp).textbbox((0, 0), FILIGRANE, font=police)
-    l, h = bb[2] - bb[0], bb[3] - bb[1]
-
-    bande = Image.new("RGBA", (l + 20, h + 20), (0, 0, 0, 0))
-    ImageDraw.Draw(bande).text((10 - bb[0], 10 - bb[1]), FILIGRANE,
-                               font=police, fill=(240, 205, 150, 235))
-
-    if cote == "left":
-        pivote = bande.rotate(90, expand=True)
-        pos = (18, (TAILLE - pivote.height) // 2)
-    else:
-        pivote = bande.rotate(270, expand=True)
-        pos = (TAILLE - pivote.width - 18, (TAILLE - pivote.height) // 2)
-
-    couche = Image.new("RGBA", img.size, (0, 0, 0, 0))
-    couche.paste(pivote, pos, pivote)
-    return Image.alpha_composite(img.convert("RGBA"), couche)
-
-
 def _cadre(d):
     m, lg, ep = 50, 85, 2
     coins = [
@@ -259,12 +236,12 @@ def _slide_cta(fond, type_post):
 
 
 def _couper(texte, largeur):
-    """Coupe une phrase en lignes d'environ `largeur` caractères."""
-    mots, lignes, courante = texte.split(), [], ""
+    mots = texte.split(" ")
+    lignes, courante = [], ""
     for m in mots:
-        essai = f"{courante} {m}".strip()
-        if len(essai) <= largeur:
-            courante = essai
+        test = f"{courante} {m}".strip()
+        if len(test) <= largeur:
+            courante = test
         else:
             lignes.append(courante)
             courante = m
