@@ -191,6 +191,8 @@ def heberger(chemin):
         str(chemin),
         folder="insta-auto",
         public_id=f"{chemin.stem}_{datetime.now():%Y%m%d%H%M%S}",
+        format="jpg",
+        resource_type="image",
     )
     return res["secure_url"]
 
