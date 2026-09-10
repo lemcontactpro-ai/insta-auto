@@ -278,7 +278,7 @@ def creer_post(type_post, entree, chemin_fond, dossier_sortie, niche, racine):
         "etymologie": _slide_etymologie,
         "prenom": _slide_prenom,
     }
-    s1 = fabricants[type_post](<fond, entree>)
+    s1 = fabricants[type_post](fond, entree)
     s2 = _slide_cta(fond, type_post)
 
     p1 = dossier_sortie / "slide1.jpg"
