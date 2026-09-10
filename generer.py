@@ -1,12 +1,14 @@
 #!/usr/bin/env python3
 """
 Génération des slides @arabe.academie
-Reprend le template validé : empilement mesuré, filigrane vertical,
+Reprend le template validé : empilement mesuré, filigrane en haut,
 cadre doré, zone sûre Instagram.
 """
 
 from pathlib import Path
-from PIL import Image, ImageDraw, ImageFont, ImageFilter
+from PIL import Image, ImageDraw, ImageFont, ImageFilter, features
+
+HAVE_RAQM = features.check("raqm")
 
 TAILLE = 1080
 SANS      = "/usr/share/fonts/truetype/liberation/LiberationSans-Regular.ttf"
@@ -25,12 +27,21 @@ _RTL = True
 
 
 def _f(chemin, taille):
+    if not Path(chemin).exists():
+        for fb in [
+            "/System/Library/Fonts/Supplemental/Arial.ttf",
+            "/Library/Fonts/Arial.ttf",
+            "/System/Library/Fonts/Helvetica.ttc",
+        ]:
+            if Path(fb).exists():
+                return ImageFont.truetype(fb, taille)
+        return ImageFont.load_default()
     return ImageFont.truetype(chemin, taille)
 
 
 def _bloc(d, texte, y, police, couleur, rtl=False):
     """Dessine un texte centré à partir de y. Renvoie le bas réel des glyphes."""
-    kw = {"direction": "rtl", "language": "ar"} if rtl else {}
+    kw = {"direction": "rtl", "language": "ar"} if (rtl and HAVE_RAQM) else {}
     bb = d.textbbox((0, y), texte, font=police, **kw)
     largeur = bb[2] - bb[0]
     d.text(((TAILLE - largeur) // 2, y), texte, font=police, fill=couleur, **kw)
@@ -63,7 +74,7 @@ def _bloc_surligne_fr(d, phrase, mot, y, police, base, surlignage):
 
 def _bloc_surligne_ar(d, phrase, mot, y, police, base, surlignage):
     """Phrase arabe, mot par mot en RTL, avec le mot-clé surligné."""
-    kw = {"direction": "rtl", "language": "ar"}
+    kw = {"direction": "rtl", "language": "ar"} if HAVE_RAQM else {}
     bb = d.textbbox((0, y), phrase, font=police, **kw)
     mots = phrase.split(" ")
 
@@ -108,29 +119,6 @@ def _voile(img, couleur, alpha, flou=2):
     )
 
 
-def _filigrane(img, cote="left"):
-    """Filigrane vertical sur le côté."""
-    police = _f(SANS, 26)
-    tmp = Image.new("RGBA", (10, 10))
-    bb = ImageDraw.Draw(tmp).textbbox((0, 0), FILIGRANE, font=police)
-    l, h = bb[2] - bb[0], bb[3] - bb[1]
-
-    bande = Image.new("RGBA", (l + 20, h + 20), (0, 0, 0, 0))
-    ImageDraw.Draw(bande).text((10 - bb[0], 10 - bb[1]), FILIGRANE,
-                               font=police, fill=(240, 205, 150, 235))
-
-    if cote == "left":
-        pivote = bande.rotate(90, expand=True)
-        pos = (18, (TAILLE - pivote.height) // 2)
-    else:
-        pivote = bande.rotate(270, expand=True)
-        pos = (TAILLE - pivote.width - 18, (TAILLE - pivote.height) // 2)
-
-    couche = Image.new("RGBA", img.size, (0, 0, 0, 0))
-    couche.paste(pivote, pos, pivote)
-    return Image.alpha_composite(img.convert("RGBA"), couche)
-
-
 def _cadre(d):
     m, lg, ep = 50, 85, 2
     coins = [
@@ -166,8 +154,8 @@ def _slide_mot(fond, e):
     d = ImageDraw.Draw(img)
     _cadre(d)
 
-    y = 250
-    y = _bloc(d, _TEXTES["tag_mot"], y, _f(SANS, 22), OR_FONCE) + 40
+    y = 200
+    y = _bloc(d, FILIGRANE, y, _f(SANS, 26), OR_FONCE) + 40
     y = _bloc(d, e["ar"], y, _f(NOTO, 175), OR, rtl=_RTL) + 45
     y = _bloc(d, e["fr"].upper(), y, _f(SANS, 30), OR_FONCE) + 32
 
@@ -178,7 +166,7 @@ def _slide_mot(fond, e):
                           _f(NOTO, 46), (*OR, 210), BLANC) + 24
     y = _bloc_surligne_fr(d, e["phrase_fr"], e.get("surligne_fr", ""), y,
                           _f(SERIF_I, 30), (*OR_FONCE, 200), BLANC)
-    return _filigrane(img)
+    return img
 
 
 def _slide_etymologie(fond, e):
@@ -187,7 +175,7 @@ def _slide_etymologie(fond, e):
     _cadre(d)
 
     y = 160
-    y = _bloc(d, FILIGRANE, y, _f(SANS, 30), OR_FONCE) + 40
+    y = _bloc(d, FILIGRANE, y, _f(SANS, 26), OR_FONCE) + 40
     y = _bloc(d, e["ar_origine"], y, _f(NOTO, 100), OR, rtl=_RTL) + 26
     y = _fleche(d, y, OR_FONCE) + 22
     y = _bloc(d, e["intermediaire"], y, _f(PLAYFAIR, 80), (*OR_FONCE, 210)) + 10
@@ -200,7 +188,7 @@ def _slide_etymologie(fond, e):
 
     for ligne in _couper(e["explication"], 34):
         y = _bloc(d, ligne, y, _f(SERIF_I, 32), BLANC) + 12
-    return img   # filigrane deja en tete de slide
+    return img
 
 
 def _slide_prenom(fond, e):
@@ -208,8 +196,8 @@ def _slide_prenom(fond, e):
     d = ImageDraw.Draw(img)
     _cadre(d)
 
-    y = 225
-    y = _bloc(d, _TEXTES["tag_prenom"], y, _f(SANS, 26), OR_FONCE) + 40
+    y = 190
+    y = _bloc(d, FILIGRANE, y, _f(SANS, 26), OR_FONCE) + 40
     y = _bloc(d, e["ar"], y, _f(NOTO, 165), OR, rtl=_RTL) + 40
     y = _bloc(d, e["fr"], y, _f(PLAYFAIR, 54), OR_FONCE) + 32
 
@@ -218,21 +206,19 @@ def _slide_prenom(fond, e):
 
     y = _bloc(d, f"« {e['sens']} »", y, _f(SERIF_I, 36), BLANC) + 24
     y = _bloc(d, e["note"], y, _f(SERIF_I, 30), (*OR_FONCE, 210))
-    return _filigrane(img)
+    return img
 
 
 def _slide_cta(fond, type_post):
     """Slide 2, adaptée au type de post."""
-    tag = _TEXTES[{"mot": "tag_mot", "etymologie": "tag_etymologie",
-                   "prenom": "tag_prenom"}[type_post]]
     l1, l2 = _TEXTES["cta_ligne1"], _TEXTES["cta_ligne2"]
 
     img = _voile(fond, tuple(_PALETTE["voile_cta"]), _PALETTE["voile_cta_alpha"], _PALETTE["flou"] + 2)
     d = ImageDraw.Draw(img)
     _cadre(d)
 
-    y = 300
-    y = _bloc(d, tag, y, _f(SANS, 22), OR_FONCE) + 45
+    y = 250
+    y = _bloc(d, FILIGRANE, y, _f(SANS, 26), OR_FONCE) + 45
     y = _bloc(d, l1, y, _f(PLAYFAIR, 56), CREME) + 22
     y = _bloc(d, l2, y, _f(PLAYFAIR, 56), CREME) + 55
     y = _bloc(d, _TEXTES["cta_sous_titre"], y, _f(SANS, 24), OR_FONCE) + 45
@@ -245,16 +231,16 @@ def _slide_cta(fond, type_post):
     d.rectangle([xb, y, xb + lb, y + hb], outline=OR, width=2)
     _bloc(d, texte, y + 16, pol, OR)
 
-    return _filigrane(img)
+    return img
 
 
 def _couper(texte, largeur):
-    """Coupe une phrase en lignes d'environ `largeur` caractères."""
-    mots, lignes, courante = texte.split(), [], ""
+    mots = texte.split(" ")
+    lignes, courante = [], ""
     for m in mots:
-        essai = f"{courante} {m}".strip()
-        if len(essai) <= largeur:
-            courante = essai
+        test = f"{courante} {m}".strip()
+        if len(test) <= largeur:
+            courante = test
         else:
             lignes.append(courante)
             courante = m
@@ -292,12 +278,11 @@ def creer_post(type_post, entree, chemin_fond, dossier_sortie, niche, racine):
         "etymologie": _slide_etymologie,
         "prenom": _slide_prenom,
     }
-    s1 = fabricants[type_post](fond, entree)
+    s1 = fabricants[type_post](<fond, entree>)
     s2 = _slide_cta(fond, type_post)
 
     p1 = dossier_sortie / "slide1.jpg"
     p2 = dossier_sortie / "slide2.jpg"
     s1.convert("RGB").save(p1, "JPEG", quality=95)
     s2.convert("RGB").save(p2, "JPEG", quality=95)
-
     return p1, p2
