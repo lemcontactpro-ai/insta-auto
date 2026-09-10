@@ -295,8 +295,9 @@ def creer_post(type_post, entree, chemin_fond, dossier_sortie, niche, racine):
     s1 = fabricants[type_post](fond, entree)
     s2 = _slide_cta(fond, type_post)
 
-    p1 = dossier_sortie / "slide1.png"
-    p2 = dossier_sortie / "slide2.png"
-    s1.convert("RGB").save(p1, quality=95)
-    s2.convert("RGB").save(p2, quality=95)
+    p1 = dossier_sortie / "slide1.jpg"
+    p2 = dossier_sortie / "slide2.jpg"
+    s1.convert("RGB").save(p1, "JPEG", quality=95)
+    s2.convert("RGB").save(p2, "JPEG", quality=95)
+
     return p1, p2
