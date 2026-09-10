@@ -6,7 +6,9 @@ cadre doré, zone sûre Instagram.
 """
 
 from pathlib import Path
-from PIL import Image, ImageDraw, ImageFont, ImageFilter
+from PIL import Image, ImageDraw, ImageFont, ImageFilter, features
+
+HAVE_RAQM = features.check("raqm")
 
 TAILLE = 1080
 SANS      = "/usr/share/fonts/truetype/liberation/LiberationSans-Regular.ttf"
@@ -25,16 +27,26 @@ _RTL = True
 
 
 def _f(chemin, taille):
+    if not Path(chemin).exists():
+        for fb in [
+            "/System/Library/Fonts/Supplemental/Arial.ttf",
+            "/Library/Fonts/Arial.ttf",
+            "/System/Library/Fonts/Helvetica.ttc",
+        ]:
+            if Path(fb).exists():
+                return ImageFont.truetype(fb, taille)
+        return ImageFont.load_default()
     return ImageFont.truetype(chemin, taille)
 
 
 def _bloc(d, texte, y, police, couleur, rtl=False):
     """Dessine un texte centré à partir de y. Renvoie le bas réel des glyphes."""
-    kw = {"direction": "rtl", "language": "ar"} if rtl else {}
+    kw = {"direction": "rtl", "language": "ar"} if (rtl and HAVE_RAQM) else {}
     bb = d.textbbox((0, y), texte, font=police, **kw)
     largeur = bb[2] - bb[0]
     d.text(((TAILLE - largeur) // 2, y), texte, font=police, fill=couleur, **kw)
     return bb[3]
+
 
 
 def _bloc_surligne_fr(d, phrase, mot, y, police, base, surlignage):
@@ -63,7 +75,7 @@ def _bloc_surligne_fr(d, phrase, mot, y, police, base, surlignage):
 
 def _bloc_surligne_ar(d, phrase, mot, y, police, base, surlignage):
     """Phrase arabe, mot par mot en RTL, avec le mot-clé surligné."""
-    kw = {"direction": "rtl", "language": "ar"}
+    kw = {"direction": "rtl", "language": "ar"} if HAVE_RAQM else {}
     bb = d.textbbox((0, y), phrase, font=police, **kw)
     mots = phrase.split(" ")
 
