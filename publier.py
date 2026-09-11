@@ -200,6 +200,22 @@ def construire_legende(niche, type_post, e):
 
 # ------------------------------------------------------------- hebergement
 
+def _attendre_url_accessible(url, essais=8, delai=1.5):
+    """Certaines URLs Cloudinary ne sont pas immédiatement servables par le
+    CDN juste après l'upload (propagation). Meta échoue silencieusement si on
+    lui passe une URL pas encore prête ('Only photo or video can be accepted
+    as media type'), donc on vérifie nous-mêmes avant de la transmettre."""
+    for tentative in range(essais):
+        try:
+            r = requests.get(url, timeout=15, stream=True)
+            if r.ok and r.headers.get("content-type", "").startswith("image/"):
+                return
+        except requests.RequestException:
+            pass
+        time.sleep(delai)
+    raise RuntimeError(f"URL hébergée jamais devenue accessible après {essais} essais : {url}")
+
+
 def heberger(chemin):
     import cloudinary
     import cloudinary.uploader
@@ -217,7 +233,9 @@ def heberger(chemin):
         format="jpg",
         resource_type="image",
     )
-    return res["secure_url"]
+    url = res["secure_url"]
+    _attendre_url_accessible(url)
+    return url
 
 
 # --------------------------------------------------------------- instagram
