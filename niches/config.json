@@ -54,7 +54,7 @@
     {
       "id": "japonais",
       "actif": false,
-      "_todo": "Remplir vocabulaire.json, ajouter photos dans fonds/, ajouter police NotoSansJP.ttf dans polices/, configurer secrets GitHub.",
+      "_todo": "Vocabulaire/grammaire/conjugaison/prénoms prêts et vérifiés. Reste à faire : choisir le nom définitif du compte (compte + FILIGRANE ci-dessous sont un placeholder), ajouter des photos dans fonds/, créer le compte Instagram + app Meta, configurer les secrets GitHub (IG_USER_ID_JAPONAIS, IG_TOKEN_JAPONAIS), puis passer actif à true.",
       "dossier": "niches/japonais",
       "compte": "@japonais.academie",
       "horaires": ["09:00", "13:00", "20:00"],
@@ -66,14 +66,18 @@
       },
 
       "poids_types": {
-        "mot": 70,
+        "mot": 50,
         "etymologie": 0,
-        "prenom": 30
+        "prenom": 20,
+        "grammaire": 15,
+        "conjugaison": 15
       },
 
       "textes": {
         "tag_mot": "APPRENDS LE JAPONAIS",
         "tag_prenom": "LE SENS DES PRÉNOMS",
+        "tag_grammaire": "GRAMMAIRE JAPONAISE",
+        "tag_conjugaison": "CONJUGAISON",
         "cta_ligne1": "Chaque jour",
         "cta_ligne2": "un mot, une histoire",
         "cta_sous_titre": "EBOOK COMPLET",
@@ -103,7 +107,7 @@
     {
       "id": "coreen",
       "actif": false,
-      "_todo": "Remplir vocabulaire.json, ajouter photos dans fonds/, ajouter police NotoSansKR.ttf dans polices/, configurer secrets GitHub.",
+      "_todo": "Vocabulaire/grammaire/conjugaison/prénoms prêts et vérifiés. Reste à faire : choisir le nom définitif du compte (compte + FILIGRANE ci-dessous sont un placeholder), ajouter des photos dans fonds/, créer le compte Instagram + app Meta, configurer les secrets GitHub (IG_USER_ID_COREEN, IG_TOKEN_COREEN), puis passer actif à true.",
       "dossier": "niches/coreen",
       "compte": "@coreen.academie",
       "horaires": ["09:00", "13:00", "20:00"],
@@ -115,14 +119,18 @@
       },
 
       "poids_types": {
-        "mot": 70,
+        "mot": 50,
         "etymologie": 0,
-        "prenom": 30
+        "prenom": 20,
+        "grammaire": 15,
+        "conjugaison": 15
       },
 
       "textes": {
         "tag_mot": "APPRENDS LE CORÉEN",
         "tag_prenom": "LE SENS DES PRÉNOMS",
+        "tag_grammaire": "GRAMMAIRE CORÉENNE",
+        "tag_conjugaison": "CONJUGAISON",
         "cta_ligne1": "Chaque jour",
         "cta_ligne2": "un mot, une histoire",
         "cta_sous_titre": "EBOOK COMPLET",

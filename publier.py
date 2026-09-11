@@ -93,6 +93,8 @@ def choisir(niche, hist):
         "mot": "mots",
         "etymologie": "mots_francais_arabe",
         "prenom": "prenoms",
+        "grammaire": "grammaire",
+        "conjugaison": "conjugaison",
     }
 
     familles = []
@@ -162,7 +164,7 @@ def construire_legende(niche, type_post, e):
             "✨ Le français regorge de mots d'origine arabe ! Retrouve toute la liste dans notre ebook en bio 🔗"
         )
         tags += " #etymologie #histoiredesmots #languefrancaise"
-    else:
+    elif type_post == "prenom":
         corps = (
             f"✨ Prénom : {e['ar']} ({e['fr']})\n\n"
             f"🤍 Signification : « {e['sens']} »\n\n"
@@ -171,6 +173,27 @@ def construire_legende(niche, type_post, e):
             "📚 Ebook complet disponible en bio !"
         )
         tags += " #prenomarabe #signification #prenom"
+    elif type_post == "grammaire":
+        corps = (
+            f"📘 Grammaire : {e['titre']}\n\n"
+            f"{e['regle']}\n\n"
+            f"✏️ Exemple :\n{e['exemple_natif']}"
+            + (f" ({e['exemple_lecture']})" if e.get("exemple_lecture") else "")
+            + f"\n« {e['exemple_fr']} »\n\n"
+            + (f"💡 {e['astuce']}\n\n" if e.get("astuce") else "")
+            + "📚 Toutes les bases expliquées dans l'ebook en bio !"
+        )
+        tags += " #grammaire #astucelangue"
+    else:  # conjugaison
+        corps = (
+            f"🔤 Conjugaison : {e['verbe_fr'].capitalize()} ({e['verbe_natif']})\n\n"
+            f"➡️ {e['forme']} : {e['conjugue_natif']}"
+            + (f" ({e['conjugue_lecture']})" if e.get("conjugue_lecture") else "")
+            + f"\n\n{e['regle']}\n\n"
+            + f"📖 {e['exemple_natif']}\n« {e['exemple_fr']} »\n\n"
+            + "📚 Le guide complet des conjugaisons dans l'ebook en bio !"
+        )
+        tags += " #conjugaison #grammaire"
 
     return f"{corps}\n\n{tags}"
 

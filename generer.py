@@ -24,9 +24,14 @@ NOTO = PLAYFAIR = None
 FILIGRANE = ""
 _TEXTES = _PALETTE = None
 _RTL = True
+_DECOR = "arabe"   # cadre décoratif : "arabe" | "japonais" | "coreen"
 
 
-def _f(chemin, taille):
+def _f(chemin, taille, gras=False):
+    """Charge une police. Si c'est une police variable, fixe un poids
+    utilisable (Regular par défaut, SemiBold si gras=True et disponible) —
+    sans ça, certaines polices variables (ex. Noto Sans JP/KR) s'affichent
+    par défaut en Thin (poids 100), illisible en grand format."""
     if not Path(chemin).exists():
         for fb in [
             "/System/Library/Fonts/Supplemental/Arial.ttf",
@@ -36,7 +41,17 @@ def _f(chemin, taille):
             if Path(fb).exists():
                 return ImageFont.truetype(fb, taille)
         return ImageFont.load_default()
-    return ImageFont.truetype(chemin, taille)
+    police = ImageFont.truetype(chemin, taille)
+    try:
+        noms = [n.decode() if isinstance(n, bytes) else n
+                for n in police.get_variation_names()]
+        cible = "SemiBold" if (gras and "SemiBold" in noms) else None
+        cible = cible or ("Regular" if "Regular" in noms else None)
+        if cible:
+            police.set_variation_by_name(cible)
+    except Exception:
+        pass
+    return police
 
 
 def _bloc(d, texte, y, police, couleur, rtl=False):
@@ -96,6 +111,29 @@ def _bloc_surligne_ar(d, phrase, mot, y, police, base, surlignage):
     return bb[3]
 
 
+def _bloc_surligne_mots(d, phrase, mot, y, police, base, surlignage):
+    """Phrase multi-mots en LTR (japonais/coréen), mot par mot, avec le
+    mot-clé surligné. Même principe que _bloc_surligne_ar mais sans
+    inversion de l'ordre des mots."""
+    bb = d.textbbox((0, y), phrase, font=police)
+    mots = phrase.split(" ")
+
+    def larg(t):
+        b = d.textbbox((0, 0), t, font=police)
+        return b[2] - b[0]
+
+    espace = larg(" ")
+    largeurs = [larg(m) for m in mots]
+    total = sum(largeurs) + espace * (len(mots) - 1)
+
+    x = (TAILLE - total) // 2
+    for m, w in zip(mots, largeurs):
+        couleur = surlignage if (mot and (mot in m or m in mot)) else base
+        d.text((x, y), m, font=police, fill=couleur)
+        x += w + espace
+    return bb[3]
+
+
 def _fleche(d, y, couleur, longueur=34, alpha=190):
     cx = TAILLE // 2
     d.rectangle([cx - 1, y, cx + 1, y + longueur], fill=(*couleur, alpha))
@@ -120,7 +158,7 @@ def _voile(img, couleur, alpha, flou=2):
     )
 
 
-def _cadre(d):
+def _cadre_arabe(d):
     m, lg, ep = 50, 85, 2
     coins = [
         [(m, m, m + lg, m + ep), (m, m, m + ep, m + lg)],
@@ -143,6 +181,52 @@ def _cadre(d):
         d.rectangle(r, fill=(*OR_FONCE, 60))
 
 
+def _cadre_japonais(d):
+    """Filet double façon montage de rouleau (kakejiku) + repères d'angle
+    façon tombo (croix d'alignement typographiques) + sceau hanko plein."""
+    m, m2 = 54, 66
+    d.rectangle([m, m, TAILLE - m, TAILLE - m], outline=OR_FONCE, width=2)
+    d.rectangle([m2, m2, TAILLE - m2, TAILLE - m2], outline=(*OR, 130), width=1)
+
+    lg = 26
+    for cx, cy, sx, sy in [(m, m, 1, 1), (TAILLE - m, m, -1, 1),
+                            (m, TAILLE - m, 1, -1), (TAILLE - m, TAILLE - m, -1, -1)]:
+        d.line([(cx + sx * 10, cy), (cx + sx * (10 + lg), cy)], fill=OR, width=2)
+        d.line([(cx, cy + sy * 10), (cx, cy + sy * (10 + lg))], fill=OR, width=2)
+
+    s = 30
+    x0, y0 = TAILLE - m - s - 6, m + 6
+    d.rectangle([x0, y0, x0 + s, y0 + s], fill=OR_FONCE)
+    d.line([(x0 + 6, y0 + s // 2), (x0 + s - 6, y0 + s // 2)], fill=CREME, width=2)
+    d.line([(x0 + s // 2, y0 + 6), (x0 + s // 2, y0 + s - 6)], fill=CREME, width=2)
+
+
+def _cadre_coreen(d):
+    """Cadre aux angles arrondis (toit courbe de hanok) + médaillon
+    circulaire bicolore façon taeguk simplifié."""
+    m, m2, rayon = 56, 68, 44
+    d.rounded_rectangle([m, m, TAILLE - m, TAILLE - m], radius=rayon,
+                        outline=OR, width=2)
+    d.rounded_rectangle([m2, m2, TAILLE - m2, TAILLE - m2], radius=rayon - 12,
+                        outline=(*OR_FONCE, 90), width=1)
+
+    r = 17
+    cx, cy = TAILLE - m - 24, m + 24
+    d.pieslice([cx - r, cy - r, cx + r, cy + r], 0, 180, fill=OR)
+    d.pieslice([cx - r, cy - r, cx + r, cy + r], 180, 360, fill=OR_FONCE)
+
+
+_DECOR_FUNCS = {
+    "arabe": _cadre_arabe,
+    "japonais": _cadre_japonais,
+    "coreen": _cadre_coreen,
+}
+
+
+def _cadre(d):
+    _DECOR_FUNCS.get(_DECOR, _cadre_arabe)(d)
+
+
 def _centrer(hauteur_contenu):
     """Renvoie le y de départ pour centrer verticalement un bloc."""
     return max(MARGE_SURE, (TAILLE - hauteur_contenu) // 2)
@@ -163,8 +247,9 @@ def _slide_mot(fond, e):
     d.rectangle([(TAILLE - 65) // 2, y, (TAILLE + 65) // 2, y + 2], fill=OR_FONCE)
     y += 34
 
-    y = _bloc_surligne_ar(d, e["phrase_ar"], e.get("surligne_ar", ""), y,
-                          _f(NOTO, 46), (*OR, 210), BLANC) + 24
+    fn_surligne = _bloc_surligne_ar if _RTL else _bloc_surligne_mots
+    y = fn_surligne(d, e["phrase_ar"], e.get("surligne_ar", ""), y,
+                    _f(NOTO, 46), (*OR, 210), BLANC) + 24
     y = _bloc_surligne_fr(d, e["phrase_fr"], e.get("surligne_fr", ""), y,
                           _f(SERIF_I, 30), (*OR_FONCE, 200), BLANC)
     return img
@@ -207,6 +292,65 @@ def _slide_prenom(fond, e):
 
     y = _bloc(d, f"« {e['sens']} »", y, _f(SERIF_I, 36), BLANC) + 24
     y = _bloc(d, e["note"], y, _f(SERIF_I, 30), (*OR_FONCE, 210))
+    return img
+
+
+def _slide_grammaire(fond, e):
+    img = _voile(fond, tuple(_PALETTE["voile"]), _PALETTE["voile_alpha"], _PALETTE["flou"])
+    d = ImageDraw.Draw(img)
+    _cadre(d)
+
+    y = 175
+    y = _bloc(d, FILIGRANE, y, _f(SANS, 26), OR_FONCE) + 34
+    y = _bloc(d, _TEXTES.get("tag_grammaire", "GRAMMAIRE"), y, _f(SANS_G, 24), OR) + 40
+    y = _bloc(d, e["titre"], y, _f(NOTO, 90, gras=True), OR, rtl=_RTL) + 30
+
+    d.rectangle([(TAILLE - 70) // 2, y, (TAILLE + 70) // 2, y + 2], fill=OR_FONCE)
+    y += 30
+
+    for ligne in _couper(e["regle"], 36):
+        y = _bloc(d, ligne, y, _f(NOTO, 30), BLANC) + 10
+    y += 20
+
+    y = _bloc_surligne_fr(d, e["exemple_natif"], e.get("surligne_natif", ""), y,
+                          _f(NOTO, 42), (*OR, 210), BLANC) + 18
+    if e.get("exemple_lecture"):
+        y = _bloc(d, e["exemple_lecture"], y, _f(SANS, 24), (*OR_FONCE, 200)) + 18
+    y = _bloc_surligne_fr(d, e["exemple_fr"], e.get("surligne_fr", ""), y,
+                          _f(SERIF_I, 28), (*OR_FONCE, 200), BLANC)
+    if e.get("astuce"):
+        y += 20
+        for ligne in _couper(e["astuce"], 40):
+            y = _bloc(d, ligne, y, _f(NOTO, 22), (*OR, 190)) + 8
+    return img
+
+
+def _slide_conjugaison(fond, e):
+    img = _voile(fond, tuple(_PALETTE["voile"]), _PALETTE["voile_alpha"], _PALETTE["flou"])
+    d = ImageDraw.Draw(img)
+    _cadre(d)
+
+    y = 155
+    y = _bloc(d, FILIGRANE, y, _f(SANS, 26), OR_FONCE) + 32
+    y = _bloc(d, _TEXTES.get("tag_conjugaison", "CONJUGAISON"), y, _f(SANS_G, 24), OR) + 36
+
+    y = _bloc(d, e["verbe_natif"], y, _f(NOTO, 74, gras=True), OR_FONCE, rtl=_RTL) + 10
+    y = _bloc(d, f"{e['verbe_lecture']} — {e['verbe_fr']}", y, _f(NOTO, 24), (*OR_FONCE, 190)) + 20
+
+    y = _fleche(d, y, OR_FONCE) + 20
+
+    y = _bloc(d, e["conjugue_natif"], y, _f(NOTO, 90, gras=True), OR, rtl=_RTL) + 12
+    y = _bloc(d, f"{e['conjugue_lecture']}  ·  {e['forme']}", y, _f(NOTO, 24), (*OR, 200)) + 28
+
+    d.rectangle([(TAILLE - 70) // 2, y, (TAILLE + 70) // 2, y + 2], fill=OR_FONCE)
+    y += 28
+
+    for ligne in _couper(e["regle"], 36):
+        y = _bloc(d, ligne, y, _f(NOTO, 28), (*OR_FONCE, 210)) + 8
+    y += 16
+
+    y = _bloc(d, e["exemple_natif"], y, _f(NOTO, 38), BLANC, rtl=_RTL) + 14
+    y = _bloc(d, e["exemple_fr"], y, _f(SERIF_I, 26), (*OR_FONCE, 200))
     return img
 
 
@@ -254,7 +398,7 @@ def _couper(texte, largeur):
 
 def creer_post(type_post, entree, chemin_fond, dossier_sortie, niche, racine):
     """Génère les 2 slides selon la config de niche."""
-    global OR, OR_FONCE, CREME, NOTO, PLAYFAIR, FILIGRANE, _TEXTES, _PALETTE, _RTL
+    global OR, OR_FONCE, CREME, NOTO, PLAYFAIR, FILIGRANE, _TEXTES, _PALETTE, _RTL, _DECOR
 
     p = niche["palette"]
     OR       = tuple(p["or"])
@@ -263,6 +407,7 @@ def creer_post(type_post, entree, chemin_fond, dossier_sortie, niche, racine):
     _PALETTE = p
     _TEXTES  = niche["textes"]
     _RTL     = niche["polices"].get("rtl", False)
+    _DECOR   = niche.get("decor", niche["id"])
 
     dp = Path(racine) / "polices"
     NOTO      = str(dp / niche["polices"]["etrangere"])
@@ -278,6 +423,8 @@ def creer_post(type_post, entree, chemin_fond, dossier_sortie, niche, racine):
         "mot": _slide_mot,
         "etymologie": _slide_etymologie,
         "prenom": _slide_prenom,
+        "grammaire": _slide_grammaire,
+        "conjugaison": _slide_conjugaison,
     }
     s1 = fabricants[type_post](fond, entree)
     s2 = _slide_cta(fond, type_post)
