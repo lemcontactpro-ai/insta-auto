@@ -847,7 +847,7 @@
    "surligne_fr": "montagne"
   },
   {
-   "ar": "وِدَاد",
+   "ar": "وَادِي",
    "fr": "Vallée",
    "phrase_ar": "الوَادِي يَسْقِيهِ المَاءُ",
    "phrase_fr": "La vallée est arrosée par l'eau",
@@ -1569,7 +1569,7 @@
   {
    "ar": "دَجَاج",
    "fr": "Poulet",
-   "phrase_ar": "الدَّجَاجُ لَحْمٌ بَيْضَاءُ",
+   "phrase_ar": "الدَّجَاجُ لَحْمٌ أَبْيَضُ",
    "phrase_fr": "Le poulet est une viande blanche",
    "surligne_ar": "الدَّجَاجُ",
    "surligne_fr": "poulet"
@@ -1863,11 +1863,11 @@
    "surligne_fr": "ceinture"
   },
   {
-   "ar": "مِرَايَة",
+   "ar": "مِرْآة",
    "fr": "Miroir",
-   "phrase_ar": "المِرَاةُ تَعْكِسُ الصُّورَةَ",
+   "phrase_ar": "المِرْآةُ تَعْكِسُ الصُّورَةَ",
    "phrase_fr": "Le miroir reflète l'image",
-   "surligne_ar": "المِرَاةُ",
+   "surligne_ar": "المِرْآةُ",
    "surligne_fr": "miroir"
   },
   {
@@ -1959,7 +1959,7 @@
    "surligne_fr": "collier"
   },
   {
-   "ar": "أَسْوَار",
+   "ar": "أَسَاوِر",
    "fr": "Bracelets",
    "phrase_ar": "الأَسَاوِرُ تُزَيِّنُ المِعْصَمَ",
    "phrase_fr": "Les bracelets ornent le poignet",
@@ -2159,11 +2159,11 @@
    "surligne_fr": "chasse"
   },
   {
-   "ar": "عَاب",
+   "ar": "لُعْبَة",
    "fr": "Jeu",
-   "phrase_ar": "العَابُ الأَطْفَالِ مُتَنَوِّعَةٌ",
+   "phrase_ar": "أَلْعَابُ الأَطْفَالِ مُتَنَوِّعَةٌ",
    "phrase_fr": "Les jeux des enfants sont variés",
-   "surligne_ar": "العَابُ",
+   "surligne_ar": "أَلْعَابُ",
    "surligne_fr": "jeu"
   },
   {
@@ -2407,7 +2407,7 @@
    "surligne_fr": "foie"
   },
   {
-   "ar": "كُلَى",
+   "ar": "كُلْيَة",
    "fr": "Rein",
    "phrase_ar": "الكُلْيَةُ تُصَفِّي النَّفَايَاتِ",
    "phrase_fr": "Le rein filtre les déchets",
@@ -2961,7 +2961,7 @@
    "note": "Tariq brille à l'aube"
   },
   {
-   "ar": "هَنَا",
+   "ar": "هَنَاء",
    "fr": "Hana",
    "sens": "le bonheur",
    "note": "Hana apporte la joie"
@@ -2973,10 +2973,10 @@
    "note": "Samir raconte histoires"
   },
   {
-   "ar": "نَدَى",
+   "ar": "نَادِيَة",
    "fr": "Nadia",
-   "sens": "l'appel",
-   "note": "Nadia appelle à l'unité"
+   "sens": "la généreuse",
+   "note": "Nadia, symbole de générosité"
   },
   {
    "ar": "أَمِين",
