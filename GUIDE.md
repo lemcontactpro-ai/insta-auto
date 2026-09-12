@@ -244,7 +244,14 @@ modèle de langage — c'est exactement l'erreur qui a produit les 8 rejets.
   lui envoyer les octets directement. D'où l'usage de Cloudinary comme
   hébergeur intermédiaire d'images (gratuit jusqu'à 25 crédits/mois, un
   crédit valant environ 1 Go de stockage, de bande passante nette, ou 1000
-  transformations).
+  transformations). **« Par mois » décrit la fréquence de vérification, pas
+  une remise à zéro** : la bande passante et les transformations sont bien
+  réinitialisées chaque mois, mais le stockage est évalué chaque mois sur la
+  quantité *actuellement* stockée — comme rien n'est jamais supprimé de
+  Cloudinary, ce total grossit mois après mois et c'est lui qui finit par
+  heurter le plafond, pas un dépassement du volume mensuel ajouté (voir le
+  calcul ci-dessous). Vérifier de temps en temps le tableau de bord
+  Cloudinary réel, les conditions du plan gratuit pouvant évoluer.
   **Combien de niches ce système supporte** — mesuré sur un vrai slide
   généré (arabe, JPEG 1080×1080 qualité 95) : ~140 Ko/slide en moyenne, soit
   ~24,6 Mo/mois de **nouveau stockage** par niche (3 posts/jour × 2 slides ×
