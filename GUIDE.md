@@ -51,8 +51,10 @@ point — une première tentative sans vérification a produit 8 erreurs sur 30
 ## 1. Le projet en une phrase
 
 Publier automatiquement 3 posts/jour sur plusieurs comptes Instagram
-thématiques (niches), chacun vendant un ebook, sans intervention manuelle et
-sans que l'ordinateur de l'utilisatrice soit allumé.
+thématiques (niches), chacun vendant un **ebook interactif** (jamais juste
+un PDF — terminologie fixée le 2026-09-12, à reprendre partout : templates,
+légendes, fiche Payhip, guides), sans intervention manuelle et sans que
+l'ordinateur de l'utilisatrice soit allumé.
 
 **Niche 1** : @arabe.academie — apprentissage de l'arabe, public francophone.
 **Niches futures** : 6 au total prévues, même système, contenu et palette

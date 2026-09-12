@@ -178,14 +178,14 @@ def construire_legende(niche, type_post, e):
             f"{e['phrase_ar']}\n"
             f"« {e['phrase_fr']} »\n\n"
             "💡 Un mot par jour, et dans 3 mois tu lis tes premières phrases en arabe ! 🚀\n\n"
-            "📚 Retrouve l'ebook complet dans le lien en bio !"
+            "📚 Retrouve l'ebook interactif complet dans le lien en bio !"
         )
     elif type_post == "etymologie":
         corps = (
             f"💡 Le savais-tu ? Le mot « {e['fr'].capitalize()} » vient de l'arabe {e['ar_origine']} !\n\n"
             f"📜 Évolution : {e['ar_origine']} ➔ {e['intermediaire']} ➔ {e['fr'].lower()}\n\n"
             f"{e['explication']}\n\n"
-            "✨ Le français regorge de mots d'origine arabe ! Retrouve toute la liste dans notre ebook en bio 🔗"
+            "✨ Le français regorge de mots d'origine arabe ! Retrouve toute la liste dans notre ebook interactif en bio 🔗"
         )
         tags += " #etymologie"
     elif type_post == "prenom":
@@ -194,7 +194,7 @@ def construire_legende(niche, type_post, e):
             f"🤍 Signification : « {e['sens']} »\n\n"
             f"{e['note']}\n\n"
             "👇 Ton prénom est-il d'origine arabe ? Dis-le-moi en commentaire et je te donne sa signification ! ✨\n\n"
-            "📚 Ebook complet disponible en bio !"
+            "📚 Ebook interactif complet disponible en bio !"
         )
         tags += " #prenomarabe"
     elif type_post == "grammaire":
@@ -205,7 +205,7 @@ def construire_legende(niche, type_post, e):
             + (f" ({e['exemple_lecture']})" if e.get("exemple_lecture") else "")
             + f"\n« {e['exemple_fr']} »\n\n"
             + (f"💡 {e['astuce']}\n\n" if e.get("astuce") else "")
-            + "📚 Toutes les bases expliquées dans l'ebook en bio !"
+            + "📚 Toutes les bases expliquées dans l'ebook interactif en bio !"
         )
         tags += " #grammaire"
     else:  # conjugaison
@@ -215,7 +215,7 @@ def construire_legende(niche, type_post, e):
             + (f" ({e['conjugue_lecture']})" if e.get("conjugue_lecture") else "")
             + f"\n\n{e['regle']}\n\n"
             + f"📖 {e['exemple_natif']}\n« {e['exemple_fr']} »\n\n"
-            + "📚 Le guide complet des conjugaisons dans l'ebook en bio !"
+            + "📚 Le guide complet des conjugaisons dans notre ebook interactif en bio !"
         )
         tags += " #conjugaison"
 
