@@ -111,6 +111,43 @@ pour ce projet.
 
 ---
 
+## 2 bis. Outils utilisés et répartition des rôles
+
+Ce projet est construit et maintenu dans **Google Antigravity** (l'IDE
+agentique local de Google), où tournent deux agents complémentaires — pas
+un seul :
+
+- **Gemini** (accès gratuit 1 an via l'offre étudiante Google AI Pro) :
+  la **recherche et la vérification de contenu**. Toute donnée factuelle
+  d'une niche — étymologie, règle de grammaire, conjugaison, romanisation,
+  signification de prénom — est rédigée par Gemini avec recherche web et
+  citation d'une source fiable (CNRTL, Littré, Académie française,
+  Wiktionnaire, ou équivalent selon la matière), jamais depuis sa seule
+  mémoire. C'est la même exigence que la règle de vérification de la
+  section 5 ; elle s'applique à **toute** niche, pas seulement l'arabe —
+  une première tentative sans cette discipline a produit 8 erreurs sur 30
+  étymologies (section 5).
+- **Claude Code** : tout ce qui touche au **repo et à l'exécution** —
+  édition de `generer.py`/`publier.py`/`niches/config.json`, rendu et
+  vérification visuelle des slides Pillow, mise en place et débogage de
+  l'automatisation GitHub Actions (workflows, secrets, incidents Meta/
+  Cloudinary comme celui du 2026-09-12). Contrairement à Antigravity, qui
+  reste local (section 2), Claude Code a accès direct au terminal, à git et
+  à GitHub pour exécuter et corriger sans intervention manuelle à chaque
+  étape.
+
+**Pourquoi cette répartition et pas un seul outil pour tout :** Gemini via
+l'offre étudiante est gratuit et fiable pour de la recherche factuelle
+citée, mais Antigravity ne fait pas tourner de cron indépendant de la
+machine (section 2) — il n'a donc aucun rôle dans l'exécution récurrente,
+seulement dans la préparation du contenu. Claude Code prend le relais pour
+tout ce qui doit s'exécuter, se déboguer ou se répliquer sans supervision.
+Aucun des deux n'intervient à l'exécution des publications elles-mêmes :
+le coût en appels IA reste nul à vie une fois une niche activée (section 2,
+« Coût en tokens/appels IA »).
+
+---
+
 ## 3. Architecture technique
 
 ```
@@ -236,6 +273,39 @@ modèle de langage — c'est exactement l'erreur qui a produit les 8 rejets.
 
 ## 7. Étapes à suivre, dans l'ordre
 
+### Étape 0 — Choisir et créer le contenu d'une nouvelle niche (Gemini + Claude Code)
+Cette étape précède tout le reste et se fait avant même de toucher au dépôt
+GitHub — voir la répartition des rôles en section 2 bis.
+
+1. **Choisir le sujet et le compte** : une langue, une matière scolaire, un
+   domaine — avec son identité (`@nom.academie`) et ce qu'il vend en bio
+   (l'ebook, comme pour arabe).
+2. **Définir les types de post et leur pondération** (`poids_types` dans
+   `config.json`) : pour une langue, mot / étymologie / prénom / grammaire /
+   conjugaison comme arabe, japonais, coréen ; pour une matière comme
+   maths-prepa ou chimie-prepa, adapter les types au sujet (ex. formule,
+   méthode, erreur classique) — le principe reste le même, un gabarit par
+   type dans `generer.py` et `construire_legende()`.
+3. **Rédiger le contenu avec Gemini**, recherche web systématique et source
+   citée pour chaque entrée (règle de la section 5, non négociable, quel que
+   soit le sujet). Produire `niches/<id>/vocabulaire.json` selon la
+   structure des familles déjà utilisées (voir `niches/arabe/vocabulaire.json`
+   comme référence de format).
+4. **Faire vérifier et rendre le contenu par Claude Code** : validation JSON,
+   puis **rendu réel de chaque type de slide** — ne jamais se contenter de
+   relire le JSON. Un champ trop long ou une fonction de dessin réutilisée
+   sans adaptation (ex. surlignage RTL appliqué à une langue LTR) casse le
+   rendu silencieusement ; c'est exactement ce qui s'est produit lors de la
+   création de japonais/coréen et a été détecté seulement à l'affichage. Si
+   la niche a une identité graphique distincte (palette, police, décor),
+   c'est aussi le moment de l'ajuster dans `generer.py`/`config.json`.
+5. **Réunir les photos de fond** (15-20 minimum, 50+ idéal) — voir Étape A.
+6. **Ajouter le bloc de config** dans `niches/config.json` (secrets,
+   `poids_types`, `textes`, `palette`, `polices`, `hashtags_base`), avec
+   `"actif": false` tant que le compte Instagram et l'app Meta ne sont pas
+   prêts (étapes D à F) — puis `"actif": true` une fois testé en dry-run
+   (étape G) et le compte réellement configuré.
+
 ### Étape A — Localiser et copier les photos de fond
 Voir section 0. Copier toutes les images du dossier personnel de
 l'utilisatrice vers `niches/arabe/fonds/`. Minimum recommandé : 15-20
@@ -302,10 +372,11 @@ fichier est calé sur l'heure d'hiver (UTC+1). Au passage à l'heure d'été
 `.github/workflows/publier.yml`.
 
 ### Étape J — Répéter pour les niches suivantes
-Une fois Arabe stable depuis quelques semaines : copier un bloc dans
-`config.json`, créer le dossier `niches/<nouvelle-niche>/` avec son
-vocabulaire (vérifié selon la règle de la section 5) et ses photos, répéter
-les étapes D à F pour le nouveau compte Instagram.
+Une fois Arabe stable depuis quelques semaines : reprendre à l'Étape 0 pour
+le contenu (Gemini + Claude Code), puis répéter les étapes D à F pour le
+nouveau compte Instagram. Pour le renouvellement automatique du jeton
+(section 6), ajouter la ligne `IG_TOKEN_<NICHE>` correspondante dans
+`.github/workflows/renouveler_token.yml`.
 
 ---
 
@@ -316,7 +387,9 @@ les étapes D à F pour le nouveau compte Instagram.
 - `generer.py` — générateur de slides
 - `requirements.txt` — dépendances Python
 - `.env.example` — modèle des secrets à créer sur GitHub
-- `.github/workflows/publier.yml` — planification GitHub Actions
+- `.github/workflows/publier.yml` — planification GitHub Actions (publication)
+- `renouveler_token.py` + `.github/workflows/renouveler_token.yml` —
+  renouvellement automatique du jeton Meta avant expiration (section 6)
 - `niches/config.json` — configuration centrale des niches
 - `niches/arabe/vocabulaire.json` — vocabulaire vérifié (317 mots, 34
   étymologies, 30 prénoms)
