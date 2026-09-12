@@ -1,0 +1,36 @@
+name: Renouveler le jeton Meta
+
+on:
+  schedule:
+    # Deux fois par mois — largement dans la fenêtre des 60 jours d'expiration,
+    # avec de la marge si une exécution échoue une fois.
+    - cron: '0 3 1,16 * *'
+  workflow_dispatch:
+
+jobs:
+  renouveler:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Configurer Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.11'
+
+      - name: Installer dépendances
+        run: pip install requests pynacl
+
+      - name: Renouveler les jetons des niches actives
+        env:
+          META_APP_ID: ${{ secrets.META_APP_ID }}
+          META_APP_SECRET: ${{ secrets.META_APP_SECRET }}
+          GH_PAT_SECRETS: ${{ secrets.GH_PAT_SECRETS }}
+          IG_TOKEN_ARABE: ${{ secrets.IG_TOKEN_ARABE }}
+          IG_TOKEN_JAPONAIS: ${{ secrets.IG_TOKEN_JAPONAIS }}
+          IG_TOKEN_COREEN: ${{ secrets.IG_TOKEN_COREEN }}
+          IG_TOKEN_MATHS_PREPA: ${{ secrets.IG_TOKEN_MATHS_PREPA }}
+          IG_TOKEN_CHIMIE_PREPA: ${{ secrets.IG_TOKEN_CHIMIE_PREPA }}
+        run: python renouveler_token.py

@@ -209,7 +209,22 @@ modèle de langage — c'est exactement l'erreur qui a produit les 8 rejets.
   suffisant pour ce volume).
 - **50 publications maximum par 24h glissantes.** Un carrousel compte pour 1.
 - Le jeton d'accès expire tous les **60 jours** — cause n°1 de panne
-  silencieuse si on oublie de le renouveler.
+  silencieuse si on oublie de le renouveler. **Depuis le 2026-09-12, ceci est
+  automatisé** par `.github/workflows/renouveler_token.yml` (exécuté deux
+  fois par mois via `renouveler_token.py`), qui échange le jeton actuel
+  contre un nouveau via l'endpoint Meta `fb_exchange_token` et met à jour le
+  secret GitHub `IG_TOKEN_<NICHE>` directement par API. Ça nécessite trois
+  secrets supplémentaires, une seule fois pour tout le dépôt (partagés entre
+  toutes les niches, un seul compte Facebook gérant toutes les Pages) :
+  `META_APP_ID`, `META_APP_SECRET` (Meta for Developers → l'app → Paramètres
+  de l'app → Général) et `GH_PAT_SECRETS` (un token GitHub personnel
+  *fine-grained*, limité à ce dépôt, permission Secrets en lecture/écriture
+  — c'est le seul moyen d'écrire un secret par API, le `GITHUB_TOKEN`
+  automatique des workflows n'en a pas le droit par sécurité). **Pour
+  activer une nouvelle niche**, ajouter sa ligne `IG_TOKEN_<NICHE>: ${{
+  secrets.IG_TOKEN_<NICHE> }}` dans le bloc `env` de
+  `renouveler_token.yml` — le script lui-même n'a rien d'autre à changer,
+  il lit `niches/config.json` et ne traite que les niches `"actif": true`.
 - **Un seul compte Facebook peut administrer plusieurs Pages**, donc gérer
   les 6 niches prévues sans multiplier les comptes Meta.
 - Ces étapes (création app Meta, PPA, jeton) nécessitent des écrans de
