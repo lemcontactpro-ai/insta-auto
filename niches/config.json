@@ -7,6 +7,7 @@
       "actif": true,
       "dossier": "niches/arabe",
       "compte": "@arabe.academie",
+      "langue_phrase": "apprend l'arabe",
       "horaires": ["08:00", "12:30", "19:00"],
       "fuseau": "Europe/Paris",
 
@@ -57,6 +58,7 @@
       "_todo": "Vocabulaire/grammaire/conjugaison/prénoms prêts et vérifiés. Reste à faire : choisir le nom définitif du compte (compte + FILIGRANE ci-dessous sont un placeholder), ajouter des photos dans fonds/, créer le compte Instagram + app Meta, configurer les secrets GitHub (IG_USER_ID_JAPONAIS, IG_TOKEN_JAPONAIS), puis passer actif à true.",
       "dossier": "niches/japonais",
       "compte": "@japonais.academie",
+      "langue_phrase": "apprend le japonais",
       "horaires": ["09:00", "13:00", "20:00"],
       "fuseau": "Europe/Paris",
 
@@ -110,6 +112,7 @@
       "_todo": "Vocabulaire/grammaire/conjugaison/prénoms prêts et vérifiés. Reste à faire : choisir le nom définitif du compte (compte + FILIGRANE ci-dessous sont un placeholder), ajouter des photos dans fonds/, créer le compte Instagram + app Meta, configurer les secrets GitHub (IG_USER_ID_COREEN, IG_TOKEN_COREEN), puis passer actif à true.",
       "dossier": "niches/coreen",
       "compte": "@coreen.academie",
+      "langue_phrase": "apprend le coréen",
       "horaires": ["09:00", "13:00", "20:00"],
       "fuseau": "Europe/Paris",
 
