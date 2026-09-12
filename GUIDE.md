@@ -208,6 +208,55 @@ le code fourni.
 
 ---
 
+## 4 bis. Le second moteur de rendu : HTML + KaTeX (maths-prepa)
+
+Le template de la section 4 (Pillow) couvre les niches de langues. Il ne
+convient pas aux matières scientifiques : Pillow ne sait pas composer de
+mathématiques — pas de fractions, pas d'intégrales, pas de racines. Un
+second moteur coexiste donc, choisi par niche via `"moteur"` dans
+`niches/config.json` :
+
+| `moteur` | Rendu | Niches |
+|---|---|---|
+| absent (défaut) | `generer.py`, Pillow, 1080×1080, 2 slides | arabe, japonais, coréen |
+| `"html-katex"` | `generer_maths.py`, Chromium + KaTeX, 1080×1350, jusqu'à 7 slides | maths-prepa |
+
+**Comment ça marche.** `generer_maths.py` compose un document HTML (un
+`<section>` par slide, style dans `gabarits/maths_prepa.css`), le charge dans
+Chromium via Playwright, fait composer le LaTeX par KaTeX, puis photographie
+chaque section en JPEG.
+
+**KaTeX et la police Inter sont embarqués dans le dépôt** (`vendor/katex/`,
+`vendor/inter/`, ~900 Ko). Aucun appel réseau au rendu : le résultat est
+identique en local et sur le runner GitHub, et ne casse pas le jour où un
+CDN change. Ne pas les remplacer par des liens externes.
+
+**Deux garde-fous, tous deux nécessaires** — ils remplacent la règle de
+placement mesuré de la section 4, qui n'a pas d'objet ici puisque le
+navigateur fait la mise en page :
+
+- *Auto-ajustement* : la variable CSS `--fit` réduit la typographie par
+  paliers de 4 % (jusqu'à 70 %) tant qu'une slide déborde. Le rendu affiche
+  toute réduction appliquée, et se plaint si ça déborde encore.
+- *Contrôleur de contenu* (`--valider`) : dans le JSON on écrit `\sqrt`, pas
+  `\\sqrt`. Un échappement doublé ne lève **aucune erreur KaTeX**, il compose
+  le nom de la commande en italique — un faux positif parfaitement
+  silencieux, déjà rencontré en développement. `verifier_exercice()` le
+  détecte, ainsi que les accolades déséquilibrées et les champs manquants.
+
+**Sur GitHub Actions**, l'étape `Publier (maths-prepa)` lit `actif` dans
+`niches/config.json` et sort immédiatement si la niche est inactive :
+Chromium (~1 min d'installation) n'est téléchargé que le jour où elle part.
+
+**Coût en tokens** : toujours nul à l'exécution. Chromium et KaTeX sont des
+outils déterministes, pas des modèles.
+
+**Pour une future niche scientifique** (chimie-prepa, physique…) : reprendre
+`"moteur": "html-katex"`, un `exercices.json` au même schéma, et un fichier
+CSS dédié dans `gabarits/` si la palette change. Aucun code à réécrire.
+
+---
+
 ## 5. Le vocabulaire (état vérifié)
 
 Fichier : `niches/arabe/vocabulaire.json`
@@ -232,6 +281,40 @@ confirmer ailleurs — la contradiction a déjà été tranchée.**
 recherche web avant ajout, en citant une source fiable (CNRTL, Littré,
 Académie française, Wiktionnaire). Jamais depuis la mémoire seule d'un
 modèle de langage — c'est exactement l'erreur qui a produit les 8 rejets.
+
+---
+
+## 5 bis. Stratégie hashtags (vérifiée par sources, 2026-09-12)
+
+Ramené de **10-13 hashtags par légende** à **4-5 maximum** (4 fixes par
+niche dans `hashtags_base` + 1 spécifique au type de post dans
+`construire_legende()`), après recherche — pas juste "on m'a dit que" :
+
+- **Adam Mosseri (chef d'Instagram) a déclaré publiquement que les
+  hashtags ne boostent plus la portée** — de simples "labels" de
+  catégorisation, plus un levier de croissance.
+- **Instagram plafonne techniquement les posts à 5 hashtags depuis fin
+  2025** — plus une option, une limite imposée par la plateforme.
+- **Deux études à grand échantillon convergent sur 3-5 hashtags** comme
+  optimum pour le *taux* d'engagement : Hootsuite (5M+ posts, 2025) et
+  Social Insider (75M+ posts).
+- Une étude contraire existe (Later, 18M posts, juin 2025, trouve un
+  bénéfice à 20-30 hashtags) mais mesure la portée/l'engagement **brut**,
+  pas le taux — biais classique où les comptes qui spamment des hashtags
+  sont aussi souvent ceux qui postent le plus/mieux pour d'autres raisons
+  (corrélation ≠ causalité) — et est de toute façon rendue obsolète par
+  le plafond technique à 5 introduit après cette étude.
+- **Ce qui compte davantage désormais** : Instagram indexe le texte de la
+  légende elle-même comme un moteur de recherche (mots-clés naturels,
+  texte à l'écran, sous-titres) plutôt que les hashtags — d'où
+  l'importance de garder des légendes riches en mots-clés naturels
+  (déjà le cas ici), pas seulement empiler des hashtags.
+
+**Règle pour toute nouvelle niche** : `hashtags_base` = 4 tags maximum,
+les plus pertinents et distincts (éviter les quasi-doublons du type
+`#arabe` + `#languearabe` + `#coursdarabe` + `#arabefacile` qui se
+chevauchent tous) ; chaque type de post peut ajouter **au plus 1** tag
+spécifique, jamais plus — total toujours ≤ 5.
 
 ---
 

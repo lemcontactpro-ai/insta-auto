@@ -1,0 +1,294 @@
+{
+  "_lisez_moi": "Contenu de la niche maths-prépa. Un objet par exercice. Le LaTeX s'écrit entre $...$ dans les champs texte, et brut (sans $) dans les blocs de type 'formule'. RÈGLE : chaque exercice est rédigé à la main depuis le PDF source puis relu ligne à ligne — les .md de sources/ sont des OCR dont toutes les formules en affichage ont été perdues, ils ne servent que de repérage. Un exercice n'est publiable que si 'verifie' vaut true.",
+  "_schema": {
+    "id": "identifiant unique, stable (sert à l'anti-répétition)",
+    "verifie": "true seulement après relecture mathématique complète",
+    "niveau": "1 à 4 — nombre d'étoiles affichées (reprend les pastilles ➀➁➂➃ des sources)",
+    "chapitre": "pastille de la slide 1, en majuscules au rendu",
+    "titre": "titre court de la slide 1, 60 caractères maximum",
+    "source": "référence de la source — USAGE INTERNE UNIQUEMENT, jamais affichée sur les slides ni dans la légende ; sert à retrouver l'exercice dans les PDF. Facultative.",
+    "accroche": "une ligne pour la légende Instagram (facultatif)",
+    "enonce": "liste de blocs — slide 1",
+    "etapes": "liste d'étapes ; chacune a un 'titre' et une liste de 'blocs'. 5 slides maximum : au-delà de 5 étapes, elles sont regroupées automatiquement (répartition équilibrée par poids visuel). Une étape peut porter 'groupe': <int> pour forcer son placement, mais alors toutes doivent en porter un.",
+    "conclusion": "bilan affiché sur la slide CTA (facultatif)",
+    "blocs": {
+      "texte": "paragraphe",
+      "question": "paragraphe précédé d'un numéro ('num')",
+      "formule": "formule centrée en carte ; 'cle': true la passe en aubergine plein",
+      "astuce": "encart crème ; 'marque' remplace le libellé « Astuce »",
+      "filet": "séparateur"
+    }
+  },
+  "exercices": [
+    {
+      "id": "sl-inegalites-3",
+      "verifie": true,
+      "niveau": 2,
+      "chapitre": "Inégalités",
+      "titre": "Trois inégalités qui n'en font qu'une",
+      "source": "Poly Saint-Louis, Transition Terminale → MPSI / PCSI / MP2I — §1.2 « Des inégalités », ex. 3",
+      "accroche": "Un classique de la rentrée : celui qui ne voit pas le carré caché s'y casse les dents.",
+      "enonce": [
+        {
+          "type": "texte",
+          "valeur": "Soient $a, b, c \\in \\mathbb{R}_+$."
+        },
+        {
+          "type": "question",
+          "num": "a.",
+          "valeur": "Montrer que $2\\sqrt{ab} \\leqslant a + b$."
+        },
+        {
+          "type": "question",
+          "num": "b.",
+          "valeur": "En déduire que $8abc \\leqslant (a+b)(b+c)(c+a)$."
+        }
+      ],
+      "etapes": [
+        {
+          "titre": "Tout ramener d'un seul côté",
+          "blocs": [
+            {
+              "type": "texte",
+              "valeur": "Une inégalité avec une racine carrée ne se démontre presque jamais de front. On passe tout du même côté et on regarde ce qui apparaît."
+            },
+            {
+              "type": "formule",
+              "valeur": "2\\sqrt{ab} \\leqslant a+b \\iff 0 \\leqslant a - 2\\sqrt{ab} + b"
+            }
+          ]
+        },
+        {
+          "titre": "Reconnaître l'identité remarquable",
+          "blocs": [
+            {
+              "type": "texte",
+              "valeur": "Comme $a, b \\geqslant 0$, on peut écrire $a = (\\sqrt{a})^2$ et $b = (\\sqrt{b})^2$. Le membre de droite est alors un carré parfait."
+            },
+            {
+              "type": "formule",
+              "cle": true,
+              "valeur": "a - 2\\sqrt{ab} + b = \\left(\\sqrt{a} - \\sqrt{b}\\right)^{2}"
+            },
+            {
+              "type": "astuce",
+              "valeur": "Dès qu'une racine carrée apparaît dans une inégalité, essaie de poser $x = \\sqrt{a}$ et $y = \\sqrt{b}$ : l'énoncé devient polynomial."
+            }
+          ]
+        },
+        {
+          "titre": "Conclure sur la question a.",
+          "blocs": [
+            {
+              "type": "texte",
+              "valeur": "Le carré d'un réel est toujours positif ou nul. L'inégalité de départ est donc vraie pour tous $a, b \\geqslant 0$."
+            },
+            {
+              "type": "formule",
+              "valeur": "\\left(\\sqrt{a}-\\sqrt{b}\\right)^{2} \\geqslant 0 \\;\\Longrightarrow\\; 2\\sqrt{ab} \\leqslant a+b"
+            },
+            {
+              "type": "texte",
+              "valeur": "Avec égalité si et seulement si $\\sqrt{a} = \\sqrt{b}$, c'est-à-dire $a = b$."
+            }
+          ]
+        },
+        {
+          "titre": "Exploiter la symétrie",
+          "blocs": [
+            {
+              "type": "texte",
+              "valeur": "La question b. fait intervenir les trois paires $(a,b)$, $(b,c)$ et $(c,a)$. Le résultat de a. s'applique à chacune, sans rien redémontrer."
+            },
+            {
+              "type": "formule",
+              "valeur": "\\begin{cases} 2\\sqrt{ab} \\leqslant a+b \\\\[4pt] 2\\sqrt{bc} \\leqslant b+c \\\\[4pt] 2\\sqrt{ca} \\leqslant c+a \\end{cases}"
+            }
+          ]
+        },
+        {
+          "titre": "Multiplier, puis simplifier",
+          "blocs": [
+            {
+              "type": "texte",
+              "valeur": "Les six membres sont positifs : on a le droit de multiplier les trois inégalités terme à terme."
+            },
+            {
+              "type": "formule",
+              "valeur": "8\\sqrt{ab}\\,\\sqrt{bc}\\,\\sqrt{ca} \\leqslant (a+b)(b+c)(c+a)"
+            },
+            {
+              "type": "texte",
+              "valeur": "Et le membre de gauche se simplifie, car $a, b, c \\geqslant 0$ :"
+            },
+            {
+              "type": "formule",
+              "cle": true,
+              "valeur": "8\\sqrt{a^2b^2c^2} = 8abc \\leqslant (a+b)(b+c)(c+a)"
+            }
+          ]
+        }
+      ],
+      "conclusion": "Cas d'égalité : $a = b = c$. Ce n'est rien d'autre que l'inégalité arithmético-géométrique à deux termes, appliquée trois fois puis multipliée.",
+      "hashtags_extra": "#inegalites #identiteremarquable"
+    },
+    {
+      "id": "sl-suites-1",
+      "verifie": true,
+      "niveau": 2,
+      "chapitre": "Suites & récurrence",
+      "titre": "La suite qui cache une factorielle",
+      "source": "Poly Saint-Louis, Transition Terminale → MPSI / PCSI / MP2I — §2.3 « Des suites et des récurrences », ex. 1",
+      "accroche": "Cinq questions, une seule idée : la récurrence bien posée fait tomber le reste.",
+      "enonce": [
+        {
+          "type": "texte",
+          "valeur": "On pose $v_0 = 1$ et, pour tout $n \\in \\mathbb{N}$ :"
+        },
+        {
+          "type": "formule",
+          "cle": true,
+          "valeur": "v_{n+1} = (n+1)\\, v_n"
+        },
+        {
+          "type": "question",
+          "num": "a.",
+          "valeur": "Montrer que $v_n \\geqslant 0$, puis que $(v_n)$ est croissante."
+        },
+        {
+          "type": "question",
+          "num": "b.",
+          "valeur": "Montrer que $v_n \\geqslant n$, en déduire $\\displaystyle\\lim_{n \\to +\\infty} v_n$."
+        },
+        {
+          "type": "question",
+          "num": "c.",
+          "valeur": "Montrer que $v_n = n!$ pour tout $n \\geqslant 1$."
+        }
+      ],
+      "etapes": [
+        {
+          "titre": "Positivité : l'initialisation",
+          "blocs": [
+            {
+              "type": "texte",
+              "valeur": "On raisonne par récurrence sur la propriété $P(n) : v_n \\geqslant 0$."
+            },
+            {
+              "type": "formule",
+              "valeur": "v_0 = 1 \\geqslant 0"
+            }
+          ]
+        },
+        {
+          "titre": "Positivité : l'hérédité",
+          "blocs": [
+            {
+              "type": "texte",
+              "valeur": "Soit $n \\in \\mathbb{N}$ tel que $v_n \\geqslant 0$. Le facteur $n+1$ est positif, donc le produit l'est aussi."
+            },
+            {
+              "type": "formule",
+              "valeur": "v_{n+1} = \\underbrace{(n+1)}_{\\geqslant\\,0} \\times \\underbrace{v_n}_{\\geqslant\\,0} \\geqslant 0"
+            },
+            {
+              "type": "texte",
+              "valeur": "Par récurrence, $v_n \\geqslant 0$ pour tout $n \\in \\mathbb{N}$."
+            }
+          ]
+        },
+        {
+          "titre": "La suite est croissante",
+          "blocs": [
+            {
+              "type": "texte",
+              "valeur": "On étudie le signe de la différence de deux termes consécutifs."
+            },
+            {
+              "type": "formule",
+              "valeur": "v_{n+1} - v_n = (n+1)v_n - v_n = n\\,v_n \\geqslant 0"
+            },
+            {
+              "type": "astuce",
+              "valeur": "La positivité n'était pas une question de décoration : c'est elle qui donne le signe ici. En prépa, les questions d'un énoncé se servent toujours les unes des autres."
+            }
+          ]
+        },
+        {
+          "titre": "Minorer par 1",
+          "blocs": [
+            {
+              "type": "texte",
+              "valeur": "Une suite croissante est minorée par son premier terme."
+            },
+            {
+              "type": "formule",
+              "valeur": "\\forall n \\in \\mathbb{N}, \\quad v_n \\geqslant v_0 = 1"
+            }
+          ]
+        },
+        {
+          "titre": "En déduire $v_n \\geqslant n$",
+          "blocs": [
+            {
+              "type": "texte",
+              "valeur": "Pour $n \\geqslant 1$, on écrit la relation de récurrence au rang précédent et on y injecte $v_{n-1} \\geqslant 1$."
+            },
+            {
+              "type": "formule",
+              "cle": true,
+              "valeur": "v_n = n\\,v_{n-1} \\geqslant n \\times 1 = n"
+            },
+            {
+              "type": "texte",
+              "valeur": "Et pour $n = 0$ : $v_0 = 1 \\geqslant 0$. L'inégalité vaut donc sur tout $\\mathbb{N}$."
+            }
+          ]
+        },
+        {
+          "titre": "La limite, par comparaison",
+          "blocs": [
+            {
+              "type": "texte",
+              "valeur": "On minore par une suite dont la limite est connue : c’est le théorème de comparaison."
+            },
+            {
+              "type": "formule",
+              "valeur": "v_n \\geqslant n \\qquad \\text{et} \\qquad \\lim_{n \\to +\\infty} n = +\\infty"
+            },
+            {
+              "type": "formule",
+              "cle": true,
+              "valeur": "\\lim_{n \\to +\\infty} v_n = +\\infty"
+            }
+          ]
+        },
+        {
+          "titre": "Reconnaître la factorielle",
+          "blocs": [
+            {
+              "type": "texte",
+              "valeur": "On déroule la relation depuis $v_0 = 1$ :"
+            },
+            {
+              "type": "formule",
+              "valeur": "v_n = n\\,v_{n-1} = n(n-1)v_{n-2} = \\cdots = n(n-1)\\cdots 2 \\times 1 \\times v_0"
+            },
+            {
+              "type": "formule",
+              "cle": true,
+              "valeur": "v_n = n! \\qquad (n \\geqslant 1)"
+            },
+            {
+              "type": "astuce",
+              "marque": "Rédaction",
+              "valeur": "Les « $\\cdots$ » ne sont pas une preuve : en copie, cette dernière égalité se démontre par récurrence. La factorielle se définit d'ailleurs exactement comme cette suite."
+            }
+          ]
+        }
+      ],
+      "conclusion": "$(v_n)$ n'est pas une suite exotique : c'est la définition par récurrence de la factorielle. Reconnaître une suite classique déguisée fait gagner des points, et du temps.",
+      "hashtags_extra": "#recurrence #suites #factorielle"
+    }
+  ]
+}

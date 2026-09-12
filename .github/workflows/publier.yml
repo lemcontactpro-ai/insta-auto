@@ -18,7 +18,7 @@ on:
 jobs:
   publier:
     runs-on: ubuntu-latest
-    timeout-minutes: 10
+    timeout-minutes: 25
 
     steps:
       - uses: actions/checkout@v4
@@ -47,11 +47,33 @@ jobs:
             python publier.py --niche arabe
           fi
 
+      - name: Publier (maths-prepa)
+        env:
+          IG_USER_ID_MATHS_PREPA: ${{ secrets.IG_USER_ID_MATHS_PREPA }}
+          IG_TOKEN_MATHS_PREPA: ${{ secrets.IG_TOKEN_MATHS_PREPA }}
+          CLOUDINARY_CLOUD_NAME: ${{ secrets.CLOUDINARY_CLOUD_NAME }}
+          CLOUDINARY_API_KEY: ${{ secrets.CLOUDINARY_API_KEY }}
+          CLOUDINARY_API_SECRET: ${{ secrets.CLOUDINARY_API_SECRET }}
+        run: |
+          # La niche ne part que lorsque "actif" passe à true dans niches/config.json.
+          # Chromium (~1 min d'installation) n'est donc téléchargé que si besoin.
+          actif=$(python -c "import json; n=[x for x in json.load(open('niches/config.json'))['niches'] if x['id']=='maths-prepa'][0]; print('oui' if n.get('actif') else 'non')")
+          if [ "$actif" != "oui" ]; then
+            echo "Niche maths-prepa inactive — rien à publier."
+            exit 0
+          fi
+          python -m playwright install --with-deps chromium
+          if [ "${{ inputs.dry_run }}" = "true" ]; then
+            python publier.py --niche maths-prepa --dry-run
+          else
+            python publier.py --niche maths-prepa
+          fi
+
       - name: Commiter historique
         run: |
           git config user.name "GitHub Actions"
           git config user.email "actions@github.com"
-          git add niches/arabe/historique.json || true
+          git add niches/arabe/historique.json niches/maths-prepa/historique.json || true
           git commit -m "Mise à jour historique $(date -u +'%Y-%m-%d %H:%M UTC')" || true
           git push || true
 

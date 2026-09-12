@@ -2,3 +2,4 @@ requests>=2.31
 Pillow>=10.0
 python-dotenv>=1.0
 cloudinary>=1.40
+playwright>=1.44          # rendu HTML/KaTeX, niche maths-prepa

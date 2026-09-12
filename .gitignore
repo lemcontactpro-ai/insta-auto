@@ -24,3 +24,6 @@ build/
 .idea/
 *.swp
 *.swo
+
+# fichier temporaire du rendu maths
+._rendu_maths.html

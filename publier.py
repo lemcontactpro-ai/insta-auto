@@ -85,7 +85,31 @@ def enregistrer(niche, hist, cle_mot, fond, lien=None):
 
 # --------------------------------------------------------------- selection
 
+def choisir_exercice(niche, hist):
+    """Sélection pour les niches à moteur HTML/KaTeX : le contenu est une
+    liste d'exercices, pas un vocabulaire, et il n'y a pas de photo de fond."""
+    base = RACINE / niche["dossier"]
+    fichier = base / niche.get("contenu", "exercices.json")
+    items = [e for e in json.loads(fichier.read_text(encoding="utf-8"))["exercices"]
+             if e.get("verifie") is True]
+    if not items:
+        sys.exit(f"Aucun exercice vérifié dans {fichier} "
+                 f"(chaque exercice doit porter verifie=true).")
+
+    vus = {p["mot"] for p in hist["posts"]}
+    dispo = [e for e in items if f"exercice:{e['id']}" not in vus]
+    if not dispo:
+        print("    (tous les exercices vus cette semaine, on recycle)")
+        dispo = items
+
+    entree = random.choice(dispo)
+    return "exercice", f"exercice:{entree['id']}", entree, None
+
+
 def choisir(niche, hist):
+    if niche.get("moteur") == "html-katex":
+        return choisir_exercice(niche, hist)
+
     base = RACINE / niche["dossier"]
     vocab = json.loads((base / "vocabulaire.json").read_text(encoding="utf-8"))
 
@@ -163,7 +187,7 @@ def construire_legende(niche, type_post, e):
             f"{e['explication']}\n\n"
             "✨ Le français regorge de mots d'origine arabe ! Retrouve toute la liste dans notre ebook en bio 🔗"
         )
-        tags += " #etymologie #histoiredesmots #languefrancaise"
+        tags += " #etymologie"
     elif type_post == "prenom":
         corps = (
             f"✨ Prénom : {e['ar']} ({e['fr']})\n\n"
@@ -172,7 +196,7 @@ def construire_legende(niche, type_post, e):
             "👇 Ton prénom est-il d'origine arabe ? Dis-le-moi en commentaire et je te donne sa signification ! ✨\n\n"
             "📚 Ebook complet disponible en bio !"
         )
-        tags += " #prenomarabe #signification #prenom"
+        tags += " #prenomarabe"
     elif type_post == "grammaire":
         corps = (
             f"📘 Grammaire : {e['titre']}\n\n"
@@ -183,7 +207,7 @@ def construire_legende(niche, type_post, e):
             + (f"💡 {e['astuce']}\n\n" if e.get("astuce") else "")
             + "📚 Toutes les bases expliquées dans l'ebook en bio !"
         )
-        tags += " #grammaire #astucelangue"
+        tags += " #grammaire"
     else:  # conjugaison
         corps = (
             f"🔤 Conjugaison : {e['verbe_fr'].capitalize()} ({e['verbe_natif']})\n\n"
@@ -193,7 +217,7 @@ def construire_legende(niche, type_post, e):
             + f"📖 {e['exemple_natif']}\n« {e['exemple_fr']} »\n\n"
             + "📚 Le guide complet des conjugaisons dans l'ebook en bio !"
         )
-        tags += " #conjugaison #grammaire"
+        tags += " #conjugaison"
 
     return f"{corps}\n\n{tags}"
 
@@ -333,17 +357,21 @@ def traiter(niche, dry_run=False):
     hist = purger(charger_historique(niche))
     type_post, cle, entree, fond = choisir(niche, hist)
 
-    etiquette = entree.get("fr") or entree.get("ar")
-    print(f"[1] {type_post} → {etiquette}   fond : {fond.name}")
-
-    s1, s2 = generer.creer_post(type_post, entree, fond, sortie, niche, RACINE)
-    print("[2] slides générées")
-
-    legende = construire_legende(niche, type_post, entree)
+    if niche.get("moteur") == "html-katex":
+        import generer_maths
+        print(f"[1] {type_post} → {entree.get('titre')}")
+        slides = generer_maths.creer_post(entree, sortie, niche, RACINE)
+        legende = generer_maths.construire_legende(niche, entree)
+    else:
+        etiquette = entree.get("fr") or entree.get("ar")
+        print(f"[1] {type_post} → {etiquette}   fond : {fond.name}")
+        slides = list(generer.creer_post(type_post, entree, fond, sortie, niche, RACINE))
+        legende = construire_legende(niche, type_post, entree)
+    print(f"[2] {len(slides)} slides générées")
 
     if dry_run:
         print(f"\n--- LÉGENDE ---\n{legende}\n---------------")
-        print(f"Images : {s1}  {s2}")
+        print("Images :", "  ".join(str(p) for p in slides))
         print("Mode test : rien publié.")
         return
 
@@ -359,13 +387,13 @@ def traiter(niche, dry_run=False):
         return
 
     print("[3] hébergement")
-    urls = [heberger(s1), heberger(s2)]
+    urls = [heberger(p) for p in slides]
 
     print("[4] publication")
     lien = publier_carrousel(ig_id, token, urls, legende)
     print(f"    → {lien}")
 
-    enregistrer(niche, hist, cle, fond.name, lien)
+    enregistrer(niche, hist, cle, fond.name if fond else "-", lien)
     print("[5] historique à jour")
 
 

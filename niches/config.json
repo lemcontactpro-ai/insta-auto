@@ -48,7 +48,7 @@
         "rtl": true
       },
 
-      "hashtags_base": "#arabe #apprendrelarabe #languearabe #vocabulairearabe #coursdarabe #arabefacile #motarabe #languesetrangeres #apprentissage #culturearabe"
+      "hashtags_base": "#apprendrelarabe #languearabe #coursdarabe #vocabulairearabe"
     },
 
     {
@@ -101,7 +101,7 @@
         "rtl": false
       },
 
-      "hashtags_base": "#japonais #apprendrelejaponais #languejaponaise #vocabulairejaponais #日本語 #coursjaponais #japonaisfacile #languesetrangeres #apprentissage"
+      "hashtags_base": "#apprendrelejaponais #languejaponaise #coursjaponais #vocabulairejaponais"
     },
 
     {
@@ -154,23 +154,43 @@
         "rtl": false
       },
 
-      "hashtags_base": "#coreen #apprendrelecoreen #languecoréenne #vocabulairecoréen #한국어 #courscoreen #coreenfacile #languesetrangeres #apprentissage"
+      "hashtags_base": "#apprendrelecoreen #languecoréenne #courscoreen #vocabulairecoréen"
     },
 
     {
-      "id": "maths-prepa",
-      "actif": false,
-      "_todo": "À configurer entièrement — structure de contenu à définir avec l'utilisatrice (formules, théorèmes, astuces…). Fournir fichiers et ressources.",
-      "dossier": "niches/maths-prepa",
-      "compte": "@maths.prepa",
-      "horaires": ["08:00", "12:30", "19:00"],
-      "fuseau": "Europe/Paris",
-
-      "secrets": {
-        "ig_user_id": "IG_USER_ID_MATHS_PREPA",
-        "ig_token": "IG_TOKEN_MATHS_PREPA"
-      }
-    },
+        "id": "maths-prepa",
+        "actif": false,
+        "_todo": "Moteur et template prêts (generer_maths.py + gabarits/maths_prepa.css + vendor/). Reste à faire : enrichir exercices.json (objectif 40-60 exercices vérifiés), créer le compte Instagram + app Meta, configurer les secrets GitHub (IG_USER_ID_MATHS_PREPA, IG_TOKEN_MATHS_PREPA), ajouter IG_TOKEN_MATHS_PREPA dans renouveler_token.yml, puis passer actif à true.",
+        "dossier": "niches/maths-prepa",
+        "compte": "@maths.prepa",
+        "horaires": [
+          "07:30",
+          "13:00",
+          "19:30"
+        ],
+        "fuseau": "Europe/Paris",
+        "moteur": "html-katex",
+        "format": [
+          1080,
+          1350
+        ],
+        "fonds_requis": false,
+        "contenu": "exercices.json",
+        "secrets": {
+          "ig_user_id": "IG_USER_ID_MATHS_PREPA",
+          "ig_token": "IG_TOKEN_MATHS_PREPA"
+        },
+        "poids_types": {
+          "exercice": 100
+        },
+        "textes": {
+          "cta_ligne1": "Un exercice par jour,",
+          "cta_ligne2": "la méthode qui reste.",
+          "cta_sous_titre": "Le recueil complet",
+          "cta_bouton": "Lien en bio"
+        },
+        "hashtags_base": "#mathsprepa #prepascientifique #classeprepa #mathematiques #concourscpge"
+      },
 
     {
       "id": "chimie-prepa",
