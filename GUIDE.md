@@ -242,8 +242,37 @@ modèle de langage — c'est exactement l'erreur qui a produit les 8 rejets.
   échec silencieux, sans message d'erreur clair.
 - Images à une **URL publique** : l'API Meta les télécharge, on ne peut pas
   lui envoyer les octets directement. D'où l'usage de Cloudinary comme
-  hébergeur intermédiaire d'images (gratuit jusqu'à 25 crédits/mois, largement
-  suffisant pour ce volume).
+  hébergeur intermédiaire d'images (gratuit jusqu'à 25 crédits/mois, un
+  crédit valant environ 1 Go de stockage, de bande passante nette, ou 1000
+  transformations).
+  **Combien de niches ce système supporte** — mesuré sur un vrai slide
+  généré (arabe, JPEG 1080×1080 qualité 95) : ~140 Ko/slide en moyenne, soit
+  ~24,6 Mo/mois de **nouveau stockage** par niche (3 posts/jour × 2 slides ×
+  30 jours). Les images ne sont **jamais supprimées** de Cloudinary, donc ce
+  stockage s'accumule indéfiniment — c'est la seule contrainte qui compte
+  réellement à terme (la bande passante, remise à zéro chaque mois, et les
+  transformations, quasi nulles ici puisqu'aucune transformation Cloudinary
+  n'est appliquée à la livraison, restent négligeables face au plafond de
+  25 Go). Sans aucun nettoyage, temps avant d'atteindre les 25 Go de
+  stockage selon le nombre de niches actives, toutes au même rythme (3
+  posts/jour, 2 slides, taille d'image comparable à celle d'arabe) :
+
+  | Niches simultanées | Stockage ajouté/mois | Plafond 25 Go atteint dans |
+  |---|---|---|
+  | 6 (plan actuel) | ~147 Mo | ~14,5 ans |
+  | 10 | ~246 Mo | ~8,7 ans |
+  | 16 | ~393 Mo | ~5,4 ans |
+  | 20 | ~491 Mo | ~4,3 ans |
+  | 30 | ~737 Mo | ~2,9 ans |
+
+  **En pratique : jusqu'à ~16 niches simultanées tiennent au moins 5 ans sans
+  rien nettoyer**, et les 6 niches prévues ont largement plus d'une décennie
+  de marge. Au-delà, ou pour repousser l'échéance indéfiniment, il suffira
+  d'ajouter un nettoyage automatique (supprimer l'image Cloudinary une fois
+  la publication confirmée) — pas nécessaire tant qu'on reste dans ces
+  ordres de grandeur. Ce calcul suppose des images de taille comparable à
+  celles d'arabe ; un template beaucoup plus lourd (résolution plus haute,
+  photos non compressées) déplacerait ces chiffres à la baisse.
 - **50 publications maximum par 24h glissantes.** Un carrousel compte pour 1.
 - Le jeton d'accès expire tous les **60 jours** — cause n°1 de panne
   silencieuse si on oublie de le renouveler. **Depuis le 2026-09-12, ceci est
