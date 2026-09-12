@@ -240,11 +240,30 @@ def heberger(chemin):
 
 # --------------------------------------------------------------- instagram
 
-def _post(url, data):
-    r = requests.post(url, data=data, timeout=60)
-    if not r.ok:
+# error_subcode Meta renvoyé quand son propre fetcher ne peut pas encore
+# récupérer l'URL Cloudinary tout juste uploadée (souvent transitoire côté
+# propagation CDN, même si Meta le classe "is_transient": false). Notre
+# propre vérification d'accessibilité (_attendre_url_accessible) tape le
+# CDN depuis le runner GitHub Actions, pas depuis l'infra de fetch de Meta :
+# elle peut passer alors que Meta touche un edge différent, pas encore
+# propagé. D'où un retry sur l'appel Meta lui-même, seul test fiable.
+ERREUR_MEDIA_NON_SERVABLE = 2207052
+
+
+def _post(url, data, essais=1, delai=10):
+    for tentative in range(essais):
+        r = requests.post(url, data=data, timeout=60)
+        if r.ok:
+            return r.json()
+        try:
+            sous_code = r.json().get("error", {}).get("error_subcode")
+        except ValueError:
+            sous_code = None
+        if sous_code == ERREUR_MEDIA_NON_SERVABLE and tentative < essais - 1:
+            print(f"    (URL pas encore servable côté Meta, nouvel essai dans {delai}s...)")
+            time.sleep(delai)
+            continue
         raise RuntimeError(f"{r.status_code} — {r.text}")
-    return r.json()
 
 
 def attendre(cid, token, essais=20):
@@ -268,7 +287,7 @@ def publier_carrousel(ig_id, token, urls, legende):
             "image_url": u,
             "is_carousel_item": "true",
             "access_token": token,
-        })
+        }, essais=5, delai=10)
         enfants.append(rep["id"])
 
     for cid in enfants:
