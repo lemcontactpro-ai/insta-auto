@@ -289,6 +289,124 @@
       ],
       "conclusion": "$(v_n)$ n'est pas une suite exotique : c'est la définition par récurrence de la factorielle. Reconnaître une suite classique déguisée fait gagner des points, et du temps.",
       "hashtags_extra": "#recurrence #suites #factorielle"
+    },
+    {
+      "id": "llg-absurde-21",
+      "verifie": true,
+      "niveau": 2,
+      "chapitre": "Raisonnement par l'absurde",
+      "titre": "Deux racines qui refusent d'être une fraction",
+      "source": "Poly LLG / Henri-IV, Transition Terminale → CPGE — §1.3 « Le raisonnement par l'absurde », ex. 21",
+      "accroche": "La première partie est un classique. La seconde se règle en une ligne, à condition de voir laquelle.",
+      "enonce": [
+        {
+          "type": "question",
+          "num": "a.",
+          "valeur": "Montrer que $\\sqrt{6}$ est irrationnel."
+        },
+        {
+          "type": "question",
+          "num": "b.",
+          "valeur": "En déduire que $\\sqrt{2} + \\sqrt{3}$ est irrationnel."
+        }
+      ],
+      "etapes": [
+        {
+          "titre": "Poser l'absurde proprement",
+          "blocs": [
+            {
+              "type": "texte",
+              "valeur": "Supposons $\\sqrt{6}$ rationnel. On peut alors l'écrire sous forme d'une fraction $\\tfrac{p}{q}$ déjà réduite, avec $p, q \\in \\mathbb{N}^*$ premiers entre eux."
+            },
+            {
+              "type": "formule",
+              "valeur": "\\begin{gathered} \\sqrt{6} = \\dfrac{p}{q}, \\qquad \\operatorname{pgcd}(p,q) = 1 \\\\[8pt] p^{2} = 6\\,q^{2} \\end{gathered}"
+            },
+            {
+              "type": "astuce",
+              "valeur": "L'hypothèse « fraction irréductible » n'est pas cosmétique : c'est elle qui fournira la contradiction. Sans elle, il n'y a rien à contredire."
+            }
+          ]
+        },
+        {
+          "titre": "Premier étage : $2$ divise $p$",
+          "blocs": [
+            {
+              "type": "texte",
+              "valeur": "$p^{2} = 6q^{2} = 2\\,(3q^{2})$ est pair, donc $2$ divise $p^{2}$. Comme $2$ est premier, le lemme d'Euclide donne :"
+            },
+            {
+              "type": "formule",
+              "cle": true,
+              "valeur": "2 \\mid p^{2} \\;\\Longrightarrow\\; 2 \\mid p"
+            },
+            {
+              "type": "texte",
+              "valeur": "On écrit alors $p = 2k$ avec $k \\in \\mathbb{N}^*$."
+            }
+          ]
+        },
+        {
+          "titre": "Deuxième étage : $2$ divise aussi $q$",
+          "blocs": [
+            {
+              "type": "texte",
+              "valeur": "On réinjecte $p = 2k$ dans $p^{2} = 6q^{2}$ et on simplifie par $2$ :"
+            },
+            {
+              "type": "formule",
+              "valeur": "4k^{2} = 6q^{2} \\;\\Longleftrightarrow\\; 2k^{2} = 3q^{2}"
+            },
+            {
+              "type": "texte",
+              "valeur": "Le membre de gauche est pair, donc $2 \\mid 3q^{2}$. Or $2$ ne divise pas $3$, donc $2 \\mid q^{2}$, et à nouveau par le lemme d'Euclide, $2 \\mid q$."
+            }
+          ]
+        },
+        {
+          "titre": "La contradiction",
+          "blocs": [
+            {
+              "type": "texte",
+              "valeur": "$2$ divise $p$ et $q$, alors qu'ils étaient supposés premiers entre eux."
+            },
+            {
+              "type": "formule",
+              "cle": true,
+              "valeur": "\\sqrt{6} \\notin \\mathbb{Q}"
+            },
+            {
+              "type": "astuce",
+              "marque": "Portée",
+              "valeur": "Le raisonnement ne doit rien à $6$ : il vaut pour $\\sqrt{n}$ dès que $n$ n'est pas un carré parfait."
+            }
+          ]
+        },
+        {
+          "titre": "Le pont vers la question b.",
+          "blocs": [
+            {
+              "type": "texte",
+              "valeur": "Posons $x = \\sqrt{2} + \\sqrt{3}$ et élevons au carré : le double produit fait apparaître $\\sqrt{6}$."
+            },
+            {
+              "type": "formule",
+              "valeur": "\\begin{gathered} x^{2} = 2 + 2\\sqrt{6} + 3 = 5 + 2\\sqrt{6} \\\\[8pt] \\sqrt{6} = \\dfrac{x^{2} - 5}{2} \\end{gathered}"
+            },
+            {
+              "type": "texte",
+              "valeur": "Si $x$ était rationnel, $x^{2}$ le serait, donc $\\tfrac{x^{2}-5}{2}$ aussi, c'est-à-dire $\\sqrt{6}$. Ce qui vient d'être exclu."
+            },
+            {
+              "type": "formule",
+              "cle": true,
+              "valeur": "\\sqrt{2} + \\sqrt{3} \\notin \\mathbb{Q}"
+            }
+          ]
+        }
+      ],
+      "conclusion": "La question b. ne se démontre pas de front : on fabrique une expression rationnelle de $\\sqrt{6}$ à partir de $x$, et on laisse la question a. faire le travail. Reconnaître ce montage vaut mieux que de recommencer une descente infinie.",
+      "hashtags_extra": "#raisonnementparlabsurde"
     }
   ]
 }
