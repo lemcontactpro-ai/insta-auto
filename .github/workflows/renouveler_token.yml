@@ -32,5 +32,5 @@ jobs:
           IG_TOKEN_JAPONAIS: ${{ secrets.IG_TOKEN_JAPONAIS }}
           IG_TOKEN_COREEN: ${{ secrets.IG_TOKEN_COREEN }}
           IG_TOKEN_MATHS_PREPA: ${{ secrets.IG_TOKEN_MATHS_PREPA }}
-          IG_TOKEN_CHIMIE_PREPA: ${{ secrets.IG_TOKEN_CHIMIE_PREPA }}
+          IG_TOKEN_PHYSIQUE_PREPA: ${{ secrets.IG_TOKEN_PHYSIQUE_PREPA }}
         run: python renouveler_token.py

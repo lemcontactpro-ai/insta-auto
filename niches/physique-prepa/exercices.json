@@ -1,0 +1,23 @@
+{
+  "_lisez_moi": "Contenu de la niche physique-prépa. Un objet par exercice. Le LaTeX s'écrit entre $...$ dans les champs texte, et brut (sans $) dans les blocs de type 'formule'. RÈGLE : chaque exercice est rédigé à la main depuis le PDF source puis relu ligne à ligne — les .md de sources/ sont des OCR dont toutes les formules en affichage ont été perdues, ils ne servent que de repérage. Un exercice n'est publiable que si 'verifie' vaut true.",
+  "_schema": {
+    "id": "identifiant unique, stable (sert à l'anti-répétition)",
+    "verifie": "true seulement après relecture mathématique complète",
+    "niveau": "1 à 4 — nombre d'étoiles affichées (reprend les pastilles ➀➁➂➃ des sources)",
+    "chapitre": "pastille de la slide 1, en majuscules au rendu",
+    "titre": "titre court de la slide 1, 60 caractères maximum",
+    "source": "référence de la source — USAGE INTERNE UNIQUEMENT, jamais affichée sur les slides ni dans la légende ; sert à retrouver l'exercice dans les PDF. Facultative.",
+    "accroche": "une ligne pour la légende Instagram (facultatif)",
+    "enonce": "liste de blocs — slide 1",
+    "etapes": "liste d'étapes ; chacune a un 'titre' et une liste de 'blocs'. 5 slides maximum : au-delà de 5 étapes, elles sont regroupées automatiquement (répartition équilibrée par poids visuel). Une étape peut porter 'groupe': <int> pour forcer son placement, mais alors toutes doivent en porter un.",
+    "conclusion": "bilan affiché sur la slide CTA (facultatif)",
+    "blocs": {
+      "texte": "paragraphe",
+      "question": "paragraphe précédé d'un numéro ('num')",
+      "formule": "formule centrée en carte ; 'cle': true la passe en aubergine plein",
+      "astuce": "encart crème ; 'marque' remplace le libellé « Astuce »",
+      "filet": "séparateur"
+    }
+  },
+  "exercices": []
+}
