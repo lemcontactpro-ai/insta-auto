@@ -1,6 +1,5 @@
 {
   "_lisez_moi": "Une entrée par niche. Pour ajouter une niche, copie un bloc, change les valeurs, crée le dossier niches/<id>/ avec vocabulaire.json et fonds/. Rien d'autre à toucher dans le code.",
-
   "niches": [
     {
       "id": "arabe",
@@ -8,20 +7,20 @@
       "dossier": "niches/arabe",
       "compte": "@arabe.academie",
       "langue_phrase": "apprend l'arabe",
-      "horaires": ["08:00", "12:30", "19:00"],
+      "horaires": [
+        "12:30",
+        "19:00"
+      ],
       "fuseau": "Europe/Paris",
-
       "secrets": {
         "ig_user_id": "IG_USER_ID_ARABE",
         "ig_token": "IG_TOKEN_ARABE"
       },
-
       "poids_types": {
         "mot": 70,
         "etymologie": 15,
         "prenom": 15
       },
-
       "textes": {
         "tag_mot": "APPRENDS L'ARABE",
         "tag_etymologie": "DE L'ARABE AU FRANÇAIS",
@@ -31,27 +30,43 @@
         "cta_sous_titre": "EBOOK INTERACTIF",
         "cta_bouton": "LIEN EN BIO"
       },
-
       "palette": {
-        "or": [232, 185, 122],
-        "or_fonce": [200, 149, 90],
-        "creme": [245, 230, 210],
-        "voile": [15, 10, 5],
+        "or": [
+          232,
+          185,
+          122
+        ],
+        "or_fonce": [
+          200,
+          149,
+          90
+        ],
+        "creme": [
+          245,
+          230,
+          210
+        ],
+        "voile": [
+          15,
+          10,
+          5
+        ],
         "voile_alpha": 165,
-        "voile_cta": [60, 35, 12],
+        "voile_cta": [
+          60,
+          35,
+          12
+        ],
         "voile_cta_alpha": 195,
         "flou": 2
       },
-
       "polices": {
         "titre": "PlayfairDisplay.ttf",
         "etrangere": "NotoNaskhArabic.ttf",
         "rtl": true
       },
-
       "hashtags_base": "#apprendrelarabe #languearabe #coursdarabe #vocabulairearabe"
     },
-
     {
       "id": "japonais",
       "actif": false,
@@ -59,14 +74,15 @@
       "dossier": "niches/japonais",
       "compte": "@japonais.academie",
       "langue_phrase": "apprend le japonais",
-      "horaires": ["09:00", "13:00", "20:00"],
+      "horaires": [
+        "12:30",
+        "19:00"
+      ],
       "fuseau": "Europe/Paris",
-
       "secrets": {
         "ig_user_id": "IG_USER_ID_JAPONAIS",
         "ig_token": "IG_TOKEN_JAPONAIS"
       },
-
       "poids_types": {
         "mot": 50,
         "etymologie": 0,
@@ -74,7 +90,6 @@
         "grammaire": 15,
         "conjugaison": 15
       },
-
       "textes": {
         "tag_mot": "APPRENDS LE JAPONAIS",
         "tag_prenom": "LE SENS DES PRÉNOMS",
@@ -85,27 +100,43 @@
         "cta_sous_titre": "EBOOK INTERACTIF",
         "cta_bouton": "LIEN EN BIO"
       },
-
       "palette": {
-        "or": [220, 80, 80],
-        "or_fonce": [180, 40, 40],
-        "creme": [255, 245, 245],
-        "voile": [20, 5, 5],
+        "or": [
+          220,
+          80,
+          80
+        ],
+        "or_fonce": [
+          180,
+          40,
+          40
+        ],
+        "creme": [
+          255,
+          245,
+          245
+        ],
+        "voile": [
+          20,
+          5,
+          5
+        ],
         "voile_alpha": 160,
-        "voile_cta": [60, 10, 10],
+        "voile_cta": [
+          60,
+          10,
+          10
+        ],
         "voile_cta_alpha": 190,
         "flou": 2
       },
-
       "polices": {
         "titre": "PlayfairDisplay.ttf",
         "etrangere": "NotoSansJP.ttf",
         "rtl": false
       },
-
       "hashtags_base": "#apprendrelejaponais #languejaponaise #coursjaponais #vocabulairejaponais"
     },
-
     {
       "id": "coreen",
       "actif": false,
@@ -113,14 +144,15 @@
       "dossier": "niches/coreen",
       "compte": "@coreen.academie",
       "langue_phrase": "apprend le coréen",
-      "horaires": ["09:00", "13:00", "20:00"],
+      "horaires": [
+        "12:30",
+        "19:00"
+      ],
       "fuseau": "Europe/Paris",
-
       "secrets": {
         "ig_user_id": "IG_USER_ID_COREEN",
         "ig_token": "IG_TOKEN_COREEN"
       },
-
       "poids_types": {
         "mot": 50,
         "etymologie": 0,
@@ -128,7 +160,6 @@
         "grammaire": 15,
         "conjugaison": 15
       },
-
       "textes": {
         "tag_mot": "APPRENDS LE CORÉEN",
         "tag_prenom": "LE SENS DES PRÉNOMS",
@@ -139,75 +170,110 @@
         "cta_sous_titre": "EBOOK INTERACTIF",
         "cta_bouton": "LIEN EN BIO"
       },
-
       "palette": {
-        "or": [70, 130, 210],
-        "or_fonce": [40, 90, 170],
-        "creme": [240, 245, 255],
-        "voile": [5, 10, 25],
+        "or": [
+          70,
+          130,
+          210
+        ],
+        "or_fonce": [
+          40,
+          90,
+          170
+        ],
+        "creme": [
+          240,
+          245,
+          255
+        ],
+        "voile": [
+          5,
+          10,
+          25
+        ],
         "voile_alpha": 160,
-        "voile_cta": [10, 25, 70],
+        "voile_cta": [
+          10,
+          25,
+          70
+        ],
         "voile_cta_alpha": 190,
         "flou": 2
       },
-
       "polices": {
         "titre": "PlayfairDisplay.ttf",
         "etrangere": "NotoSansKR.ttf",
         "rtl": false
       },
-
       "hashtags_base": "#apprendrelecoreen #languecoréenne #courscoreen #vocabulairecoréen"
     },
-
     {
-        "id": "maths-prepa",
-        "actif": false,
-        "_todo": "Moteur et template prêts (generer_maths.py + gabarits/maths_prepa.css + vendor/). Reste à faire : enrichir exercices.json (objectif 40-60 exercices vérifiés), créer le compte Instagram + app Meta, configurer les secrets GitHub (IG_USER_ID_MATHS_PREPA, IG_TOKEN_MATHS_PREPA), ajouter IG_TOKEN_MATHS_PREPA dans renouveler_token.yml, puis passer actif à true.",
-        "dossier": "niches/maths-prepa",
-        "compte": "@maths.prepa",
-        "horaires": [
-          "07:30",
-          "13:00",
-          "19:30"
-        ],
-        "fuseau": "Europe/Paris",
-        "moteur": "html-katex",
-        "format": [
-          1080,
-          1350
-        ],
-        "fonds_requis": false,
-        "contenu": "exercices.json",
-        "secrets": {
-          "ig_user_id": "IG_USER_ID_MATHS_PREPA",
-          "ig_token": "IG_TOKEN_MATHS_PREPA"
-        },
-        "poids_types": {
-          "exercice": 100
-        },
-        "textes": {
-          "cta_ligne1": "Un exercice par jour,",
-          "cta_ligne2": "la méthode qui reste.",
-          "cta_sous_titre": "Le recueil complet",
-          "cta_bouton": "Lien en bio"
-        },
-        "hashtags_base": "#mathsprepa #prepascientifique #classeprepa #mathematiques #concourscpge"
-      },
-
-    {
-      "id": "chimie-prepa",
+      "id": "maths-prepa",
       "actif": false,
-      "_todo": "À configurer entièrement — structure de contenu à définir avec l'utilisatrice (réactions, lois, mnémotechniques…). Fournir fichiers et ressources.",
-      "dossier": "niches/chimie-prepa",
-      "compte": "@chimie.prepa",
-      "horaires": ["08:00", "12:30", "19:00"],
+      "_todo": "Moteur et template prêts (generer_maths.py + gabarits/ (structure + palette) + vendor/). Reste à faire : enrichir exercices.json (objectif 40-60 exercices vérifiés), créer le compte Instagram + app Meta, configurer les secrets GitHub (IG_USER_ID_MATHS_PREPA, IG_TOKEN_MATHS_PREPA), ajouter IG_TOKEN_MATHS_PREPA dans renouveler_token.yml, puis passer actif à true.",
+      "dossier": "niches/maths-prepa",
+      "compte": "@maths.prepa",
+      "horaires": [
+        "12:30",
+        "19:00"
+      ],
       "fuseau": "Europe/Paris",
-
+      "moteur": "html-katex",
+      "gabarit": "tuiles-nuit-ambre.css",
+      "format": [
+        1080,
+        1350
+      ],
+      "fonds_requis": false,
+      "contenu": "exercices.json",
       "secrets": {
-        "ig_user_id": "IG_USER_ID_CHIMIE_PREPA",
-        "ig_token": "IG_TOKEN_CHIMIE_PREPA"
-      }
+        "ig_user_id": "IG_USER_ID_MATHS_PREPA",
+        "ig_token": "IG_TOKEN_MATHS_PREPA"
+      },
+      "poids_types": {
+        "exercice": 100
+      },
+      "textes": {
+        "cta_ligne1": "Un exercice par jour,",
+        "cta_ligne2": "la méthode qui reste.",
+        "cta_sous_titre": "Le recueil complet",
+        "cta_bouton": "Lien en bio"
+      },
+      "hashtags_base": "#mathsprepa #prepascientifique #mpsi #methodemaths"
+    },
+    {
+      "id": "physique-prepa",
+      "actif": false,
+      "_todo": "Structure et charte arrêtées (gélules, palette aubergine). Reste à faire : écrire exercices.json (objectif 40-60 exercices vérifiés), créer le compte Instagram + app Meta, configurer les secrets GitHub (IG_USER_ID_PHYSIQUE_PREPA, IG_TOKEN_PHYSIQUE_PREPA), ajouter la ligne dans renouveler_token.yml, puis passer actif à true. Voir MISE-EN-PLACE.md pour la procédure complète.",
+      "dossier": "niches/physique-prepa",
+      "compte": "@physique.prepa",
+      "horaires": [
+        "12:30",
+        "19:00"
+      ],
+      "fuseau": "Europe/Paris",
+      "moteur": "html-katex",
+      "gabarit": "gelules-aubergine.css",
+      "format": [
+        1080,
+        1350
+      ],
+      "fonds_requis": false,
+      "contenu": "exercices.json",
+      "secrets": {
+        "ig_user_id": "IG_USER_ID_PHYSIQUE_PREPA",
+        "ig_token": "IG_TOKEN_PHYSIQUE_PREPA"
+      },
+      "poids_types": {
+        "exercice": 100
+      },
+      "textes": {
+        "cta_ligne1": "Une notion par jour,",
+        "cta_ligne2": "la physique qui tient.",
+        "cta_sous_titre": "Le recueil complet",
+        "cta_bouton": "Lien en bio"
+      },
+      "hashtags_base": "#physiqueprepa #prepascientifique #mpsi #methodephysique"
     }
   ]
 }
