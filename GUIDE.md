@@ -1,56 +1,52 @@
-# Automatisation Instagram — Guide complet et instructions d'exécution
+# Automatisation Instagram — guide technique
 
-Ce document est autosuffisant : il ne suppose aucune conversation préalable.
-Il s'adresse à la fois à l'utilisatrice (Amy) et à tout agent IA exécutant
-la mise en place (Claude Code, Antigravity, ou autre).
+Ce document décrit **comment le système fonctionne**. Il s'adresse à un agent
+IA ou à un développeur qui reprend le projet.
+
+| Pour | Lire |
+|---|---|
+| Comprendre et modifier le système | ce document |
+| Lancer une nouvelle niche, pas à pas | `MISE-EN-PLACE.md` |
+| Le business : modèle, prix, marketing, erreurs | `../Guide.md` |
+| Une niche en particulier | `niches/<id>/README.md` |
 
 ---
 
 ## 0. Instructions pour l'agent exécutant
 
-Si tu es un agent IA chargé de mettre en place ce projet, lis cette section
-en premier.
+**Ne réécris rien depuis zéro.** Le code, la configuration et le contenu
+existent. Les sections ci-dessous expliquent pourquoi les choses sont faites
+ainsi ; les redécouvrir par essai-erreur coûte du temps déjà dépensé.
 
-**Contexte de départ :** ce dossier contient déjà tout le code, la
-configuration et le vocabulaire nécessaires. Rien n'est à réécrire depuis
-zéro. Ta mission est d'exécuter la mise en place décrite en section 7, pas
-de redessiner l'architecture.
+**Ne modifie pas sans instruction explicite :**
 
-**Étape à faire en premier — localiser les photos de fond :**
-Le dossier de travail contient, quelque part, un sous-dossier avec des
-photos destinées à servir de fond aux visuels Instagram (architecture
-marocaine/arabe, ruelles, mosaïques, etc.). Ce sous-dossier n'est **pas**
-`niches/arabe/fonds/` — il faut le localiser (cherche un dossier contenant
-des fichiers `.jpg`, `.jpeg`, `.png` ou `.webp` en dehors de l'arborescence
-du projet décrite en section 3), puis **copier toutes ses images** dans
-`niches/arabe/fonds/` (ce dossier existe déjà, vide, avec un fichier
-`.gitkeep` à conserver ou supprimer selon convenance).
+| Quoi | Pourquoi |
+|---|---|
+| `niches/arabe/vocabulaire.json`, en particulier `_etymologies_ecartees` | 8 étymologies ont été écartées après vérification. Ne jamais les réintroduire, la contradiction a déjà été tranchée (§5) |
+| La règle de placement vertical mesuré dans `generer.py` | L'arabe vocalisé déborde de sa position nominale. Des coordonnées en dur produisent des superpositions (§4) |
+| Les choix d'architecture (GitHub Actions, pas de Google Drive) | Les raisons sont en §2. Ne pas les reproposer |
 
-**Ne modifie pas** sans instruction explicite de l'utilisatrice :
-- Le vocabulaire dans `niches/arabe/vocabulaire.json` — en particulier ne
-  jamais réintroduire les entrées listées dans `_etymologies_ecartees`
-  (voir section 5).
-- Le template visuel dans `generer.py` — en particulier la règle de
-  placement vertical mesuré (voir section 4).
-- Les choix d'architecture (GitHub Actions, pas de Google Drive, pas de
-  Cowork, pas de Claude Code Routines) — les raisons sont données en
-  section 2, ne pas les reproposer sans qu'on te le demande.
+**N'invente jamais la valeur d'un secret.** S'il en manque un, arrête-toi et
+demande. Un secret ne se colle ni dans le code, ni dans une conversation.
 
-**N'invente jamais** de valeurs de secrets (jetons, clés API). Si un secret
-manque, arrête-toi et demande à l'utilisatrice de le fournir — voir section
-6 et étape F.
+**Ne lis jamais les PDF** de `../atelier/*/sources/` ni de
+`../atelier/maths-prepa/bibliotheque/`. Un poly scanné coûte plus de contexte
+qu'une session entière de travail. Les `.md` à côté sont les OCR et servent au
+repérage.
 
-**Sur la vérification du vocabulaire :** si on te demande d'ajouter des mots
-ou des étymologies, vérifie systématiquement chaque étymologie par une
-recherche web avant de l'ajouter. Ne te fie jamais à ta mémoire seule sur ce
-point — une première tentative sans vérification a produit 8 erreurs sur 30
-(détail en section 5).
+**Vérifie tout contenu factuel** par recherche web avec source citée, ou
+rédige-le à la main et relis-le ligne à ligne. Jamais depuis ta seule mémoire :
+une première tentative sans cette discipline a produit 8 erreurs sur 30
+étymologies (§5).
+
+**Regarde les images produites**, ne te contente pas de valider le JSON. Un
+champ trop long ou une fonction de dessin réutilisée sans adaptation casse le
+rendu sans lever d'erreur.
 
 ---
-
 ## 1. Le projet en une phrase
 
-Publier automatiquement 3 posts/jour sur plusieurs comptes Instagram
+Publier automatiquement 2 posts/jour, midi et soir, sur plusieurs comptes Instagram
 thématiques (niches), chacun vendant un **ebook interactif** (jamais juste
 un PDF — terminologie fixée le 2026-09-12, à reprendre partout : templates,
 légendes, fiche Payhip, guides), sans intervention manuelle et sans que
@@ -66,7 +62,7 @@ différents à chaque fois.
 
 ### Hébergement : GitHub Actions
 - **Gratuit**, illimité en dépôt public, 2000 min/mois en privé (largement
-  suffisant : 6 niches × 3 posts/jour × 30 jours ≈ 540 minutes utilisées).
+  suffisant : 6 niches × 2 posts/jour × 30 jours ≈ 360 minutes utilisées).
 - Le code tourne sur les serveurs de GitHub, pas sur l'ordinateur de
   l'utilisatrice — condition impérative du projet.
 - Alternative écartée : **Claude Code Routines** (fonctionnalité réelle de
@@ -100,16 +96,6 @@ différents à chaque fois.
   mise en place, la maintenance, ou l'enrichissement de contenu — jamais à
   chaque publication.
 
-### Structure des conversations Claude : par sujet, pas par niche
-Si l'utilisatrice travaille aussi dans un Projet claude.ai en parallèle :
-une conversation par sujet technique (GitHub, Meta, contenu, template),
-réutilisée pour toutes les niches, plutôt qu'un jeu complet de conversations
-dupliqué à chaque nouvelle niche.
-
-### Cowork : non pertinent ici
-Cowork est un outil de travail collaboratif humain-Claude sur des tâches de
-connaissance, pas un planificateur de tâches récurrentes. Aucune utilité
-pour ce projet.
 
 ---
 
@@ -154,7 +140,7 @@ le coût en appels IA reste nul à vie une fois une niche activée (section 2,
 
 ```
 insta-auto/                          (dépôt GitHub, à créer)
-├── .github/workflows/publier.yml    # cron 3x/jour, appelle publier.py
+├── .github/workflows/publier.yml    # cron 2x/jour (midi, soir), appelle publier.py
 ├── publier.py                        # orchestrateur multi-niches
 ├── generer.py                        # génération des slides
 ├── requirements.txt
@@ -224,7 +210,7 @@ second moteur coexiste donc, choisi par niche via `"moteur"` dans
 | `"html-katex"` | `generer_maths.py`, Chromium + KaTeX, 1080×1350, jusqu'à 7 slides | maths-prepa |
 
 **Comment ça marche.** `generer_maths.py` compose un document HTML (un
-`<section>` par slide, style dans `gabarits/maths_prepa.css`), le charge dans
+`<section>` par slide, style dans `gabarits/structure-gelules.css`), le charge dans
 Chromium via Playwright, fait composer le LaTeX par KaTeX, puis photographie
 chaque section en JPEG.
 
@@ -253,7 +239,7 @@ Chromium (~1 min d'installation) n'est téléchargé que le jour où elle part.
 **Coût en tokens** : toujours nul à l'exécution. Chromium et KaTeX sont des
 outils déterministes, pas des modèles.
 
-**Pour une future niche scientifique** (chimie-prepa, physique…) : reprendre
+**Pour une future niche scientifique** (physique-prepa, physique…) : reprendre
 `"moteur": "html-katex"`, un `exercices.json` au même schéma, et un fichier
 CSS dédié dans `gabarits/` si la palette change. Aucun code à réécrire.
 
@@ -286,40 +272,20 @@ modèle de langage — c'est exactement l'erreur qui a produit les 8 rejets.
 
 ---
 
-## 5 bis. Stratégie hashtags (vérifiée par sources, 2026-09-12)
+## 5 bis. Règle hashtags
 
-Ramené de **10-13 hashtags par légende** à **4-5 maximum** (4 fixes par
-niche dans `hashtags_base` + 1 spécifique au type de post dans
-`construire_legende()`), après recherche — pas juste "on m'a dit que" :
+**4 hashtags maximum dans `hashtags_base`**, plus **au plus 1** spécifique au
+type de post dans `construire_legende()`. Jamais plus de 5 au total.
 
-- **Adam Mosseri (chef d'Instagram) a déclaré publiquement que les
-  hashtags ne boostent plus la portée** — de simples "labels" de
-  catégorisation, plus un levier de croissance.
-- **Instagram plafonne techniquement les posts à 5 hashtags depuis fin
-  2025** — plus une option, une limite imposée par la plateforme.
-- **Deux études à grand échantillon convergent sur 3-5 hashtags** comme
-  optimum pour le *taux* d'engagement : Hootsuite (5M+ posts, 2025) et
-  Social Insider (75M+ posts).
-- Une étude contraire existe (Later, 18M posts, juin 2025, trouve un
-  bénéfice à 20-30 hashtags) mais mesure la portée/l'engagement **brut**,
-  pas le taux — biais classique où les comptes qui spamment des hashtags
-  sont aussi souvent ceux qui postent le plus/mieux pour d'autres raisons
-  (corrélation ≠ causalité) — et est de toute façon rendue obsolète par
-  le plafond technique à 5 introduit après cette étude.
-- **Ce qui compte davantage désormais** : Instagram indexe le texte de la
-  légende elle-même comme un moteur de recherche (mots-clés naturels,
-  texte à l'écran, sous-titres) plutôt que les hashtags — d'où
-  l'importance de garder des légendes riches en mots-clés naturels
-  (déjà le cas ici), pas seulement empiler des hashtags.
+Instagram plafonne techniquement à 5 depuis fin 2025 et les hashtags ne
+boostent plus la portée. Éviter les quasi-doublons (`#arabe` + `#languearabe`
++ `#coursdarabe` se chevauchent tous). Ce qui compte davantage : Instagram
+indexe le texte de la légende comme un moteur de recherche, d'où l'intérêt de
+légendes riches en mots-clés naturels.
 
-**Règle pour toute nouvelle niche** : `hashtags_base` = 4 tags maximum,
-les plus pertinents et distincts (éviter les quasi-doublons du type
-`#arabe` + `#languearabe` + `#coursdarabe` + `#arabefacile` qui se
-chevauchent tous) ; chaque type de post peut ajouter **au plus 1** tag
-spécifique, jamais plus — total toujours ≤ 5.
+Justification complète, études et sources : `../Guide.md` §4.
 
 ---
-
 ## 6. Contraintes API Meta (Instagram)
 
 - Compte Instagram **Professionnel**, lié à une Page Facebook.
@@ -338,9 +304,11 @@ spécifique, jamais plus — total toujours ≤ 5.
   calcul ci-dessous). Vérifier de temps en temps le tableau de bord
   Cloudinary réel, les conditions du plan gratuit pouvant évoluer.
   **Combien de niches ce système supporte** — mesuré sur un vrai slide
-  généré (arabe, JPEG 1080×1080 qualité 95) : ~140 Ko/slide en moyenne, soit
-  ~24,6 Mo/mois de **nouveau stockage** par niche (3 posts/jour × 2 slides ×
-  30 jours). Les images ne sont **jamais supprimées** de Cloudinary, donc ce
+  générés : **183 Ko/slide** pour une niche langue (Pillow, fond photo,
+  1080×1080) et **107 Ko/slide** pour une niche scientifique (KaTeX, design à
+  plat, 1080×1350). À 2 posts/jour sur 30 jours, cela donne ~22 Mo/mois de
+  **nouveau stockage** pour une niche langue (2 slides par post) et ~45 Mo/mois
+  pour une niche scientifique (7 slides par post). Les images ne sont **jamais supprimées** de Cloudinary, donc ce
   stockage s'accumule indéfiniment — c'est la seule contrainte qui compte
   réellement à terme (la bande passante, remise à zéro chaque mois, et les
   transformations, quasi nulles ici puisqu'aucune transformation Cloudinary
@@ -392,132 +360,56 @@ spécifique, jamais plus — total toujours ≤ 5.
 
 ---
 
-## 7. Étapes à suivre, dans l'ordre
+## 7. Lancer une nouvelle niche
 
-### Étape 0 — Choisir et créer le contenu d'une nouvelle niche (Gemini + Claude Code)
-Cette étape précède tout le reste et se fait avant même de toucher au dépôt
-GitHub — voir la répartition des rôles en section 2 bis.
+La procédure complète est dans **`MISE-EN-PLACE.md`**, écrit pour être lu par
+un agent qui conduit ensuite l'entretien avec l'utilisatrice : quelles
+questions poser, où trouver chaque valeur côté Meta, Cloudinary et GitHub,
+quels secrets créer, et le rapport de ce qui bloque.
 
-1. **Choisir le sujet et le compte** : une langue, une matière scolaire, un
-   domaine — avec son identité (`@nom.academie`) et ce qu'il vend en bio
-   (l'ebook, comme pour arabe).
-2. **Définir les types de post et leur pondération** (`poids_types` dans
-   `config.json`) : pour une langue, mot / étymologie / prénom / grammaire /
-   conjugaison comme arabe, japonais, coréen ; pour une matière comme
-   maths-prepa ou chimie-prepa, adapter les types au sujet (ex. formule,
-   méthode, erreur classique) — le principe reste le même, un gabarit par
-   type dans `generer.py` et `construire_legende()`.
-3. **Rédiger le contenu avec Gemini**, recherche web systématique et source
-   citée pour chaque entrée (règle de la section 5, non négociable, quel que
-   soit le sujet). Produire `niches/<id>/vocabulaire.json` selon la
-   structure des familles déjà utilisées (voir `niches/arabe/vocabulaire.json`
-   comme référence de format).
-4. **Faire vérifier et rendre le contenu par Claude Code** : validation JSON,
-   puis **rendu réel de chaque type de slide** — ne jamais se contenter de
-   relire le JSON. Un champ trop long ou une fonction de dessin réutilisée
-   sans adaptation (ex. surlignage RTL appliqué à une langue LTR) casse le
-   rendu silencieusement ; c'est exactement ce qui s'est produit lors de la
-   création de japonais/coréen et a été détecté seulement à l'affichage. Si
-   la niche a une identité graphique distincte (palette, police, décor),
-   c'est aussi le moment de l'ajuster dans `generer.py`/`config.json`.
-5. **Réunir les photos de fond** (15-20 minimum, 50+ idéal) — voir Étape A.
-6. **Ajouter le bloc de config** dans `niches/config.json` (secrets,
-   `poids_types`, `textes`, `palette`, `polices`, `hashtags_base`), avec
-   `"actif": false` tant que le compte Instagram et l'app Meta ne sont pas
-   prêts (étapes D à F) — puis `"actif": true` une fois testé en dry-run
-   (étape G) et le compte réellement configuré.
+En résumé, ce qui change quand on ajoute une niche :
 
-### Étape A — Localiser et copier les photos de fond
-Voir section 0. Copier toutes les images du dossier personnel de
-l'utilisatrice vers `niches/arabe/fonds/`. Minimum recommandé : 15-20
-photos pour une rotation correcte, idéalement 50+.
+| Fichier | Modification |
+|---|---|
+| `niches/config.json` | un bloc, copié d'une niche voisine |
+| `niches/<id>/` | contenu, `fonds/` (niches Pillow uniquement), `sortie/` |
+| `.github/workflows/renouveler_token.yml` | une ligne `IG_TOKEN_<NICHE>` dans `env` |
+| `.github/workflows/publier.yml` | une étape, si la niche a son propre moteur |
+| GitHub → Settings → Secrets | `IG_USER_ID_<NICHE>` et `IG_TOKEN_<NICHE>` |
 
-### Étape B — Créer le dépôt GitHub
-Créer un nouveau dépôt (public ou privé, les deux fonctionnent — public
-donne un quota d'exécution illimité). Nom suggéré : `insta-auto`.
-
-### Étape C — Pousser les fichiers dans le dépôt
-Initialiser git dans le dossier de travail (s'il ne l'est pas déjà),
-committer l'ensemble de l'arborescence décrite en section 3 (avec les
-photos maintenant présentes dans `niches/arabe/fonds/`), pousser vers le
-dépôt GitHub créé à l'étape B.
-
-### Étape D — Connecter Instagram à l'API Meta
-Étapes nécessitant l'utilisatrice elle-même (voir section 6) : compte Pro,
-Page Facebook, PPA, création de l'app Meta, permissions, récupération de
-l'IG User ID, génération d'un jeton longue durée. Un agent IA (Claude Code
-via terminal, par exemple) peut guider pas à pas à travers chaque écran,
-mais ne peut pas cliquer à la place de l'utilisatrice sur les écrans de
-consentement Meta.
-
-### Étape E — Créer un compte Cloudinary
-Gratuit, sert à héberger temporairement les images le temps que Meta les
-récupère. Compte en quelques minutes sur cloudinary.com.
-
-### Étape F — Configurer les secrets GitHub
-Dans le dépôt : Settings → Secrets and variables → Actions → New repository
-secret. Créer chaque secret listé dans `.env.example` avec sa vraie valeur
-(`IG_USER_ID_ARABE`, `IG_TOKEN_ARABE`, `CLOUDINARY_CLOUD_NAME`,
-`CLOUDINARY_API_KEY`, `CLOUDINARY_API_SECRET`).
-
-**Un secret n'est jamais écrit dans le code ni collé dans une session
-d'agent IA.** Il doit être saisi directement dans l'interface web GitHub par
-l'utilisatrice, pour éviter qu'il reste visible dans un historique de
-terminal ou de conversation. Si le jeton se trouvait dans `publier.py`,
-n'importe qui consultant un dépôt public pourrait le voler.
-
-### Étape G — Tester en simulation
-Localement, ou via le déclenchement manuel du workflow GitHub Actions
-(`workflow_dispatch`, avec l'option `dry_run` déjà prévue dans
-`.github/workflows/publier.yml`) :
-```bash
-python3 publier.py --niche arabe --dry-run
-```
-Vérifier l'image générée et la légende, sans rien publier.
-
-### Étape H — Première publication réelle
-```bash
-python3 publier.py --niche arabe
-```
-Vérifier que le post apparaît sur Instagram.
-
-### Étape I — Confirmer l'activation du cron
-Une fois poussé dans le dépôt, l'onglet **Actions** du dépôt GitHub doit
-montrer les 3 tâches programmées (8h, 13h30, 19h heure de Paris, converties
-en UTC dans le fichier). Aucune autre action nécessaire ensuite — ça tourne
-seul, indéfiniment.
-
-**Point de vigilance saisonnier** : GitHub Actions raisonne en UTC. Le
-fichier est calé sur l'heure d'hiver (UTC+1). Au passage à l'heure d'été
-(UTC+2), il faudra décaler les horaires cron d'une heure dans
-`.github/workflows/publier.yml`.
-
-### Étape J — Répéter pour les niches suivantes
-Une fois Arabe stable depuis quelques semaines : reprendre à l'Étape 0 pour
-le contenu (Gemini + Claude Code), puis répéter les étapes D à F pour le
-nouveau compte Instagram. Pour le renouvellement automatique du jeton
-(section 6), ajouter la ligne `IG_TOKEN_<NICHE>` correspondante dans
-`.github/workflows/renouveler_token.yml`.
+Aucune ligne de `publier.py` ni de `generer.py` n'est à toucher.
 
 ---
+## 8. Inventaire du dépôt
 
-## 8. Contenu de ce dossier / de cette archive
+```
+insta-auto/
+├── GUIDE.md                    ce document (technique)
+├── MISE-EN-PLACE.md            script d'entretien pour lancer une niche
+├── publier.py                  orchestrateur multi-niches
+├── generer.py                  rendu Pillow — 1080×1080, 2 slides
+├── generer_maths.py            rendu Chromium + KaTeX — 1080×1350, 7 slides
+├── renouveler_token.py         échange du jeton Meta avant expiration
+├── requirements.txt
+├── .env.example                liste des secrets attendus
+├── .github/workflows/
+│   ├── publier.yml             cron 2×/jour, midi et soir + déclenchement manuel
+│   └── renouveler_token.yml    2×/mois, écrit le nouveau secret par API
+├── gabarits/
+│   └── structure-gelules.css         système visuel du moteur HTML
+├── vendor/
+│   ├── katex/                  KaTeX + ses polices, embarqués
+│   └── inter/                  Inter, embarquée
+├── polices/                    Noto Naskh Arabic, Noto Sans JP, Noto Sans KR, Playfair Display
+├── exemple_etymologie.png      rendu de référence du template Pillow
+└── niches/
+    ├── config.json             une entrée par niche
+    ├── arabe/                  actif — 317 mots, 34 étymologies, 30 prénoms, 57 fonds
+    ├── japonais/  coreen/      contenu prêt, comptes à créer
+    ├── maths-prepa/            moteur prêt, 2 exercices, + README.md
+    └── physique-prepa/           réservé
+```
 
-- `GUIDE.md` — ce document
-- `publier.py` — script d'orchestration
-- `generer.py` — générateur de slides
-- `requirements.txt` — dépendances Python
-- `.env.example` — modèle des secrets à créer sur GitHub
-- `.github/workflows/publier.yml` — planification GitHub Actions (publication)
-- `renouveler_token.py` + `.github/workflows/renouveler_token.yml` —
-  renouvellement automatique du jeton Meta avant expiration (section 6)
-- `niches/config.json` — configuration centrale des niches
-- `niches/arabe/vocabulaire.json` — vocabulaire vérifié (317 mots, 34
-  étymologies, 30 prénoms)
-- `niches/arabe/fonds/` — dossier vide à remplir (voir section 0 / étape A)
-- `polices/` — les deux polices nécessaires au rendu
-- `exemple_etymologie.png` — rendu de référence à jour du template
-
-**Rien d'autre n'est nécessaire.** Ne pas régénérer le code, la config ou
-le vocabulaire depuis zéro : tout est déjà prêt, seule la mise en place
-(sections 0 et 7) reste à exécuter.
+**Une seule copie des photos de fond arabes existe**, dans
+`niches/arabe/fonds/`. Le générateur de l'ebook y pointe par chemin relatif.
+Toute nouvelle photo va là, nulle part ailleurs.
