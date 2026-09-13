@@ -1,0 +1,16 @@
+/* Nuit & Ambre — variante de palette pour la structure « tuiles ».
+   N'redéfinit que des couleurs : la structure vit dans structure-tuiles.css. */
+
+@import url("structure-tuiles.css");
+
+:root {
+  --tile-dark:     #15161c;
+  --blue:          #a8792e;
+  --blue-on-dark:  #e6bc72;
+  --parchment:     #f2f2f3;
+  --pearl:         #f7f3ea;
+  --on-dark-mute:  #b5b0a4;
+  /* papier quadrillé sur les slides claires :
+     décommenter la ligne suivante pour l'activer */
+  /* --grille: rgba(19, 26, 46, .055); */
+}

@@ -1,0 +1,16 @@
+/* Vert Académie — variante de palette pour la structure « tuiles ».
+   N'redéfinit que des couleurs : la structure vit dans structure-tuiles.css. */
+
+@import url("structure-tuiles.css");
+
+:root {
+  --tile-dark:     #12241d;
+  --blue:          #2f6f52;
+  --blue-on-dark:  #7cc9a1;
+  --parchment:     #edf4f0;
+  --pearl:         #f4f1e8;
+  --on-dark-mute:  #a6c4b4;
+  /* papier quadrillé sur les slides claires :
+     décommenter la ligne suivante pour l'activer */
+  /* --grille: rgba(19, 26, 46, .055); */
+}

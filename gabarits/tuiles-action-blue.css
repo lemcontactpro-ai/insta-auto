@@ -1,0 +1,16 @@
+/* Action Blue (charte Apple d'origine) — palette pour la structure « tuiles ».
+   N'redéfinit que des couleurs : la structure vit dans structure-tuiles.css. */
+
+@import url("structure-tuiles.css");
+
+:root {
+  --tile-dark:     #272729;
+  --blue:          #0066cc;
+  --blue-on-dark:  #2997ff;
+  --parchment:     #f5f5f7;
+  --pearl:         #fafafc;
+  --on-dark-mute:  #cccccc;
+  /* papier quadrillé sur les slides claires :
+     décommenter la ligne suivante pour l'activer */
+  /* --grille: rgba(29, 29, 31, .05); */
+}

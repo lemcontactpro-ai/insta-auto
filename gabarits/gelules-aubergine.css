@@ -1,0 +1,22 @@
+/* Aubergine (charte Slack d'origine) — palette pour la structure « gelules ».
+   N'redéfinit que des couleurs : la structure vit dans structure-gelules.css. */
+
+@import url("structure-gelules.css");
+
+:root {
+  --aubergine:       #4a154b;
+  --aubergine-press: #611f69;
+  --aubergine-tint:  #592466;
+  --accent:          #4a154b;
+  --accent-on-fonce: #d9bdde;
+  --cream:           #f4ede4;
+  --lavender:        #f9f0ff;
+  --mute-on-aub:     #d9bdde;
+  --mesh-a:          rgba(255, 214, 183, .22);
+  --mesh-b:          rgba(233, 216, 255, .26);
+  --mesh-c:          rgba(176, 214, 196, .16);
+  --wash:            rgba(244, 237, 228, .85);
+  /* papier quadrillé sur les slides claires :
+     décommenter la ligne suivante pour l'activer */
+  /* --grille: rgba(74, 21, 75, .05); */
+}

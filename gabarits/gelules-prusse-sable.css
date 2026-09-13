@@ -1,0 +1,22 @@
+/* Prusse & Sable — variante de palette pour la structure « gelules ».
+   N'redéfinit que des couleurs : la structure vit dans structure-gelules.css. */
+
+@import url("structure-gelules.css");
+
+:root {
+  --aubergine:       #0e2439;
+  --aubergine-press: #0e2439;
+  --aubergine-tint:  #2a6ba8;
+  --accent:          #2a6ba8;
+  --accent-on-fonce: #82b9e8;
+  --cream:           #f2ece0;
+  --lavender:        #ecf1f6;
+  --mute-on-aub:     #9db6cd;
+  --mesh-a:          rgba(120, 180, 230, .15);
+  --mesh-b:          rgba(240, 220, 180, .09);
+  --mesh-c:          rgba(70, 130, 180, .10);
+  --wash:            rgba(242, 238, 230, .82);
+  /* papier quadrillé sur les slides claires :
+     décommenter la ligne suivante pour l'activer */
+  /* --grille: rgba(19, 26, 46, .055); */
+}

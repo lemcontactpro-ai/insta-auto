@@ -1,0 +1,16 @@
+/* Ardoise & Cuivre — variante de palette pour la structure « tuiles ».
+   N'redéfinit que des couleurs : la structure vit dans structure-tuiles.css. */
+
+@import url("structure-tuiles.css");
+
+:root {
+  --tile-dark:     #1e2126;
+  --blue:          #a86432;
+  --blue-on-dark:  #e5a875;
+  --parchment:     #f1f2f4;
+  --pearl:         #f6f1ea;
+  --on-dark-mute:  #b8b3ad;
+  /* papier quadrillé sur les slides claires :
+     décommenter la ligne suivante pour l'activer */
+  /* --grille: rgba(19, 26, 46, .055); */
+}

@@ -1,0 +1,22 @@
+/* Ardoise & Cuivre — variante de palette pour la structure « gelules ».
+   N'redéfinit que des couleurs : la structure vit dans structure-gelules.css. */
+
+@import url("structure-gelules.css");
+
+:root {
+  --aubergine:       #1e2126;
+  --aubergine-press: #1e2126;
+  --aubergine-tint:  #a86432;
+  --accent:          #a86432;
+  --accent-on-fonce: #e5a875;
+  --cream:           #f6f1ea;
+  --lavender:        #f1f2f4;
+  --mute-on-aub:     #b8b3ad;
+  --mesh-a:          rgba(224, 162, 115, .13);
+  --mesh-b:          rgba(255, 255, 255, .05);
+  --mesh-c:          rgba(180, 140, 100, .09);
+  --wash:            rgba(244, 241, 236, .82);
+  /* papier quadrillé sur les slides claires :
+     décommenter la ligne suivante pour l'activer */
+  /* --grille: rgba(19, 26, 46, .055); */
+}

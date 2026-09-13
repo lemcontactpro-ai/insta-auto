@@ -1,0 +1,16 @@
+/* Encre & Indigo — variante de palette pour la structure « tuiles ».
+   N'redéfinit que des couleurs : la structure vit dans structure-tuiles.css. */
+
+@import url("structure-tuiles.css");
+
+:root {
+  --tile-dark:     #131a2e;
+  --blue:          #33469f;
+  --blue-on-dark:  #93a6ee;
+  --parchment:     #eff2fa;
+  --pearl:         #f3f0e9;
+  --on-dark-mute:  #a9b4d8;
+  /* papier quadrillé sur les slides claires :
+     décommenter la ligne suivante pour l'activer */
+  /* --grille: rgba(19, 26, 46, .055); */
+}

@@ -1,0 +1,309 @@
+/* ==========================================================================
+   Structure « tuiles » — système visuel partagé
+   Dérivée de design/DESIGN-apple.md.
+   Mêmes classes que structure-gelules.css : on change de gabarit dans
+   niches/config.json, rien d'autre.
+
+   Ce que la charte impose et qui se voit ici :
+   · un seul accent, l'Action Blue #0066cc (#2997ff sur fond sombre)
+   · aucun dégradé, aucune bordure décorative, aucune ombre sur le chrome
+   · une seule ombre dans tout le système, réservée à « l'objet » posé sur
+     une surface — ici la formule clé, le produit de la slide
+   · l'alternance clair / sombre EST le séparateur
+   · échelle de graisses 300 / 400 / 600 / 700, le 500 est délibérément absent
+   · interlignage de corps à 1.47, jamais plus serré
+   ========================================================================== */
+
+@font-face { font-family: Inter; font-weight: 300; font-display: block;
+  src: url("../vendor/inter/inter-latin-300-normal.woff2") format("woff2"); }
+@font-face { font-family: Inter; font-weight: 400; font-display: block;
+  src: url("../vendor/inter/inter-latin-400-normal.woff2") format("woff2"); }
+@font-face { font-family: Inter; font-weight: 600; font-display: block;
+  src: url("../vendor/inter/inter-latin-600-normal.woff2") format("woff2"); }
+@font-face { font-family: Inter; font-weight: 700; font-display: block;
+  src: url("../vendor/inter/inter-latin-700-normal.woff2") format("woff2"); }
+@font-face { font-family: Inter; font-weight: 300; font-display: block; unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+  src: url("../vendor/inter/inter-latin-ext-300-normal.woff2") format("woff2"); }
+@font-face { font-family: Inter; font-weight: 400; font-display: block; unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+  src: url("../vendor/inter/inter-latin-ext-400-normal.woff2") format("woff2"); }
+@font-face { font-family: Inter; font-weight: 600; font-display: block; unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+  src: url("../vendor/inter/inter-latin-ext-600-normal.woff2") format("woff2"); }
+
+:root {
+  /* --- couleurs (tokens DESIGN-apple.md) --- */
+  --blue:          #0066cc;   /* Action Blue, surfaces claires */
+  --blue-on-dark:  #2997ff;   /* Sky Link Blue, surfaces sombres uniquement */
+  --ink:           #1d1d1f;
+  --ink-80:        #333333;
+  --ink-48:        #7a7a7a;
+  --hairline:      rgba(0, 0, 0, .08);
+  --canvas:        #ffffff;
+  --parchment:     #f5f5f7;
+  --pearl:         #fafafc;
+  --tile-dark:     #272729;
+  --on-dark:       #ffffff;
+  --on-dark-mute:  #cccccc;
+  --grille:        transparent;
+
+  /* --- géométrie --- */
+  --pad:      96px;
+  --pad-v:    100px;
+  --r-sm:     8px;
+  --r-md:     11px;
+  --r-lg:     18px;
+  --r-pill:   9999px;
+
+  /* --- typo : ratios Apple portés à l'échelle d'une slide 1080 px --- */
+  --fit: 1;
+  --t-display: calc(84px * var(--fit));   /* hero-display, 600, tracking négatif */
+  --t-h1:      calc(56px * var(--fit));   /* display-lg */
+  --t-h2:      calc(44px * var(--fit));
+  --t-body:    calc(38px * var(--fit));   /* body, 400, 1.47 */
+  --t-body-sm: calc(33px * var(--fit));
+  --t-cap:     calc(30px * var(--fit));
+  --t-micro:   26px;
+  --t-math:    calc(46px * var(--fit));
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  font-family: Inter, "SF Pro Text", system-ui, -apple-system, sans-serif;
+  background: #0a0a0a;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: geometricPrecision;
+}
+
+.slide {
+  position: relative;
+  width: 1080px;
+  height: 1350px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  padding: var(--pad-v) var(--pad);
+  background: var(--canvas);
+  color: var(--ink);
+}
+
+/* Aucun dégradé, aucune texture : le changement de surface est le séparateur. */
+.slide--aub { background: var(--tile-dark); color: var(--on-dark); }
+.slide--aub::before, .slide--clair::before { content: none; }
+
+/* grille façon papier quadrillé — invisible tant que --grille vaut transparent */
+.slide--clair::after {
+  content: ""; position: absolute; inset: 0; z-index: 0; pointer-events: none;
+  background-image:
+    repeating-linear-gradient(to right,  var(--grille) 0 1px, transparent 1px 60px),
+    repeating-linear-gradient(to bottom, var(--grille) 0 1px, transparent 1px 60px);
+}
+.slide--clair > * { position: relative; z-index: 1; }
+
+/* ------------------------------------------------------------- bandeau haut */
+
+.tete {
+  display: flex; align-items: center; justify-content: space-between;
+  gap: 24px; flex: 0 0 auto;
+}
+
+.handle {
+  font-size: var(--t-micro); font-weight: 400;
+  letter-spacing: -.4px; text-transform: none;
+  color: var(--ink-48);
+}
+.slide--aub .handle { color: var(--on-dark-mute); }
+
+.compteur {
+  font-size: var(--t-micro); font-weight: 600;
+  letter-spacing: -.4px; text-transform: none;
+  color: var(--ink-48);
+}
+.slide--aub .compteur { color: var(--on-dark-mute); }
+
+/* étoiles : l'accent bleu est réservé à l'interactif, la difficulté reste en encre */
+.etoiles { display: flex; gap: 9px; align-items: center; }
+.etoiles svg { width: 30px; height: 30px; display: block; }
+.etoiles .pleine  { fill: var(--on-dark); }
+.etoiles .vide    { fill: rgba(255, 255, 255, .28); }
+.slide--clair .etoiles .pleine { fill: var(--ink); }
+.slide--clair .etoiles .vide   { fill: rgba(29, 29, 31, .18); }
+
+/* progression : un filet, pas un élément graphique */
+.progression { display: flex; gap: 6px; margin-top: 30px; flex: 0 0 auto; }
+.progression span {
+  height: 3px; flex: 1 1 0; border-radius: var(--r-pill);
+  background: rgba(29, 29, 31, .12);
+}
+.progression span.on { background: var(--ink); }
+
+/* ------------------------------------------------------------- « pill » */
+/* Apple ne met pas d'étiquette en gélule : le chapitre devient une tagline. */
+
+.pill {
+  display: inline-block;
+  font-size: calc(28px); font-weight: 600;
+  letter-spacing: .2px; text-transform: none;
+  padding: 0; border-radius: 0;
+  background: none; color: var(--blue);
+}
+.slide--aub .pill {
+  background: none; box-shadow: none; color: var(--blue-on-dark);
+}
+
+/* ------------------------------------------------------------------- corps */
+
+.corps {
+  flex: 1 1 auto;
+  display: flex; flex-direction: column;
+  justify-content: center;
+  gap: calc(34px * var(--fit));
+  min-height: 0;
+  padding: 44px 0;
+}
+.corps--haut { justify-content: flex-start; padding-top: 66px; }
+
+.sous-etape + .sous-etape {
+  border-top: 1px solid var(--hairline);
+  padding-top: calc(38px * var(--fit));
+}
+.sous-etape { display: flex; flex-direction: column; gap: calc(30px * var(--fit)); }
+
+.titre-exo {
+  font-size: var(--t-display); font-weight: 600;
+  line-height: 1.07; letter-spacing: -2.2px;
+}
+
+.titre-etape {
+  font-size: var(--t-h1); font-weight: 600;
+  line-height: 1.1; letter-spacing: -1.1px;
+  color: var(--ink);
+}
+
+.texte {
+  font-size: var(--t-body); font-weight: 400;
+  line-height: 1.47; letter-spacing: -.85px;
+  color: var(--ink);
+}
+.slide--aub .texte { color: var(--on-dark); }
+.texte strong { font-weight: 600; }
+
+.question {
+  display: flex; gap: 20px; align-items: baseline;
+  font-size: var(--t-body); line-height: 1.47; letter-spacing: -.85px;
+}
+.question .num {
+  flex: 0 0 auto; font-weight: 600; font-size: var(--t-body-sm);
+  color: var(--blue-on-dark); font-variant-numeric: tabular-nums;
+}
+.slide--clair .question .num { color: var(--blue); }
+
+/* carte utilitaire : parchemin, filet 1 px, rayon 18 px. Pas d'ombre. */
+.formule {
+  background: var(--parchment);
+  border: 1px solid var(--hairline);
+  border-radius: var(--r-lg);
+  padding: calc(46px * var(--fit)) 38px;
+  text-align: center;
+  font-size: var(--t-math);
+  color: var(--ink);
+  overflow: hidden;
+}
+.slide--aub .formule {
+  background: rgba(255, 255, 255, .06);
+  border-color: rgba(255, 255, 255, .12);
+  color: var(--on-dark);
+}
+
+/* La formule clé est « le produit » de la slide : seul élément du système
+   qui porte l'unique ombre de la charte. */
+.formule--cle {
+  background: var(--canvas);
+  border-color: rgba(0, 0, 0, .06);
+  color: var(--ink);
+  box-shadow: rgba(0, 0, 0, .22) 3px 5px 30px 0;
+}
+.slide--aub .formule--cle {
+  background: var(--canvas);
+  border-color: transparent;
+  color: var(--ink);
+  box-shadow: rgba(0, 0, 0, .45) 3px 5px 30px 0;
+}
+.formule .katex { font-size: 1em; }
+
+/* encart astuce : carte utilitaire, libellé en bleu */
+.astuce {
+  display: flex; gap: 26px; align-items: flex-start;
+  background: var(--pearl);
+  border: 1px solid var(--hairline);
+  border-radius: var(--r-lg);
+  padding: calc(34px * var(--fit)) 36px;
+  font-size: var(--t-body-sm); line-height: 1.47; letter-spacing: -.6px;
+  color: var(--ink-80);
+}
+.astuce .marque {
+  flex: 0 0 auto;
+  font-size: 26px; font-weight: 600; letter-spacing: -.4px;
+  text-transform: none; color: var(--blue);
+  padding-top: 4px;
+}
+.slide--aub .astuce {
+  background: rgba(255, 255, 255, .06);
+  border-color: rgba(255, 255, 255, .12);
+  color: var(--on-dark);
+}
+.slide--aub .astuce .marque { color: var(--blue-on-dark); }
+
+.filet { height: 1px; width: 100%; background: var(--hairline); border-radius: 0; }
+.slide--aub .filet { background: rgba(255, 255, 255, .14); }
+
+/* ------------------------------------------------------------------- pieds */
+
+.pied {
+  flex: 0 0 auto;
+  display: flex; align-items: center; justify-content: space-between;
+  gap: 20px;
+  font-size: var(--t-micro); font-weight: 400;
+  letter-spacing: -.4px; text-transform: none;
+  color: var(--blue);
+}
+.slide--aub .pied { color: var(--blue-on-dark); }
+.pied .source { display: none; }
+
+.swipe { display: flex; align-items: center; gap: 10px; white-space: nowrap; }
+.swipe svg { width: 22px; height: 22px; }
+.swipe svg path { fill: currentColor; }
+
+/* ---------------------------------------------------------------- slide CTA */
+
+.cta-corps {
+  flex: 1 1 auto;
+  display: flex; flex-direction: column; justify-content: center;
+}
+.cta-titre {
+  font-size: calc(88px); font-weight: 600;
+  line-height: 1.07; letter-spacing: -2.4px;
+  color: var(--on-dark);
+}
+.cta-sous {
+  margin-top: 52px;
+  font-size: var(--t-cap); font-weight: 400; letter-spacing: -.5px;
+  text-transform: none; color: var(--on-dark-mute);
+}
+.cta-bouton {
+  margin-top: 30px; align-self: flex-start;
+  background: var(--blue); color: #ffffff;
+  font-size: 34px; font-weight: 400; letter-spacing: -.6px;
+  padding: 24px 52px; border-radius: var(--r-pill);
+}
+.cta-note {
+  margin-top: 44px;
+  font-size: var(--t-body-sm); font-weight: 300; line-height: 1.5;
+  letter-spacing: -.5px; color: var(--on-dark-mute);
+}
+
+/* ------------------------------------------------------------------ katex */
+
+.katex { font-size: 1em !important; }
+.katex-display { margin: 0 !important; }
+.katex-display > .katex { white-space: normal; }
+.texte .katex, .question .katex, .astuce .katex { font-size: .97em !important; }

@@ -1,0 +1,22 @@
+/* Nuit & Ambre — variante de palette pour la structure « gelules ».
+   N'redéfinit que des couleurs : la structure vit dans structure-gelules.css. */
+
+@import url("structure-gelules.css");
+
+:root {
+  --aubergine:       #15161c;
+  --aubergine-press: #15161c;
+  --aubergine-tint:  #a8792e;
+  --accent:          #a8792e;
+  --accent-on-fonce: #e6bc72;
+  --cream:           #f7f3ea;
+  --lavender:        #f2f2f3;
+  --mute-on-aub:     #b5b0a4;
+  --mesh-a:          rgba(230, 188, 114, .12);
+  --mesh-b:          rgba(255, 255, 255, .04);
+  --mesh-c:          rgba(160, 130, 80, .08);
+  --wash:            rgba(246, 243, 236, .82);
+  /* papier quadrillé sur les slides claires :
+     décommenter la ligne suivante pour l'activer */
+  /* --grille: rgba(19, 26, 46, .055); */
+}

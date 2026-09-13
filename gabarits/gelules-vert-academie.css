@@ -1,0 +1,22 @@
+/* Vert Académie — variante de palette pour la structure « gelules ».
+   N'redéfinit que des couleurs : la structure vit dans structure-gelules.css. */
+
+@import url("structure-gelules.css");
+
+:root {
+  --aubergine:       #12241d;
+  --aubergine-press: #12241d;
+  --aubergine-tint:  #2f6f52;
+  --accent:          #2f6f52;
+  --accent-on-fonce: #7cc9a1;
+  --cream:           #f4f1e8;
+  --lavender:        #edf4f0;
+  --mute-on-aub:     #a6c4b4;
+  --mesh-a:          rgba(120, 200, 160, .13);
+  --mesh-b:          rgba(255, 232, 190, .08);
+  --mesh-c:          rgba(90, 160, 130, .10);
+  --wash:            rgba(239, 244, 240, .82);
+  /* papier quadrillé sur les slides claires :
+     décommenter la ligne suivante pour l'activer */
+  /* --grille: rgba(19, 26, 46, .055); */
+}

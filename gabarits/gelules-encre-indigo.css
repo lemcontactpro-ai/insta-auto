@@ -1,0 +1,22 @@
+/* Encre & Indigo — variante de palette pour la structure « gelules ».
+   N'redéfinit que des couleurs : la structure vit dans structure-gelules.css. */
+
+@import url("structure-gelules.css");
+
+:root {
+  --aubergine:       #131a2e;
+  --aubergine-press: #131a2e;
+  --aubergine-tint:  #33469f;
+  --accent:          #33469f;
+  --accent-on-fonce: #93a6ee;
+  --cream:           #f3f0e9;
+  --lavender:        #eff2fa;
+  --mute-on-aub:     #a9b4d8;
+  --mesh-a:          rgba(120, 140, 230, .16);
+  --mesh-b:          rgba(200, 180, 255, .10);
+  --mesh-c:          rgba(255, 214, 170, .07);
+  --wash:            rgba(239, 242, 250, .8);
+  /* papier quadrillé sur les slides claires :
+     décommenter la ligne suivante pour l'activer */
+  /* --grille: rgba(19, 26, 46, .055); */
+}

@@ -387,10 +387,17 @@ def construire_html(exo: dict, niche: dict, racine: Path) -> tuple[str, int]:
               .replace("%FIT_MIN%", str(FIT_MIN))
               .replace("%FIT_PAS%", str(FIT_PAS)))
 
+    # Le gabarit visuel est un simple fichier CSS, choisi par niche.
+    # Les classes HTML ne changent pas : changer de charte graphique, c'est
+    # changer cette seule valeur dans niches/config.json.
+    gabarit = niche.get("gabarit", "gelules-aubergine.css")
+    if not (racine / "gabarits" / gabarit).exists():
+        raise ValueError(f"Gabarit introuvable : gabarits/{gabarit}")
+
     page = f"""<!doctype html>
 <html lang="fr"><head><meta charset="utf-8">
 <link rel="stylesheet" href="vendor/katex/katex.min.css">
-<link rel="stylesheet" href="gabarits/maths_prepa.css">
+<link rel="stylesheet" href="gabarits/{gabarit}">
 <script src="vendor/katex/katex.min.js"></script>
 </head><body>
 {''.join(corps)}

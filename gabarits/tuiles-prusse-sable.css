@@ -1,0 +1,16 @@
+/* Prusse & Sable — variante de palette pour la structure « tuiles ».
+   N'redéfinit que des couleurs : la structure vit dans structure-tuiles.css. */
+
+@import url("structure-tuiles.css");
+
+:root {
+  --tile-dark:     #0e2439;
+  --blue:          #2a6ba8;
+  --blue-on-dark:  #82b9e8;
+  --parchment:     #ecf1f6;
+  --pearl:         #f2ece0;
+  --on-dark-mute:  #9db6cd;
+  /* papier quadrillé sur les slides claires :
+     décommenter la ligne suivante pour l'activer */
+  /* --grille: rgba(19, 26, 46, .055); */
+}
