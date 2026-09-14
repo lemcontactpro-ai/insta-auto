@@ -288,9 +288,15 @@ Justification complète, études et sources : `../Guide.md` §4.
 ---
 ## 6. Contraintes API Meta (Instagram)
 
-- Compte Instagram **Professionnel**, lié à une Page Facebook.
-- **Page Publishing Authorization (PPA)** obligatoire — son absence cause un
-  échec silencieux, sans message d'erreur clair.
+- Compte Instagram **Professionnel** (Créateur ou Entreprise, pas Personnel).
+  **Depuis le 14/09/2026, plus aucune Page Facebook liée, plus aucun ajout du
+  compte comme élément du portefeuille business** — l'app utilise le cas
+  d'utilisation « Instagram API with Instagram Login » (pas « Instagram API
+  with Facebook Login »), qui ne requiert ni Page ni ces liaisons. C'est un
+  changement délibéré suite à un incident (voir « Trois interdits »
+  ci-dessous) : lier une Page ou ajouter un compte au portefeuille recrée un
+  accès croisé entre niches. La Page Publishing Authorization, spécifique au
+  chemin Page Facebook, ne s'applique plus.
 - Images à une **URL publique** : l'API Meta les télécharge, on ne peut pas
   lui envoyer les octets directement. D'où l'usage de Cloudinary comme
   hébergeur intermédiaire d'images (gratuit jusqu'à 25 crédits/mois, un
@@ -335,26 +341,31 @@ Justification complète, études et sources : `../Guide.md` §4.
   photos non compressées) déplacerait ces chiffres à la baisse.
 - **50 publications maximum par 24h glissantes.** Un carrousel compte pour 1.
 - Le jeton d'accès expire tous les **60 jours** — cause n°1 de panne
-  silencieuse si on oublie de le renouveler. **Depuis le 2026-09-12, ceci est
+  silencieuse si on oublie de le renouveler. **Depuis le 2026-09-12,
   automatisé** par `.github/workflows/renouveler_token.yml` (exécuté deux
-  fois par mois via `renouveler_token.py`), qui échange le jeton actuel
-  contre un nouveau via l'endpoint Meta `fb_exchange_token` et met à jour le
-  secret GitHub `IG_TOKEN_<NICHE>` directement par API. Ça nécessite trois
-  secrets supplémentaires, une seule fois pour tout le dépôt (partagés entre
-  toutes les niches, un seul compte Facebook gérant toutes les Pages) :
-  `META_APP_ID`, `META_APP_SECRET` (Meta for Developers → l'app → Paramètres
-  de l'app → Général) et `GH_PAT_SECRETS` (un token GitHub personnel
-  *fine-grained*, limité à ce dépôt, permission Secrets en lecture/écriture
-  — c'est le seul moyen d'écrire un secret par API, le `GITHUB_TOKEN`
-  automatique des workflows n'en a pas le droit par sécurité). **Pour
-  activer une nouvelle niche**, ajouter sa ligne `IG_TOKEN_<NICHE>: ${{
-  secrets.IG_TOKEN_<NICHE> }}` dans le bloc `env` de
+  fois par mois via `renouveler_token.py`) ; **depuis le 14/09/2026**, ce
+  renouvellement passe par l'endpoint Instagram Login
+  `graph.instagram.com/refresh_access_token` (`ig_refresh_token`), qui ne
+  nécessite que le jeton lui-même (pas d'App ID). Un repli sur
+  `graph.instagram.com/access_token` (`ig_exchange_token`, avec l'App
+  Secret) existe pour le cas rare d'un jeton encore court, jamais échangé.
+  Le script met à jour le secret GitHub `IG_TOKEN_<NICHE>` directement par
+  API. Deux secrets suffisent, une seule fois pour tout le dépôt (partagés
+  entre toutes les niches) : `META_APP_SECRET` (Meta for Developers → l'app
+  « Niches Auto » → Paramètres de l'app → Général) et `GH_PAT_SECRETS` (un
+  token GitHub personnel *fine-grained*, limité à ce dépôt, permission
+  Secrets en lecture/écriture — c'est le seul moyen d'écrire un secret par
+  API, le `GITHUB_TOKEN` automatique des workflows n'en a pas le droit par
+  sécurité). **Pour activer une nouvelle niche**, ajouter sa ligne
+  `IG_TOKEN_<NICHE>: ${{ secrets.IG_TOKEN_<NICHE> }}` dans le bloc `env` de
   `renouveler_token.yml` — le script lui-même n'a rien d'autre à changer,
   il lit `niches/config.json` et ne traite que les niches `"actif": true`.
-- **Un seul compte Facebook peut administrer plusieurs Pages**, donc gérer
-  les 6 niches prévues sans multiplier les comptes Meta.
-- Ces étapes (création app Meta, PPA, jeton) nécessitent des écrans de
-  consentement humain sur le site Meta/Facebook. Aucun agent IA ne peut les
+- **Une seule app Meta partagée** (« Niches Auto ») porte toutes les niches :
+  chaque nouveau compte n'a besoin que du rôle de testeur Instagram sur
+  cette app (onglet Rôles du cas d'utilisation Instagram Login), plus aucune
+  gestion de Page Facebook ni de portefeuille business par niche.
+- Ces étapes (rôle de testeur, génération du jeton) nécessitent des écrans
+  de consentement humain sur le site Meta. Aucun agent IA ne peut les
   compléter à la place de l'utilisatrice — il peut seulement l'expliquer
   pas à pas et l'aider à câbler la valeur finale dans les secrets GitHub.
 
