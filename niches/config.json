@@ -139,8 +139,7 @@
     },
     {
       "id": "coreen",
-      "actif": false,
-      "_todo": "Vocabulaire/grammaire/conjugaison/prénoms prêts et vérifiés. Reste à faire : choisir le nom définitif du compte (compte + FILIGRANE ci-dessous sont un placeholder), ajouter des photos dans fonds/, créer le compte Instagram + app Meta, configurer les secrets GitHub (IG_USER_ID_COREEN, IG_TOKEN_COREEN), puis passer actif à true.",
+      "actif": true,
       "dossier": "niches/coreen",
       "compte": "@coreen.academie",
       "langue_phrase": "apprend le coréen",

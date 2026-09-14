@@ -68,8 +68,7 @@ jobs:
             python publier.py --niche maths-prepa
           fi
 
-      - name: Publier (coreen) — test manuel migration Instagram Login
-        if: github.event_name == 'workflow_dispatch'
+      - name: Publier (coreen)
         env:
           IG_USER_ID_COREEN: ${{ secrets.IG_USER_ID_COREEN }}
           IG_TOKEN_COREEN: ${{ secrets.IG_TOKEN_COREEN }}
