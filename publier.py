@@ -28,7 +28,7 @@ load_dotenv()
 
 RACINE = Path(__file__).parent
 CONFIG = RACINE / "niches" / "config.json"
-API    = "https://graph.facebook.com/v21.0"
+API    = "https://graph.instagram.com/v21.0"
 
 FENETRE_JOURS = 7
 
@@ -312,7 +312,7 @@ def attendre(cid, token, essais=20):
 def publier_carrousel(ig_id, token, urls, legende):
     enfants = []
     for u in urls:
-        rep = _post(f"{API}/{ig_id}/media", {
+        rep = _post(f"{API}/me/media", {
             "image_url": u,
             "is_carousel_item": "true",
             "access_token": token,
@@ -322,7 +322,7 @@ def publier_carrousel(ig_id, token, urls, legende):
     for cid in enfants:
         attendre(cid, token)
 
-    parent = _post(f"{API}/{ig_id}/media", {
+    parent = _post(f"{API}/me/media", {
         "media_type": "CAROUSEL",
         "children": ",".join(enfants),
         "caption": legende,
@@ -330,7 +330,7 @@ def publier_carrousel(ig_id, token, urls, legende):
     })
     attendre(parent["id"], token)
 
-    pub = _post(f"{API}/{ig_id}/media_publish", {
+    pub = _post(f"{API}/me/media_publish", {
         "creation_id": parent["id"],
         "access_token": token,
     })
@@ -343,7 +343,7 @@ def publier_carrousel(ig_id, token, urls, legende):
 
 def quota_restant(ig_id, token):
     try:
-        r = requests.get(f"{API}/{ig_id}/content_publishing_limit",
+        r = requests.get(f"{API}/me/content_publishing_limit",
                          params={"access_token": token}, timeout=30).json()
         return 50 - r["data"][0]["quota_usage"]
     except Exception:

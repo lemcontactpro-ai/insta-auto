@@ -68,11 +68,26 @@ jobs:
             python publier.py --niche maths-prepa
           fi
 
+      - name: Publier (coreen) — test manuel migration Instagram Login
+        if: github.event_name == 'workflow_dispatch'
+        env:
+          IG_USER_ID_COREEN: ${{ secrets.IG_USER_ID_COREEN }}
+          IG_TOKEN_COREEN: ${{ secrets.IG_TOKEN_COREEN }}
+          CLOUDINARY_CLOUD_NAME: ${{ secrets.CLOUDINARY_CLOUD_NAME }}
+          CLOUDINARY_API_KEY: ${{ secrets.CLOUDINARY_API_KEY }}
+          CLOUDINARY_API_SECRET: ${{ secrets.CLOUDINARY_API_SECRET }}
+        run: |
+          if [ "${{ inputs.dry_run }}" = "true" ]; then
+            python publier.py --niche coreen --dry-run
+          else
+            python publier.py --niche coreen
+          fi
+
       - name: Commiter historique
         run: |
           git config user.name "GitHub Actions"
           git config user.email "actions@github.com"
-          git add niches/arabe/historique.json niches/maths-prepa/historique.json || true
+          git add niches/arabe/historique.json niches/maths-prepa/historique.json niches/coreen/historique.json || true
           git commit -m "Mise à jour historique $(date -u +'%Y-%m-%d %H:%M UTC')" || true
           git push || true
 
