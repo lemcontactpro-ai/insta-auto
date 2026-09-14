@@ -19,7 +19,7 @@ from nacl import encoding, public
 
 RACINE = Path(__file__).parent
 CONFIG = RACINE / "niches" / "config.json"
-API = "https://graph.facebook.com/v21.0"
+API = "https://graph.instagram.com"  # Instagram Login : pas de préfixe de version ici
 REPO = "lemcontactpro-ai/insta-auto"
 
 
@@ -50,20 +50,34 @@ def maj_secret_github(pat, nom_secret, valeur):
         raise RuntimeError(f"Échec mise à jour secret {nom_secret} : {r.status_code} — {r.text}")
 
 
-def renouveler(app_id, app_secret, jeton_actuel):
-    r = requests.get(f"{API}/oauth/access_token", params={
-        "grant_type": "fb_exchange_token",
-        "client_id": app_id,
-        "client_secret": app_secret,
-        "fb_exchange_token": jeton_actuel,
+def renouveler(app_secret, jeton_actuel):
+    """Rafraîchit un jeton longue durée Instagram (chemin normal : le jeton
+    doit avoir au moins 24h et moins de 60 jours). Si ça échoue parce que le
+    jeton est encore un jeton court jamais échangé (cas d'un jeton fraîchement
+    généré depuis le dashboard, avant sa première fenêtre de rafraîchissement),
+    on tente l'échange initial avant de repartir avec le jeton longue durée
+    obtenu."""
+    r = requests.get(f"{API}/refresh_access_token", params={
+        "grant_type": "ig_refresh_token",
+        "access_token": jeton_actuel,
     }, timeout=30)
-    if not r.ok:
-        raise RuntimeError(f"Échec renouvellement : {r.status_code} — {r.text}")
-    return r.json()["access_token"]
+    if r.ok:
+        return r.json()["access_token"]
+
+    r2 = requests.get(f"{API}/access_token", params={
+        "grant_type": "ig_exchange_token",
+        "client_secret": app_secret,
+        "access_token": jeton_actuel,
+    }, timeout=30)
+    if not r2.ok:
+        raise RuntimeError(
+            f"Échec rafraîchissement ({r.status_code} — {r.text}) "
+            f"et échec de l'échange initial ({r2.status_code} — {r2.text})"
+        )
+    return r2.json()["access_token"]
 
 
 def main():
-    app_id = os.environ["META_APP_ID"]
     app_secret = os.environ["META_APP_SECRET"]
     pat = os.environ["GH_PAT_SECRETS"]
 
@@ -80,7 +94,7 @@ def main():
                   "(ajoute-le au step 'env' du workflow si cette niche est active).")
             continue
         try:
-            nouveau = renouveler(app_id, app_secret, jeton_actuel)
+            nouveau = renouveler(app_secret, jeton_actuel)
             maj_secret_github(pat, nom_secret, nouveau)
             print(f"[{niche['id']}] jeton renouvelé, secret {nom_secret} mis à jour.")
         except Exception as e:

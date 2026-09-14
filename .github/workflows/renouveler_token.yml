@@ -25,7 +25,6 @@ jobs:
 
       - name: Renouveler les jetons des niches actives
         env:
-          META_APP_ID: ${{ secrets.META_APP_ID }}
           META_APP_SECRET: ${{ secrets.META_APP_SECRET }}
           GH_PAT_SECRETS: ${{ secrets.GH_PAT_SECRETS }}
           IG_TOKEN_ARABE: ${{ secrets.IG_TOKEN_ARABE }}
