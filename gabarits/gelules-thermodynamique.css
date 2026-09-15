@@ -1,0 +1,24 @@
+/* Thermodynamique : palette « gélules » du domaine, dérivée de la charte Slack.
+   Ne redéfinit que des couleurs, la structure vit dans structure-gelules.css.
+   Générée par faire_palettes.py : ne pas modifier à la main, modifier la
+   couleur de base du domaine dans ce script. */
+
+@import url("structure-gelules.css");
+
+:root {
+  --aubergine:       #6d2418;
+  --aubergine-press: #862c1e;
+  --aubergine-tint:  #822718;
+  --accent:          #6d2418;
+  --accent-on-fonce: #dcc0bc;
+  --cream:           #f4ede4;
+  --lavender:        #fbf3f1;
+  --mute-on-aub:     #dcc0bc;
+  --mesh-a:          rgba(230, 177, 168, 0.22);
+  --mesh-b:          rgba(235, 208, 203, 0.24);
+  --mesh-c:          rgba(205, 159, 152, 0.16);
+  --wash:            rgba(244, 237, 228, .85);
+  /* papier quadrillé sur les slides claires :
+     décommenter pour l'activer */
+  /* --grille: rgba(119, 46, 34, 0.05); */
+}

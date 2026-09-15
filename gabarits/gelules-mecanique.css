@@ -1,0 +1,24 @@
+/* Mécanique : palette « gélules » du domaine, dérivée de la charte Slack.
+   Ne redéfinit que des couleurs, la structure vit dans structure-gelules.css.
+   Générée par faire_palettes.py : ne pas modifier à la main, modifier la
+   couleur de base du domaine dans ce script. */
+
+@import url("structure-gelules.css");
+
+:root {
+  --aubergine:       #4a154b;
+  --aubergine-press: #621c63;
+  --aubergine-tint:  #5d175e;
+  --accent:          #4a154b;
+  --accent-on-fonce: #dcbcdc;
+  --cream:           #f4ede4;
+  --lavender:        #fbf1fb;
+  --mute-on-aub:     #dcbcdc;
+  --mesh-a:          rgba(229, 168, 230, 0.22);
+  --mesh-b:          rgba(235, 203, 235, 0.24);
+  --mesh-c:          rgba(204, 152, 205, 0.16);
+  --wash:            rgba(244, 237, 228, .85);
+  /* papier quadrillé sur les slides claires :
+     décommenter pour l'activer */
+  /* --grille: rgba(117, 34, 119, 0.05); */
+}

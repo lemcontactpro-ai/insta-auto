@@ -1,0 +1,24 @@
+/* Électromagnétisme : palette « gélules » du domaine, dérivée de la charte Slack.
+   Ne redéfinit que des couleurs, la structure vit dans structure-gelules.css.
+   Générée par faire_palettes.py : ne pas modifier à la main, modifier la
+   couleur de base du domaine dans ce script. */
+
+@import url("structure-gelules.css");
+
+:root {
+  --aubergine:       #2c2a6b;
+  --aubergine-press: #353381;
+  --aubergine-tint:  #2e2c7e;
+  --accent:          #2c2a6b;
+  --accent-on-fonce: #bdbcdc;
+  --cream:           #f4ede4;
+  --lavender:        #f1f1fb;
+  --mute-on-aub:     #bdbcdc;
+  --mesh-a:          rgba(170, 168, 230, 0.22);
+  --mesh-b:          rgba(204, 203, 235, 0.24);
+  --mesh-c:          rgba(153, 152, 205, 0.16);
+  --wash:            rgba(244, 237, 228, .85);
+  /* papier quadrillé sur les slides claires :
+     décommenter pour l'activer */
+  /* --grille: rgba(37, 34, 119, 0.05); */
+}

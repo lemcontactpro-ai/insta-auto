@@ -1,23 +1,215 @@
 {
-  "_lisez_moi": "Contenu de la niche physique-prépa. Un objet par exercice. Le LaTeX s'écrit entre $...$ dans les champs texte, et brut (sans $) dans les blocs de type 'formule'. RÈGLE : chaque exercice est rédigé à la main depuis le PDF source puis relu ligne à ligne — les .md de sources/ sont des OCR dont toutes les formules en affichage ont été perdues, ils ne servent que de repérage. Un exercice n'est publiable que si 'verifie' vaut true.",
+  "_lisez_moi": "Contenu de la niche physique-prépa. Un objet par exercice. Le LaTeX s'écrit entre $...$ dans les champs texte, et brut (sans $) dans les blocs de type 'formule'. RÈGLE : chaque exercice est rédigé à la main depuis le PDF source puis relu ligne à ligne — les .md de sources/ sont des OCR dont toutes les formules en affichage ont été perdues, ils ne servent que de repérage. Un exercice n'est publiable que si 'verifie' vaut true. Aucun tiret cadratin dans les textes, le contrôleur le refuse. Unités composées avec \\cdot (\\mathrm{m\\cdot s^{-1}}), jamais avec une espace ; un résultat se donne toujours avec son unité complète.",
   "_schema": {
     "id": "identifiant unique, stable (sert à l'anti-répétition)",
     "verifie": "true seulement après relecture mathématique complète",
     "niveau": "1 à 4 — nombre d'étoiles affichées (reprend les pastilles ➀➁➂➃ des sources)",
-    "chapitre": "pastille de la slide 1, en majuscules au rendu",
-    "titre": "titre court de la slide 1, 60 caractères maximum",
+    "chapitre": "pastille de la slide 1. Doit valoir exactement une clé de 'domaines' dans niches/config.json : elle choisit la palette du post et les lignes obligatoires de la mise en place.",
+    "titre": "titre court, 60 caractères maximum. C'est le NOM CLASSIQUE DE LA NOTION tel qu'il apparaît dans un chapitre de manuel (« L'effet Doppler », « Chute verticale avec frottement fluide », « Réflexion totale et fibre optique »). Jamais une formule d'accroche imagée : le lecteur doit reconnaître la carte de révision au premier regard. L'accroche imagée va dans 'accroche', qui n'apparaît que dans la légende.",
     "source": "référence de la source — USAGE INTERNE UNIQUEMENT, jamais affichée sur les slides ni dans la légende ; sert à retrouver l'exercice dans les PDF. Facultative.",
     "accroche": "une ligne pour la légende Instagram (facultatif)",
     "enonce": "liste de blocs — slide 1",
-    "etapes": "liste d'étapes ; chacune a un 'titre' et une liste de 'blocs'. 5 slides maximum : au-delà de 5 étapes, elles sont regroupées automatiquement (répartition équilibrée par poids visuel). Une étape peut porter 'groupe': <int> pour forcer son placement, mais alors toutes doivent en porter un.",
+    "etapes": "liste d'étapes ; chacune a un 'titre' et une liste de 'blocs'. 6 slides maximum (8 slides au total, énoncé et CTA compris). RÈGLE DE FOND : aucun résultat parachuté. Chaque équation est établie devant le lecteur (système, référentiel, bilan des forces, axe, projection), chaque choix de méthode est justifié, les astuces de calcul sont dites.",
     "conclusion": "bilan affiché sur la slide CTA (facultatif)",
     "blocs": {
       "texte": "paragraphe",
       "question": "paragraphe précédé d'un numéro ('num')",
       "formule": "formule centrée en carte ; 'cle': true la passe en aubergine plein",
       "astuce": "encart crème ; 'marque' remplace le libellé « Astuce »",
-      "filet": "séparateur"
+      "filet": "séparateur",
+      "poser": "mise en place en lignes séparées : 'lignes' = [{'cle': 'Système', 'valeur': '...'}]. Obligatoire : le domaine (clé 'chapitre') impose les lignes attendues, voir 'domaines' dans niches/config.json.",
+      "schema": "figure au trait : 'svg' contient un <svg viewBox=...> autonome (aucune ressource externe), tracé en currentColor pour suivre la couleur de la slide, plus une 'legende' facultative. Obligatoire dans tous les domaines sauf Méthodes."
     }
   },
-  "exercices": []
+  "exercices": [
+    {
+      "id": "ph-meca-chute-fluide-1",
+      "verifie": true,
+      "niveau": 2,
+      "chapitre": "Mécanique",
+      "titre": "Chute verticale avec frottement fluide",
+      "source": "Classique MPSI/PCSI, chute verticale avec frottement fluide linéaire",
+      "accroche": "Le classique de la chute amortie : deux forces, une équation du premier ordre, une vitesse limite.",
+      "enonce": [
+        {
+          "type": "texte",
+          "valeur": "Une bille de masse $m$ est lâchée sans vitesse initiale dans un fluide visqueux. Le fluide exerce sur elle une force de frottement $\\vec{f} = -\\lambda \\vec{v}$, avec $\\lambda > 0$. On néglige la poussée d'Archimède."
+        },
+        {
+          "type": "question",
+          "num": "a.",
+          "valeur": "Établir l'équation différentielle vérifiée par la vitesse $v(t)$."
+        },
+        {
+          "type": "question",
+          "num": "b.",
+          "valeur": "Résoudre, puis identifier la vitesse limite et le temps caractéristique."
+        },
+        {
+          "type": "question",
+          "num": "c.",
+          "valeur": "Application : $m = 2{,}0\\ \\mathrm{g}$, $\\lambda = 4{,}0 \\times 10^{-2}\\ \\mathrm{kg\\cdot s^{-1}}$."
+        }
+      ],
+      "etapes": [
+        {
+          "titre": "La mise en place, avant tout calcul",
+          "blocs": [
+            {
+              "type": "poser",
+              "lignes": [
+                {
+                  "cle": "Système",
+                  "valeur": "la bille seule, de masse $m$ constante."
+                },
+                {
+                  "cle": "Référentiel",
+                  "valeur": "le laboratoire, supposé galiléen. C'est ce qui autorise le principe fondamental de la dynamique sous sa forme usuelle."
+                },
+                {
+                  "cle": "Bilan des forces",
+                  "valeur": "le poids $m\\vec{g}$, moteur, et le frottement fluide $\\vec{f} = -\\lambda \\vec{v}$, résistant. La poussée d'Archimède est négligée par l'énoncé."
+                },
+                {
+                  "cle": "Axe",
+                  "valeur": "$Oz$ vertical, orienté vers le bas, origine au point de lâcher."
+                }
+              ]
+            },
+            {
+              "type": "schema",
+              "legende": "Axe orienté dans le sens du mouvement : tous les signes moins disparaissent, $v > 0$ et $g > 0$. Avec un axe vers le haut, même résultat, au prix de deux signes.",
+              "svg": "<svg viewBox=\"0 0 560 300\" role=\"img\" aria-label=\"Bille en chute dans un fluide : axe Oz vers le bas, poids et frottement\">\n<rect x=\"150\" y=\"34\" width=\"370\" height=\"240\" rx=\"16\" fill=\"currentColor\" opacity=\"0.07\"/>\n<path d=\"M150 46 q22 -12 44 0 t44 0 t44 0 t44 0 t44 0 t44 0 t44 0 t44 0\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"0.45\"/>\n<line x1=\"78\" y1=\"40\" x2=\"78\" y2=\"256\" stroke=\"currentColor\" stroke-width=\"2.5\"/>\n<polygon points=\"78,274 70,252 86,252\" fill=\"currentColor\"/>\n<circle cx=\"78\" cy=\"40\" r=\"5\" fill=\"currentColor\"/>\n<text x=\"46\" y=\"36\" font-size=\"22\" fill=\"currentColor\" font-style=\"italic\">O</text>\n<text x=\"92\" y=\"270\" font-size=\"22\" fill=\"currentColor\" font-style=\"italic\">z</text>\n<circle cx=\"300\" cy=\"158\" r=\"19\" fill=\"currentColor\"/>\n<line x1=\"300\" y1=\"177\" x2=\"300\" y2=\"228\" stroke=\"currentColor\" stroke-width=\"3.5\"/>\n<polygon points=\"300,248 291,226 309,226\" fill=\"currentColor\"/>\n<text x=\"320\" y=\"238\" font-size=\"23\" fill=\"currentColor\" font-style=\"italic\">m g</text>\n<line x1=\"300\" y1=\"139\" x2=\"300\" y2=\"92\" stroke=\"currentColor\" stroke-width=\"3.5\"/>\n<polygon points=\"300,72 291,94 309,94\" fill=\"currentColor\"/>\n<text x=\"320\" y=\"90\" font-size=\"23\" fill=\"currentColor\" font-style=\"italic\">&#8722;λ v</text>\n<line x1=\"430\" y1=\"132\" x2=\"430\" y2=\"184\" stroke=\"currentColor\" stroke-width=\"2.5\" stroke-dasharray=\"7 6\"/>\n<polygon points=\"430,202 422,182 438,182\" fill=\"currentColor\"/>\n<text x=\"446\" y=\"176\" font-size=\"22\" fill=\"currentColor\" font-style=\"italic\">v</text>\n</svg>"
+            }
+          ]
+        },
+        {
+          "titre": "Projeter les forces, signe par signe",
+          "blocs": [
+            {
+              "type": "texte",
+              "valeur": "Chaque force se projette sur $\\vec{u}_z$, qui pointe vers le bas. C'est ici que se jouent les erreurs de signe, pas dans la résolution."
+            },
+            {
+              "type": "poser",
+              "lignes": [
+                {
+                  "cle": "Poids",
+                  "valeur": "dirigé vers le bas, donc dans le sens de l'axe : sa projection vaut $+mg$."
+                },
+                {
+                  "cle": "Frottement",
+                  "valeur": "le signe moins est dans le modèle lui-même, la force s'oppose toujours au mouvement. Comme $\\vec{v} = v\\,\\vec{u}_z$, sa projection vaut $-\\lambda v$."
+                }
+              ]
+            },
+            {
+              "type": "astuce",
+              "marque": "Contrôle",
+              "valeur": "$\\lambda v$ est une force, donc $\\lambda$ s'exprime en $\\mathrm{kg\\cdot s^{-1}}$. Le modèle linéaire en $v$ vaut aux faibles vitesses ; plus vite, le frottement devient quadratique, en $-k v^{2}$, et l'équation n'est plus linéaire."
+            }
+          ]
+        },
+        {
+          "titre": "Écrire le principe fondamental, puis projeter",
+          "blocs": [
+            {
+              "type": "texte",
+              "valeur": "On l'écrit d'abord sous forme vectorielle, sans se soucier des signes :"
+            },
+            {
+              "type": "formule",
+              "valeur": "m\\,\\frac{\\mathrm{d}\\vec{v}}{\\mathrm{d}t} = m\\vec{g} + \\vec{f}"
+            },
+            {
+              "type": "texte",
+              "valeur": "Le mouvement est rectiligne selon $Oz$, donc l'accélération se réduit à $\\dfrac{\\mathrm{d}v}{\\mathrm{d}t}\\,\\vec{u}_z$. On reporte les deux projections de l'étape précédente."
+            },
+            {
+              "type": "formule",
+              "cle": true,
+              "valeur": "m\\,\\frac{\\mathrm{d}v}{\\mathrm{d}t} = mg - \\lambda v"
+            },
+            {
+              "type": "texte",
+              "valeur": "Elle se lit déjà : à $t = 0$ le frottement est nul, l'accélération vaut $g$ ; puis $v$ croît, le terme $-\\lambda v$ ronge le poids et l'accélération diminue."
+            }
+          ]
+        },
+        {
+          "titre": "Mettre sous forme canonique, et pourquoi",
+          "blocs": [
+            {
+              "type": "texte",
+              "valeur": "Équation linéaire du premier ordre à second membre constant : sa solution est connue, à condition de l'écrire sous la forme attendue, dérivée et inconnue à gauche, coefficient $1$ devant la dérivée."
+            },
+            {
+              "type": "formule",
+              "valeur": "\\frac{\\mathrm{d}v}{\\mathrm{d}t} + \\frac{\\lambda}{m}\\,v = g"
+            },
+            {
+              "type": "texte",
+              "valeur": "Le coefficient $\\lambda/m$ est l'inverse d'un temps : on lui donne un nom."
+            },
+            {
+              "type": "formule",
+              "cle": true,
+              "valeur": "\\frac{\\mathrm{d}v}{\\mathrm{d}t} + \\frac{v}{\\tau} = g \\qquad \\text{avec} \\quad \\tau = \\frac{m}{\\lambda}"
+            },
+            {
+              "type": "astuce",
+              "valeur": "$[\\tau] = \\dfrac{\\mathrm{kg}}{\\mathrm{kg\\cdot s^{-1}}} = \\mathrm{s}$. Ce contrôle coûte trois secondes et attrape presque toutes les erreurs de mise en équation."
+            }
+          ]
+        },
+        {
+          "titre": "Résoudre : deux morceaux, puis la condition initiale",
+          "blocs": [
+            {
+              "type": "texte",
+              "valeur": "Solution générale = solution de l'équation homogène + une solution particulière. L'homogène $\\dot{v} + v/\\tau = 0$ dit que la dérivée est proportionnelle à la fonction : seule l'exponentielle fait ça."
+            },
+            {
+              "type": "formule",
+              "valeur": "v_h(t) = A\\,\\mathrm{e}^{-t/\\tau}"
+            },
+            {
+              "type": "texte",
+              "valeur": "Second membre constant, donc solution particulière constante : sa dérivée est nulle, il reste $v_p/\\tau = g$, soit $v_p = g\\tau$."
+            },
+            {
+              "type": "texte",
+              "valeur": "$A$ se fixe en dernier, sur la solution complète : $v(0) = 0$ donne $A = -g\\tau$."
+            },
+            {
+              "type": "formule",
+              "cle": true,
+              "valeur": "v(t) = g\\tau\\left(1 - \\mathrm{e}^{-t/\\tau}\\right)"
+            }
+          ]
+        },
+        {
+          "titre": "Vitesse limite, et application numérique",
+          "blocs": [
+            {
+              "type": "texte",
+              "valeur": "Quand $t \\gg \\tau$, l'exponentielle s'éteint et la vitesse plafonne. On retrouve cette valeur sans résoudre : en régime permanent $\\dfrac{\\mathrm{d}v}{\\mathrm{d}t} = 0$, le frottement compense exactement le poids, $\\lambda v_{\\ell} = mg$."
+            },
+            {
+              "type": "formule",
+              "cle": true,
+              "valeur": "\\begin{gathered} v_{\\ell} = g\\tau = \\frac{mg}{\\lambda} \\\\[10pt] \\tau = \\frac{2{,}0 \\times 10^{-3}}{4{,}0 \\times 10^{-2}} = 5{,}0 \\times 10^{-2}\\ \\mathrm{s} \\\\[10pt] v_{\\ell} = 9{,}81 \\times 5{,}0 \\times 10^{-2} \\approx 0{,}49\\ \\mathrm{m\\cdot s^{-1}} \\end{gathered}"
+            },
+            {
+              "type": "astuce",
+              "marque": "Repère",
+              "valeur": "$v$ atteint $63\\,\\%$ de $v_{\\ell}$ au bout de $\\tau$, $95\\,\\%$ en $3\\tau$, $99\\,\\%$ en $5\\tau$. Ici le régime permanent est établi en $0{,}25\\ \\mathrm{s}$. Ces trois chiffres valent pour toute grandeur du premier ordre, mécanique comme électrocinétique."
+            }
+          ]
+        }
+      ],
+      "conclusion": "La difficulté n'était pas de résoudre, mais de poser : système, référentiel, forces, projections. Une fois l'équation écrite, $\\tau$ et la valeur finale se lisent sans calcul.",
+      "hashtags_extra": "#mecanique #equadiff"
+    }
+  ]
 }

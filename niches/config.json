@@ -171,30 +171,35 @@
       },
       "palette": {
         "or": [
-          70,
-          130,
-          210
+          235,
+          45,
+          115
         ],
         "or_fonce": [
-          40,
           90,
-          170
+          55,
+          95
         ],
         "creme": [
-          240,
-          245,
-          255
+          145,
+          85,
+          195
+        ],
+        "texte": [
+          75,
+          45,
+          80
         ],
         "voile": [
-          5,
-          10,
-          25
+          255,
+          240,
+          218
         ],
-        "voile_alpha": 160,
+        "voile_alpha": 175,
         "voile_cta": [
-          10,
-          25,
-          70
+          255,
+          234,
+          208
         ],
         "voile_cta_alpha": 190,
         "flou": 2
@@ -272,7 +277,82 @@
         "cta_sous_titre": "Le recueil complet",
         "cta_bouton": "Lien en bio"
       },
-      "hashtags_base": "#physiqueprepa #prepascientifique #mpsi #methodephysique"
+      "hashtags_base": "#physiqueprepa #prepascientifique #mpsi #methodephysique",
+      "_domaines_lisez_moi": "Une couleur par domaine de physique. Le 'chapitre' d'un exercice doit valoir exactement une clé de 'domaines' : il choisit le gabarit du post et les lignes obligatoires de la mise en place (bloc 'poser' de la première étape). 'schema_obligatoire' impose au moins un bloc 'schema' dans l'exercice : ces posts sont des cartes de révision, la figure fait partie de la méthode.",
+      "domaines": {
+        "Mécanique": {
+          "gabarit": "gelules-mecanique.css",
+          "mise_en_place": [
+            "Système",
+            "Référentiel",
+            "Bilan des forces"
+          ],
+          "schema_obligatoire": true
+        },
+        "Optique": {
+          "gabarit": "gelules-optique.css",
+          "mise_en_place": [
+            "Système optique",
+            "Sens de propagation",
+            "Conventions"
+          ],
+          "schema_obligatoire": true
+        },
+        "Électrocinétique": {
+          "gabarit": "gelules-electrocinetique.css",
+          "mise_en_place": [
+            "Circuit",
+            "Conventions",
+            "Régime"
+          ],
+          "schema_obligatoire": true
+        },
+        "Ondes et signaux": {
+          "gabarit": "gelules-ondes.css",
+          "mise_en_place": [
+            "Système",
+            "Grandeur étudiée",
+            "Hypothèses"
+          ],
+          "schema_obligatoire": true
+        },
+        "Électromagnétisme": {
+          "gabarit": "gelules-electromagnetisme.css",
+          "mise_en_place": [
+            "Système",
+            "Champ",
+            "Orientation"
+          ],
+          "schema_obligatoire": true
+        },
+        "Thermodynamique": {
+          "gabarit": "gelules-thermodynamique.css",
+          "mise_en_place": [
+            "Système",
+            "Transformation",
+            "Hypothèses"
+          ],
+          "schema_obligatoire": true
+        },
+        "Chimie": {
+          "gabarit": "gelules-chimie.css",
+          "mise_en_place": [
+            "Système",
+            "Réaction",
+            "Conditions"
+          ],
+          "schema_obligatoire": true
+        },
+        "Méthodes": {
+          "gabarit": "gelules-methodes.css",
+          "mise_en_place": [
+            "Grandeur cherchée",
+            "Données",
+            "Hypothèses"
+          ],
+          "schema_obligatoire": false
+        }
+      }
     }
   ]
 }

@@ -1,14 +1,14 @@
 {
-  "_lisez_moi": "Contenu de la niche maths-prépa. Un objet par exercice. Le LaTeX s'écrit entre $...$ dans les champs texte, et brut (sans $) dans les blocs de type 'formule'. RÈGLE : chaque exercice est rédigé à la main depuis le PDF source puis relu ligne à ligne — les .md de sources/ sont des OCR dont toutes les formules en affichage ont été perdues, ils ne servent que de repérage. Un exercice n'est publiable que si 'verifie' vaut true.",
+  "_lisez_moi": "Contenu de la niche maths-prépa. Un objet par exercice. Le LaTeX s'écrit entre $...$ dans les champs texte, et brut (sans $) dans les blocs de type 'formule'. RÈGLE : chaque exercice est rédigé à la main depuis le PDF source puis relu ligne à ligne, les .md de sources/ sont des OCR dont toutes les formules en affichage ont été perdues, ils ne servent que de repérage. Un exercice n'est publiable que si 'verifie' vaut true.",
   "_schema": {
     "id": "identifiant unique, stable (sert à l'anti-répétition)",
     "verifie": "true seulement après relecture mathématique complète",
-    "niveau": "1 à 4 — nombre d'étoiles affichées (reprend les pastilles ➀➁➂➃ des sources)",
+    "niveau": "1 à 4, nombre d'étoiles affichées (reprend les pastilles ➀➁➂➃ des sources)",
     "chapitre": "pastille de la slide 1, en majuscules au rendu",
-    "titre": "titre court de la slide 1, 60 caractères maximum",
-    "source": "référence de la source — USAGE INTERNE UNIQUEMENT, jamais affichée sur les slides ni dans la légende ; sert à retrouver l'exercice dans les PDF. Facultative.",
+    "titre": "titre court, 60 caractères maximum. C'est le NOM CLASSIQUE DE LA NOTION tel qu'il apparaît dans un chapitre de manuel (« Le théorème des gendarmes », « L'intégration par parties »). Jamais une formule d'accroche imagée : ces posts sont des cartes de révision, le lecteur doit reconnaître la notion au premier regard. L'accroche imagée va dans 'accroche', qui n'apparaît que dans la légende.",
+    "source": "référence de la source, USAGE INTERNE UNIQUEMENT, jamais affichée sur les slides ni dans la légende ; sert à retrouver l'exercice dans les PDF. Facultative.",
     "accroche": "une ligne pour la légende Instagram (facultatif)",
-    "enonce": "liste de blocs — slide 1",
+    "enonce": "liste de blocs, slide 1",
     "etapes": "liste d'étapes ; chacune a un 'titre' et une liste de 'blocs'. 5 slides maximum : au-delà de 5 étapes, elles sont regroupées automatiquement (répartition équilibrée par poids visuel). Une étape peut porter 'groupe': <int> pour forcer son placement, mais alors toutes doivent en porter un.",
     "conclusion": "bilan affiché sur la slide CTA (facultatif)",
     "blocs": {
@@ -25,8 +25,8 @@
       "verifie": true,
       "niveau": 2,
       "chapitre": "Inégalités",
-      "titre": "Trois inégalités qui n'en font qu'une",
-      "source": "Poly Saint-Louis, Transition Terminale → MPSI / PCSI / MP2I — §1.2 « Des inégalités », ex. 3",
+      "titre": "L'inégalité arithmético-géométrique",
+      "source": "Poly Saint-Louis, Transition Terminale → MPSI / PCSI / MP2I, §1.2 « Des inégalités », ex. 3",
       "accroche": "Un classique de la rentrée : celui qui ne voit pas le carré caché s'y casse les dents.",
       "enonce": [
         {
@@ -137,8 +137,8 @@
       "verifie": true,
       "niveau": 2,
       "chapitre": "Suites & récurrence",
-      "titre": "La suite qui cache une factorielle",
-      "source": "Poly Saint-Louis, Transition Terminale → MPSI / PCSI / MP2I — §2.3 « Des suites et des récurrences », ex. 1",
+      "titre": "Démonstration par récurrence",
+      "source": "Poly Saint-Louis, Transition Terminale → MPSI / PCSI / MP2I, §2.3 « Des suites et des récurrences », ex. 1",
       "accroche": "Cinq questions, une seule idée : la récurrence bien posée fait tomber le reste.",
       "enonce": [
         {
@@ -295,8 +295,8 @@
       "verifie": true,
       "niveau": 2,
       "chapitre": "Raisonnement par l'absurde",
-      "titre": "Deux racines qui refusent d'être une fraction",
-      "source": "Poly LLG / Henri-IV, Transition Terminale → CPGE — §1.3 « Le raisonnement par l'absurde », ex. 21",
+      "titre": "Raisonnement par l'absurde et irrationalité",
+      "source": "Poly LLG / Henri-IV, Transition Terminale → CPGE, §1.3 « Le raisonnement par l'absurde », ex. 21",
       "accroche": "La première partie est un classique. La seconde se règle en une ligne, à condition de voir laquelle.",
       "enonce": [
         {
@@ -407,6 +407,3956 @@
       ],
       "conclusion": "La question b. ne se démontre pas de front : on fabrique une expression rationnelle de $\\sqrt{6}$ à partir de $x$, et on laisse la question a. faire le travail. Reconnaître ce montage vaut mieux que de recommencer une descente infinie.",
       "hashtags_extra": "#raisonnementparlabsurde"
+    },
+    {
+      "id": "sl-limites-1",
+      "verifie": true,
+      "niveau": 1,
+      "chapitre": "Croissances comparées",
+      "titre": "Les croissances comparées",
+      "source": "Poly Saint-Louis, Transition Terminale → MPSI/PCSI/MP2I, limites de référence",
+      "accroche": "Deux limites classiques, une seule idée : l'exponentielle gagne toujours.",
+      "enonce": [
+        {
+          "type": "texte",
+          "valeur": "On admet la limite de référence $\\displaystyle\\lim_{x \\to +\\infty} \\frac{e^x}{x^2} = +\\infty$."
+        },
+        {
+          "type": "question",
+          "num": "a.",
+          "valeur": "Calculer $\\displaystyle\\lim_{x \\to +\\infty} x^2 e^{-x}$."
+        },
+        {
+          "type": "question",
+          "num": "b.",
+          "valeur": "Calculer $\\displaystyle\\lim_{x \\to +\\infty} \\frac{\\ln x}{x}$."
+        }
+      ],
+      "etapes": [
+        {
+          "titre": "Réécrire pour faire apparaître la référence",
+          "blocs": [
+            {
+              "type": "texte",
+              "valeur": "On écrit $x^2 e^{-x}$ comme l'inverse du quotient dont on connaît la limite."
+            },
+            {
+              "type": "formule",
+              "cle": true,
+              "valeur": "x^2 e^{-x} = \\dfrac{x^2}{e^x} = \\dfrac{1}{\\left(\\dfrac{e^x}{x^2}\\right)}"
+            }
+          ]
+        },
+        {
+          "titre": "Conclure sur la question a.",
+          "blocs": [
+            {
+              "type": "texte",
+              "valeur": "Le dénominateur tend vers $+\\infty$, donc l'inverse tend vers $0$."
+            },
+            {
+              "type": "formule",
+              "valeur": "\\lim_{x \\to +\\infty} \\dfrac{e^x}{x^2} = +\\infty \\;\\Longrightarrow\\; \\lim_{x \\to +\\infty} x^2 e^{-x} = 0"
+            }
+          ]
+        },
+        {
+          "titre": "Passer du polynôme au logarithme",
+          "blocs": [
+            {
+              "type": "texte",
+              "valeur": "Pour la question b., on pose $x = e^t$, avec $t \\to +\\infty$ lorsque $x \\to +\\infty$."
+            },
+            {
+              "type": "formule",
+              "valeur": "\\dfrac{\\ln x}{x} = \\dfrac{t}{e^t}"
+            },
+            {
+              "type": "astuce",
+              "valeur": "Changer de variable pour ramener une limite en $\\ln$ à une limite déjà connue est un réflexe qui marche presque partout en croissances comparées."
+            }
+          ]
+        },
+        {
+          "titre": "Conclure sur la question b.",
+          "blocs": [
+            {
+              "type": "texte",
+              "valeur": "$t/e^t$ est l'inverse de $e^t/t$, dont la limite en $+\\infty$ est $+\\infty$ par la référence admise (avec l'exposant $1$ au lieu de $2$)."
+            },
+            {
+              "type": "formule",
+              "cle": true,
+              "valeur": "\\lim_{x \\to +\\infty} \\dfrac{\\ln x}{x} = 0"
+            }
+          ]
+        }
+      ],
+      "conclusion": "Une seule limite de référence, bien maîtrisée, permet de retrouver toutes les autres par un simple changement d'écriture.",
+      "hashtags_extra": "#croissancescomparees #limites"
+    },
+    {
+      "id": "sl-suites-2",
+      "verifie": true,
+      "niveau": 1,
+      "chapitre": "Suites & récurrence",
+      "titre": "Suite récurrente et point fixe",
+      "source": "Poly Saint-Louis, Transition Terminale → MPSI/PCSI/MP2I, suites arithmético-géométriques",
+      "accroche": "Une suite qui a l'air compliquée n'est souvent qu'une suite géométrique déguisée.",
+      "enonce": [
+        {
+          "type": "texte",
+          "valeur": "On définit $(u_n)$ par $u_0 = 0$ et, pour tout $n \\in \\mathbb{N}$ :"
+        },
+        {
+          "type": "formule",
+          "cle": true,
+          "valeur": "u_{n+1} = \\dfrac{1}{2}u_n + 3"
+        },
+        {
+          "type": "question",
+          "num": "",
+          "valeur": "Montrer que $(u_n)$ converge et déterminer sa limite."
+        }
+      ],
+      "etapes": [
+        {
+          "titre": "Chercher le point fixe",
+          "blocs": [
+            {
+              "type": "texte",
+              "valeur": "Si $(u_n)$ converge vers une limite $\\ell$, celle-ci doit vérifier l'équation obtenue en remplaçant $u_{n+1}$ et $u_n$ par $\\ell$ dans la relation."
+            },
+            {
+              "type": "formule",
+              "valeur": "\\ell = \\dfrac{1}{2}\\ell + 3 \\;\\Longleftrightarrow\\; \\ell = 6"
+            }
+          ]
+        },
+        {
+          "titre": "Fabriquer une suite géométrique",
+          "blocs": [
+            {
+              "type": "texte",
+              "valeur": "On pose $v_n = u_n - 6$ et on calcule $v_{n+1}$ à partir de la relation de départ."
+            },
+            {
+              "type": "formule",
+              "cle": true,
+              "valeur": "v_{n+1} = u_{n+1} - 6 = \\dfrac{1}{2}u_n + 3 - 6 = \\dfrac{1}{2}(u_n - 6) = \\dfrac{1}{2}v_n"
+            },
+            {
+              "type": "astuce",
+              "valeur": "Retrancher le point fixe transforme systématiquement une suite arithmético-géométrique en suite géométrique pure."
+            }
+          ]
+        },
+        {
+          "titre": "Expliciter $v_n$ puis $u_n$",
+          "blocs": [
+            {
+              "type": "texte",
+              "valeur": "$(v_n)$ est géométrique de raison $1/2$ et de premier terme $v_0 = u_0 - 6 = -6$."
+            },
+            {
+              "type": "formule",
+              "valeur": "v_n = -6 \\times \\left(\\dfrac{1}{2}\\right)^{n} \\qquad \\Longrightarrow \\qquad u_n = 6 - 6 \\left(\\dfrac{1}{2}\\right)^{n}"
+            }
+          ]
+        },
+        {
+          "titre": "Passer à la limite",
+          "blocs": [
+            {
+              "type": "texte",
+              "valeur": "Comme $0 < 1/2 < 1$, on a $\\left(\\tfrac{1}{2}\\right)^n \\to 0$ quand $n \\to +\\infty$."
+            },
+            {
+              "type": "formule",
+              "cle": true,
+              "valeur": "\\lim_{n \\to +\\infty} u_n = 6"
+            }
+          ]
+        }
+      ],
+      "conclusion": "$(u_n)$ converge vers $6$, exactement le point fixe trouvé à la première étape, ce qui n'est jamais un hasard pour ce type de suite.",
+      "hashtags_extra": "#suitesrecurrentes"
+    },
+    {
+      "id": "sl-limites-3",
+      "verifie": true,
+      "niveau": 1,
+      "chapitre": "Limites usuelles",
+      "titre": "Limite d'une fraction rationnelle en l'infini",
+      "source": "Poly Saint-Louis, Transition Terminale → MPSI/PCSI/MP2I, formes indéterminées rationnelles",
+      "accroche": "Une forme $\\infty/\\infty$ n'a rien d'un problème : il suffit de savoir qui domine.",
+      "enonce": [
+        {
+          "type": "question",
+          "num": "",
+          "valeur": "Calculer $\\displaystyle\\lim_{x \\to +\\infty} \\dfrac{3x^2 - 5x + 1}{2x^2 + 7}$."
+        }
+      ],
+      "etapes": [
+        {
+          "titre": "Repérer la forme indéterminée",
+          "blocs": [
+            {
+              "type": "texte",
+              "valeur": "Numérateur et dénominateur tendent tous deux vers $+\\infty$ : c'est une forme $\\infty/\\infty$, qu'on ne peut pas traiter terme à terme."
+            }
+          ]
+        },
+        {
+          "titre": "Factoriser par le terme de plus haut degré",
+          "blocs": [
+            {
+              "type": "texte",
+              "valeur": "On met $x^2$ en facteur en haut et en bas, c'est le terme qui écrase tous les autres quand $x \\to +\\infty$."
+            },
+            {
+              "type": "formule",
+              "cle": true,
+              "valeur": "\\dfrac{3x^2 - 5x + 1}{2x^2 + 7} = \\dfrac{x^2\\left(3 - \\dfrac{5}{x} + \\dfrac{1}{x^2}\\right)}{x^2\\left(2 + \\dfrac{7}{x^2}\\right)} = \\dfrac{3 - \\dfrac{5}{x} + \\dfrac{1}{x^2}}{2 + \\dfrac{7}{x^2}}"
+            },
+            {
+              "type": "astuce",
+              "valeur": "Le réflexe à automatiser : dans une fraction de polynômes, on factorise toujours par le monôme de plus haut degré, en haut comme en bas."
+            }
+          ]
+        },
+        {
+          "titre": "Passer à la limite terme à terme",
+          "blocs": [
+            {
+              "type": "texte",
+              "valeur": "Tous les termes en $1/x$ et $1/x^2$ tendent vers $0$ quand $x \\to +\\infty$."
+            },
+            {
+              "type": "formule",
+              "valeur": "\\lim_{x \\to +\\infty} \\dfrac{3 - \\dfrac{5}{x} + \\dfrac{1}{x^2}}{2 + \\dfrac{7}{x^2}} = \\dfrac{3}{2}"
+            }
+          ]
+        }
+      ],
+      "conclusion": "En $+\\infty$, une fraction rationnelle se comporte toujours comme le rapport de ses termes dominants : ici $3x^2/2x^2 = 3/2$.",
+      "hashtags_extra": "#limites"
+    },
+    {
+      "id": "llg-fonctions-1",
+      "verifie": true,
+      "niveau": 2,
+      "chapitre": "Étude de fonctions",
+      "titre": "Recherche d'un extremum par la dérivée",
+      "source": "Poly LLG/H4, Transition Prépa, §6 Étude de fonctions, exercice type",
+      "accroche": "La fonction $x e^{-x}$ monte, redescend, et sait exactement où elle culmine.",
+      "enonce": [
+        {
+          "type": "texte",
+          "valeur": "On considère $f : x \\mapsto x e^{-x}$, définie sur $[0, +\\infty[$."
+        },
+        {
+          "type": "question",
+          "num": "a.",
+          "valeur": "Étudier les variations de $f$."
+        },
+        {
+          "type": "question",
+          "num": "b.",
+          "valeur": "Déterminer $\\displaystyle\\lim_{x \\to +\\infty} f(x)$ et en déduire le tableau de variations complet."
+        }
+      ],
+      "etapes": [
+        {
+          "titre": "Dériver le produit",
+          "blocs": [
+            {
+              "type": "texte",
+              "valeur": "$f$ est dérivable sur $[0, +\\infty[$ comme produit de fonctions dérivables."
+            },
+            {
+              "type": "formule",
+              "cle": true,
+              "valeur": "f'(x) = e^{-x} - x e^{-x} = (1 - x)\\,e^{-x}"
+            }
+          ]
+        },
+        {
+          "titre": "Étudier le signe de $f'$",
+          "blocs": [
+            {
+              "type": "texte",
+              "valeur": "$e^{-x} > 0$ pour tout $x$, donc $f'(x)$ a le signe de $1 - x$."
+            },
+            {
+              "type": "formule",
+              "valeur": "f'(x) > 0 \\text{ sur } [0,1[, \\qquad f'(1) = 0, \\qquad f'(x) < 0 \\text{ sur } ]1, +\\infty["
+            },
+            {
+              "type": "astuce",
+              "valeur": "Dès qu'une dérivée est un produit avec un facteur toujours positif ($e^{-x}$ ici), inutile de l'étudier : seul l'autre facteur compte pour le signe."
+            }
+          ]
+        },
+        {
+          "titre": "Conclure sur les variations",
+          "blocs": [
+            {
+              "type": "texte",
+              "valeur": "$f$ est donc croissante sur $[0,1]$ puis décroissante sur $[1, +\\infty[$ : elle admet un maximum en $x = 1$."
+            },
+            {
+              "type": "formule",
+              "valeur": "f(1) = 1 \\times e^{-1} = \\dfrac{1}{e}"
+            }
+          ]
+        },
+        {
+          "titre": "La limite en $+\\infty$",
+          "blocs": [
+            {
+              "type": "texte",
+              "valeur": "$x e^{-x}$ est exactement la forme de croissance comparée vue plus haut : l'exponentielle au dénominateur l'emporte."
+            },
+            {
+              "type": "formule",
+              "cle": true,
+              "valeur": "\\lim_{x \\to +\\infty} x e^{-x} = 0"
+            }
+          ]
+        }
+      ],
+      "conclusion": "$f$ part de $f(0)=0$, monte jusqu'à $1/e$ en $x=1$, puis redescend vers $0$ sans jamais redevenir négative : le tableau de variations est entièrement déterminé.",
+      "hashtags_extra": "#etudedefonction"
+    },
+    {
+      "id": "sl-fonctions-2",
+      "verifie": true,
+      "niveau": 2,
+      "chapitre": "Étude de fonctions",
+      "titre": "L'inégalité ln x ≤ x − 1",
+      "source": "Poly Saint-Louis, Transition Terminale → MPSI/PCSI/MP2I, inégalité de référence",
+      "accroche": "Une inégalité qu'on retrouvera partout ensuite : $\\ln x \\leqslant x - 1$.",
+      "enonce": [
+        {
+          "type": "texte",
+          "valeur": "On pose, pour tout $x > 0$ :"
+        },
+        {
+          "type": "formule",
+          "cle": true,
+          "valeur": "f(x) = \\ln x - x + 1"
+        },
+        {
+          "type": "question",
+          "num": "",
+          "valeur": "Montrer que $\\ln x \\leqslant x - 1$ pour tout $x > 0$, avec égalité si et seulement si $x = 1$."
+        }
+      ],
+      "etapes": [
+        {
+          "titre": "Dériver et étudier le signe",
+          "blocs": [
+            {
+              "type": "texte",
+              "valeur": "$f$ est dérivable sur $]0, +\\infty[$ comme somme de fonctions dérivables."
+            },
+            {
+              "type": "formule",
+              "valeur": "f'(x) = \\dfrac{1}{x} - 1 = \\dfrac{1 - x}{x}"
+            },
+            {
+              "type": "texte",
+              "valeur": "Comme $x > 0$, $f'(x)$ a le signe de $1 - x$ : positif sur $]0,1[$, nul en $1$, négatif sur $]1, +\\infty[$."
+            }
+          ]
+        },
+        {
+          "titre": "En déduire un maximum",
+          "blocs": [
+            {
+              "type": "texte",
+              "valeur": "$f$ est donc croissante puis décroissante : elle admet un maximum unique en $x = 1$."
+            },
+            {
+              "type": "formule",
+              "cle": true,
+              "valeur": "f(1) = \\ln 1 - 1 + 1 = 0"
+            },
+            {
+              "type": "astuce",
+              "valeur": "Prouver une inégalité $g \\leqslant h$ revient presque toujours à montrer que $g - h$ atteint un maximum négatif ou nul."
+            }
+          ]
+        },
+        {
+          "titre": "Conclure",
+          "blocs": [
+            {
+              "type": "texte",
+              "valeur": "Le maximum de $f$ sur $]0,+\\infty[$ valant $0$, on a $f(x) \\leqslant 0$ pour tout $x > 0$, c'est-à-dire l'inégalité voulue."
+            },
+            {
+              "type": "formule",
+              "cle": true,
+              "valeur": "\\forall x > 0, \\quad \\ln x \\leqslant x - 1"
+            },
+            {
+              "type": "texte",
+              "valeur": "L'égalité n'a lieu qu'au point où le maximum est atteint, c'est-à-dire uniquement en $x = 1$, puisque $f$ est strictement monotone ailleurs."
+            }
+          ]
+        }
+      ],
+      "conclusion": "Géométriquement : la courbe de $\\ln$ reste toujours sous sa tangente en $x=1$, qui a pour équation $y = x - 1$.",
+      "hashtags_extra": "#inegalites #logarithme"
+    },
+    {
+      "id": "llg-fonctions-2",
+      "verifie": true,
+      "niveau": 2,
+      "chapitre": "Théorème de la bijection",
+      "titre": "Le théorème de la bijection",
+      "source": "Poly LLG/H4, Transition Prépa, application du théorème de la bijection",
+      "accroche": "Pas besoin de résoudre l'équation pour savoir qu'elle n'a qu'une solution, et où la trouver.",
+      "enonce": [
+        {
+          "type": "texte",
+          "valeur": "On pose $f(x) = x^3 + x - 1$, définie sur $\\mathbb{R}$."
+        },
+        {
+          "type": "question",
+          "num": "",
+          "valeur": "Montrer que l'équation $f(x) = 0$ admet une unique solution réelle, et qu'elle appartient à $]0,1[$."
+        }
+      ],
+      "etapes": [
+        {
+          "titre": "Stricte monotonie",
+          "blocs": [
+            {
+              "type": "texte",
+              "valeur": "$f$ est dérivable sur $\\mathbb{R}$, de dérivée :"
+            },
+            {
+              "type": "formule",
+              "cle": true,
+              "valeur": "f'(x) = 3x^2 + 1"
+            },
+            {
+              "type": "texte",
+              "valeur": "Comme $3x^2 \\geqslant 0$, on a $f'(x) \\geqslant 1 > 0$ pour tout $x$ : $f$ est strictement croissante sur $\\mathbb{R}$."
+            }
+          ]
+        },
+        {
+          "titre": "Continuité et limites aux bornes",
+          "blocs": [
+            {
+              "type": "texte",
+              "valeur": "$f$ est continue sur $\\mathbb{R}$ comme fonction polynomiale, et :"
+            },
+            {
+              "type": "formule",
+              "valeur": "\\lim_{x \\to -\\infty} f(x) = -\\infty, \\qquad \\lim_{x \\to +\\infty} f(x) = +\\infty"
+            },
+            {
+              "type": "astuce",
+              "valeur": "Continue + strictement monotone + limites de signes opposés aux bornes : c'est exactement l'hypothèse du théorème de la bijection."
+            }
+          ]
+        },
+        {
+          "titre": "Appliquer le théorème de la bijection",
+          "blocs": [
+            {
+              "type": "texte",
+              "valeur": "$f$ réalise donc une bijection de $\\mathbb{R}$ sur $\\mathbb{R}$. En particulier, $0$ admet un unique antécédent : l'équation $f(x)=0$ a une unique solution réelle."
+            }
+          ]
+        },
+        {
+          "titre": "Localiser la solution",
+          "blocs": [
+            {
+              "type": "texte",
+              "valeur": "On encadre en évaluant $f$ aux entiers voisins."
+            },
+            {
+              "type": "formule",
+              "cle": true,
+              "valeur": "f(0) = -1 < 0 \\qquad \\text{et} \\qquad f(1) = 1 > 0"
+            },
+            {
+              "type": "texte",
+              "valeur": "$f$ étant strictement croissante et changeant de signe entre $0$ et $1$, l'unique solution appartient à $]0,1[$."
+            }
+          ]
+        }
+      ],
+      "conclusion": "Le théorème de la bijection donne l'existence et l'unicité sans jamais résoudre l'équation explicitement, ce que la formule de Cardan ferait, mais bien plus lourdement.",
+      "hashtags_extra": "#theoremedelabijection"
+    },
+    {
+      "id": "llg-integration-1",
+      "verifie": true,
+      "niveau": 2,
+      "chapitre": "Calcul d'intégrales",
+      "titre": "L'intégration par parties",
+      "source": "Poly LLG/H4, Transition Prépa, §8.1 Calculs d'intégrales et de primitives",
+      "accroche": "Un produit $x$ par $e^x$ : le signal qu'il faut intégrer par parties, et une seule fois suffit.",
+      "enonce": [
+        {
+          "type": "question",
+          "num": "",
+          "valeur": "Calculer $\\displaystyle\\int_0^1 x\\,e^x \\, dx$."
+        }
+      ],
+      "etapes": [
+        {
+          "titre": "Choisir $u$ et $v'$",
+          "blocs": [
+            {
+              "type": "texte",
+              "valeur": "On pose $u(x) = x$ et $v'(x) = e^x$, tous deux $\\mathcal{C}^1$ sur $[0,1]$."
+            },
+            {
+              "type": "formule",
+              "valeur": "u'(x) = 1, \\qquad v(x) = e^x"
+            },
+            {
+              "type": "astuce",
+              "valeur": "On choisit toujours $u$ comme le facteur qui se simplifie en dérivant, ici $x$ devient $1$, alors que $e^x$ reste $e^x$ quoi qu'on en fasse."
+            }
+          ]
+        },
+        {
+          "titre": "Appliquer la formule d'intégration par parties",
+          "blocs": [
+            {
+              "type": "formule",
+              "cle": true,
+              "valeur": "\\int_0^1 x e^x \\, dx = \\Big[x e^x\\Big]_0^1 - \\int_0^1 e^x \\, dx"
+            }
+          ]
+        },
+        {
+          "titre": "Évaluer les deux morceaux",
+          "blocs": [
+            {
+              "type": "formule",
+              "valeur": "\\Big[x e^x\\Big]_0^1 = (1 \\times e^1) - (0 \\times e^0) = e"
+            },
+            {
+              "type": "formule",
+              "valeur": "\\int_0^1 e^x \\, dx = \\Big[e^x\\Big]_0^1 = e - 1"
+            }
+          ]
+        },
+        {
+          "titre": "Conclure",
+          "blocs": [
+            {
+              "type": "formule",
+              "cle": true,
+              "valeur": "\\int_0^1 x e^x \\, dx = e - (e - 1) = 1"
+            }
+          ]
+        }
+      ],
+      "conclusion": "Le résultat est un entier alors que $e$ apparaît à chaque étape intermédiaire : un signe que les deux occurrences de $e$ se sont bien annulées, pas une coïncidence à ignorer en cas d'erreur de calcul.",
+      "hashtags_extra": "#integrationparparties"
+    },
+    {
+      "id": "llg-limites-2",
+      "verifie": true,
+      "niveau": 2,
+      "chapitre": "Limites usuelles",
+      "titre": "Le théorème des gendarmes",
+      "source": "Poly LLG/H4, Transition Prépa, §5.1 Premiers exemples, théorème des gendarmes",
+      "accroche": "$\\cos(1/x)$ oscille sans fin près de $0$, mais $x^2$ suffit à l'écraser.",
+      "enonce": [
+        {
+          "type": "texte",
+          "valeur": "On pose $f(x) = x^2 \\cos\\!\\left(\\dfrac{1}{x}\\right)$ pour $x \\neq 0$."
+        },
+        {
+          "type": "question",
+          "num": "a.",
+          "valeur": "Montrer que $f$ admet une limite en $0$, et la déterminer."
+        },
+        {
+          "type": "question",
+          "num": "b.",
+          "valeur": "$f$ est-elle prolongeable par continuité en $0$ ?"
+        }
+      ],
+      "etapes": [
+        {
+          "titre": "Encadrer le cosinus",
+          "blocs": [
+            {
+              "type": "texte",
+              "valeur": "Pour tout $x \\neq 0$, $\\cos(1/x)$ est bien défini et vérifie l'encadrement usuel du cosinus."
+            },
+            {
+              "type": "formule",
+              "valeur": "-1 \\leqslant \\cos\\!\\left(\\dfrac{1}{x}\\right) \\leqslant 1"
+            }
+          ]
+        },
+        {
+          "titre": "Multiplier par $x^2 \\geqslant 0$",
+          "blocs": [
+            {
+              "type": "texte",
+              "valeur": "Multiplier une double inégalité par un nombre positif ($x^2$) conserve le sens des inégalités."
+            },
+            {
+              "type": "formule",
+              "cle": true,
+              "valeur": "-x^2 \\leqslant x^2 \\cos\\!\\left(\\dfrac{1}{x}\\right) \\leqslant x^2"
+            },
+            {
+              "type": "astuce",
+              "valeur": "Une fonction bornée (ici $\\cos$) multipliée par une fonction qui tend vers $0$ tend elle aussi vers $0$ : c'est le réflexe à avoir dès qu'on voit une oscillation bornée."
+            }
+          ]
+        },
+        {
+          "titre": "Appliquer le théorème des gendarmes",
+          "blocs": [
+            {
+              "type": "texte",
+              "valeur": "$-x^2$ et $x^2$ tendent tous deux vers $0$ quand $x \\to 0$."
+            },
+            {
+              "type": "formule",
+              "cle": true,
+              "valeur": "\\lim_{x \\to 0} x^2 \\cos\\!\\left(\\dfrac{1}{x}\\right) = 0"
+            }
+          ]
+        },
+        {
+          "titre": "Conclure sur le prolongement",
+          "blocs": [
+            {
+              "type": "texte",
+              "valeur": "$f$ n'est pas définie en $0$, mais admet une limite finie en ce point : on peut donc poser $f(0) = 0$ pour obtenir une fonction continue sur $\\mathbb{R}$ tout entier."
+            }
+          ]
+        }
+      ],
+      "conclusion": "$\\cos(1/x)$ seul n'a pas de limite en $0$, mais dès qu'on le multiplie par une fonction qui s'annule, l'oscillation devient inoffensive.",
+      "hashtags_extra": "#theoremedesgendarmes"
+    },
+    {
+      "id": "sl-suites-3",
+      "verifie": true,
+      "niveau": 3,
+      "chapitre": "Suites adjacentes",
+      "titre": "Les suites adjacentes",
+      "source": "Poly Saint-Louis, Transition Terminale → MPSI/PCSI/MP2I, suites adjacentes",
+      "accroche": "Deux suites, l'une monte, l'autre descend, et l'écart s'efface : elles n'ont pas le choix, elles convergent ensemble.",
+      "enonce": [
+        {
+          "type": "texte",
+          "valeur": "Pour tout $n \\geqslant 1$, on pose :"
+        },
+        {
+          "type": "formule",
+          "cle": true,
+          "valeur": "u_n = \\sum_{k=1}^{n} \\dfrac{1}{k^2}, \\qquad v_n = u_n + \\dfrac{1}{n}"
+        },
+        {
+          "type": "question",
+          "num": "a.",
+          "valeur": "Montrer que $(u_n)$ est croissante."
+        },
+        {
+          "type": "question",
+          "num": "b.",
+          "valeur": "Montrer que $(v_n)$ est décroissante."
+        },
+        {
+          "type": "question",
+          "num": "c.",
+          "valeur": "En déduire que $(u_n)$ et $(v_n)$ convergent vers une même limite."
+        }
+      ],
+      "etapes": [
+        {
+          "titre": "Croissance de $(u_n)$",
+          "blocs": [
+            {
+              "type": "texte",
+              "valeur": "On calcule directement la différence de deux termes consécutifs."
+            },
+            {
+              "type": "formule",
+              "valeur": "u_{n+1} - u_n = \\dfrac{1}{(n+1)^2} \\geqslant 0"
+            },
+            {
+              "type": "texte",
+              "valeur": "$(u_n)$ est donc croissante : on ajoute à chaque étape un terme positif."
+            }
+          ]
+        },
+        {
+          "titre": "Décroissance de $(v_n)$",
+          "blocs": [
+            {
+              "type": "texte",
+              "valeur": "On calcule de même $v_{n+1} - v_n$, en réutilisant le calcul précédent."
+            },
+            {
+              "type": "formule",
+              "valeur": "v_{n+1} - v_n = \\dfrac{1}{(n+1)^2} + \\dfrac{1}{n+1} - \\dfrac{1}{n}"
+            },
+            {
+              "type": "astuce",
+              "valeur": "Regrouper les deux derniers termes en une seule fraction fait apparaître un dénominateur commun exploitable."
+            }
+          ]
+        },
+        {
+          "titre": "Mettre au même dénominateur",
+          "blocs": [
+            {
+              "type": "formule",
+              "valeur": "\\dfrac{1}{n+1} - \\dfrac{1}{n} = \\dfrac{n - (n+1)}{n(n+1)} = \\dfrac{-1}{n(n+1)}"
+            },
+            {
+              "type": "formule",
+              "cle": true,
+              "valeur": "\\begin{aligned} v_{n+1} - v_n &= \\dfrac{1}{(n+1)^2} - \\dfrac{1}{n(n+1)} \\\\[6pt] &= \\dfrac{n - (n+1)}{n(n+1)^2} = \\dfrac{-1}{n(n+1)^2} \\end{aligned}"
+            },
+            {
+              "type": "texte",
+              "valeur": "Cette quantité est strictement négative pour $n \\geqslant 1$ : $(v_n)$ est donc décroissante."
+            }
+          ]
+        },
+        {
+          "titre": "L'écart s'efface",
+          "blocs": [
+            {
+              "type": "texte",
+              "valeur": "Par définition, $v_n - u_n = 1/n$, qui tend vers $0$ quand $n \\to +\\infty$."
+            },
+            {
+              "type": "formule",
+              "cle": true,
+              "valeur": "(u_n) \\text{ croissante}, \\quad (v_n) \\text{ décroissante}, \\quad v_n - u_n \\xrightarrow[n \\to +\\infty]{} 0"
+            },
+            {
+              "type": "texte",
+              "valeur": "$(u_n)$ et $(v_n)$ sont donc adjacentes : d'après le théorème des suites adjacentes, elles convergent vers une même limite."
+            }
+          ]
+        }
+      ],
+      "conclusion": "Cette limite commune existe (théorème des suites adjacentes), sans qu'il ait fallu la calculer, c'est justement l'intérêt de la méthode.",
+      "hashtags_extra": "#suitesadjacentes"
+    },
+    {
+      "id": "sl-suites-4",
+      "verifie": true,
+      "niveau": 3,
+      "chapitre": "Suites & récurrence",
+      "titre": "Convergence d'une suite croissante majorée",
+      "source": "Poly Saint-Louis, Transition Terminale → MPSI/PCSI/MP2I, suites récurrentes $u_{n+1}=f(u_n)$",
+      "accroche": "Bornée et croissante : deux ingrédients qui suffisent à garantir la convergence, sans connaître la limite à l'avance.",
+      "enonce": [
+        {
+          "type": "texte",
+          "valeur": "On définit $(u_n)$ par $u_0 = 0$ et, pour tout $n \\in \\mathbb{N}$ :"
+        },
+        {
+          "type": "formule",
+          "cle": true,
+          "valeur": "u_{n+1} = \\sqrt{2 + u_n}"
+        },
+        {
+          "type": "question",
+          "num": "",
+          "valeur": "Montrer que $(u_n)$ converge, et déterminer sa limite."
+        }
+      ],
+      "etapes": [
+        {
+          "titre": "$(u_n)$ reste dans $[0,2]$",
+          "blocs": [
+            {
+              "type": "texte",
+              "valeur": "On montre par récurrence que $0 \\leqslant u_n \\leqslant 2$ pour tout $n$. Initialisation : $u_0 = 0$, c'est vérifié."
+            },
+            {
+              "type": "texte",
+              "valeur": "Hérédité : si $0 \\leqslant u_n \\leqslant 2$, alors $2 \\leqslant 2 + u_n \\leqslant 4$, et la racine carrée étant croissante :"
+            },
+            {
+              "type": "formule",
+              "cle": true,
+              "valeur": "\\sqrt{2} \\leqslant u_{n+1} \\leqslant 2"
+            },
+            {
+              "type": "texte",
+              "valeur": "donc en particulier $0 \\leqslant u_{n+1} \\leqslant 2$."
+            }
+          ]
+        },
+        {
+          "titre": "$(u_n)$ est croissante",
+          "blocs": [
+            {
+              "type": "texte",
+              "valeur": "On compare $u_{n+1}$ et $u_n$ en utilisant que $h : x \\mapsto \\sqrt{2+x}$ est croissante sur $[0,2]$."
+            },
+            {
+              "type": "texte",
+              "valeur": "Initialisation : $u_1 - u_0 = \\sqrt{2} - 0 > 0$. Hérédité : si $u_n \\geqslant u_{n-1}$, alors par croissance de $h$ :"
+            },
+            {
+              "type": "formule",
+              "valeur": "u_{n+1} = h(u_n) \\geqslant h(u_{n-1}) = u_n"
+            },
+            {
+              "type": "astuce",
+              "valeur": "Pour comparer deux termes consécutifs d'une suite $u_{n+1}=f(u_n)$, comparer $f(u_n)$ et $f(u_{n-1})$ marche dès que $f$ est monotone, croissante ici, il n'y a pas d'inversion de sens."
+            }
+          ]
+        },
+        {
+          "titre": "Croissante et majorée : la convergence",
+          "blocs": [
+            {
+              "type": "texte",
+              "valeur": "$(u_n)$ est croissante et majorée par $2$ : elle converge donc vers une limite $\\ell \\leqslant 2$, avec $\\ell \\geqslant 0$."
+            }
+          ]
+        },
+        {
+          "titre": "Identifier la limite",
+          "blocs": [
+            {
+              "type": "texte",
+              "valeur": "La fonction $x \\mapsto \\sqrt{2+x}$ est continue, donc on peut passer à la limite dans la relation de récurrence."
+            },
+            {
+              "type": "formule",
+              "valeur": "\\ell = \\sqrt{2 + \\ell} \\;\\Longrightarrow\\; \\ell^2 = 2 + \\ell \\;\\Longrightarrow\\; \\ell^2 - \\ell - 2 = 0"
+            },
+            {
+              "type": "formule",
+              "cle": true,
+              "valeur": "(\\ell - 2)(\\ell + 1) = 0 \\;\\Longrightarrow\\; \\ell = 2 \\text{ ou } \\ell = -1"
+            },
+            {
+              "type": "texte",
+              "valeur": "Comme $\\ell \\geqslant 0$, la valeur $\\ell = -1$ est exclue : $\\ell = 2$."
+            }
+          ]
+        }
+      ],
+      "conclusion": "Le schéma « majorer, montrer la monotonie, passer à la limite dans la relation » se répète à l'identique pour toute suite $u_{n+1}=f(u_n)$ avec $f$ continue et croissante.",
+      "hashtags_extra": "#suitesrecurrentes"
+    },
+    {
+      "id": "llg-integration-2",
+      "verifie": true,
+      "niveau": 3,
+      "chapitre": "Intégration des inégalités",
+      "titre": "Encadrement d'une intégrale",
+      "source": "Poly LLG/H4, Transition Prépa, §8.2 Intégration des inégalités",
+      "accroche": "On n'a pas besoin de calculer l'intégrale pour savoir où elle va : l'encadrer suffit.",
+      "enonce": [
+        {
+          "type": "texte",
+          "valeur": "Pour tout $n \\in \\mathbb{N}$, on pose :"
+        },
+        {
+          "type": "formule",
+          "cle": true,
+          "valeur": "I_n = \\int_0^1 \\dfrac{x^n}{1+x} \\, dx"
+        },
+        {
+          "type": "question",
+          "num": "a.",
+          "valeur": "Montrer que, pour tout $x \\in [0,1]$, $\\dfrac{x^n}{2} \\leqslant \\dfrac{x^n}{1+x} \\leqslant x^n$."
+        },
+        {
+          "type": "question",
+          "num": "b.",
+          "valeur": "En déduire un encadrement de $I_n$, puis $\\displaystyle\\lim_{n \\to +\\infty} I_n$."
+        }
+      ],
+      "etapes": [
+        {
+          "titre": "Encadrer $1+x$, puis inverser",
+          "blocs": [
+            {
+              "type": "texte",
+              "valeur": "Pour $x \\in [0,1]$, on a $1 \\leqslant 1+x \\leqslant 2$. En passant à l'inverse (fonction décroissante sur les positifs) :"
+            },
+            {
+              "type": "formule",
+              "valeur": "\\dfrac{1}{2} \\leqslant \\dfrac{1}{1+x} \\leqslant 1"
+            }
+          ]
+        },
+        {
+          "titre": "Multiplier par $x^n \\geqslant 0$",
+          "blocs": [
+            {
+              "type": "texte",
+              "valeur": "Multiplier par $x^n \\geqslant 0$ conserve le sens de l'encadrement, ce qui donne exactement la question a."
+            },
+            {
+              "type": "formule",
+              "cle": true,
+              "valeur": "\\dfrac{x^n}{2} \\leqslant \\dfrac{x^n}{1+x} \\leqslant x^n \\qquad \\forall x \\in [0,1]"
+            }
+          ]
+        },
+        {
+          "titre": "Intégrer l'encadrement sur $[0,1]$",
+          "blocs": [
+            {
+              "type": "texte",
+              "valeur": "L'intégration conserve les inégalités entre fonctions sur un intervalle où la borne supérieure est plus grande que la borne inférieure."
+            },
+            {
+              "type": "formule",
+              "valeur": "\\int_0^1 \\dfrac{x^n}{2}\\,dx \\leqslant I_n \\leqslant \\int_0^1 x^n \\, dx"
+            },
+            {
+              "type": "astuce",
+              "valeur": "« Intégrer une inégalité » n'est rien d'autre qu'appliquer la positivité/linéarité de l'intégrale à la différence des deux fonctions."
+            }
+          ]
+        },
+        {
+          "titre": "Calculer les deux bornes",
+          "blocs": [
+            {
+              "type": "formule",
+              "cle": true,
+              "valeur": "\\dfrac{1}{2(n+1)} \\leqslant I_n \\leqslant \\dfrac{1}{n+1}"
+            }
+          ]
+        },
+        {
+          "titre": "Conclure par les gendarmes",
+          "blocs": [
+            {
+              "type": "texte",
+              "valeur": "Les deux bornes tendent vers $0$ quand $n \\to +\\infty$."
+            },
+            {
+              "type": "formule",
+              "cle": true,
+              "valeur": "\\lim_{n \\to +\\infty} I_n = 0"
+            }
+          ]
+        }
+      ],
+      "conclusion": "Encadrer l'intégrande avant d'intégrer évite tout calcul explicite de primitive, une méthode qui marche même quand $I_n$ n'a pas d'expression simple.",
+      "hashtags_extra": "#integrationdesinegalites"
+    },
+    {
+      "id": "llg-wallis-1",
+      "verifie": true,
+      "niveau": 3,
+      "chapitre": "Intégrales de Wallis",
+      "titre": "Les intégrales de Wallis",
+      "source": "Poly LLG/H4, Transition Prépa, §8.6 Complément : intégrales de Wallis (version élémentaire)",
+      "accroche": "Sans calculer une seule valeur, on sait déjà que cette suite converge.",
+      "enonce": [
+        {
+          "type": "texte",
+          "valeur": "Pour tout $n \\in \\mathbb{N}$, on pose :"
+        },
+        {
+          "type": "formule",
+          "cle": true,
+          "valeur": "I_n = \\int_0^{\\pi/2} \\sin^n(x) \\, dx"
+        },
+        {
+          "type": "question",
+          "num": "a.",
+          "valeur": "Montrer que $I_n > 0$ pour tout $n$."
+        },
+        {
+          "type": "question",
+          "num": "b.",
+          "valeur": "Montrer que $(I_n)$ est décroissante."
+        },
+        {
+          "type": "question",
+          "num": "c.",
+          "valeur": "En déduire que $(I_n)$ converge."
+        }
+      ],
+      "etapes": [
+        {
+          "titre": "Positivité stricte",
+          "blocs": [
+            {
+              "type": "texte",
+              "valeur": "Sur $[0, \\pi/2]$, $\\sin(x) \\geqslant 0$, donc $\\sin^n(x) \\geqslant 0$. De plus $\\sin(x) > 0$ dès que $x \\in \\,]0, \\pi/2]$."
+            },
+            {
+              "type": "texte",
+              "valeur": "L'intégrale d'une fonction continue, positive et non identiquement nulle sur un intervalle non réduit à un point est strictement positive."
+            },
+            {
+              "type": "formule",
+              "cle": true,
+              "valeur": "I_n = \\int_0^{\\pi/2} \\sin^n(x)\\,dx > 0"
+            }
+          ]
+        },
+        {
+          "titre": "Comparer $\\sin^{n+1}$ et $\\sin^n$",
+          "blocs": [
+            {
+              "type": "texte",
+              "valeur": "Pour $x \\in [0,\\pi/2]$, on a $0 \\leqslant \\sin(x) \\leqslant 1$. Multiplier $\\sin^n(x) \\geqslant 0$ par un facteur $\\leqslant 1$ ne peut que le diminuer ou le laisser inchangé."
+            },
+            {
+              "type": "formule",
+              "cle": true,
+              "valeur": "\\sin^{n+1}(x) = \\sin(x) \\times \\sin^n(x) \\leqslant \\sin^n(x)"
+            },
+            {
+              "type": "astuce",
+              "valeur": "C'est le point clé de toute la famille des intégrales de Wallis : $\\sin$ borné par $1$ sur $[0,\\pi/2]$ rend la suite $(\\sin^n)$ décroissante en $n$, point par point."
+            }
+          ]
+        },
+        {
+          "titre": "Intégrer l'inégalité",
+          "blocs": [
+            {
+              "type": "texte",
+              "valeur": "En intégrant l'inégalité précédente sur $[0, \\pi/2]$ (intervalle où la borne supérieure dépasse bien la borne inférieure) :"
+            },
+            {
+              "type": "formule",
+              "cle": true,
+              "valeur": "I_{n+1} \\leqslant I_n"
+            },
+            {
+              "type": "texte",
+              "valeur": "$(I_n)$ est donc décroissante."
+            }
+          ]
+        },
+        {
+          "titre": "Conclure à la convergence",
+          "blocs": [
+            {
+              "type": "texte",
+              "valeur": "$(I_n)$ est décroissante (question b) et minorée par $0$ (question a, au sens large) : toute suite décroissante minorée converge."
+            },
+            {
+              "type": "formule",
+              "valeur": "(I_n) \\text{ décroissante et minorée par } 0 \\;\\Longrightarrow\\; (I_n) \\text{ converge}"
+            }
+          ]
+        }
+      ],
+      "conclusion": "Positivité et décroissance suffisent à garantir la convergence, la suite $(I_n)$ tend en réalité vers $0$, mais ça, c'est une autre étape, avec d'autres outils.",
+      "hashtags_extra": "#integralesdewallis"
+    },
+    {
+      "id": "llg-extremum-2",
+      "verifie": true,
+      "niveau": 3,
+      "chapitre": "Condition nécessaire d'extremum",
+      "titre": "Optimisation : le rectangle d'aire maximale",
+      "source": "Poly LLG/H4, Transition Prépa, §6.5 application de la condition nécessaire d'extremum",
+      "accroche": "Parmi tous les rectangles de même périmètre, un seul maximise l'aire, et ce n'est pas un hasard si c'est le carré.",
+      "enonce": [
+        {
+          "type": "texte",
+          "valeur": "On fixe un périmètre $P > 0$. Un rectangle de côtés $x$ et $\\dfrac{P}{2} - x$, avec $x \\in \\left]0, \\dfrac{P}{2}\\right[$, a pour aire $A(x) = x\\left(\\dfrac{P}{2} - x\\right)$."
+        },
+        {
+          "type": "question",
+          "num": "",
+          "valeur": "Montrer que l'aire est maximale lorsque le rectangle est un carré, et donner cette aire maximale."
+        }
+      ],
+      "etapes": [
+        {
+          "titre": "Développer et dériver",
+          "blocs": [
+            {
+              "type": "formule",
+              "valeur": "A(x) = \\dfrac{P}{2}x - x^2"
+            },
+            {
+              "type": "formule",
+              "cle": true,
+              "valeur": "A'(x) = \\dfrac{P}{2} - 2x"
+            }
+          ]
+        },
+        {
+          "titre": "Trouver le point critique",
+          "blocs": [
+            {
+              "type": "texte",
+              "valeur": "D'après la condition nécessaire d'extremum, un maximum de $A$ ne peut se trouver qu'en un point où $A'$ s'annule."
+            },
+            {
+              "type": "formule",
+              "valeur": "A'(x) = 0 \\iff x = \\dfrac{P}{4}"
+            },
+            {
+              "type": "astuce",
+              "valeur": "La condition $A'=0$ ne donne qu'un candidat : il reste à vérifier que c'en est bien un maximum, pas un minimum ni un simple point d'inflexion."
+            }
+          ]
+        },
+        {
+          "titre": "Vérifier qu'il s'agit d'un maximum",
+          "blocs": [
+            {
+              "type": "texte",
+              "valeur": "$A'(x) = P/2 - 2x$ est positive avant $P/4$ et négative après : $A$ est croissante puis décroissante, donc $x = P/4$ est bien un maximum (et pas seulement un point critique)."
+            }
+          ]
+        },
+        {
+          "titre": "Identifier la forme et l'aire",
+          "blocs": [
+            {
+              "type": "texte",
+              "valeur": "Au point critique, le second côté vaut :"
+            },
+            {
+              "type": "formule",
+              "valeur": "\\dfrac{P}{2} - \\dfrac{P}{4} = \\dfrac{P}{4}"
+            },
+            {
+              "type": "texte",
+              "valeur": "Les deux côtés sont égaux : le rectangle optimal est un carré."
+            },
+            {
+              "type": "formule",
+              "cle": true,
+              "valeur": "A_{\\max} = \\left(\\dfrac{P}{4}\\right)^2 = \\dfrac{P^2}{16}"
+            }
+          ]
+        }
+      ],
+      "conclusion": "La condition nécessaire d'extremum ($A'=0$) trouve le candidat ; c'est l'étude du signe de $A'$ autour de ce point qui confirme qu'il s'agit bien d'un maximum.",
+      "hashtags_extra": "#optimisation"
+    },
+    {
+      "id": "sl-fonctions-3",
+      "verifie": true,
+      "niveau": 3,
+      "chapitre": "Étude de fonctions",
+      "titre": "Étude de la fonction ln x / x",
+      "source": "Poly Saint-Louis, Transition Terminale → MPSI/PCSI/MP2I, étude de $\\ln x / x$",
+      "accroche": "Entre $-\\infty$ en $0$ et un retour discret vers $0$ en $+\\infty$, un unique sommet, en $x=e$.",
+      "enonce": [
+        {
+          "type": "texte",
+          "valeur": "On considère $f : x \\mapsto \\dfrac{\\ln x}{x}$, définie sur $]0, +\\infty[$."
+        },
+        {
+          "type": "question",
+          "num": "",
+          "valeur": "Étudier les variations de $f$ et ses limites en $0$ et en $+\\infty$."
+        }
+      ],
+      "etapes": [
+        {
+          "titre": "Dériver le quotient",
+          "blocs": [
+            {
+              "type": "texte",
+              "valeur": "$f$ est dérivable sur $]0,+\\infty[$ comme quotient de fonctions dérivables, avec dénominateur non nul."
+            },
+            {
+              "type": "formule",
+              "cle": true,
+              "valeur": "f'(x) = \\dfrac{\\dfrac{1}{x} \\times x - \\ln x \\times 1}{x^2} = \\dfrac{1 - \\ln x}{x^2}"
+            }
+          ]
+        },
+        {
+          "titre": "Étudier le signe de $f'$",
+          "blocs": [
+            {
+              "type": "texte",
+              "valeur": "$x^2 > 0$, donc $f'(x)$ a le signe de $1 - \\ln x$."
+            },
+            {
+              "type": "formule",
+              "valeur": "1 - \\ln x > 0 \\iff \\ln x < 1 \\iff x < e"
+            },
+            {
+              "type": "astuce",
+              "valeur": "Résoudre le signe d'une expression en $\\ln x$ se ramène presque toujours à comparer $x$ à $e^{\\text{quelque chose}}$, jamais à manipuler $\\ln$ à vue."
+            }
+          ]
+        },
+        {
+          "titre": "En déduire le maximum",
+          "blocs": [
+            {
+              "type": "texte",
+              "valeur": "$f$ est croissante sur $]0, e]$ puis décroissante sur $[e, +\\infty[$ : elle atteint son maximum en $x = e$."
+            },
+            {
+              "type": "formule",
+              "cle": true,
+              "valeur": "f(e) = \\dfrac{\\ln e}{e} = \\dfrac{1}{e}"
+            }
+          ]
+        },
+        {
+          "titre": "Limite en $0^+$",
+          "blocs": [
+            {
+              "type": "texte",
+              "valeur": "Quand $x \\to 0^+$, $\\ln x \\to -\\infty$ tandis que $x \\to 0^+$ : le quotient d'un numérateur qui tend vers $-\\infty$ par un dénominateur positif qui tend vers $0$ diverge vers $-\\infty$."
+            },
+            {
+              "type": "formule",
+              "valeur": "\\lim_{x \\to 0^+} \\dfrac{\\ln x}{x} = -\\infty"
+            }
+          ]
+        },
+        {
+          "titre": "Limite en $+\\infty$",
+          "blocs": [
+            {
+              "type": "texte",
+              "valeur": "C'est exactement la croissance comparée établie plus tôt : le logarithme est dominé par $x$."
+            },
+            {
+              "type": "formule",
+              "cle": true,
+              "valeur": "\\lim_{x \\to +\\infty} \\dfrac{\\ln x}{x} = 0"
+            }
+          ]
+        }
+      ],
+      "conclusion": "$f$ plonge vers $-\\infty$ près de $0$, culmine à $1/e$ en $x=e$, puis redescend vers $0$ sans jamais redevenir négative après $x=1$ : tout le comportement tient dans le signe de $1-\\ln x$.",
+      "hashtags_extra": "#etudedefonction #logarithme"
+    },
+    {
+      "id": "llg-extremum-1",
+      "verifie": true,
+      "niveau": 4,
+      "chapitre": "Condition nécessaire d'extremum",
+      "titre": "La condition nécessaire d'extremum",
+      "source": "Poly LLG/H4, Transition Prépa, §6.5 Complément : la condition nécessaire d'extremum",
+      "accroche": "Le résultat le plus utilisé de toute l'optimisation, et pour une fois, on en démontre le mécanisme.",
+      "enonce": [
+        {
+          "type": "texte",
+          "valeur": "Soit $f$ une fonction dérivable sur un intervalle ouvert $I$, et $x_0 \\in I$ un point où $f$ admet un extremum local."
+        },
+        {
+          "type": "question",
+          "num": "a.",
+          "valeur": "Montrer que $f'(x_0) = 0$."
+        },
+        {
+          "type": "question",
+          "num": "b.",
+          "valeur": "Application : trouver les extrema locaux de $f(x) = x^3 - 3x$ sur $\\mathbb{R}$."
+        }
+      ],
+      "etapes": [
+        {
+          "titre": "Se ramener à un maximum local",
+          "blocs": [
+            {
+              "type": "texte",
+              "valeur": "Traitons le cas d'un maximum local (le cas minimum se traite de façon symétrique). Il existe $h > 0$ tel que $]x_0 - h, x_0 + h[ \\subset I$ et, sur cet intervalle, $f(x) \\leqslant f(x_0)$."
+            }
+          ]
+        },
+        {
+          "titre": "Le taux d'accroissement à droite",
+          "blocs": [
+            {
+              "type": "texte",
+              "valeur": "Pour $x_0 < x < x_0 + h$ : le numérateur $f(x) - f(x_0)$ est $\\leqslant 0$, et le dénominateur $x - x_0$ est $> 0$."
+            },
+            {
+              "type": "formule",
+              "valeur": "\\dfrac{f(x) - f(x_0)}{x - x_0} \\leqslant 0"
+            },
+            {
+              "type": "texte",
+              "valeur": "En passant à la limite quand $x \\to x_0^+$, et $f$ étant dérivable en $x_0$, on obtient $f'(x_0) \\leqslant 0$."
+            }
+          ]
+        },
+        {
+          "titre": "Le taux d'accroissement à gauche",
+          "blocs": [
+            {
+              "type": "texte",
+              "valeur": "Pour $x_0 - h < x < x_0$ : le numérateur est toujours $\\leqslant 0$, mais cette fois le dénominateur $x - x_0$ est $< 0$."
+            },
+            {
+              "type": "formule",
+              "cle": true,
+              "valeur": "\\dfrac{f(x) - f(x_0)}{x - x_0} \\geqslant 0 \\;\\xrightarrow[x \\to x_0^-]{}\\; f'(x_0) \\geqslant 0"
+            },
+            {
+              "type": "astuce",
+              "valeur": "C'est le changement de signe du dénominateur, selon qu'on approche par la droite ou par la gauche, qui force les deux inégalités opposées, et donc l'égalité à $0$."
+            }
+          ]
+        },
+        {
+          "titre": "Conclure",
+          "blocs": [
+            {
+              "type": "texte",
+              "valeur": "$f$ étant dérivable en $x_0$, les limites à gauche et à droite du taux d'accroissement sont égales, toutes deux à $f'(x_0)$. On a donc simultanément $f'(x_0) \\leqslant 0$ et $f'(x_0) \\geqslant 0$."
+            },
+            {
+              "type": "formule",
+              "cle": true,
+              "valeur": "f'(x_0) = 0"
+            }
+          ]
+        },
+        {
+          "titre": "Application : les extrema de $x^3 - 3x$",
+          "blocs": [
+            {
+              "type": "texte",
+              "valeur": "$f'(x) = 3x^2 - 3 = 3(x-1)(x+1)$ s'annule en $x = -1$ et $x = 1$ : ce sont les seuls candidats à un extremum local."
+            },
+            {
+              "type": "formule",
+              "valeur": "\\begin{gathered} f' > 0 \\text{ sur } ]-\\infty,-1[ \\\\[6pt] f' < 0 \\text{ sur } ]-1,1[ \\\\[6pt] f' > 0 \\text{ sur } ]1,+\\infty[ \\end{gathered}"
+            },
+            {
+              "type": "texte",
+              "valeur": "Le signe change de $+$ à $-$ en $-1$ (maximum local) et de $-$ à $+$ en $1$ (minimum local)."
+            },
+            {
+              "type": "formule",
+              "cle": true,
+              "valeur": "\\begin{gathered} f(-1) = 2 \\quad \\text{(maximum local)} \\\\[6pt] f(1) = -2 \\quad \\text{(minimum local)} \\end{gathered}"
+            }
+          ]
+        }
+      ],
+      "conclusion": "$f'(x_0)=0$ est une condition nécessaire, jamais suffisante : elle donne des candidats, c'est l'étude du signe de $f'$ autour de chacun qui tranche entre maximum, minimum, ou ni l'un ni l'autre (cas $x^3$ en $0$).",
+      "hashtags_extra": "#theoremedefermat #extremum"
+    },
+    {
+      "id": "llg-denombrement-1",
+      "verifie": true,
+      "niveau": 1,
+      "chapitre": "Dénombrement",
+      "titre": "Tirage simultané et équiprobabilité",
+      "source": "Poly LLG/Henri-IV, Transition Terminale → CPGE, §9.1, exercice classique de dénombrement, rédigé à la main",
+      "accroche": "Deux réflexes à avoir en tête dès qu'on tire des boules d'une urne : compter, puis diviser.",
+      "enonce": [
+        {
+          "type": "texte",
+          "valeur": "Une urne contient 6 boules numérotées de 1 à 6. On en tire 3 simultanément (sans ordre, sans remise)."
+        },
+        {
+          "type": "question",
+          "num": "a.",
+          "valeur": "Combien y a-t-il de tirages possibles ?"
+        },
+        {
+          "type": "question",
+          "num": "b.",
+          "valeur": "Quelle est la probabilité que les 3 boules tirées soient toutes impaires ?"
+        }
+      ],
+      "etapes": [
+        {
+          "titre": "Reconnaître le bon modèle",
+          "blocs": [
+            {
+              "type": "texte",
+              "valeur": "« Simultanément » signifie que l'ordre du tirage n'a pas d'importance : le bon objet à compter est une combinaison, pas une liste ordonnée."
+            }
+          ]
+        },
+        {
+          "titre": "Compter les tirages possibles",
+          "blocs": [
+            {
+              "type": "formule",
+              "cle": true,
+              "valeur": "\\binom{6}{3} = \\dfrac{6!}{3!\\,3!} = \\dfrac{720}{6 \\times 6} = 20"
+            },
+            {
+              "type": "texte",
+              "valeur": "Il y a donc 20 tirages possibles, tous équiprobables."
+            }
+          ]
+        },
+        {
+          "titre": "Compter les tirages favorables",
+          "blocs": [
+            {
+              "type": "texte",
+              "valeur": "Les boules impaires sont $1, 3, 5$ : il n'y en a que 3. Un tirage « tout impair » revient à choisir les 3 boules impaires parmi ces 3."
+            },
+            {
+              "type": "formule",
+              "valeur": "\\binom{3}{3} = 1"
+            }
+          ]
+        },
+        {
+          "titre": "Calculer la probabilité",
+          "blocs": [
+            {
+              "type": "texte",
+              "valeur": "Sur un univers équiprobable, la probabilité est le rapport du nombre de cas favorables au nombre de cas possibles."
+            },
+            {
+              "type": "formule",
+              "cle": true,
+              "valeur": "p = \\dfrac{1}{20}"
+            },
+            {
+              "type": "astuce",
+              "valeur": "Toujours vérifier que l'univers est bien équiprobable avant de diviser, ici, chaque combinaison de 3 boules a la même chance d'être tirée."
+            }
+          ]
+        }
+      ],
+      "conclusion": "$\\binom{n}{k}$ répond à une seule question : « combien de façons de choisir $k$ objets parmi $n$, sans ordre ? » Une fois cette question identifiée, le reste est mécanique.",
+      "hashtags_extra": "#denombrement #probabilites"
+    },
+    {
+      "id": "llg-denombrement-2",
+      "verifie": true,
+      "niveau": 2,
+      "chapitre": "Dénombrement",
+      "titre": "La somme des coefficients binomiaux",
+      "source": "Poly LLG/Henri-IV, Transition Terminale → CPGE, §9.2 (schéma binomial), exercice classique rédigé à la main",
+      "accroche": "Sommer 2^n termes un par un ? Non : on évalue un polynôme en un point bien choisi.",
+      "enonce": [
+        {
+          "type": "texte",
+          "valeur": "Soit $n \\in \\mathbb{N}^*$."
+        },
+        {
+          "type": "question",
+          "num": "a.",
+          "valeur": "Montrer que $\\displaystyle\\sum_{k=0}^{n} \\binom{n}{k} = 2^n$."
+        },
+        {
+          "type": "question",
+          "num": "b.",
+          "valeur": "Montrer que $\\displaystyle\\sum_{k=0}^{n} (-1)^k \\binom{n}{k} = 0$."
+        }
+      ],
+      "etapes": [
+        {
+          "titre": "Partir de la formule du binôme",
+          "blocs": [
+            {
+              "type": "texte",
+              "valeur": "Pour tout réel $x$ :"
+            },
+            {
+              "type": "formule",
+              "cle": true,
+              "valeur": "(1+x)^n = \\sum_{k=0}^{n} \\binom{n}{k}\\, x^k"
+            }
+          ]
+        },
+        {
+          "titre": "Évaluer en x = 1",
+          "blocs": [
+            {
+              "type": "texte",
+              "valeur": "En posant $x=1$, chaque $x^k$ vaut 1 et la somme devient exactement celle de la question a."
+            },
+            {
+              "type": "formule",
+              "valeur": "(1+1)^n = 2^n = \\sum_{k=0}^{n} \\binom{n}{k}"
+            }
+          ]
+        },
+        {
+          "titre": "Évaluer en x = -1",
+          "blocs": [
+            {
+              "type": "texte",
+              "valeur": "En posant $x=-1$, $x^k$ devient $(-1)^k$ : c'est exactement la somme de la question b."
+            },
+            {
+              "type": "formule",
+              "valeur": "(1-1)^n = 0^n = \\sum_{k=0}^{n} (-1)^k \\binom{n}{k}"
+            }
+          ]
+        },
+        {
+          "titre": "Conclure, avec l'hypothèse n ≥ 1",
+          "blocs": [
+            {
+              "type": "texte",
+              "valeur": "Comme $n \\geqslant 1$, $0^n = 0$, d'où le résultat."
+            },
+            {
+              "type": "astuce",
+              "valeur": "L'hypothèse $n \\geqslant 1$ n'est pas un détail : pour $n=0$, la somme ne contient que le terme $k=0$ et vaut $1$, pas $0$ (convention $0^0=1$)."
+            }
+          ]
+        }
+      ],
+      "conclusion": "Évaluer une identité polynomiale en des points bien choisis ($x=\\pm 1$ ici) transforme une somme combinatoire en un calcul trivial. Le réflexe se généralise à bien d'autres sommes de coefficients binomiaux.",
+      "hashtags_extra": "#binomedenewton #combinatoire"
+    },
+    {
+      "id": "llg-denombrement-3",
+      "verifie": true,
+      "niveau": 3,
+      "chapitre": "Dénombrement",
+      "titre": "Le problème du chevalier de Méré",
+      "source": "Poly LLG/Henri-IV, Transition Terminale → CPGE, §9.1, Exercice 267a (adapté et complété)",
+      "accroche": "Le problème historique qui a lancé le calcul des probabilités, avec Pascal et Fermat.",
+      "enonce": [
+        {
+          "type": "texte",
+          "valeur": "On lance $n$ fois un dé non pipé, les lancers étant indépendants. On note $p_n$ la probabilité d'obtenir au moins un 6."
+        },
+        {
+          "type": "question",
+          "num": "a.",
+          "valeur": "Exprimer $p_n$ en fonction de $n$."
+        },
+        {
+          "type": "question",
+          "num": "b.",
+          "valeur": "Déterminer $\\displaystyle\\lim_{n \\to +\\infty} p_n$."
+        },
+        {
+          "type": "question",
+          "num": "c.",
+          "valeur": "Déterminer le plus petit entier $n$ tel que $p_n \\geqslant \\dfrac{1}{2}$."
+        }
+      ],
+      "etapes": [
+        {
+          "titre": "Passer par l'événement contraire",
+          "blocs": [
+            {
+              "type": "texte",
+              "valeur": "« Au moins un 6 » est pénible à calculer directement (trop de cas). Son contraire, « jamais de 6 », est un simple produit grâce à l'indépendance des lancers."
+            },
+            {
+              "type": "formule",
+              "cle": true,
+              "valeur": "P(\\text{jamais de 6}) = \\left(\\dfrac{5}{6}\\right)^{n}"
+            }
+          ]
+        },
+        {
+          "titre": "En déduire p_n",
+          "blocs": [
+            {
+              "type": "formule",
+              "valeur": "p_n = 1 - \\left(\\dfrac{5}{6}\\right)^{n}"
+            }
+          ]
+        },
+        {
+          "titre": "La limite",
+          "blocs": [
+            {
+              "type": "texte",
+              "valeur": "Comme $0 < \\tfrac{5}{6} < 1$, la suite géométrique $\\left(\\tfrac{5}{6}\\right)^n$ tend vers $0$."
+            },
+            {
+              "type": "formule",
+              "cle": true,
+              "valeur": "\\lim_{n \\to +\\infty} p_n = 1"
+            }
+          ]
+        },
+        {
+          "titre": "Poser l'inéquation",
+          "blocs": [
+            {
+              "type": "formule",
+              "valeur": "p_n \\geqslant \\dfrac{1}{2} \\iff \\left(\\dfrac{5}{6}\\right)^{n} \\leqslant \\dfrac{1}{2} \\iff n \\geqslant \\dfrac{\\ln 2}{\\ln\\!\\left(\\tfrac{6}{5}\\right)}"
+            },
+            {
+              "type": "astuce",
+              "valeur": "$\\ln\\!\\left(\\tfrac{5}{6}\\right) < 0$ : en divisant par ce nombre pour isoler $n$, l'inégalité change de sens."
+            }
+          ]
+        },
+        {
+          "titre": "Trancher numériquement",
+          "blocs": [
+            {
+              "type": "texte",
+              "valeur": "$\\dfrac{\\ln 2}{\\ln(6/5)} \\approx \\dfrac{0{,}693}{0{,}182} \\approx 3{,}80$. Le plus petit entier qui convient est donc $n=4$."
+            },
+            {
+              "type": "formule",
+              "valeur": "p_4 = 1 - \\left(\\dfrac{5}{6}\\right)^{4} = \\dfrac{671}{1296} \\approx 0{,}518 \\geqslant \\dfrac{1}{2}"
+            }
+          ]
+        }
+      ],
+      "conclusion": "C'est le problème posé au XVIIe siècle par le chevalier de Méré à Pascal : il pariait gagnant dès 4 lancers, et il avait raison. Ce calcul est à l'origine de la correspondance Pascal–Fermat sur les probabilités.",
+      "hashtags_extra": "#probabilites #chevalierdemere"
+    },
+    {
+      "id": "llg-complexes-1",
+      "verifie": true,
+      "niveau": 1,
+      "chapitre": "Nombres complexes",
+      "titre": "Module et conjugué d'un complexe",
+      "source": "Poly LLG/Henri-IV, Transition Terminale → CPGE, §10.2 (conjugué et module), exercice classique rédigé à la main",
+      "accroche": "Une seule identité à retenir pour manipuler n'importe quel nombre complexe : z·z̄ = |z|².",
+      "enonce": [
+        {
+          "type": "texte",
+          "valeur": "Soit $z = 3 - 4i$."
+        },
+        {
+          "type": "question",
+          "num": "a.",
+          "valeur": "Calculer $\\overline{z}$ puis $|z|$."
+        },
+        {
+          "type": "question",
+          "num": "b.",
+          "valeur": "Vérifier que $z\\,\\overline{z} = |z|^2$."
+        }
+      ],
+      "etapes": [
+        {
+          "titre": "Le conjugué",
+          "blocs": [
+            {
+              "type": "texte",
+              "valeur": "Le conjugué s'obtient en changeant le signe de la partie imaginaire."
+            },
+            {
+              "type": "formule",
+              "valeur": "\\overline{z} = 3 + 4i"
+            }
+          ]
+        },
+        {
+          "titre": "Le module",
+          "blocs": [
+            {
+              "type": "formule",
+              "valeur": "|z| = \\sqrt{3^2 + (-4)^2} = \\sqrt{9+16} = \\sqrt{25} = 5"
+            }
+          ]
+        },
+        {
+          "titre": "Le produit z fois son conjugué",
+          "blocs": [
+            {
+              "type": "texte",
+              "valeur": "On développe en utilisant $i^2 = -1$."
+            },
+            {
+              "type": "formule",
+              "valeur": "z\\,\\overline{z} = (3-4i)(3+4i) = 3^2 - (4i)^2 = 9 - (-16) = 25"
+            }
+          ]
+        },
+        {
+          "titre": "Comparer",
+          "blocs": [
+            {
+              "type": "formule",
+              "cle": true,
+              "valeur": "z\\,\\overline{z} = 25 = |z|^2"
+            },
+            {
+              "type": "astuce",
+              "valeur": "$z\\overline{z} = |z|^2$ est l'identité à connaître par cœur : elle sert dès qu'il faut rendre réel un dénominateur complexe, en multipliant haut et bas par le conjugué."
+            }
+          ]
+        }
+      ],
+      "conclusion": "Le produit d'un complexe par son conjugué est toujours réel positif, et égal au carré du module : c'est la version complexe de « $a \\times a = a^2$ ».",
+      "hashtags_extra": "#nombrescomplexes"
+    },
+    {
+      "id": "llg-complexes-2",
+      "verifie": true,
+      "niveau": 2,
+      "chapitre": "Nombres complexes",
+      "titre": "L'identité du parallélogramme",
+      "source": "Poly LLG/Henri-IV, Transition Terminale → CPGE, §10.2/10.3, exercice classique rédigé à la main",
+      "accroche": "Une identité qui semble sortie de nulle part... jusqu'à ce qu'on la lise comme un parallélogramme.",
+      "enonce": [
+        {
+          "type": "texte",
+          "valeur": "Soient $z, w \\in \\mathbb{C}$."
+        },
+        {
+          "type": "question",
+          "valeur": "Montrer que $|z+w|^2 + |z-w|^2 = 2\\left(|z|^2 + |w|^2\\right)$."
+        }
+      ],
+      "etapes": [
+        {
+          "titre": "Repartir de z·z̄ = |z|²",
+          "blocs": [
+            {
+              "type": "texte",
+              "valeur": "Pour tout complexe $a$, $|a|^2 = a\\,\\overline{a}$. On l'applique à $a = z+w$."
+            },
+            {
+              "type": "formule",
+              "valeur": "|z+w|^2 = (z+w)\\overline{(z+w)} = (z+w)(\\overline{z}+\\overline{w})"
+            }
+          ]
+        },
+        {
+          "titre": "Développer",
+          "blocs": [
+            {
+              "type": "formule",
+              "valeur": "(z+w)(\\overline{z}+\\overline{w}) = z\\overline{z} + z\\overline{w} + w\\overline{z} + w\\overline{w}"
+            },
+            {
+              "type": "texte",
+              "valeur": "Comme $w\\overline{z} = \\overline{z\\overline{w}}$, les deux termes croisés s'écrivent $z\\overline{w} + \\overline{z\\overline{w}} = 2\\,\\mathrm{Re}(z\\overline{w})$."
+            },
+            {
+              "type": "formule",
+              "cle": true,
+              "valeur": "|z+w|^2 = |z|^2 + |w|^2 + 2\\,\\mathrm{Re}(z\\overline{w})"
+            }
+          ]
+        },
+        {
+          "titre": "Le même calcul pour z - w",
+          "blocs": [
+            {
+              "type": "texte",
+              "valeur": "Un calcul identique, en remplaçant $w$ par $-w$, donne :"
+            },
+            {
+              "type": "formule",
+              "valeur": "|z-w|^2 = |z|^2 + |w|^2 - 2\\,\\mathrm{Re}(z\\overline{w})"
+            }
+          ]
+        },
+        {
+          "titre": "Additionner",
+          "blocs": [
+            {
+              "type": "texte",
+              "valeur": "Les termes en $\\mathrm{Re}(z\\overline{w})$ s'éliminent exactement."
+            },
+            {
+              "type": "formule",
+              "cle": true,
+              "valeur": "|z+w|^2 + |z-w|^2 = 2\\left(|z|^2+|w|^2\\right)"
+            },
+            {
+              "type": "astuce",
+              "valeur": "Repérer les deux termes opposés qui vont s'annuler avant de tout développer évite un calcul plus long qu'il n'y paraît."
+            }
+          ]
+        }
+      ],
+      "conclusion": "Géométriquement : dans un parallélogramme de côtés $z$ et $w$, la somme des carrés des deux diagonales égale la somme des carrés des quatre côtés, d'où le nom.",
+      "hashtags_extra": "#nombrescomplexes #geometrie"
+    },
+    {
+      "id": "llg-complexes-3",
+      "verifie": true,
+      "niveau": 3,
+      "chapitre": "Nombres complexes",
+      "titre": "Alignement de trois points et affixes",
+      "source": "Poly LLG/Henri-IV, Transition Terminale → CPGE, §10.6 (interprétation géométrique de (c-a)/(b-a)), adapté",
+      "accroche": "La géométrie plane se traite parfois entièrement au calcul, sans dessin.",
+      "enonce": [
+        {
+          "type": "texte",
+          "valeur": "Soient $A, B, C$ trois points du plan complexe, d'affixes $a, b, c$ deux à deux distinctes."
+        },
+        {
+          "type": "question",
+          "valeur": "Montrer que $A, B, C$ sont alignés si et seulement si $\\dfrac{c-a}{b-a}$ est un réel."
+        }
+      ],
+      "etapes": [
+        {
+          "titre": "Traduire l'alignement en vecteurs",
+          "blocs": [
+            {
+              "type": "texte",
+              "valeur": "$A, B, C$ alignés $\\iff$ les vecteurs $\\overrightarrow{AB}$ et $\\overrightarrow{AC}$ sont colinéaires."
+            }
+          ]
+        },
+        {
+          "titre": "Passer aux affixes",
+          "blocs": [
+            {
+              "type": "texte",
+              "valeur": "$\\overrightarrow{AB}$ a pour affixe $b-a$, et $\\overrightarrow{AC}$ a pour affixe $c-a$ (tous deux non nuls car $a,b,c$ sont distincts)."
+            }
+          ]
+        },
+        {
+          "titre": "Le critère de colinéarité en affixes",
+          "blocs": [
+            {
+              "type": "texte",
+              "valeur": "Deux vecteurs non nuls d'affixes $u$ et $v$ sont colinéaires si et seulement si leur quotient est réel : en effet, $\\mathrm{Im}(v/u) = 0$ équivaut exactement à la nullité du déterminant des coordonnées."
+            },
+            {
+              "type": "formule",
+              "cle": true,
+              "valeur": "A, B, C \\text{ alignés} \\iff \\dfrac{c-a}{b-a} \\in \\mathbb{R}"
+            }
+          ]
+        },
+        {
+          "titre": "Reformuler avec l'argument",
+          "blocs": [
+            {
+              "type": "texte",
+              "valeur": "Un complexe non nul est réel si et seulement si son argument vaut $0$ ou $\\pi$ modulo $2\\pi$, c'est-à-dire modulo $\\pi$."
+            },
+            {
+              "type": "formule",
+              "valeur": "A, B, C \\text{ alignés} \\iff \\arg\\!\\left(\\dfrac{c-a}{b-a}\\right) \\equiv 0 \\; [\\pi]"
+            },
+            {
+              "type": "astuce",
+              "valeur": "Variante utile à connaître : $(AB) \\perp (AC) \\iff \\dfrac{c-a}{b-a}$ est un imaginaire pur, c'est-à-dire $\\arg\\!\\left(\\tfrac{c-a}{b-a}\\right) \\equiv \\tfrac{\\pi}{2} \\; [\\pi]$."
+            }
+          ]
+        }
+      ],
+      "conclusion": "Cette caractérisation transforme un problème de géométrie plane (alignement) en un simple calcul algébrique sur des affixes, l'un des réflexes les plus rentables des nombres complexes en prépa.",
+      "hashtags_extra": "#nombrescomplexes #geometrie"
+    },
+    {
+      "id": "llg-complexes-4",
+      "verifie": true,
+      "niveau": 4,
+      "chapitre": "Nombres complexes",
+      "titre": "La somme des racines n-ièmes de l'unité",
+      "source": "Poly LLG/Henri-IV, Transition Terminale → CPGE, §10.5 (argument et forme trigonométrique), exercice classique rédigé à la main",
+      "accroche": "n points, répartis parfaitement sur un cercle : leur somme est toujours nulle.",
+      "enonce": [
+        {
+          "type": "texte",
+          "valeur": "Soit $n \\geqslant 2$. On note $U_n = \\{z \\in \\mathbb{C} \\;:\\; z^n = 1\\}$."
+        },
+        {
+          "type": "question",
+          "num": "a.",
+          "valeur": "Décrire les éléments de $U_n$."
+        },
+        {
+          "type": "question",
+          "num": "b.",
+          "valeur": "Montrer que la somme des éléments de $U_n$ est nulle."
+        }
+      ],
+      "etapes": [
+        {
+          "titre": "Décrire U_n",
+          "blocs": [
+            {
+              "type": "texte",
+              "valeur": "Les solutions de $z^n=1$ sont les $n$ complexes de module 1 également répartis sur le cercle trigonométrique."
+            },
+            {
+              "type": "formule",
+              "valeur": "U_n = \\left\\{ e^{\\frac{2ik\\pi}{n}}, \\; k = 0, 1, \\dots, n-1 \\right\\}"
+            }
+          ]
+        },
+        {
+          "titre": "Introduire une racine primitive",
+          "blocs": [
+            {
+              "type": "texte",
+              "valeur": "Posons $\\omega = e^{\\frac{2i\\pi}{n}}$. Alors $U_n = \\{1, \\omega, \\omega^2, \\dots, \\omega^{n-1}\\}$."
+            }
+          ]
+        },
+        {
+          "titre": "Reconnaître une somme géométrique",
+          "blocs": [
+            {
+              "type": "texte",
+              "valeur": "La somme cherchée est une somme géométrique de raison $\\omega$."
+            },
+            {
+              "type": "formule",
+              "valeur": "S = \\sum_{k=0}^{n-1} \\omega^{k}"
+            },
+            {
+              "type": "astuce",
+              "valeur": "Comme $n \\geqslant 2$, $\\tfrac{2\\pi}{n} \\in \\,]0, 2\\pi[$ n'est pas un multiple de $2\\pi$, donc $\\omega \\neq 1$ : la formule de la somme géométrique s'applique."
+            }
+          ]
+        },
+        {
+          "titre": "Appliquer la formule et conclure",
+          "blocs": [
+            {
+              "type": "formule",
+              "valeur": "S = \\dfrac{\\omega^{n} - 1}{\\omega - 1}"
+            },
+            {
+              "type": "texte",
+              "valeur": "Or $\\omega^n = e^{2i\\pi} = 1$, donc le numérateur est nul."
+            },
+            {
+              "type": "formule",
+              "cle": true,
+              "valeur": "S = 0"
+            }
+          ]
+        }
+      ],
+      "conclusion": "Interprétation géométrique : les points de $U_n$ forment un polygone régulier à $n$ sommets centré en $0$. Leur isobarycentre est le centre, donc la somme (et la moyenne) de leurs affixes est nulle.",
+      "hashtags_extra": "#nombrescomplexes #racinesdelunite"
+    },
+    {
+      "id": "llg-polynomes-1",
+      "verifie": true,
+      "niveau": 1,
+      "chapitre": "Polynômes",
+      "titre": "Reste d'une division par X − a",
+      "source": "Poly LLG/Henri-IV, Transition Terminale → CPGE, §11.1 (polynômes), exercice classique rédigé à la main",
+      "accroche": "Pas besoin de poser la division : une seule évaluation suffit.",
+      "enonce": [
+        {
+          "type": "question",
+          "num": "a.",
+          "valeur": "Soit $P$ un polynôme et $a \\in \\mathbb{R}$. Montrer que le reste de la division euclidienne de $P$ par $(X-a)$ vaut $P(a)$."
+        },
+        {
+          "type": "question",
+          "num": "b.",
+          "valeur": "Application : quel est le reste de la division de $X^3 - 2X + 5$ par $(X-2)$ ?"
+        }
+      ],
+      "etapes": [
+        {
+          "titre": "Poser la division euclidienne",
+          "blocs": [
+            {
+              "type": "texte",
+              "valeur": "La division euclidienne de $P$ par $(X-a)$ (degré 1) s'écrit $P = (X-a)Q + R$, avec $\\deg R < 1$ : $R$ est donc un polynôme constant, disons $R = r$."
+            }
+          ]
+        },
+        {
+          "titre": "Évaluer l'égalité en X = a",
+          "blocs": [
+            {
+              "type": "formule",
+              "valeur": "P(a) = (a-a)\\,Q(a) + r = r"
+            },
+            {
+              "type": "astuce",
+              "valeur": "Le terme $(a-a)Q(a)$ s'annule quel que soit $Q$ : c'est ce qui rend l'argument indépendant du quotient, et donc général."
+            }
+          ]
+        },
+        {
+          "titre": "Conclure la question a.",
+          "blocs": [
+            {
+              "type": "formule",
+              "cle": true,
+              "valeur": "r = P(a)"
+            }
+          ]
+        },
+        {
+          "titre": "Application numérique",
+          "blocs": [
+            {
+              "type": "texte",
+              "valeur": "Avec $P(X) = X^3 - 2X + 5$ et $a=2$ :"
+            },
+            {
+              "type": "formule",
+              "valeur": "P(2) = 8 - 4 + 5 = 9"
+            },
+            {
+              "type": "texte",
+              "valeur": "Le reste de la division de $P$ par $(X-2)$ est donc le polynôme constant $9$."
+            }
+          ]
+        }
+      ],
+      "conclusion": "Cas particulier immédiat : $a$ est racine de $P$ si et seulement si $P(a)=0$, c'est-à-dire si et seulement si $(X-a)$ divise $P$. C'est le lien fondateur entre racines et divisibilité.",
+      "hashtags_extra": "#polynomes"
+    },
+    {
+      "id": "llg-polynomes-2",
+      "verifie": true,
+      "niveau": 2,
+      "chapitre": "Polynômes",
+      "titre": "Les relations coefficients-racines",
+      "source": "Poly LLG/Henri-IV, Transition Terminale → CPGE, §11.1, exercice classique rédigé à la main",
+      "accroche": "Pas de discriminant : juste deux nombres dont on connaît la somme et le produit.",
+      "enonce": [
+        {
+          "type": "texte",
+          "valeur": "Soit $P(X) = X^2 - 7X + 10$, dont on admet qu'il possède deux racines réelles $x_1, x_2$."
+        },
+        {
+          "type": "question",
+          "num": "a.",
+          "valeur": "Exprimer $x_1+x_2$ et $x_1 x_2$ en fonction des coefficients de $P$, sans résoudre l'équation."
+        },
+        {
+          "type": "question",
+          "num": "b.",
+          "valeur": "En déduire $x_1$ et $x_2$."
+        }
+      ],
+      "etapes": [
+        {
+          "titre": "Factoriser formellement par les racines",
+          "blocs": [
+            {
+              "type": "texte",
+              "valeur": "Si $x_1, x_2$ sont les racines de $P$, alors $P(X) = (X-x_1)(X-x_2)$. En développant :"
+            },
+            {
+              "type": "formule",
+              "valeur": "(X-x_1)(X-x_2) = X^2 - (x_1+x_2)X + x_1x_2"
+            }
+          ]
+        },
+        {
+          "titre": "Identifier avec les coefficients",
+          "blocs": [
+            {
+              "type": "texte",
+              "valeur": "En comparant avec $P(X)=X^2-7X+10$ :"
+            },
+            {
+              "type": "formule",
+              "cle": true,
+              "valeur": "x_1+x_2 = 7 \\qquad \\text{et} \\qquad x_1x_2 = 10"
+            }
+          ]
+        },
+        {
+          "titre": "Chercher deux nombres au lieu de résoudre",
+          "blocs": [
+            {
+              "type": "texte",
+              "valeur": "Plutôt que le discriminant, on cherche directement deux nombres de somme 7 et de produit 10."
+            },
+            {
+              "type": "formule",
+              "valeur": "5 + 2 = 7 \\qquad \\text{et} \\qquad 5 \\times 2 = 10"
+            },
+            {
+              "type": "astuce",
+              "valeur": "Pour un trinôme à racines entières « gentilles », deviner ainsi est souvent plus rapide qu'un calcul de discriminant."
+            }
+          ]
+        },
+        {
+          "titre": "Vérifier",
+          "blocs": [
+            {
+              "type": "formule",
+              "valeur": "(X-5)(X-2) = X^2 - 7X + 10 = P(X) \\quad \\checkmark"
+            }
+          ]
+        }
+      ],
+      "conclusion": "Ce sont les relations de Viète : elles relient somme et produit des racines aux coefficients, et se généralisent à tout polynôme scindé, pas seulement aux trinômes.",
+      "hashtags_extra": "#polynomes #relationsdevieta"
+    },
+    {
+      "id": "llg-polynomes-3",
+      "verifie": true,
+      "niveau": 3,
+      "chapitre": "Polynômes",
+      "titre": "Racine double et polynôme dérivé",
+      "source": "Poly LLG/Henri-IV, Transition Terminale → CPGE, §11.3 (racines d'une équation polynomiale), exercice classique rédigé à la main",
+      "accroche": "Trouver une racine double sans essayer au hasard : la dérivée donne directement les candidats.",
+      "enonce": [
+        {
+          "type": "texte",
+          "valeur": "Soit $m \\in \\mathbb{R}$ et $P(X) = X^3 - 3X + m$."
+        },
+        {
+          "type": "question",
+          "valeur": "Déterminer les valeurs de $m$ pour lesquelles $P$ possède une racine (au moins) double."
+        }
+      ],
+      "etapes": [
+        {
+          "titre": "Le critère de racine double",
+          "blocs": [
+            {
+              "type": "texte",
+              "valeur": "$a$ est racine double de $P$ si et seulement si $P(a)=0$ ET $P'(a)=0$."
+            }
+          ]
+        },
+        {
+          "titre": "Chercher les candidats via P'",
+          "blocs": [
+            {
+              "type": "formule",
+              "valeur": "P'(X) = 3X^2 - 3 = 3(X-1)(X+1)"
+            },
+            {
+              "type": "texte",
+              "valeur": "Les seuls candidats possibles sont donc $a=1$ et $a=-1$."
+            },
+            {
+              "type": "astuce",
+              "valeur": "Chercher $a$ tel que $P(a)=P'(a)=0$ évite tout essai à l'aveugle : la dérivée réduit le problème à deux valeurs testées, au lieu d'une infinité."
+            }
+          ]
+        },
+        {
+          "titre": "Tester a = 1",
+          "blocs": [
+            {
+              "type": "formule",
+              "valeur": "P(1) = 1 - 3 + m = m - 2"
+            },
+            {
+              "type": "texte",
+              "valeur": "$P(1)=0 \\iff m=2$. Dans ce cas, $1$ est racine double de $P$."
+            }
+          ]
+        },
+        {
+          "titre": "Tester a = -1",
+          "blocs": [
+            {
+              "type": "formule",
+              "valeur": "P(-1) = -1 + 3 + m = m + 2"
+            },
+            {
+              "type": "texte",
+              "valeur": "$P(-1)=0 \\iff m=-2$. Dans ce cas, $-1$ est racine double de $P$."
+            }
+          ]
+        },
+        {
+          "titre": "Vérifier par factorisation",
+          "blocs": [
+            {
+              "type": "formule",
+              "cle": true,
+              "valeur": "\\begin{gathered} m=2 \\;:\\; P(X) = (X-1)^2(X+2) \\\\[6pt] m=-2 \\;:\\; P(X) = (X+1)^2(X-2) \\end{gathered}"
+            }
+          ]
+        }
+      ],
+      "conclusion": "$P$ a une racine double si et seulement si $m \\in \\{-2, 2\\}$, jamais les deux en même temps. Le passage par $P'$ transforme une recherche de racine double en un système de deux équations simples.",
+      "hashtags_extra": "#polynomes #derivation"
+    },
+    {
+      "id": "llg-polynomes-4",
+      "verifie": true,
+      "niveau": 4,
+      "chapitre": "Polynômes",
+      "titre": "Polynôme déterminé par ses valeurs",
+      "source": "Poly LLG/Henri-IV, Transition Terminale → CPGE, §11.6 (rigidité des polynômes, version élémentaire), rédigé à la main",
+      "accroche": "Deux polynômes qui coïncident assez souvent... coïncident partout.",
+      "enonce": [
+        {
+          "type": "texte",
+          "valeur": "On admet le résultat suivant : un polynôme non nul de degré $\\leqslant n$ possède au plus $n$ racines. Soient $P, Q$ deux polynômes de degré $\\leqslant n$."
+        },
+        {
+          "type": "question",
+          "num": "a.",
+          "valeur": "On suppose que $P$ et $Q$ prennent la même valeur en $n+1$ réels deux à deux distincts $x_0, \\dots, x_n$. Montrer que $P = Q$."
+        },
+        {
+          "type": "question",
+          "num": "b.",
+          "valeur": "Application : trouver l'unique polynôme de degré $\\leqslant 2$ tel que $P(0)=1$, $P(1)=3$, $P(2)=7$."
+        }
+      ],
+      "etapes": [
+        {
+          "titre": "Introduire le polynôme différence",
+          "blocs": [
+            {
+              "type": "texte",
+              "valeur": "Posons $R = P - Q$. Alors $\\deg R \\leqslant n$ (ou $R$ est le polynôme nul)."
+            }
+          ]
+        },
+        {
+          "titre": "Compter les racines de R",
+          "blocs": [
+            {
+              "type": "texte",
+              "valeur": "Pour chaque $i$, $P(x_i)=Q(x_i)$ donc $R(x_i)=0$. $R$ possède donc au moins $n+1$ racines distinctes."
+            }
+          ]
+        },
+        {
+          "titre": "Utiliser le résultat admis",
+          "blocs": [
+            {
+              "type": "texte",
+              "valeur": "Si $R$ n'était pas le polynôme nul, il aurait un degré $\\leqslant n$ et donc, d'après le résultat admis, au plus $n$ racines, ce qui contredit l'existence de $n+1$ racines distinctes."
+            },
+            {
+              "type": "formule",
+              "cle": true,
+              "valeur": "R = 0 \\qquad \\text{c'est-à-dire} \\qquad P = Q"
+            }
+          ]
+        },
+        {
+          "titre": "Application : identifier un candidat",
+          "blocs": [
+            {
+              "type": "texte",
+              "valeur": "On remarque que $Q(X) = X^2+X+1$ vérifie $Q(0)=1$, $Q(1)=3$, $Q(2)=7$."
+            },
+            {
+              "type": "formule",
+              "valeur": "\\begin{gathered} Q(0)=1 \\qquad Q(1)=1+1+1=3 \\\\[6pt] Q(2)=4+2+1=7 \\quad \\checkmark \\end{gathered}"
+            }
+          ]
+        },
+        {
+          "titre": "Conclure par unicité",
+          "blocs": [
+            {
+              "type": "texte",
+              "valeur": "$Q$ est de degré $2 \\leqslant 2$ et coïncide avec $P$ en $3 = 2+1$ points distincts. D'après la question a., $P = Q$."
+            },
+            {
+              "type": "astuce",
+              "valeur": "Cette méthode d'identification remplace souvent un calcul de coefficients : dès qu'on devine une forme plausible, il suffit de vérifier qu'elle prend les bonnes valeurs en assez de points, ni plus, ni moins que le degré $+1$."
+            }
+          ]
+        }
+      ],
+      "conclusion": "Le nombre de points nécessaires est exactement $\\deg + 1$, jamais moins : avec un point de moins, on peut construire deux polynômes distincts qui coïncident partout ailleurs sur les points donnés.",
+      "hashtags_extra": "#polynomes"
+    },
+    {
+      "id": "llg-arithmetique-1",
+      "verifie": true,
+      "niveau": 2,
+      "chapitre": "Arithmétique",
+      "titre": "L'infinité des nombres premiers",
+      "source": "Poly LLG/Henri-IV, Transition Terminale → CPGE, §12.2 (nombres premiers), démonstration d'Euclide",
+      "accroche": "Une preuve vieille de plus de 2000 ans, et toujours aussi courte.",
+      "enonce": [
+        {
+          "type": "question",
+          "valeur": "Montrer qu'il existe une infinité de nombres premiers."
+        }
+      ],
+      "etapes": [
+        {
+          "titre": "Raisonner par l'absurde",
+          "blocs": [
+            {
+              "type": "texte",
+              "valeur": "Supposons qu'il n'existe qu'un nombre fini de nombres premiers, notés $p_1 < p_2 < \\dots < p_n$."
+            }
+          ]
+        },
+        {
+          "titre": "Construire un nombre bien choisi",
+          "blocs": [
+            {
+              "type": "formule",
+              "cle": true,
+              "valeur": "N = p_1 p_2 \\cdots p_n + 1"
+            }
+          ]
+        },
+        {
+          "titre": "N possède un diviseur premier",
+          "blocs": [
+            {
+              "type": "texte",
+              "valeur": "$N \\geqslant 2$, donc $N$ admet un diviseur premier $p$ (le plus petit diviseur de $N$ strictement supérieur à 1 est toujours premier)."
+            }
+          ]
+        },
+        {
+          "titre": "p ne peut être aucun des p_i",
+          "blocs": [
+            {
+              "type": "texte",
+              "valeur": "Si $p = p_i$ pour un certain $i$, alors $p_i$ divise à la fois $N$ et $p_1\\cdots p_n$, donc divise leur différence."
+            },
+            {
+              "type": "formule",
+              "valeur": "N - p_1 p_2 \\cdots p_n = 1"
+            },
+            {
+              "type": "texte",
+              "valeur": "Impossible : $p_i \\geqslant 2$ ne peut pas diviser $1$."
+            },
+            {
+              "type": "astuce",
+              "valeur": "La contradiction ne dit pas que $N$ est premier (il peut très bien être composé), seulement qu'il possède un facteur premier absent de la liste. C'est une confusion fréquente à éviter."
+            }
+          ]
+        },
+        {
+          "titre": "Conclure",
+          "blocs": [
+            {
+              "type": "texte",
+              "valeur": "$p$ est donc un nombre premier distinct de tous les $p_i$, ce qui contredit l'hypothèse que $p_1,\\dots,p_n$ était la liste de TOUS les nombres premiers."
+            }
+          ]
+        }
+      ],
+      "conclusion": "C'est la démonstration d'Euclide (Éléments, Livre IX), l'une des plus anciennes preuves par l'absurde de l'histoire des mathématiques.",
+      "hashtags_extra": "#arithmetique #nombrespremiers"
+    },
+    {
+      "id": "llg-arithmetique-2",
+      "verifie": true,
+      "niveau": 1,
+      "chapitre": "Arithmétique",
+      "titre": "Algorithme d'Euclide et théorème de Bézout",
+      "source": "Poly LLG/Henri-IV, Transition Terminale → CPGE, §12.3 (PGCD et théorème de Bézout), exercice classique rédigé à la main",
+      "accroche": "L'algorithme d'Euclide ne calcule pas que le PGCD : il donne aussi les coefficients de Bézout, gratuitement.",
+      "enonce": [
+        {
+          "type": "question",
+          "num": "a.",
+          "valeur": "Calculer $\\mathrm{pgcd}(84, 36)$ par l'algorithme d'Euclide."
+        },
+        {
+          "type": "question",
+          "num": "b.",
+          "valeur": "Trouver des entiers $u, v$ tels que $84u + 36v = \\mathrm{pgcd}(84,36)$."
+        }
+      ],
+      "etapes": [
+        {
+          "titre": "Première division",
+          "blocs": [
+            {
+              "type": "formule",
+              "valeur": "84 = 2 \\times 36 + 12"
+            }
+          ]
+        },
+        {
+          "titre": "Deuxième division",
+          "blocs": [
+            {
+              "type": "formule",
+              "valeur": "36 = 3 \\times 12 + 0"
+            },
+            {
+              "type": "texte",
+              "valeur": "Le reste est nul : le dernier reste non nul, $12$, est le PGCD."
+            },
+            {
+              "type": "formule",
+              "cle": true,
+              "valeur": "\\mathrm{pgcd}(84,36) = 12"
+            }
+          ]
+        },
+        {
+          "titre": "Remonter l'égalité",
+          "blocs": [
+            {
+              "type": "texte",
+              "valeur": "On isole $12$ dans la première division :"
+            },
+            {
+              "type": "formule",
+              "valeur": "12 = 84 - 2 \\times 36"
+            }
+          ]
+        },
+        {
+          "titre": "Conclure",
+          "blocs": [
+            {
+              "type": "formule",
+              "cle": true,
+              "valeur": "u = 1, \\qquad v = -2 \\qquad\\qquad (84 \\times 1 + 36 \\times (-2) = 12)"
+            },
+            {
+              "type": "astuce",
+              "valeur": "Dès qu'un seul quotient intervient avant le reste nul, la remontée de Bézout tient en une ligne, pas besoin de dresser tout le tableau des divisions successives."
+            }
+          ]
+        }
+      ],
+      "conclusion": "Vérification directe : $84 = 7\\times 12$ et $36 = 3 \\times 12$, cohérent avec $\\mathrm{pgcd}(84,36)=12$.",
+      "hashtags_extra": "#arithmetique #algorithmedeuclide"
+    },
+    {
+      "id": "llg-arithmetique-3",
+      "verifie": true,
+      "niveau": 3,
+      "chapitre": "Arithmétique",
+      "titre": "L'équation diophantienne ax + by = c",
+      "source": "Poly LLG/Henri-IV, Transition Terminale → CPGE, §12.3, exercice classique rédigé à la main",
+      "accroche": "Une seule relation de Bézout suffit à décrire une infinité de solutions entières.",
+      "enonce": [
+        {
+          "type": "texte",
+          "valeur": "On admet que $\\mathrm{pgcd}(84,36) = 12$."
+        },
+        {
+          "type": "question",
+          "valeur": "Résoudre dans $\\mathbb{Z}^2$ l'équation $84x + 36y = 24$."
+        }
+      ],
+      "etapes": [
+        {
+          "titre": "Vérifier qu'il existe des solutions",
+          "blocs": [
+            {
+              "type": "texte",
+              "valeur": "L'équation $ax+by=c$ a des solutions entières si et seulement si $\\mathrm{pgcd}(a,b)$ divise $c$. Ici $12 \\mid 24$ : des solutions existent."
+            }
+          ]
+        },
+        {
+          "titre": "Trouver une solution particulière",
+          "blocs": [
+            {
+              "type": "texte",
+              "valeur": "La relation de Bézout $84 \\times 1 + 36 \\times (-2) = 12$, multipliée par $2$ (car $24 = 2 \\times 12$), donne :"
+            },
+            {
+              "type": "formule",
+              "valeur": "84 \\times 2 + 36 \\times (-4) = 24"
+            },
+            {
+              "type": "texte",
+              "valeur": "Solution particulière : $(x_0, y_0) = (2, -4)$."
+            }
+          ]
+        },
+        {
+          "titre": "Soustraire à l'équation générale",
+          "blocs": [
+            {
+              "type": "formule",
+              "valeur": "\\begin{gathered} 84x + 36y = 24 \\quad \\text{et} \\quad 84x_0 + 36y_0 = 24 \\\\[6pt] \\Longrightarrow\\quad 84(x-x_0) + 36(y-y_0) = 0 \\end{gathered}"
+            }
+          ]
+        },
+        {
+          "titre": "Simplifier par le PGCD",
+          "blocs": [
+            {
+              "type": "formule",
+              "cle": true,
+              "valeur": "7(x-x_0) = -3(y-y_0), \\qquad \\mathrm{pgcd}(7,3)=1"
+            }
+          ]
+        },
+        {
+          "titre": "Appliquer le lemme de Gauss",
+          "blocs": [
+            {
+              "type": "texte",
+              "valeur": "$3$ divise $7(x-x_0)$ et $\\mathrm{pgcd}(3,7)=1$, donc $3$ divise $(x-x_0)$ : on pose $x-x_0=3k$, $k\\in\\mathbb{Z}$."
+            },
+            {
+              "type": "formule",
+              "valeur": "7 \\times 3k = -3(y-y_0) \\;\\Longrightarrow\\; y - y_0 = -7k"
+            },
+            {
+              "type": "astuce",
+              "valeur": "Le passage de « solution particulière » à « solution générale » est mécanique une fois simplifié par le pgcd et invoqué le lemme de Gauss, la même mécanique vaut pour toute équation $ax+by=c$."
+            }
+          ]
+        }
+      ],
+      "conclusion": "L'ensemble des solutions est $\\{(2+3k,\\, -4-7k) \\;:\\; k \\in \\mathbb{Z}\\}$. Vérification pour $k=1$ : $(5,-11)$, et $84\\times5+36\\times(-11) = 420-396=24$.",
+      "hashtags_extra": "#arithmetique #equationdiophantienne"
+    },
+    {
+      "id": "llg-arithmetique-4",
+      "verifie": true,
+      "niveau": 3,
+      "chapitre": "Arithmétique",
+      "titre": "Le petit théorème de Fermat",
+      "source": "Poly LLG/Henri-IV, Transition Terminale → CPGE, §12.7 (petit théorème de Fermat), exercice classique rédigé à la main",
+      "accroche": "Calculer un nombre à 84 chiffres ? Non, réduire l'exposant suffit.",
+      "enonce": [
+        {
+          "type": "texte",
+          "valeur": "On rappelle que $13$ est un nombre premier."
+        },
+        {
+          "type": "question",
+          "valeur": "Déterminer le reste de la division euclidienne de $7^{100}$ par $13$."
+        }
+      ],
+      "etapes": [
+        {
+          "titre": "Vérifier les hypothèses du petit théorème de Fermat",
+          "blocs": [
+            {
+              "type": "texte",
+              "valeur": "$13$ est premier et ne divise pas $7$ : le petit théorème de Fermat s'applique."
+            },
+            {
+              "type": "formule",
+              "cle": true,
+              "valeur": "7^{12} \\equiv 1 \\; [13]"
+            }
+          ]
+        },
+        {
+          "titre": "Réduire l'exposant modulo 12",
+          "blocs": [
+            {
+              "type": "texte",
+              "valeur": "On divise l'exposant $100$ par $12$ (pas par $13$)."
+            },
+            {
+              "type": "formule",
+              "valeur": "100 = 12 \\times 8 + 4"
+            },
+            {
+              "type": "astuce",
+              "valeur": "Pour une puissance modulaire, toujours réduire l'exposant modulo $p-1$ avant de calculer, c'est précisément ce qu'autorise le petit théorème de Fermat, jamais un raccourci gratuit."
+            }
+          ]
+        },
+        {
+          "titre": "Décomposer la puissance",
+          "blocs": [
+            {
+              "type": "formule",
+              "valeur": "7^{100} = \\left(7^{12}\\right)^{8} \\times 7^{4} \\equiv 1^{8} \\times 7^{4} \\equiv 7^{4} \\; [13]"
+            }
+          ]
+        },
+        {
+          "titre": "Calculer 7^4 modulo 13 par carrés successifs",
+          "blocs": [
+            {
+              "type": "formule",
+              "valeur": "7^2 = 49 \\equiv 10 \\; [13] \\qquad\\qquad 7^4 = (7^2)^2 \\equiv 10^2 = 100 \\equiv 9 \\; [13]"
+            },
+            {
+              "type": "formule",
+              "cle": true,
+              "valeur": "7^{100} \\equiv 9 \\; [13]"
+            }
+          ]
+        }
+      ],
+      "conclusion": "Le reste cherché est $9$. La technique (réduire l'exposant via Fermat, puis élever au carré successivement) permet de calculer n'importe quelle puissance modulaire sans jamais manipuler de grand nombre.",
+      "hashtags_extra": "#arithmetique #petittheoremedefermat"
+    },
+    {
+      "id": "llg-arithmetique-5",
+      "verifie": true,
+      "niveau": 4,
+      "chapitre": "Arithmétique",
+      "titre": "Le théorème des restes chinois",
+      "source": "Poly LLG/Henri-IV, Transition Terminale → CPGE, §12.8 (théorème des restes chinois, cas élémentaire), rédigé à la main",
+      "accroche": "Deux conditions qui semblent indépendantes se combinent en une seule, mécaniquement.",
+      "enonce": [
+        {
+          "type": "question",
+          "valeur": "Résoudre dans $\\mathbb{Z}$ le système $\\begin{cases} x \\equiv 2 \\; [5] \\\\ x \\equiv 3 \\; [7] \\end{cases}$."
+        }
+      ],
+      "etapes": [
+        {
+          "titre": "Garantir l'existence d'une solution",
+          "blocs": [
+            {
+              "type": "texte",
+              "valeur": "$\\mathrm{pgcd}(5,7)=1$ : le théorème des restes chinois garantit une solution, unique modulo $5 \\times 7 = 35$."
+            }
+          ]
+        },
+        {
+          "titre": "Traduire la première condition",
+          "blocs": [
+            {
+              "type": "formule",
+              "valeur": "x \\equiv 2 \\; [5] \\iff x = 2 + 5k, \\quad k \\in \\mathbb{Z}"
+            }
+          ]
+        },
+        {
+          "titre": "Reporter dans la seconde",
+          "blocs": [
+            {
+              "type": "formule",
+              "cle": true,
+              "valeur": "2 + 5k \\equiv 3 \\; [7] \\iff 5k \\equiv 1 \\; [7]"
+            }
+          ]
+        },
+        {
+          "titre": "Inverser 5 modulo 7",
+          "blocs": [
+            {
+              "type": "texte",
+              "valeur": "On cherche $u$ tel que $5u \\equiv 1 \\; [7]$ : $u=3$ convient, car $5\\times 3 = 15 = 2\\times 7+1$."
+            },
+            {
+              "type": "formule",
+              "valeur": "k \\equiv 3 \\times 1 \\equiv 3 \\; [7] \\iff k = 3 + 7m, \\quad m \\in \\mathbb{Z}"
+            },
+            {
+              "type": "astuce",
+              "valeur": "Cette substitution directe est plus rapide que la formule générale du théorème des restes chinois dès qu'il n'y a que deux congruences à petits modules."
+            }
+          ]
+        },
+        {
+          "titre": "Conclure",
+          "blocs": [
+            {
+              "type": "formule",
+              "valeur": "x = 2 + 5(3+7m) = 17 + 35m"
+            },
+            {
+              "type": "texte",
+              "valeur": "Vérification : $17 = 3\\times5+2 \\equiv 2\\,[5]$ et $17=2\\times7+3\\equiv3\\,[7]$."
+            }
+          ]
+        }
+      ],
+      "conclusion": "L'ensemble des solutions est $\\{x \\in \\mathbb{Z} \\;:\\; x \\equiv 17 \\; [35]\\}$. La méthode se généralise à un nombre quelconque de congruences deux à deux premières entre elles.",
+      "hashtags_extra": "#arithmetique #restechinois"
+    },
+    {
+      "id": "sl-absolue-1",
+      "verifie": true,
+      "niveau": 1,
+      "chapitre": "Équations et inéquations",
+      "titre": "Inéquations avec valeur absolue",
+      "source": "Poly Saint-Louis, Transition Terminale → MPSI/PCSI/MP2I, §1 Calcul algébrique, « Équations et inéquations diverses », ex. 3",
+      "accroche": "Deux réflexes à avoir automatiquement dès qu'une valeur absolue apparaît dans une inéquation.",
+      "enonce": [
+        {
+          "type": "texte",
+          "valeur": "Résoudre dans $\\mathbb{R}$ les inéquations suivantes."
+        },
+        {
+          "type": "question",
+          "num": "a.",
+          "valeur": "$|2x - 5| < 13$"
+        },
+        {
+          "type": "question",
+          "num": "b.",
+          "valeur": "$|3 - 4x| \\geqslant 17$"
+        }
+      ],
+      "etapes": [
+        {
+          "titre": "Traduire la première inéquation",
+          "blocs": [
+            {
+              "type": "texte",
+              "valeur": "Pour $a>0$, $|u|<a \\iff -a<u<a$. On applique ce résultat directement."
+            },
+            {
+              "type": "formule",
+              "valeur": "-13 < 2x-5 < 13"
+            }
+          ]
+        },
+        {
+          "titre": "Isoler x",
+          "blocs": [
+            {
+              "type": "texte",
+              "valeur": "On ajoute 5 puis on divise par 2 dans les trois membres, ce qui conserve le sens des inégalités (division par un nombre positif)."
+            },
+            {
+              "type": "formule",
+              "cle": true,
+              "valeur": "-4 < x < 9"
+            },
+            {
+              "type": "astuce",
+              "valeur": "Diviser par un nombre négatif inverse le sens des inégalités, ce n'est pas le cas ici, mais le réflexe de vérifier le signe du diviseur doit être automatique."
+            }
+          ]
+        },
+        {
+          "titre": "Traduire la seconde inéquation",
+          "blocs": [
+            {
+              "type": "texte",
+              "valeur": "Pour $a>0$, $|u|\\geqslant a \\iff u\\geqslant a$ ou $u\\leqslant -a$."
+            },
+            {
+              "type": "formule",
+              "valeur": "3-4x \\geqslant 17 \\quad \\text{ou} \\quad 3-4x \\leqslant -17"
+            }
+          ]
+        },
+        {
+          "titre": "Résoudre chaque branche",
+          "blocs": [
+            {
+              "type": "texte",
+              "valeur": "On isole $x$ dans chaque cas ; attention, on divise par $-4$, donc les inégalités changent de sens."
+            },
+            {
+              "type": "formule",
+              "cle": true,
+              "valeur": "x \\leqslant -\\dfrac{7}{2} \\quad \\text{ou} \\quad x \\geqslant 5"
+            }
+          ]
+        }
+      ],
+      "conclusion": "$S_1 = \\left]-4, 9\\right[$ et $S_2 = \\left]-\\infty, -\\dfrac{7}{2}\\right] \\cup \\left[5, +\\infty\\right[$. Le sens de l'inégalité stricte ou large de départ se répercute jusqu'au bout, une erreur fréquente est de l'oublier en cours de route.",
+      "hashtags_extra": "#valeurabsolue"
+    },
+    {
+      "id": "sl-inegalite-inverse-1",
+      "verifie": true,
+      "niveau": 1,
+      "chapitre": "Inégalités",
+      "titre": "L'inégalité x + 1/x ≥ 2",
+      "source": "Poly Saint-Louis, Transition Terminale → MPSI/PCSI/MP2I, §1.2 « Des inégalités », ex. 2",
+      "accroche": "L'inégalité la plus utilisée de toute la feuille d'exercices sur les inégalités, et la plus vite oubliée.",
+      "enonce": [
+        {
+          "type": "texte",
+          "valeur": "Montrer que pour tout $x \\in \\mathbb{R}_+^*$ :"
+        },
+        {
+          "type": "formule",
+          "valeur": "x + \\dfrac{1}{x} \\geqslant 2"
+        }
+      ],
+      "etapes": [
+        {
+          "titre": "Tout ramener du même côté",
+          "blocs": [
+            {
+              "type": "texte",
+              "valeur": "Comme pour toute inégalité à prouver, on étudie le signe de la différence entre les deux membres."
+            },
+            {
+              "type": "formule",
+              "valeur": "x + \\dfrac{1}{x} - 2 = \\dfrac{x^2 - 2x + 1}{x}"
+            }
+          ]
+        },
+        {
+          "titre": "Reconnaître le carré au numérateur",
+          "blocs": [
+            {
+              "type": "texte",
+              "valeur": "Le numérateur est un carré parfait."
+            },
+            {
+              "type": "formule",
+              "cle": true,
+              "valeur": "x^2 - 2x + 1 = (x-1)^2"
+            },
+            {
+              "type": "astuce",
+              "valeur": "Dès qu'apparaît une expression du type $a+\\tfrac{1}{a}$, penser à réduire au même dénominateur : le numérateur cache presque toujours un carré."
+            }
+          ]
+        },
+        {
+          "titre": "Conclure sur le signe",
+          "blocs": [
+            {
+              "type": "texte",
+              "valeur": "Le numérateur est positif ou nul (un carré), et $x>0$ par hypothèse : le quotient est donc positif ou nul."
+            },
+            {
+              "type": "formule",
+              "cle": true,
+              "valeur": "x + \\dfrac{1}{x} - 2 = \\dfrac{(x-1)^2}{x} \\geqslant 0"
+            }
+          ]
+        },
+        {
+          "titre": "Cas d'égalité",
+          "blocs": [
+            {
+              "type": "texte",
+              "valeur": "Le quotient s'annule si et seulement si le numérateur s'annule, c'est-à-dire $x=1$."
+            },
+            {
+              "type": "formule",
+              "valeur": "x + \\dfrac{1}{x} = 2 \\iff x = 1"
+            }
+          ]
+        }
+      ],
+      "conclusion": "L'inégalité est stricte dès que $x\\neq 1$. C'est le cas particulier de l'inégalité arithmético-géométrique entre $x$ et $\\tfrac{1}{x}$, dont le produit vaut $1$.",
+      "hashtags_extra": "#inegalites"
+    },
+    {
+      "id": "llg-trinome-racines-1",
+      "verifie": true,
+      "niveau": 1,
+      "chapitre": "Trinôme du second degré",
+      "titre": "Discriminant et nombre de racines",
+      "source": "Correction Poly LLG/Henri-IV, Transition Prépa, §3.3 « Le trinôme du second degré réel », ex. 83 (adapté)",
+      "accroche": "Le réflexe numéro un face à un trinôme paramétré : calculer le discriminant en fonction du paramètre, avant toute chose.",
+      "enonce": [
+        {
+          "type": "texte",
+          "valeur": "Pour $m \\in \\mathbb{R}$, on considère le trinôme $p_m(x) = x^2 + mx + 4$. Déterminer, selon la valeur de $m$, le nombre de racines réelles de $p_m$."
+        }
+      ],
+      "etapes": [
+        {
+          "titre": "Calculer le discriminant",
+          "blocs": [
+            {
+              "type": "texte",
+              "valeur": "Le discriminant de $p_m(x)=x^2+mx+4$ est"
+            },
+            {
+              "type": "formule",
+              "cle": true,
+              "valeur": "\\Delta = m^2 - 16"
+            }
+          ]
+        },
+        {
+          "titre": "Étudier son signe",
+          "blocs": [
+            {
+              "type": "texte",
+              "valeur": "$\\Delta$ est lui-même un trinôme en $m$, de racines $-4$ et $4$ : il est négatif entre ses racines, positif à l'extérieur."
+            },
+            {
+              "type": "formule",
+              "valeur": "\\Delta < 0 \\iff -4 < m < 4"
+            }
+          ]
+        },
+        {
+          "titre": "Le cas sans racine réelle",
+          "blocs": [
+            {
+              "type": "texte",
+              "valeur": "Si $-4<m<4$, $\\Delta<0$ : $p_m$ n'a aucune racine réelle."
+            }
+          ]
+        },
+        {
+          "titre": "Le cas de la racine double",
+          "blocs": [
+            {
+              "type": "texte",
+              "valeur": "Si $m=4$ ou $m=-4$, $\\Delta=0$ : $p_m$ a une unique racine réelle (double), égale à $-\\tfrac{m}{2}$."
+            },
+            {
+              "type": "formule",
+              "valeur": "m = 4 \\Rightarrow x_0 = -2 \\qquad m=-4 \\Rightarrow x_0 = 2"
+            }
+          ]
+        },
+        {
+          "titre": "Le cas des deux racines distinctes",
+          "blocs": [
+            {
+              "type": "texte",
+              "valeur": "Si $m<-4$ ou $m>4$, $\\Delta>0$ : $p_m$ a deux racines réelles distinctes."
+            },
+            {
+              "type": "astuce",
+              "valeur": "Le coefficient dominant de $p_m$ ne dépend pas de $m$ ici (il vaut $1$) : c'est bien le signe de $\\Delta$ seul qui tranche, sans autre discussion."
+            }
+          ]
+        }
+      ],
+      "conclusion": "Trois régimes, entièrement pilotés par le signe de $\\Delta = m^2-16$ : aucune, une ou deux racines réelles selon que $m$ est entre $-4$ et $4$, égal à l'un des deux, ou à l'extérieur.",
+      "hashtags_extra": "#trinome #discriminant"
+    },
+    {
+      "id": "llg-tangente-addition-1",
+      "verifie": true,
+      "niveau": 1,
+      "chapitre": "Trigonométrie",
+      "titre": "La formule d'addition de la tangente",
+      "source": "Correction Poly LLG/Henri-IV, Transition Prépa, §4.4 « Complément : la fonction tangente », ex. 119",
+      "accroche": "La formule d'addition de la tangente ne se retient pas : elle se retrouve en trente secondes à partir de celles du cosinus et du sinus.",
+      "enonce": [
+        {
+          "type": "texte",
+          "valeur": "Soient $x,y \\in \\mathbb{R}$ tels que $\\cos x \\neq 0$, $\\cos y \\neq 0$ et $\\cos(x+y)\\neq 0$. Exprimer $\\tan(x+y)$ en fonction de $\\tan x$ et $\\tan y$."
+        }
+      ],
+      "etapes": [
+        {
+          "titre": "Partir de la définition",
+          "blocs": [
+            {
+              "type": "texte",
+              "valeur": "Par définition, $\\tan(x+y) = \\dfrac{\\sin(x+y)}{\\cos(x+y)}$. On développe le numérateur et le dénominateur avec les formules d'addition."
+            },
+            {
+              "type": "formule",
+              "valeur": "\\tan(x+y) = \\dfrac{\\sin x \\cos y + \\cos x \\sin y}{\\cos x \\cos y - \\sin x \\sin y}"
+            }
+          ]
+        },
+        {
+          "titre": "Faire apparaître des tangentes",
+          "blocs": [
+            {
+              "type": "texte",
+              "valeur": "On divise numérateur et dénominateur par $\\cos x \\cos y$, qui est non nul par hypothèse : cela ne change pas la fraction."
+            },
+            {
+              "type": "formule",
+              "cle": true,
+              "valeur": "\\tan(x+y) = \\dfrac{\\dfrac{\\sin x}{\\cos x} + \\dfrac{\\sin y}{\\cos y}}{1 - \\dfrac{\\sin x}{\\cos x}\\cdot\\dfrac{\\sin y}{\\cos y}}"
+            },
+            {
+              "type": "astuce",
+              "valeur": "Diviser haut et bas par la même quantité non nulle est le geste réflexe pour transformer une expression en cosinus/sinus en une expression en tangente."
+            }
+          ]
+        },
+        {
+          "titre": "Conclure",
+          "blocs": [
+            {
+              "type": "texte",
+              "valeur": "En reconnaissant $\\tan x$ et $\\tan y$ :"
+            },
+            {
+              "type": "formule",
+              "cle": true,
+              "valeur": "\\tan(x+y) = \\dfrac{\\tan x + \\tan y}{1 - \\tan x \\tan y}"
+            }
+          ]
+        }
+      ],
+      "conclusion": "La condition $\\cos(x+y)\\neq 0$ garantit que le dénominateur obtenu, $1-\\tan x\\tan y$, est non nul : c'est la même condition, juste réécrite après division.",
+      "hashtags_extra": "#trigonometrie #tangente"
+    },
+    {
+      "id": "llg-amplitude-1",
+      "verifie": true,
+      "niveau": 2,
+      "chapitre": "Trigonométrie",
+      "titre": "Transformation de a cos x + b sin x",
+      "source": "Correction Poly LLG/Henri-IV, Transition Prépa, §4.3 « Complément : transformation $a\\cos x+b\\sin x$ », ex. 116 (adapté)",
+      "accroche": "Une somme d'un cosinus et d'un sinus n'est jamais aussi compliquée qu'elle en a l'air : c'est toujours un unique cosinus, déphasé et amplifié.",
+      "enonce": [
+        {
+          "type": "texte",
+          "valeur": "Pour $x\\in\\mathbb{R}$, on pose $f(x) = 3\\cos x + 4 \\sin x$. Écrire $f(x)$ sous la forme $R\\cos(x-\\varphi)$ avec $R>0$, et déterminer $R$."
+        }
+      ],
+      "etapes": [
+        {
+          "titre": "Développer la forme visée",
+          "blocs": [
+            {
+              "type": "texte",
+              "valeur": "On développe $R\\cos(x-\\varphi)$ avec la formule d'addition, pour identifier terme à terme avec $3\\cos x + 4\\sin x$."
+            },
+            {
+              "type": "formule",
+              "valeur": "R\\cos(x-\\varphi) = R\\cos\\varphi \\cos x + R \\sin\\varphi \\sin x"
+            }
+          ]
+        },
+        {
+          "titre": "Identifier les coefficients",
+          "blocs": [
+            {
+              "type": "texte",
+              "valeur": "Par identification avec $3\\cos x + 4\\sin x$ :"
+            },
+            {
+              "type": "formule",
+              "cle": true,
+              "valeur": "R\\cos\\varphi = 3 \\qquad R\\sin\\varphi = 4"
+            }
+          ]
+        },
+        {
+          "titre": "Trouver R par Pythagore",
+          "blocs": [
+            {
+              "type": "texte",
+              "valeur": "On élève les deux égalités au carré et on additionne : $\\cos^2\\varphi+\\sin^2\\varphi=1$ fait disparaître $\\varphi$."
+            },
+            {
+              "type": "formule",
+              "cle": true,
+              "valeur": "R^2 = 3^2+4^2 = 25 \\;\\Longrightarrow\\; R=5"
+            },
+            {
+              "type": "astuce",
+              "valeur": "$R$ est toujours $\\sqrt{a^2+b^2}$ pour une expression $a\\cos x+b\\sin x$, un réflexe à avoir immédiatement, avant même de chercher $\\varphi$."
+            }
+          ]
+        },
+        {
+          "titre": "En déduire φ",
+          "blocs": [
+            {
+              "type": "texte",
+              "valeur": "Avec $R=5$ : $\\cos\\varphi = \\tfrac{3}{5}$ et $\\sin\\varphi = \\tfrac{4}{5}$, tous deux positifs, donc $\\varphi$ est dans le premier quadrant."
+            },
+            {
+              "type": "formule",
+              "valeur": "\\varphi = \\arctan\\!\\left(\\dfrac{4}{3}\\right)"
+            }
+          ]
+        }
+      ],
+      "conclusion": "$f(x) = 5\\cos\\!\\left(x - \\arctan\\tfrac{4}{3}\\right)$ : l'amplitude de $f$ est $5$, jamais $3+4=7$, l'erreur la plus fréquente sur ce type d'exercice.",
+      "hashtags_extra": "#trigonometrie"
+    },
+    {
+      "id": "sl-racines-carrees-1",
+      "verifie": true,
+      "niveau": 2,
+      "chapitre": "Équations et inéquations",
+      "titre": "Équations avec racines carrées",
+      "source": "Poly Saint-Louis, Transition Terminale → MPSI/PCSI/MP2I, §1 Calcul algébrique, « Équations et inéquations diverses », ex. 4",
+      "accroche": "Élever au carré résout l'équation, mais fabrique aussi de fausses solutions si on oublie de vérifier le domaine.",
+      "enonce": [
+        {
+          "type": "texte",
+          "valeur": "Résoudre dans $\\mathbb{R}$ l'équation :"
+        },
+        {
+          "type": "formule",
+          "cle": true,
+          "valeur": "\\sqrt{3x^2-4} = \\sqrt{1-2x}"
+        }
+      ],
+      "etapes": [
+        {
+          "titre": "Poser le domaine de définition",
+          "blocs": [
+            {
+              "type": "texte",
+              "valeur": "Les deux membres doivent être définis simultanément."
+            },
+            {
+              "type": "formule",
+              "valeur": "3x^2 - 4 \\geqslant 0 \\quad \\text{et} \\quad 1-2x \\geqslant 0"
+            },
+            {
+              "type": "astuce",
+              "valeur": "Ne jamais élever au carré une équation avec racines sans avoir d'abord posé le domaine, sinon on ne sait plus, à la fin, lesquelles des solutions trouvées sont valables."
+            }
+          ]
+        },
+        {
+          "titre": "Élever au carré",
+          "blocs": [
+            {
+              "type": "texte",
+              "valeur": "Les deux membres sont positifs ou nuls sur ce domaine : $\\sqrt{A}=\\sqrt{B} \\iff A=B$ (et $A,B\\geqslant 0$)."
+            },
+            {
+              "type": "formule",
+              "valeur": "3x^2-4 = 1-2x \\iff 3x^2+2x-5=0"
+            }
+          ]
+        },
+        {
+          "titre": "Résoudre le trinôme",
+          "blocs": [
+            {
+              "type": "texte",
+              "valeur": "Discriminant : $\\Delta = 2^2 - 4\\times3\\times(-5) = 4+60=64=8^2$."
+            },
+            {
+              "type": "formule",
+              "cle": true,
+              "valeur": "x = \\dfrac{-2-8}{6} = -\\dfrac{5}{3} \\qquad \\text{ou} \\qquad x = \\dfrac{-2+8}{6} = 1"
+            }
+          ]
+        },
+        {
+          "titre": "Vérifier chaque solution dans le domaine",
+          "blocs": [
+            {
+              "type": "texte",
+              "valeur": "$1-2x\\geqslant 0$ impose $x \\leqslant \\tfrac{1}{2}$. Or $1 > \\tfrac{1}{2}$ : $x=1$ est à rejeter, bien qu'il annule bien $3x^2+2x-5$."
+            },
+            {
+              "type": "formule",
+              "valeur": "x=-\\dfrac{5}{3} : \\quad 1-2x = \\dfrac{13}{3} \\geqslant 0 \\quad \\text{et} \\quad 3x^2-4 = \\dfrac{13}{3} \\geqslant 0 \\;\\checkmark"
+            }
+          ]
+        }
+      ],
+      "conclusion": "$S = \\left\\{-\\dfrac{5}{3}\\right\\}$. La solution $x=1$, mathématiquement correcte pour l'équation du second degré, ne l'est plus pour l'équation de départ : c'est le prix à payer pour avoir élevé au carré.",
+      "hashtags_extra": "#equations"
+    },
+    {
+      "id": "llg-log-trinome-1",
+      "verifie": true,
+      "niveau": 2,
+      "chapitre": "Équations et inéquations",
+      "titre": "Les équations logarithmiques",
+      "source": "Correction Poly LLG/Henri-IV, Transition Prépa, §3.3 « Le trinôme du second degré réel », ex. 84 (partie 1)",
+      "accroche": "Un logarithme d'une somme ne se simplifie jamais ; un logarithme d'un produit, si : encore faut-il poser le domaine avant.",
+      "enonce": [
+        {
+          "type": "texte",
+          "valeur": "Résoudre dans $\\mathbb{R}$ l'équation $\\ln(x+1) + \\ln(x+5) = \\ln(96)$."
+        }
+      ],
+      "etapes": [
+        {
+          "titre": "Poser le domaine",
+          "blocs": [
+            {
+              "type": "texte",
+              "valeur": "Chaque terme exige son argument strictement positif."
+            },
+            {
+              "type": "formule",
+              "valeur": "x+1>0 \\quad \\text{et} \\quad x+5>0 \\;\\Longleftrightarrow\\; x \\in \\left]-1,+\\infty\\right["
+            }
+          ]
+        },
+        {
+          "titre": "Regrouper les logarithmes",
+          "blocs": [
+            {
+              "type": "texte",
+              "valeur": "Sur ce domaine, $x+1>0$ et $x+5>0$ : on peut utiliser $\\ln a + \\ln b = \\ln(ab)$."
+            },
+            {
+              "type": "formule",
+              "cle": true,
+              "valeur": "\\ln\\big((x+1)(x+5)\\big) = \\ln(96)"
+            }
+          ]
+        },
+        {
+          "titre": "Passer à l'exponentielle",
+          "blocs": [
+            {
+              "type": "texte",
+              "valeur": "$\\ln$ est injective : deux logarithmes égaux viennent de deux arguments égaux."
+            },
+            {
+              "type": "formule",
+              "valeur": "\\begin{gathered} (x+1)(x+5) = 96 \\iff x^2+6x+5 = 96 \\\\[6pt] \\iff x^2+6x-91 = 0 \\end{gathered}"
+            }
+          ]
+        },
+        {
+          "titre": "Résoudre le trinôme",
+          "blocs": [
+            {
+              "type": "texte",
+              "valeur": "Discriminant : $\\Delta = 36+364=400=20^2$."
+            },
+            {
+              "type": "formule",
+              "cle": true,
+              "valeur": "x = \\dfrac{-6-20}{2}=-13 \\qquad \\text{ou} \\qquad x=\\dfrac{-6+20}{2}=7"
+            }
+          ]
+        },
+        {
+          "titre": "Vérifier le domaine",
+          "blocs": [
+            {
+              "type": "texte",
+              "valeur": "Seul $x=7$ appartient à $\\left]-1,+\\infty\\right[$ ; $x=-13$ est à rejeter."
+            },
+            {
+              "type": "astuce",
+              "valeur": "Le piège classique ici est de résoudre le trinôme sans revenir au domaine posé en étape 1, la moitié des solutions d'une équation logarithmique disparaît généralement à cette étape."
+            }
+          ]
+        }
+      ],
+      "conclusion": "$S=\\{7\\}$.",
+      "hashtags_extra": "#logarithme #equations"
+    },
+    {
+      "id": "sl-somme-geometrique-1",
+      "verifie": true,
+      "niveau": 2,
+      "chapitre": "Sommes",
+      "titre": "La somme géométrique",
+      "source": "Poly Saint-Louis, Transition Terminale → MPSI/PCSI/MP2I, §1 Calcul algébrique, « Sommes géométriques »",
+      "accroche": "La formule de la somme géométrique ne se retient pas par cœur : elle se redémontre en une ligne, par télescopage.",
+      "enonce": [
+        {
+          "type": "texte",
+          "valeur": "Soit $x\\in\\mathbb{R}$, $x\\neq 1$, et $n\\in\\mathbb{N}$. On pose $S=\\displaystyle\\sum_{k=0}^{n} x^k$. Montrer que $S = \\dfrac{1-x^{n+1}}{1-x}$."
+        }
+      ],
+      "etapes": [
+        {
+          "titre": "Fabriquer un télescopage",
+          "blocs": [
+            {
+              "type": "texte",
+              "valeur": "On calcule $(1-x)S$ en distribuant, puis on décale l'indice de la seconde somme."
+            },
+            {
+              "type": "formule",
+              "valeur": "(1-x)S = \\sum_{k=0}^{n} x^k - \\sum_{k=0}^{n} x^{k+1} = \\sum_{k=0}^{n} x^k - \\sum_{k=1}^{n+1} x^{k}"
+            }
+          ]
+        },
+        {
+          "titre": "Repérer les termes qui s'annulent",
+          "blocs": [
+            {
+              "type": "texte",
+              "valeur": "Les deux sommes partagent les termes d'indice $1$ à $n$ : ils se détruisent deux à deux."
+            },
+            {
+              "type": "formule",
+              "cle": true,
+              "valeur": "(1-x)S = x^0 - x^{n+1} = 1-x^{n+1}"
+            },
+            {
+              "type": "astuce",
+              "valeur": "Le télescopage est l'outil par défaut face à une somme géométrique ou à toute somme où deux indices consécutifs se répondent."
+            }
+          ]
+        },
+        {
+          "titre": "Diviser par 1-x",
+          "blocs": [
+            {
+              "type": "texte",
+              "valeur": "Comme $x\\neq 1$, on peut diviser les deux membres par $1-x \\neq 0$."
+            },
+            {
+              "type": "formule",
+              "cle": true,
+              "valeur": "S = \\dfrac{1-x^{n+1}}{1-x}"
+            }
+          ]
+        },
+        {
+          "titre": "Application numérique",
+          "blocs": [
+            {
+              "type": "texte",
+              "valeur": "Pour $x=\\tfrac12$ et $n=10$ :"
+            },
+            {
+              "type": "formule",
+              "valeur": "\\sum_{k=0}^{10} \\left(\\dfrac{1}{2}\\right)^k = \\dfrac{1-\\left(\\tfrac12\\right)^{11}}{1-\\tfrac12} = 2 - \\dfrac{1}{2^{10}} = \\dfrac{2047}{1024}"
+            }
+          ]
+        }
+      ],
+      "conclusion": "La condition $x\\neq 1$ n'est pas accessoire : pour $x=1$, $S$ vaut simplement $n+1$, et la formule ci-dessus n'a plus de sens (division par $0$).",
+      "hashtags_extra": "#sommes #suitegeometrique"
+    },
+    {
+      "id": "llg-congruences-1",
+      "verifie": true,
+      "niveau": 2,
+      "chapitre": "Trigonométrie",
+      "titre": "Les équations trigonométriques",
+      "source": "Correction Poly LLG/Henri-IV, Transition Prépa, §4.2 « Congruences modulo un nombre réel », ex. 109",
+      "accroche": "Deux équations trigonométriques classiques, pour vérifier qu'on manie bien le cercle trigonométrique sans hésitation.",
+      "enonce": [
+        {
+          "type": "question",
+          "num": "a.",
+          "valeur": "Résoudre dans $\\mathbb{R}$ : $\\cos x = \\dfrac{\\sqrt2}{2}$."
+        },
+        {
+          "type": "question",
+          "num": "b.",
+          "valeur": "Résoudre dans $\\mathbb{R}$ : $\\sin(2x) = \\dfrac{\\sqrt2}{2}$."
+        }
+      ],
+      "etapes": [
+        {
+          "titre": "Repérer une solution de référence (a)",
+          "blocs": [
+            {
+              "type": "texte",
+              "valeur": "$\\cos\\left(\\tfrac{\\pi}{4}\\right) = \\tfrac{\\sqrt2}{2}$. On utilise ensuite : $\\cos u = \\cos v \\iff u=v\\,[2\\pi]$ ou $u=-v\\,[2\\pi]$."
+            },
+            {
+              "type": "formule",
+              "cle": true,
+              "valeur": "x = \\dfrac{\\pi}{4}\\,[2\\pi] \\quad \\text{ou} \\quad x=-\\dfrac{\\pi}{4}\\,[2\\pi]"
+            }
+          ]
+        },
+        {
+          "titre": "Conclure (a)",
+          "blocs": [
+            {
+              "type": "formule",
+              "valeur": "S_a = \\left\\{\\dfrac{\\pi}{4}+2k\\pi \\;;\\; -\\dfrac{\\pi}{4}+2k\\pi,\\; k\\in\\mathbb{Z}\\right\\}"
+            }
+          ]
+        },
+        {
+          "titre": "Poser l'inconnue auxiliaire (b)",
+          "blocs": [
+            {
+              "type": "texte",
+              "valeur": "On pose $u=2x$ et on résout d'abord en $u$ : $\\sin u = \\tfrac{\\sqrt2}{2} = \\sin\\left(\\tfrac{\\pi}{4}\\right)$, avec $\\sin p = \\sin q \\iff p=q\\,[2\\pi]$ ou $p=\\pi-q\\,[2\\pi]$."
+            },
+            {
+              "type": "formule",
+              "cle": true,
+              "valeur": "2x = \\dfrac{\\pi}{4}\\,[2\\pi] \\quad \\text{ou} \\quad 2x = \\dfrac{3\\pi}{4}\\,[2\\pi]"
+            },
+            {
+              "type": "astuce",
+              "valeur": "Poser une inconnue auxiliaire ($u=2x$) avant de traduire les congruences évite l'erreur classique de diviser un modulo $2\\pi$ par $2$ sans y penser."
+            }
+          ]
+        },
+        {
+          "titre": "Revenir à x (b)",
+          "blocs": [
+            {
+              "type": "texte",
+              "valeur": "On divise par $2$, ce qui divise aussi le modulo par $2$."
+            },
+            {
+              "type": "formule",
+              "cle": true,
+              "valeur": "x = \\dfrac{\\pi}{8}\\,[\\pi] \\quad \\text{ou} \\quad x = \\dfrac{3\\pi}{8}\\,[\\pi]"
+            }
+          ]
+        }
+      ],
+      "conclusion": "$S_b = \\left\\{\\dfrac{\\pi}{8}+k\\pi \\;;\\; \\dfrac{3\\pi}{8}+k\\pi,\\; k\\in\\mathbb{Z}\\right\\}$. Diviser une congruence modulo $2\\pi$ par $2$ la transforme en congruence modulo $\\pi$ : c'est ce doublement de solutions qui est le piège de la question (b).",
+      "hashtags_extra": "#trigonometrie #congruences"
+    },
+    {
+      "id": "llg-cauchyschwarz-1",
+      "verifie": true,
+      "niveau": 3,
+      "chapitre": "Inégalités",
+      "titre": "L'inégalité de Cauchy-Schwarz",
+      "source": "Correction Poly LLG/Henri-IV, Transition Prépa, §3.4 « Complément : inégalité de Cauchy-Schwarz pour les sommes »",
+      "accroche": "Une inégalité qui semble sortie de nulle part se démontre en fait avec le même outil qu'un trinôme ordinaire : son discriminant.",
+      "enonce": [
+        {
+          "type": "texte",
+          "valeur": "Soient $a_1,a_2,a_3,b_1,b_2,b_3 \\in \\mathbb{R}$. Montrer que :"
+        },
+        {
+          "type": "formule",
+          "cle": true,
+          "valeur": "(a_1b_1+a_2b_2+a_3b_3)^2 \\leqslant (a_1^2+a_2^2+a_3^2)(b_1^2+b_2^2+b_3^2)"
+        }
+      ],
+      "etapes": [
+        {
+          "titre": "Fabriquer un trinôme en t",
+          "blocs": [
+            {
+              "type": "texte",
+              "valeur": "L'idée est de considérer, pour $t\\in\\mathbb{R}$, la quantité toujours positive $P(t) = \\displaystyle\\sum_{i=1}^{3}(a_it-b_i)^2$, et de la développer."
+            },
+            {
+              "type": "formule",
+              "valeur": "P(t) = \\left(\\sum_{i=1}^{3} a_i^2\\right) t^2 - 2\\left(\\sum_{i=1}^{3} a_ib_i\\right) t + \\sum_{i=1}^{3} b_i^2"
+            },
+            {
+              "type": "astuce",
+              "valeur": "Une somme de carrés est toujours positive ou nulle : c'est le point de départ de presque toutes les preuves d'inégalité par cette méthode."
+            }
+          ]
+        },
+        {
+          "titre": "Traiter le cas dégénéré",
+          "blocs": [
+            {
+              "type": "texte",
+              "valeur": "Si $a_1=a_2=a_3=0$, l'inégalité à montrer s'écrit $0\\leqslant 0$ : elle est vraie. On suppose désormais $\\sum a_i^2 > 0$."
+            }
+          ]
+        },
+        {
+          "titre": "Un trinôme toujours positif",
+          "blocs": [
+            {
+              "type": "texte",
+              "valeur": "$P$ est alors un vrai trinôme du second degré en $t$, à coefficient dominant $\\sum a_i^2>0$, et $P(t)\\geqslant 0$ pour tout $t$ : son discriminant est donc négatif ou nul."
+            },
+            {
+              "type": "formule",
+              "cle": true,
+              "valeur": "\\Delta = 4\\left(\\sum_{i=1}^{3} a_ib_i\\right)^2 - 4\\left(\\sum_{i=1}^{3} a_i^2\\right)\\left(\\sum_{i=1}^{3} b_i^2\\right) \\leqslant 0"
+            }
+          ]
+        },
+        {
+          "titre": "Conclure",
+          "blocs": [
+            {
+              "type": "texte",
+              "valeur": "On divise par $4$ et on réorganise : c'est exactement l'inégalité annoncée."
+            },
+            {
+              "type": "formule",
+              "cle": true,
+              "valeur": "\\left(\\sum_{i=1}^{3} a_ib_i\\right)^2 \\leqslant \\left(\\sum_{i=1}^{3} a_i^2\\right)\\left(\\sum_{i=1}^{3} b_i^2\\right)"
+            }
+          ]
+        }
+      ],
+      "conclusion": "Il y a égalité si et seulement si $P$ admet une racine réelle, c'est-à-dire si les triplets $(a_1,a_2,a_3)$ et $(b_1,b_2,b_3)$ sont proportionnels. La méthode se généralise mot pour mot à $n$ termes.",
+      "hashtags_extra": "#cauchyschwarz #inegalites"
+    },
+    {
+      "id": "llg-biquadratique-1",
+      "verifie": true,
+      "niveau": 3,
+      "chapitre": "Trinôme du second degré",
+      "titre": "Les équations bicarrées",
+      "source": "Correction Poly LLG/Henri-IV, Transition Prépa, §3.3 « Le trinôme du second degré réel », ex. 93",
+      "accroche": "Une équation de degré 4 sans terme impair n'est jamais qu'un trinôme déguisé, à condition de bien traduire la contrainte de réalité.",
+      "enonce": [
+        {
+          "type": "texte",
+          "valeur": "Soient $u,v \\in \\mathbb{R}$. À quelle condition sur $u$ et $v$ l'équation $x^4+ux^2+v=0$ admet-elle quatre racines réelles distinctes ?"
+        }
+      ],
+      "etapes": [
+        {
+          "titre": "Changer d'inconnue",
+          "blocs": [
+            {
+              "type": "texte",
+              "valeur": "On pose $X=x^2$ : l'équation devient un trinôme en $X$."
+            },
+            {
+              "type": "formule",
+              "cle": true,
+              "valeur": "X^2+uX+v=0"
+            }
+          ]
+        },
+        {
+          "titre": "Traduire « quatre racines réelles » en X",
+          "blocs": [
+            {
+              "type": "texte",
+              "valeur": "Pour chaque racine $X>0$ du trinôme en $X$, on obtient deux valeurs réelles distinctes de $x$ : $\\sqrt X$ et $-\\sqrt X$. Une racine $X\\leqslant 0$ ne donne, elle, aucune valeur réelle de $x$ (si $X<0$) ou une seule ($x=0$ si $X=0$)."
+            },
+            {
+              "type": "astuce",
+              "valeur": "Quatre racines réelles distinctes en $x$ exigent donc exactement deux racines réelles distinctes et strictement positives en $X$, ni une racine double, ni une racine négative ou nulle."
+            }
+          ]
+        },
+        {
+          "titre": "Discriminant strictement positif",
+          "blocs": [
+            {
+              "type": "texte",
+              "valeur": "Deux racines distinctes pour le trinôme en $X$ :"
+            },
+            {
+              "type": "formule",
+              "valeur": "\\Delta = u^2-4v > 0"
+            }
+          ]
+        },
+        {
+          "titre": "Les deux racines strictement positives",
+          "blocs": [
+            {
+              "type": "texte",
+              "valeur": "Pour un trinôme de racines $X_1,X_2$, leur somme vaut $-u$ et leur produit $v$ (relations coefficients-racines). Toutes deux strictement positives équivaut à :"
+            },
+            {
+              "type": "formule",
+              "cle": true,
+              "valeur": "\\begin{gathered} X_1+X_2 = -u > 0 \\quad \\text{et} \\quad X_1X_2 = v > 0 \\\\[6pt] \\Longleftrightarrow \\quad u < 0 \\ \\text{ et }\\ v > 0 \\end{gathered}"
+            }
+          ]
+        },
+        {
+          "titre": "Combiner les deux conditions",
+          "blocs": [
+            {
+              "type": "texte",
+              "valeur": "Les trois conditions $u^2-4v>0$, $u<0$ et $v>0$ doivent être vérifiées simultanément."
+            }
+          ]
+        }
+      ],
+      "conclusion": "L'équation a quatre racines réelles distinctes si et seulement si $u<0$ et $0<v<\\dfrac{u^2}{4}$ : la deuxième condition résume à elle seule $v>0$ et $\\Delta>0$.",
+      "hashtags_extra": "#trinome #biquadratique"
+    },
+    {
+      "id": "llg-trig-trinome-1",
+      "verifie": true,
+      "niveau": 3,
+      "chapitre": "Trigonométrie",
+      "titre": "La formule de duplication du cosinus",
+      "source": "Correction Poly LLG/Henri-IV, Transition Prépa, chapitre 4 « Trigonométrie », ex. 101 (numéro exact de sous-section perdu dans l'OCR, chapitre et numéro d'exercice certains)",
+      "accroche": "Une inégalité trigonométrique qui semble nécessiter une étude de fonction se règle en une ligne, via la formule de duplication.",
+      "enonce": [
+        {
+          "type": "texte",
+          "valeur": "Montrer que pour tout $x\\in\\mathbb{R}$ :"
+        },
+        {
+          "type": "formule",
+          "cle": true,
+          "valeur": "2\\cos(2x)+4\\cos(x)+3 \\geqslant 0"
+        },
+        {
+          "type": "texte",
+          "valeur": "et préciser le cas d'égalité."
+        }
+      ],
+      "etapes": [
+        {
+          "titre": "Tout ramener à cos x",
+          "blocs": [
+            {
+              "type": "texte",
+              "valeur": "$\\cos(2x)$ s'exprime en fonction de $\\cos x$ seul, grâce à la formule de duplication $\\cos(2x)=2\\cos^2x-1$."
+            },
+            {
+              "type": "formule",
+              "valeur": "2\\cos(2x)+4\\cos x+3 = 2(2\\cos^2x-1)+4\\cos x+3"
+            }
+          ]
+        },
+        {
+          "titre": "Développer",
+          "blocs": [
+            {
+              "type": "formule",
+              "valeur": "= 4\\cos^2x+4\\cos x+1"
+            }
+          ]
+        },
+        {
+          "titre": "Reconnaître le carré parfait",
+          "blocs": [
+            {
+              "type": "texte",
+              "valeur": "On pose $c=\\cos x$ : l'expression est $4c^2+4c+1$, discriminant $\\Delta=16-16=0$ : c'est un carré parfait."
+            },
+            {
+              "type": "formule",
+              "cle": true,
+              "valeur": "4\\cos^2x+4\\cos x+1 = (2\\cos x+1)^2"
+            },
+            {
+              "type": "astuce",
+              "valeur": "Un trinôme de discriminant nul se factorise toujours en un carré parfait : quand $\\Delta=0$ apparaît dans un calcul, chercher directement cette factorisation plutôt que la formule des racines."
+            }
+          ]
+        },
+        {
+          "titre": "Conclure",
+          "blocs": [
+            {
+              "type": "texte",
+              "valeur": "Un carré est toujours positif ou nul, pour tout $x\\in\\mathbb{R}$ :"
+            },
+            {
+              "type": "formule",
+              "cle": true,
+              "valeur": "2\\cos(2x)+4\\cos x+3 = (2\\cos x+1)^2 \\geqslant 0"
+            }
+          ]
+        },
+        {
+          "titre": "Cas d'égalité",
+          "blocs": [
+            {
+              "type": "texte",
+              "valeur": "L'égalité a lieu si et seulement si $\\cos x=-\\tfrac12$, c'est-à-dire $x=\\tfrac{2\\pi}{3}\\,[2\\pi]$ ou $x=-\\tfrac{2\\pi}{3}\\,[2\\pi]$."
+            }
+          ]
+        }
+      ],
+      "conclusion": "Ce qui ressemblait à une inégalité trigonométrique arbitraire n'était, sous la duplication, qu'un trinôme du second degré en $\\cos x$ dont le discriminant s'annule exactement.",
+      "hashtags_extra": "#trigonometrie #trinome"
+    },
+    {
+      "id": "sl-telescopage-1",
+      "verifie": true,
+      "niveau": 3,
+      "chapitre": "Sommes",
+      "titre": "Les sommes télescopiques",
+      "source": "Exercice classique de sommes télescopiques (fractions rationnelles), rédigé pour cette niche dans l'esprit du thème « Sommes géométriques » du Poly Saint-Louis §1, pas une citation directe d'un exercice numéroté du poly",
+      "accroche": "Le télescopage n'est pas réservé aux suites géométriques : il marche tout aussi bien sur une fraction.",
+      "enonce": [
+        {
+          "type": "texte",
+          "valeur": "Soit $n\\in\\mathbb{N}^*$. Montrer que :"
+        },
+        {
+          "type": "formule",
+          "cle": true,
+          "valeur": "\\sum_{k=1}^{n} \\dfrac{1}{k(k+1)} = \\dfrac{n}{n+1}"
+        }
+      ],
+      "etapes": [
+        {
+          "titre": "Décomposer chaque terme",
+          "blocs": [
+            {
+              "type": "texte",
+              "valeur": "On décompose $\\dfrac{1}{k(k+1)}$ en éléments simples : on cherche $\\alpha,\\beta$ tels que $\\dfrac{1}{k(k+1)} = \\dfrac{\\alpha}{k}+\\dfrac{\\beta}{k+1}$."
+            },
+            {
+              "type": "formule",
+              "cle": true,
+              "valeur": "\\dfrac{1}{k(k+1)} = \\dfrac{1}{k} - \\dfrac{1}{k+1}"
+            },
+            {
+              "type": "astuce",
+              "valeur": "Pour vérifier une décomposition en éléments simples sans repartir du calcul complet : réduire au même dénominateur et comparer au numérateur de départ."
+            }
+          ]
+        },
+        {
+          "titre": "Écrire la somme terme à terme",
+          "blocs": [
+            {
+              "type": "texte",
+              "valeur": "On remplace chaque terme de la somme par cette différence."
+            },
+            {
+              "type": "formule",
+              "valeur": "\\sum_{k=1}^{n} \\dfrac{1}{k(k+1)} = \\sum_{k=1}^{n} \\left(\\dfrac{1}{k}-\\dfrac{1}{k+1}\\right)"
+            }
+          ]
+        },
+        {
+          "titre": "Repérer le télescopage",
+          "blocs": [
+            {
+              "type": "texte",
+              "valeur": "Chaque $-\\tfrac1{k+1}$ est annulé par le $+\\tfrac1{k+1}$ du terme suivant : seuls le tout premier et le tout dernier terme survivent."
+            },
+            {
+              "type": "formule",
+              "cle": true,
+              "valeur": "\\sum_{k=1}^{n} \\left(\\dfrac{1}{k}-\\dfrac{1}{k+1}\\right) = \\dfrac{1}{1} - \\dfrac{1}{n+1}"
+            }
+          ]
+        },
+        {
+          "titre": "Conclure",
+          "blocs": [
+            {
+              "type": "formule",
+              "cle": true,
+              "valeur": "\\dfrac{1}{1}-\\dfrac{1}{n+1} = \\dfrac{n+1-1}{n+1} = \\dfrac{n}{n+1}"
+            }
+          ]
+        }
+      ],
+      "conclusion": "Le télescopage transforme une somme de $n$ termes en une simple différence de deux termes, la même idée que pour la somme géométrique, appliquée cette fois à une fraction plutôt qu'à une puissance.",
+      "hashtags_extra": "#sommes #telescopage"
+    },
+    {
+      "id": "llg-irrationnel-cos-1",
+      "verifie": true,
+      "niveau": 4,
+      "chapitre": "Trigonométrie",
+      "titre": "Périodicité et irrationalité",
+      "source": "Correction Poly LLG/Henri-IV, Transition Prépa, §4.2 « Congruences modulo un nombre réel », ex. 113",
+      "accroche": "Un exercice où l'irrationalité d'un simple nombre suffit à casser toute périodicité, une idée qui revient souvent en prépa.",
+      "enonce": [
+        {
+          "type": "texte",
+          "valeur": "Soit $\\alpha$ un nombre irrationnel. On pose, pour $x\\in\\mathbb{R}$, $f(x)=\\cos x + \\cos(\\alpha x)$."
+        },
+        {
+          "type": "question",
+          "num": "a.",
+          "valeur": "Montrer que le seul réel $x$ tel que $f(x)=2$ est $x=0$."
+        },
+        {
+          "type": "question",
+          "num": "b.",
+          "valeur": "La fonction $f$ est-elle périodique ?"
+        }
+      ],
+      "etapes": [
+        {
+          "titre": "Majorer f par 2 (a)",
+          "blocs": [
+            {
+              "type": "texte",
+              "valeur": "Pour tout $x\\in\\mathbb{R}$, $\\cos x\\leqslant 1$ et $\\cos(\\alpha x)\\leqslant 1$, donc $f(x)\\leqslant 2$, avec égalité si et seulement si les deux valent $1$ en même temps."
+            },
+            {
+              "type": "formule",
+              "cle": true,
+              "valeur": "f(x)=2 \\iff \\cos x=1 \\text{ et } \\cos(\\alpha x)=1"
+            }
+          ]
+        },
+        {
+          "titre": "Traduire par des congruences (a)",
+          "blocs": [
+            {
+              "type": "texte",
+              "valeur": "$\\cos x=1 \\iff x=2k\\pi$ pour un $k\\in\\mathbb{Z}$, et $\\cos(\\alpha x)=1 \\iff \\alpha x = 2\\ell\\pi$ pour un $\\ell\\in\\mathbb{Z}$."
+            },
+            {
+              "type": "formule",
+              "valeur": "x=2k\\pi \\quad \\text{et} \\quad \\alpha x = 2\\ell\\pi, \\qquad (k,\\ell)\\in\\mathbb{Z}^2"
+            }
+          ]
+        },
+        {
+          "titre": "Faire jouer l'irrationalité (a)",
+          "blocs": [
+            {
+              "type": "texte",
+              "valeur": "Si $x\\neq 0$, alors $k\\neq 0$. En substituant $x=2k\\pi$ dans la seconde égalité :"
+            },
+            {
+              "type": "formule",
+              "cle": true,
+              "valeur": "\\alpha \\times 2k\\pi = 2\\ell\\pi \\;\\Longrightarrow\\; \\alpha = \\dfrac{\\ell}{k} \\in \\mathbb{Q}"
+            },
+            {
+              "type": "astuce",
+              "valeur": "C'est le montage typique pour exploiter une hypothèse d'irrationalité : la faire apparaître comme égale à un quotient d'entiers, puis conclure par contradiction."
+            }
+          ]
+        },
+        {
+          "titre": "Conclure (a)",
+          "blocs": [
+            {
+              "type": "texte",
+              "valeur": "C'est absurde, $\\alpha$ étant irrationnel par hypothèse. Donc $k=0$, c'est-à-dire $x=0$, qui vérifie bien $f(0)=\\cos0+\\cos0=2$."
+            }
+          ]
+        },
+        {
+          "titre": "Supposer f périodique, pour l'absurde (b)",
+          "blocs": [
+            {
+              "type": "texte",
+              "valeur": "Supposons $f$ périodique : il existe $T\\neq 0$ tel que $f(x+T)=f(x)$ pour tout $x\\in\\mathbb{R}$. On applique cette égalité en $x=0$."
+            },
+            {
+              "type": "formule",
+              "valeur": "f(T) = f(0+T) = f(0) = 2"
+            }
+          ]
+        },
+        {
+          "titre": "Conclure (b)",
+          "blocs": [
+            {
+              "type": "texte",
+              "valeur": "D'après la question (a), $f(T)=2$ implique $T=0$. Or $T$ a été choisi non nul : contradiction."
+            }
+          ]
+        }
+      ],
+      "conclusion": "$f$ n'est pas périodique. C'est la question (a) qui porte tout l'exercice : une fois acquis que $2$ n'est atteint qu'en $0$, la non-périodicité s'ensuit presque automatiquement.",
+      "hashtags_extra": "#irrationnel #periodicite"
+    },
+    {
+      "id": "llg-cauchyschwarz-application-1",
+      "verifie": true,
+      "niveau": 4,
+      "chapitre": "Inégalités",
+      "titre": "Cauchy-Schwarz : recherche d'un minimum",
+      "source": "Application classique de l'inégalité de Cauchy-Schwarz démontrée dans l'exercice llg-cauchyschwarz-1 de cette même niche, énoncé standard de prépa, rédigé pour cette niche",
+      "accroche": "Le retour sur investissement d'une inégalité générale démontrée une fois : ici, une borne inférieure obtenue sans aucun calcul supplémentaire.",
+      "enonce": [
+        {
+          "type": "texte",
+          "valeur": "Soient $a,b,c\\in\\mathbb{R}$ tels que $a+b+c=3$. Montrer que $a^2+b^2+c^2\\geqslant 3$, et préciser le cas d'égalité."
+        }
+      ],
+      "etapes": [
+        {
+          "titre": "Choisir les bons triplets",
+          "blocs": [
+            {
+              "type": "texte",
+              "valeur": "On applique l'inégalité de Cauchy-Schwarz aux triplets $(1,1,1)$ et $(a,b,c)$."
+            },
+            {
+              "type": "formule",
+              "valeur": "(1\\times a+1\\times b+1\\times c)^2 \\leqslant (1^2+1^2+1^2)(a^2+b^2+c^2)"
+            }
+          ]
+        },
+        {
+          "titre": "Simplifier avec l'hypothèse",
+          "blocs": [
+            {
+              "type": "texte",
+              "valeur": "Le membre de gauche est $(a+b+c)^2$, qui vaut $3^2=9$ d'après l'hypothèse."
+            },
+            {
+              "type": "formule",
+              "cle": true,
+              "valeur": "9 \\leqslant 3(a^2+b^2+c^2)"
+            }
+          ]
+        },
+        {
+          "titre": "Conclure",
+          "blocs": [
+            {
+              "type": "texte",
+              "valeur": "On divise par $3>0$."
+            },
+            {
+              "type": "formule",
+              "cle": true,
+              "valeur": "a^2+b^2+c^2 \\geqslant 3"
+            }
+          ]
+        },
+        {
+          "titre": "Cas d'égalité",
+          "blocs": [
+            {
+              "type": "texte",
+              "valeur": "D'après le cas d'égalité de Cauchy-Schwarz, il y a égalité si et seulement si les triplets $(1,1,1)$ et $(a,b,c)$ sont proportionnels, c'est-à-dire $a=b=c$. Avec $a+b+c=3$, cela impose $a=b=c=1$."
+            },
+            {
+              "type": "astuce",
+              "valeur": "Toute inégalité démontrée une fois devient un outil : ici, l'exercice se résout en une ligne parce que Cauchy-Schwarz a déjà été établi ailleurs, sans qu'il soit nécessaire de le redémontrer."
+            }
+          ]
+        }
+      ],
+      "conclusion": "L'égalité $a=b=c=1$ correspond au minimum de $a^2+b^2+c^2$ sous la contrainte $a+b+c=3$, un résultat que l'on retrouvera plus tard en prépa via les multiplicateurs de Lagrange, ici obtenu sans aucun outil d'analyse.",
+      "hashtags_extra": "#cauchyschwarz #optimisation"
+    },
+    {
+      "id": "llg-annulation-periode-1",
+      "verifie": true,
+      "niveau": 4,
+      "chapitre": "Trigonométrie",
+      "titre": "Les zéros d'une fonction sinusoïdale",
+      "source": "Correction Poly LLG/Henri-IV, Transition Prépa, §4.3 « Complément : transformation $a\\cos x+b\\sin x$ », ex. 118",
+      "accroche": "Une fonction $a\\cos x+b\\sin x$ ne s'annule jamais deux fois de suite sans un « trou » de longueur exactement π, ni jamais sans s'annuler du tout.",
+      "enonce": [
+        {
+          "type": "texte",
+          "valeur": "Soit $(a,b)\\in\\mathbb{R}^2\\setminus\\{(0,0)\\}$, et $f(x)=a\\cos x+b\\sin x$. Montrer que, pour tout $x_0\\in\\mathbb{R}$, $f$ s'annule exactement une fois sur $[x_0,x_0+\\pi[$."
+        }
+      ],
+      "etapes": [
+        {
+          "titre": "Repasser à la forme amplitude-phase",
+          "blocs": [
+            {
+              "type": "texte",
+              "valeur": "Comme $(a,b)\\neq(0,0)$, on pose $R=\\sqrt{a^2+b^2}>0$ : il existe $\\varphi\\in\\mathbb{R}$ tel que $f(x)=R\\cos(x-\\varphi)$ pour tout $x$ (même transformation que pour amplitude et phase)."
+            }
+          ]
+        },
+        {
+          "titre": "Traduire l'annulation",
+          "blocs": [
+            {
+              "type": "texte",
+              "valeur": "Comme $R\\neq 0$ :"
+            },
+            {
+              "type": "formule",
+              "cle": true,
+              "valeur": "f(x)=0 \\iff \\cos(x-\\varphi)=0 \\iff x-\\varphi = \\dfrac{\\pi}{2}\\,[\\pi]"
+            }
+          ]
+        },
+        {
+          "titre": "Décrire l'ensemble des zéros",
+          "blocs": [
+            {
+              "type": "texte",
+              "valeur": "L'ensemble des zéros de $f$ est donc"
+            },
+            {
+              "type": "formule",
+              "cle": true,
+              "valeur": "S = \\left\\{\\varphi+\\dfrac{\\pi}{2}+k\\pi \\;:\\; k\\in\\mathbb{Z}\\right\\}"
+            },
+            {
+              "type": "astuce",
+              "valeur": "Un ensemble décrit par « $+k\\pi$, $k\\in\\mathbb{Z}$ » est une progression de points régulièrement espacés de $\\pi$ sur la droite réelle, c'est cette régularité qui va porter toute la fin de la preuve."
+            }
+          ]
+        },
+        {
+          "titre": "Un seul point par intervalle de longueur π",
+          "blocs": [
+            {
+              "type": "texte",
+              "valeur": "Les éléments de $S$ sont deux à deux distants d'au moins $\\pi$ (ce sont des multiples entiers de $\\pi$ décalés de $\\varphi+\\tfrac\\pi2$), et l'écart entre deux éléments consécutifs de $S$ vaut exactement $\\pi$. Tout intervalle demi-ouvert de longueur $\\pi$, comme $[x_0,x_0+\\pi[$, contient donc exactement un élément de $S$."
+            }
+          ]
+        }
+      ],
+      "conclusion": "$f$ s'annule donc exactement une fois sur $[x_0,x_0+\\pi[$, quel que soit $x_0$, c'est la même régularité que celle des zéros de $\\cos$ ou de $\\sin$, translatée de $\\varphi$.",
+      "hashtags_extra": "#trigonometrie #periodicite"
     }
   ]
 }

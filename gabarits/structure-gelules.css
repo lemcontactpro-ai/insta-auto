@@ -55,16 +55,7 @@
   --r-pill:   999px;
 
   /* --- typo, échelle ×2.2 des tokens web, modulée par --fit --- */
-  --fit: 1;
-  --t-display: calc(74px * var(--fit));
-  --t-h1:      calc(58px * var(--fit));
-  --t-h2:      calc(46px * var(--fit));
-  --t-body:    calc(38px * var(--fit));
-  --t-body-sm: calc(33px * var(--fit));
-  --t-cap:     calc(30px * var(--fit));
   --t-micro:   25px;
-  --t-math:    calc(46px * var(--fit));
-  --t-math-sm: calc(38px * var(--fit));
 }
 
 * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -77,6 +68,19 @@ body {
 }
 
 .slide {
+  /* --fit : redéclaré ici et non dans :root — une variable calc()
+     est résolue là où elle est DÉCLARÉE. Dans :root, le --fit posé
+     en ligne sur .slide par le script d'auto-ajustement n'avait
+     aucun effet et la typo ne se réduisait jamais. */
+  --fit: 1;
+  --t-display: calc(74px * var(--fit));
+  --t-h1:      calc(58px * var(--fit));
+  --t-h2:      calc(46px * var(--fit));
+  --t-body:    calc(38px * var(--fit));
+  --t-body-sm: calc(33px * var(--fit));
+  --t-cap:     calc(30px * var(--fit));
+  --t-math:    calc(46px * var(--fit));
+  --t-math-sm: calc(38px * var(--fit));
   position: relative;
   width: 1080px;
   height: 1350px;
@@ -245,6 +249,11 @@ body {
   box-shadow: none;
 }
 .formule .katex { font-size: 1em; }
+/* Une formule ne s'enroule jamais : l'enroulement automatique coupe au milieu
+   d'une expression et donne un rendu bancal. Elle reste sur une ligne, quitte
+   à déborder : le contrôle de rendu réduit alors la typo, et refuse la slide
+   si même cela ne suffit pas. */
+.formule .katex, .formule .katex-display { white-space: nowrap; }
 
 /* encart astuce */
 .astuce {
@@ -266,6 +275,29 @@ body {
 .slide--aub .astuce .marque { color: var(--mute-on-aub); }
 
 /* filet de séparation */
+/* ------------------------------------------------- mise en place (« poser »)
+   Une ligne par élément de méthode : système, référentiel, bilan des forces.
+   Jamais un paragraphe compact : la méthode doit se lire d'un coup d'œil. */
+.poser { display: flex; flex-direction: column; gap: calc(20px * var(--fit));
+  border-left: 5px solid var(--accent); padding-left: 30px; }
+.slide--aub .poser { border-left-color: var(--accent-on-fonce); }
+.poser-l { display: flex; gap: 16px; align-items: baseline;
+  font-size: var(--t-body); line-height: 1.38; }
+.poser-cle { flex: 0 0 auto; font-weight: 800; color: var(--accent); }
+.slide--aub .poser-cle { color: var(--accent-on-fonce); }
+.poser-cle::after { content: " :"; }
+
+/* ------------------------------------------------------------------ schéma
+   Figure au trait, écrite en SVG dans le JSON de l'exercice. Elle suit la
+   couleur de la slide (currentColor) et se réduit avec --fit comme le reste. */
+.schema { display: flex; flex-direction: column; align-items: center; gap: 14px;
+  background: var(--lavender); border-radius: var(--r-lg);
+  padding: calc(26px * var(--fit)) 30px; color: var(--ink); }
+.slide--aub .schema { background: rgba(255, 255, 255, .10); color: var(--on-primary); }
+.schema svg { width: 100%; height: auto; max-height: calc(360px * var(--fit)); }
+.schema-legende { font-size: var(--t-cap); color: var(--ink-mute); text-align: center; }
+.slide--aub .schema-legende { color: var(--mute-on-aub); }
+
 .filet { height: 3px; width: 120px; background: var(--aubergine); border-radius: 2px; }
 .slide--aub .filet { background: rgba(255, 255, 255, .5); }
 
@@ -327,5 +359,5 @@ body {
 
 .katex { font-size: 1em !important; }
 .katex-display { margin: 0 !important; }
-.katex-display > .katex { white-space: normal; }
+.katex-display > .katex { white-space: nowrap; }
 .texte .katex, .question .katex, .astuce .katex { font-size: .97em !important; }

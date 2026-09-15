@@ -4,150 +4,1062 @@
     "prenoms": 25,
     "grammaire": 18,
     "conjugaison": 18,
-    "note": "Vocabulaire japonais débutant (niveau proche JLPT N5). Romanisation Hepburn pour les lectures. Grammaire et conjugaison vérifiées (formes irrégulières de する/来る/行く confirmées par recherche web). Les champs 'ar'/'fr'/'phrase_ar'/'phrase_fr'/'surligne_ar'/'surligne_fr' des familles mots/prenoms reprennent les noms de clés historiques du projet (venant de la niche arabe) réutilisés tels quels pour toutes les langues — 'ar' désigne toujours le texte en écriture native, pas spécifiquement l'arabe."
+    "note": "Vocabulaire japonais débutant (niveau proche JLPT N5). Romanisation Hepburn pour les lectures. Grammaire et conjugaison vérifiées (formes irrégulières de する/来る/行く confirmées par recherche web). Les champs 'ar'/'fr'/'phrase_ar'/'phrase_fr'/'surligne_ar'/'surligne_fr' des familles mots/prenoms reprennent les noms de clés historiques du projet (venant de la niche arabe) réutilisés tels quels pour toutes les langues, 'ar' désigne toujours le texte en écriture native, pas spécifiquement l'arabe."
   },
-
   "mots": [
-    {"ar": "こんにちは", "fr": "bonjour", "phrase_ar": "田中さん、こんにちは", "phrase_fr": "Bonjour, Tanaka.", "surligne_ar": "こんにちは", "surligne_fr": "Bonjour"},
-    {"ar": "ありがとう", "fr": "merci", "phrase_ar": "本当にありがとう", "phrase_fr": "Merci beaucoup.", "surligne_ar": "ありがとう", "surligne_fr": "Merci"},
-    {"ar": "すみません", "fr": "pardon", "phrase_ar": "すみません、遅れました", "phrase_fr": "Pardon, je suis en retard.", "surligne_ar": "すみません", "surligne_fr": "Pardon"},
-    {"ar": "おはよう", "fr": "bonjour (le matin)", "phrase_ar": "おはよう、先生", "phrase_fr": "Bonjour, professeur.", "surligne_ar": "おはよう", "surligne_fr": "Bonjour"},
-    {"ar": "さようなら", "fr": "au revoir", "phrase_ar": "先生、さようなら", "phrase_fr": "Au revoir, professeur.", "surligne_ar": "さようなら", "surligne_fr": "Au revoir"},
-    {"ar": "はい", "fr": "oui", "phrase_ar": "はい、そうです", "phrase_fr": "Oui, c'est ça.", "surligne_ar": "はい", "surligne_fr": "Oui"},
-    {"ar": "いいえ", "fr": "non", "phrase_ar": "いいえ、違います", "phrase_fr": "Non, ce n'est pas ça.", "surligne_ar": "いいえ", "surligne_fr": "Non"},
-    {"ar": "お願いします", "fr": "s'il vous plaît", "phrase_ar": "水をお願いします", "phrase_fr": "De l'eau, s'il vous plaît.", "surligne_ar": "お願いします", "surligne_fr": "s'il vous plaît"},
-
-    {"ar": "家族", "fr": "famille", "phrase_ar": "私の家族は五人", "phrase_fr": "Nous sommes cinq dans ma famille.", "surligne_ar": "家族", "surligne_fr": "famille"},
-    {"ar": "母", "fr": "mère", "phrase_ar": "母は料理が上手", "phrase_fr": "Ma mère cuisine bien.", "surligne_ar": "母", "surligne_fr": "mère"},
-    {"ar": "父", "fr": "père", "phrase_ar": "父は医者です", "phrase_fr": "Mon père est médecin.", "surligne_ar": "父", "surligne_fr": "père"},
-    {"ar": "兄", "fr": "grand frère", "phrase_ar": "兄は大学生", "phrase_fr": "Mon grand frère est étudiant.", "surligne_ar": "兄", "surligne_fr": "grand frère"},
-    {"ar": "妹", "fr": "petite sœur", "phrase_ar": "妹はまだ小さい", "phrase_fr": "Ma petite sœur est encore petite.", "surligne_ar": "妹", "surligne_fr": "petite sœur"},
-    {"ar": "友達", "fr": "ami", "phrase_ar": "友達と話す", "phrase_fr": "Je parle avec un ami.", "surligne_ar": "友達", "surligne_fr": "ami"},
-
-    {"ar": "食べる", "fr": "manger", "phrase_ar": "私はりんごを食べる", "phrase_fr": "Je mange une pomme.", "surligne_ar": "食べる", "surligne_fr": "mange"},
-    {"ar": "飲む", "fr": "boire", "phrase_ar": "お茶を飲む", "phrase_fr": "Je bois du thé.", "surligne_ar": "飲む", "surligne_fr": "bois"},
-    {"ar": "水", "fr": "eau", "phrase_ar": "水を飲みたい", "phrase_fr": "Je veux boire de l'eau.", "surligne_ar": "水", "surligne_fr": "eau"},
-    {"ar": "ご飯", "fr": "repas (riz)", "phrase_ar": "ご飯を作る", "phrase_fr": "Je prépare le repas.", "surligne_ar": "ご飯", "surligne_fr": "repas"},
-    {"ar": "魚", "fr": "poisson", "phrase_ar": "魚が好き", "phrase_fr": "J'aime le poisson.", "surligne_ar": "魚", "surligne_fr": "poisson"},
-    {"ar": "果物", "fr": "fruit", "phrase_ar": "果物は甘い", "phrase_fr": "Les fruits sont sucrés.", "surligne_ar": "果物", "surligne_fr": "fruits"},
-    {"ar": "美味しい", "fr": "délicieux", "phrase_ar": "これは美味しい", "phrase_fr": "C'est délicieux.", "surligne_ar": "美味しい", "surligne_fr": "délicieux"},
-    {"ar": "甘い", "fr": "sucré", "phrase_ar": "このケーキは甘い", "phrase_fr": "Ce gâteau est sucré.", "surligne_ar": "甘い", "surligne_fr": "sucré"},
-
-    {"ar": "行く", "fr": "aller", "phrase_ar": "学校に行く", "phrase_fr": "Je vais à l'école.", "surligne_ar": "行く", "surligne_fr": "vais"},
-    {"ar": "来る", "fr": "venir", "phrase_ar": "友達が来る", "phrase_fr": "Un ami vient.", "surligne_ar": "来る", "surligne_fr": "vient"},
-    {"ar": "見る", "fr": "regarder", "phrase_ar": "映画を見る", "phrase_fr": "Je regarde un film.", "surligne_ar": "見る", "surligne_fr": "regarde"},
-    {"ar": "聞く", "fr": "écouter", "phrase_ar": "音楽を聞く", "phrase_fr": "J'écoute de la musique.", "surligne_ar": "聞く", "surligne_fr": "écoute"},
-    {"ar": "読む", "fr": "lire", "phrase_ar": "本を読む", "phrase_fr": "Je lis un livre.", "surligne_ar": "読む", "surligne_fr": "lis"},
-    {"ar": "書く", "fr": "écrire", "phrase_ar": "手紙を書く", "phrase_fr": "J'écris une lettre.", "surligne_ar": "書く", "surligne_fr": "écris"},
-    {"ar": "話す", "fr": "parler", "phrase_ar": "日本語を話す", "phrase_fr": "Je parle japonais.", "surligne_ar": "話す", "surligne_fr": "parle"},
-    {"ar": "寝る", "fr": "dormir", "phrase_ar": "早く寝る", "phrase_fr": "Je me couche tôt.", "surligne_ar": "寝る", "surligne_fr": "couche"},
-    {"ar": "起きる", "fr": "se lever", "phrase_ar": "六時に起きる", "phrase_fr": "Je me lève à six heures.", "surligne_ar": "起きる", "surligne_fr": "lève"},
-    {"ar": "買う", "fr": "acheter", "phrase_ar": "服を買う", "phrase_fr": "J'achète des vêtements.", "surligne_ar": "買う", "surligne_fr": "achète"},
-    {"ar": "働く", "fr": "travailler", "phrase_ar": "会社で働く", "phrase_fr": "Je travaille dans une entreprise.", "surligne_ar": "働く", "surligne_fr": "travaille"},
-    {"ar": "勉強する", "fr": "étudier", "phrase_ar": "日本語を勉強する", "phrase_fr": "J'étudie le japonais.", "surligne_ar": "勉強する", "surligne_fr": "étudie"},
-    {"ar": "休む", "fr": "se reposer", "phrase_ar": "今日は休む", "phrase_fr": "Aujourd'hui, je me repose.", "surligne_ar": "休む", "surligne_fr": "repose"},
-    {"ar": "待つ", "fr": "attendre", "phrase_ar": "バスを待つ", "phrase_fr": "J'attends le bus.", "surligne_ar": "待つ", "surligne_fr": "attends"},
-
-    {"ar": "大きい", "fr": "grand", "phrase_ar": "大きい犬", "phrase_fr": "Un grand chien.", "surligne_ar": "大きい", "surligne_fr": "grand"},
-    {"ar": "小さい", "fr": "petit", "phrase_ar": "小さい部屋", "phrase_fr": "Une petite pièce.", "surligne_ar": "小さい", "surligne_fr": "petite"},
-    {"ar": "新しい", "fr": "nouveau", "phrase_ar": "新しい靴", "phrase_fr": "De nouvelles chaussures.", "surligne_ar": "新しい", "surligne_fr": "nouvelles"},
-    {"ar": "古い", "fr": "vieux", "phrase_ar": "古い本", "phrase_fr": "Un vieux livre.", "surligne_ar": "古い", "surligne_fr": "vieux"},
-    {"ar": "楽しい", "fr": "amusant", "phrase_ar": "旅行は楽しい", "phrase_fr": "Le voyage est amusant.", "surligne_ar": "楽しい", "surligne_fr": "amusant"},
-    {"ar": "難しい", "fr": "difficile", "phrase_ar": "漢字は難しい", "phrase_fr": "Les kanji sont difficiles.", "surligne_ar": "難しい", "surligne_fr": "difficiles"},
-
-    {"ar": "一", "fr": "un (chiffre)", "phrase_ar": "一から十まで", "phrase_fr": "De un à dix.", "surligne_ar": "一", "surligne_fr": "un"},
-    {"ar": "十", "fr": "dix", "phrase_ar": "十歳です", "phrase_fr": "J'ai dix ans.", "surligne_ar": "十", "surligne_fr": "dix"},
-    {"ar": "百", "fr": "cent", "phrase_ar": "百円のパン", "phrase_fr": "Un pain à cent yens.", "surligne_ar": "百", "surligne_fr": "cent"},
-
-    {"ar": "今日", "fr": "aujourd'hui", "phrase_ar": "今日は晴れ", "phrase_fr": "Aujourd'hui il fait beau.", "surligne_ar": "今日", "surligne_fr": "Aujourd'hui"},
-    {"ar": "明日", "fr": "demain", "phrase_ar": "明日は休み", "phrase_fr": "Demain, c'est congé.", "surligne_ar": "明日", "surligne_fr": "Demain"},
-    {"ar": "昨日", "fr": "hier", "phrase_ar": "昨日は雨だった", "phrase_fr": "Hier il pleuvait.", "surligne_ar": "昨日", "surligne_fr": "Hier"},
-    {"ar": "時間", "fr": "temps", "phrase_ar": "時間がない", "phrase_fr": "Je n'ai pas le temps.", "surligne_ar": "時間", "surligne_fr": "temps"},
-    {"ar": "学校", "fr": "école", "phrase_ar": "学校へ行く", "phrase_fr": "Je vais à l'école.", "surligne_ar": "学校", "surligne_fr": "école"},
-    {"ar": "家", "fr": "maison", "phrase_ar": "家に帰る", "phrase_fr": "Je rentre à la maison.", "surligne_ar": "家", "surligne_fr": "maison"},
-    {"ar": "駅", "fr": "gare", "phrase_ar": "駅で会う", "phrase_fr": "On se retrouve à la gare.", "surligne_ar": "駅", "surligne_fr": "gare"},
-    {"ar": "病院", "fr": "hôpital", "phrase_ar": "病院へ行く", "phrase_fr": "Je vais à l'hôpital.", "surligne_ar": "病院", "surligne_fr": "hôpital"},
-    {"ar": "会社", "fr": "entreprise", "phrase_ar": "会社は遠い", "phrase_fr": "L'entreprise est loin.", "surligne_ar": "会社", "surligne_fr": "entreprise"},
-    {"ar": "店", "fr": "magasin", "phrase_ar": "店で買う", "phrase_fr": "J'achète au magasin.", "surligne_ar": "店", "surligne_fr": "magasin"},
-    {"ar": "天気", "fr": "temps (météo)", "phrase_ar": "天気がいい", "phrase_fr": "Le temps est bon.", "surligne_ar": "天気", "surligne_fr": "temps"},
-    {"ar": "雨", "fr": "pluie", "phrase_ar": "雨が降る", "phrase_fr": "La pluie tombe.", "surligne_ar": "雨", "surligne_fr": "pluie"},
-    {"ar": "猫", "fr": "chat", "phrase_ar": "猫がかわいい", "phrase_fr": "Le chat est mignon.", "surligne_ar": "猫", "surligne_fr": "chat"},
-    {"ar": "犬", "fr": "chien", "phrase_ar": "犬と散歩する", "phrase_fr": "Je me promène avec le chien.", "surligne_ar": "犬", "surligne_fr": "chien"},
-    {"ar": "本", "fr": "livre", "phrase_ar": "本が好き", "phrase_fr": "J'aime les livres.", "surligne_ar": "本", "surligne_fr": "livres"},
-    {"ar": "車", "fr": "voiture", "phrase_ar": "車で行く", "phrase_fr": "J'y vais en voiture.", "surligne_ar": "車", "surligne_fr": "voiture"},
-    {"ar": "電車", "fr": "train", "phrase_ar": "電車に乗る", "phrase_fr": "Je monte dans le train.", "surligne_ar": "電車", "surligne_fr": "train"},
-    {"ar": "好き", "fr": "aimer", "phrase_ar": "音楽が好き", "phrase_fr": "J'aime la musique.", "surligne_ar": "好き", "surligne_fr": "aime"},
-    {"ar": "嫌い", "fr": "détester", "phrase_ar": "虫が嫌い", "phrase_fr": "Je déteste les insectes.", "surligne_ar": "嫌い", "surligne_fr": "déteste"},
-    {"ar": "頑張る", "fr": "persévérer", "phrase_ar": "最後まで頑張る", "phrase_fr": "Je persévère jusqu'au bout.", "surligne_ar": "頑張る", "surligne_fr": "persévère"}
+    {
+      "ar": "こんにちは",
+      "fr": "bonjour",
+      "phrase_ar": "田中さん、こんにちは",
+      "phrase_fr": "Bonjour, Tanaka.",
+      "surligne_ar": "こんにちは",
+      "surligne_fr": "Bonjour"
+    },
+    {
+      "ar": "ありがとう",
+      "fr": "merci",
+      "phrase_ar": "本当にありがとう",
+      "phrase_fr": "Merci beaucoup.",
+      "surligne_ar": "ありがとう",
+      "surligne_fr": "Merci"
+    },
+    {
+      "ar": "すみません",
+      "fr": "pardon",
+      "phrase_ar": "すみません、遅れました",
+      "phrase_fr": "Pardon, je suis en retard.",
+      "surligne_ar": "すみません",
+      "surligne_fr": "Pardon"
+    },
+    {
+      "ar": "おはよう",
+      "fr": "bonjour (le matin)",
+      "phrase_ar": "おはよう、先生",
+      "phrase_fr": "Bonjour, professeur.",
+      "surligne_ar": "おはよう",
+      "surligne_fr": "Bonjour"
+    },
+    {
+      "ar": "さようなら",
+      "fr": "au revoir",
+      "phrase_ar": "先生、さようなら",
+      "phrase_fr": "Au revoir, professeur.",
+      "surligne_ar": "さようなら",
+      "surligne_fr": "Au revoir"
+    },
+    {
+      "ar": "はい",
+      "fr": "oui",
+      "phrase_ar": "はい、そうです",
+      "phrase_fr": "Oui, c'est ça.",
+      "surligne_ar": "はい",
+      "surligne_fr": "Oui"
+    },
+    {
+      "ar": "いいえ",
+      "fr": "non",
+      "phrase_ar": "いいえ、違います",
+      "phrase_fr": "Non, ce n'est pas ça.",
+      "surligne_ar": "いいえ",
+      "surligne_fr": "Non"
+    },
+    {
+      "ar": "お願いします",
+      "fr": "s'il vous plaît",
+      "phrase_ar": "水をお願いします",
+      "phrase_fr": "De l'eau, s'il vous plaît.",
+      "surligne_ar": "お願いします",
+      "surligne_fr": "s'il vous plaît"
+    },
+    {
+      "ar": "家族",
+      "fr": "famille",
+      "phrase_ar": "私の家族は五人",
+      "phrase_fr": "Nous sommes cinq dans ma famille.",
+      "surligne_ar": "家族",
+      "surligne_fr": "famille"
+    },
+    {
+      "ar": "母",
+      "fr": "mère",
+      "phrase_ar": "母は料理が上手",
+      "phrase_fr": "Ma mère cuisine bien.",
+      "surligne_ar": "母",
+      "surligne_fr": "mère"
+    },
+    {
+      "ar": "父",
+      "fr": "père",
+      "phrase_ar": "父は医者です",
+      "phrase_fr": "Mon père est médecin.",
+      "surligne_ar": "父",
+      "surligne_fr": "père"
+    },
+    {
+      "ar": "兄",
+      "fr": "grand frère",
+      "phrase_ar": "兄は大学生",
+      "phrase_fr": "Mon grand frère est étudiant.",
+      "surligne_ar": "兄",
+      "surligne_fr": "grand frère"
+    },
+    {
+      "ar": "妹",
+      "fr": "petite sœur",
+      "phrase_ar": "妹はまだ小さい",
+      "phrase_fr": "Ma petite sœur est encore petite.",
+      "surligne_ar": "妹",
+      "surligne_fr": "petite sœur"
+    },
+    {
+      "ar": "友達",
+      "fr": "ami",
+      "phrase_ar": "友達と話す",
+      "phrase_fr": "Je parle avec un ami.",
+      "surligne_ar": "友達",
+      "surligne_fr": "ami"
+    },
+    {
+      "ar": "食べる",
+      "fr": "manger",
+      "phrase_ar": "私はりんごを食べる",
+      "phrase_fr": "Je mange une pomme.",
+      "surligne_ar": "食べる",
+      "surligne_fr": "mange"
+    },
+    {
+      "ar": "飲む",
+      "fr": "boire",
+      "phrase_ar": "お茶を飲む",
+      "phrase_fr": "Je bois du thé.",
+      "surligne_ar": "飲む",
+      "surligne_fr": "bois"
+    },
+    {
+      "ar": "水",
+      "fr": "eau",
+      "phrase_ar": "水を飲みたい",
+      "phrase_fr": "Je veux boire de l'eau.",
+      "surligne_ar": "水",
+      "surligne_fr": "eau"
+    },
+    {
+      "ar": "ご飯",
+      "fr": "repas (riz)",
+      "phrase_ar": "ご飯を作る",
+      "phrase_fr": "Je prépare le repas.",
+      "surligne_ar": "ご飯",
+      "surligne_fr": "repas"
+    },
+    {
+      "ar": "魚",
+      "fr": "poisson",
+      "phrase_ar": "魚が好き",
+      "phrase_fr": "J'aime le poisson.",
+      "surligne_ar": "魚",
+      "surligne_fr": "poisson"
+    },
+    {
+      "ar": "果物",
+      "fr": "fruit",
+      "phrase_ar": "果物は甘い",
+      "phrase_fr": "Les fruits sont sucrés.",
+      "surligne_ar": "果物",
+      "surligne_fr": "fruits"
+    },
+    {
+      "ar": "美味しい",
+      "fr": "délicieux",
+      "phrase_ar": "これは美味しい",
+      "phrase_fr": "C'est délicieux.",
+      "surligne_ar": "美味しい",
+      "surligne_fr": "délicieux"
+    },
+    {
+      "ar": "甘い",
+      "fr": "sucré",
+      "phrase_ar": "このケーキは甘い",
+      "phrase_fr": "Ce gâteau est sucré.",
+      "surligne_ar": "甘い",
+      "surligne_fr": "sucré"
+    },
+    {
+      "ar": "行く",
+      "fr": "aller",
+      "phrase_ar": "学校に行く",
+      "phrase_fr": "Je vais à l'école.",
+      "surligne_ar": "行く",
+      "surligne_fr": "vais"
+    },
+    {
+      "ar": "来る",
+      "fr": "venir",
+      "phrase_ar": "友達が来る",
+      "phrase_fr": "Un ami vient.",
+      "surligne_ar": "来る",
+      "surligne_fr": "vient"
+    },
+    {
+      "ar": "見る",
+      "fr": "regarder",
+      "phrase_ar": "映画を見る",
+      "phrase_fr": "Je regarde un film.",
+      "surligne_ar": "見る",
+      "surligne_fr": "regarde"
+    },
+    {
+      "ar": "聞く",
+      "fr": "écouter",
+      "phrase_ar": "音楽を聞く",
+      "phrase_fr": "J'écoute de la musique.",
+      "surligne_ar": "聞く",
+      "surligne_fr": "écoute"
+    },
+    {
+      "ar": "読む",
+      "fr": "lire",
+      "phrase_ar": "本を読む",
+      "phrase_fr": "Je lis un livre.",
+      "surligne_ar": "読む",
+      "surligne_fr": "lis"
+    },
+    {
+      "ar": "書く",
+      "fr": "écrire",
+      "phrase_ar": "手紙を書く",
+      "phrase_fr": "J'écris une lettre.",
+      "surligne_ar": "書く",
+      "surligne_fr": "écris"
+    },
+    {
+      "ar": "話す",
+      "fr": "parler",
+      "phrase_ar": "日本語を話す",
+      "phrase_fr": "Je parle japonais.",
+      "surligne_ar": "話す",
+      "surligne_fr": "parle"
+    },
+    {
+      "ar": "寝る",
+      "fr": "dormir",
+      "phrase_ar": "早く寝る",
+      "phrase_fr": "Je me couche tôt.",
+      "surligne_ar": "寝る",
+      "surligne_fr": "couche"
+    },
+    {
+      "ar": "起きる",
+      "fr": "se lever",
+      "phrase_ar": "六時に起きる",
+      "phrase_fr": "Je me lève à six heures.",
+      "surligne_ar": "起きる",
+      "surligne_fr": "lève"
+    },
+    {
+      "ar": "買う",
+      "fr": "acheter",
+      "phrase_ar": "服を買う",
+      "phrase_fr": "J'achète des vêtements.",
+      "surligne_ar": "買う",
+      "surligne_fr": "achète"
+    },
+    {
+      "ar": "働く",
+      "fr": "travailler",
+      "phrase_ar": "会社で働く",
+      "phrase_fr": "Je travaille dans une entreprise.",
+      "surligne_ar": "働く",
+      "surligne_fr": "travaille"
+    },
+    {
+      "ar": "勉強する",
+      "fr": "étudier",
+      "phrase_ar": "日本語を勉強する",
+      "phrase_fr": "J'étudie le japonais.",
+      "surligne_ar": "勉強する",
+      "surligne_fr": "étudie"
+    },
+    {
+      "ar": "休む",
+      "fr": "se reposer",
+      "phrase_ar": "今日は休む",
+      "phrase_fr": "Aujourd'hui, je me repose.",
+      "surligne_ar": "休む",
+      "surligne_fr": "repose"
+    },
+    {
+      "ar": "待つ",
+      "fr": "attendre",
+      "phrase_ar": "バスを待つ",
+      "phrase_fr": "J'attends le bus.",
+      "surligne_ar": "待つ",
+      "surligne_fr": "attends"
+    },
+    {
+      "ar": "大きい",
+      "fr": "grand",
+      "phrase_ar": "大きい犬",
+      "phrase_fr": "Un grand chien.",
+      "surligne_ar": "大きい",
+      "surligne_fr": "grand"
+    },
+    {
+      "ar": "小さい",
+      "fr": "petit",
+      "phrase_ar": "小さい部屋",
+      "phrase_fr": "Une petite pièce.",
+      "surligne_ar": "小さい",
+      "surligne_fr": "petite"
+    },
+    {
+      "ar": "新しい",
+      "fr": "nouveau",
+      "phrase_ar": "新しい靴",
+      "phrase_fr": "De nouvelles chaussures.",
+      "surligne_ar": "新しい",
+      "surligne_fr": "nouvelles"
+    },
+    {
+      "ar": "古い",
+      "fr": "vieux",
+      "phrase_ar": "古い本",
+      "phrase_fr": "Un vieux livre.",
+      "surligne_ar": "古い",
+      "surligne_fr": "vieux"
+    },
+    {
+      "ar": "楽しい",
+      "fr": "amusant",
+      "phrase_ar": "旅行は楽しい",
+      "phrase_fr": "Le voyage est amusant.",
+      "surligne_ar": "楽しい",
+      "surligne_fr": "amusant"
+    },
+    {
+      "ar": "難しい",
+      "fr": "difficile",
+      "phrase_ar": "漢字は難しい",
+      "phrase_fr": "Les kanji sont difficiles.",
+      "surligne_ar": "難しい",
+      "surligne_fr": "difficiles"
+    },
+    {
+      "ar": "一",
+      "fr": "un (chiffre)",
+      "phrase_ar": "一から十まで",
+      "phrase_fr": "De un à dix.",
+      "surligne_ar": "一",
+      "surligne_fr": "un"
+    },
+    {
+      "ar": "十",
+      "fr": "dix",
+      "phrase_ar": "十歳です",
+      "phrase_fr": "J'ai dix ans.",
+      "surligne_ar": "十",
+      "surligne_fr": "dix"
+    },
+    {
+      "ar": "百",
+      "fr": "cent",
+      "phrase_ar": "百円のパン",
+      "phrase_fr": "Un pain à cent yens.",
+      "surligne_ar": "百",
+      "surligne_fr": "cent"
+    },
+    {
+      "ar": "今日",
+      "fr": "aujourd'hui",
+      "phrase_ar": "今日は晴れ",
+      "phrase_fr": "Aujourd'hui il fait beau.",
+      "surligne_ar": "今日",
+      "surligne_fr": "Aujourd'hui"
+    },
+    {
+      "ar": "明日",
+      "fr": "demain",
+      "phrase_ar": "明日は休み",
+      "phrase_fr": "Demain, c'est congé.",
+      "surligne_ar": "明日",
+      "surligne_fr": "Demain"
+    },
+    {
+      "ar": "昨日",
+      "fr": "hier",
+      "phrase_ar": "昨日は雨だった",
+      "phrase_fr": "Hier il pleuvait.",
+      "surligne_ar": "昨日",
+      "surligne_fr": "Hier"
+    },
+    {
+      "ar": "時間",
+      "fr": "temps",
+      "phrase_ar": "時間がない",
+      "phrase_fr": "Je n'ai pas le temps.",
+      "surligne_ar": "時間",
+      "surligne_fr": "temps"
+    },
+    {
+      "ar": "学校",
+      "fr": "école",
+      "phrase_ar": "学校へ行く",
+      "phrase_fr": "Je vais à l'école.",
+      "surligne_ar": "学校",
+      "surligne_fr": "école"
+    },
+    {
+      "ar": "家",
+      "fr": "maison",
+      "phrase_ar": "家に帰る",
+      "phrase_fr": "Je rentre à la maison.",
+      "surligne_ar": "家",
+      "surligne_fr": "maison"
+    },
+    {
+      "ar": "駅",
+      "fr": "gare",
+      "phrase_ar": "駅で会う",
+      "phrase_fr": "On se retrouve à la gare.",
+      "surligne_ar": "駅",
+      "surligne_fr": "gare"
+    },
+    {
+      "ar": "病院",
+      "fr": "hôpital",
+      "phrase_ar": "病院へ行く",
+      "phrase_fr": "Je vais à l'hôpital.",
+      "surligne_ar": "病院",
+      "surligne_fr": "hôpital"
+    },
+    {
+      "ar": "会社",
+      "fr": "entreprise",
+      "phrase_ar": "会社は遠い",
+      "phrase_fr": "L'entreprise est loin.",
+      "surligne_ar": "会社",
+      "surligne_fr": "entreprise"
+    },
+    {
+      "ar": "店",
+      "fr": "magasin",
+      "phrase_ar": "店で買う",
+      "phrase_fr": "J'achète au magasin.",
+      "surligne_ar": "店",
+      "surligne_fr": "magasin"
+    },
+    {
+      "ar": "天気",
+      "fr": "temps (météo)",
+      "phrase_ar": "天気がいい",
+      "phrase_fr": "Le temps est bon.",
+      "surligne_ar": "天気",
+      "surligne_fr": "temps"
+    },
+    {
+      "ar": "雨",
+      "fr": "pluie",
+      "phrase_ar": "雨が降る",
+      "phrase_fr": "La pluie tombe.",
+      "surligne_ar": "雨",
+      "surligne_fr": "pluie"
+    },
+    {
+      "ar": "猫",
+      "fr": "chat",
+      "phrase_ar": "猫がかわいい",
+      "phrase_fr": "Le chat est mignon.",
+      "surligne_ar": "猫",
+      "surligne_fr": "chat"
+    },
+    {
+      "ar": "犬",
+      "fr": "chien",
+      "phrase_ar": "犬と散歩する",
+      "phrase_fr": "Je me promène avec le chien.",
+      "surligne_ar": "犬",
+      "surligne_fr": "chien"
+    },
+    {
+      "ar": "本",
+      "fr": "livre",
+      "phrase_ar": "本が好き",
+      "phrase_fr": "J'aime les livres.",
+      "surligne_ar": "本",
+      "surligne_fr": "livres"
+    },
+    {
+      "ar": "車",
+      "fr": "voiture",
+      "phrase_ar": "車で行く",
+      "phrase_fr": "J'y vais en voiture.",
+      "surligne_ar": "車",
+      "surligne_fr": "voiture"
+    },
+    {
+      "ar": "電車",
+      "fr": "train",
+      "phrase_ar": "電車に乗る",
+      "phrase_fr": "Je monte dans le train.",
+      "surligne_ar": "電車",
+      "surligne_fr": "train"
+    },
+    {
+      "ar": "好き",
+      "fr": "aimer",
+      "phrase_ar": "音楽が好き",
+      "phrase_fr": "J'aime la musique.",
+      "surligne_ar": "好き",
+      "surligne_fr": "aime"
+    },
+    {
+      "ar": "嫌い",
+      "fr": "détester",
+      "phrase_ar": "虫が嫌い",
+      "phrase_fr": "Je déteste les insectes.",
+      "surligne_ar": "嫌い",
+      "surligne_fr": "déteste"
+    },
+    {
+      "ar": "頑張る",
+      "fr": "persévérer",
+      "phrase_ar": "最後まで頑張る",
+      "phrase_fr": "Je persévère jusqu'au bout.",
+      "surligne_ar": "頑張る",
+      "surligne_fr": "persévère"
+    }
   ],
-
   "prenoms": [
-    {"ar": "光", "fr": "Hikari", "sens": "lumière", "note": "Thème récurrent dans les mangas shôjo : clarté, espoir."},
-    {"ar": "桜", "fr": "Sakura", "sens": "fleur de cerisier", "note": "Porté par Sakura Haruno, personnage principal du manga Naruto."},
-    {"ar": "雪", "fr": "Yuki", "sens": "neige (ou « bonheur » selon un autre kanji possible, 幸)", "note": ""},
-    {"ar": "陽翔", "fr": "Haruto", "sens": "envol, s'élever haut", "note": "L'un des prénoms masculins les plus donnés au Japon depuis les années 2010."},
-    {"ar": "空", "fr": "Sora", "sens": "ciel", "note": "Prénom mixte, apprécié pour son évocation du ciel et de la liberté."},
-    {"ar": "蓮", "fr": "Ren", "sens": "lotus", "note": ""},
-    {"ar": "結", "fr": "Yui", "sens": "lien, attache", "note": ""},
-    {"ar": "明", "fr": "Akira", "sens": "clair, brillant", "note": "Prénom rendu célèbre à l'international par le film d'animation Akira (1988)."},
-    {"ar": "海斗", "fr": "Kaito", "sens": "voler porté par la mer/le vent", "note": "Très populaire chez les garçons japonais depuis les années 2000."},
-    {"ar": "陸", "fr": "Riku", "sens": "terre, continent", "note": ""},
-    {"ar": "花", "fr": "Hana", "sens": "fleur", "note": ""},
-    {"ar": "彩花", "fr": "Ayaka", "sens": "fleur aux couleurs éclatantes", "note": ""},
-    {"ar": "健二", "fr": "Kenji", "sens": "deuxième enfant robuste et sage", "note": ""},
-    {"ar": "武", "fr": "Takeshi", "sens": "vaillant, robuste", "note": "Porté par de nombreuses figures publiques japonaises, dont le cinéaste Takeshi Kitano."},
-    {"ar": "悠人", "fr": "Yuto", "sens": "personne posée et tranquille", "note": ""},
-    {"ar": "芽依", "fr": "Mei", "sens": "bourgeon, pousse", "note": ""},
-    {"ar": "凛", "fr": "Rin", "sens": "digne, austère", "note": "Porté par plusieurs héroïnes d'anime, notamment dans Fate/stay night et Blue Exorcist."},
-    {"ar": "奏太", "fr": "Sota", "sens": "grande personne pleine d'harmonie", "note": ""},
-    {"ar": "葵", "fr": "Aoi", "sens": "fleur de mauve (ou « bleu » selon un autre kanji possible)", "note": ""},
-    {"ar": "恵美", "fr": "Emi", "sens": "sourire bienveillant", "note": ""},
-    {"ar": "大樹", "fr": "Daiki", "sens": "grand arbre", "note": ""},
-    {"ar": "遥", "fr": "Haruka", "sens": "lointain(e)", "note": "Prénom mixte porté par plusieurs héroïnes d'anime, notamment dans Free! et Sailor Moon."},
-    {"ar": "弓美", "fr": "Yumi", "sens": "beauté gracieuse comme un arc", "note": ""},
-    {"ar": "和樹", "fr": "Kazuki", "sens": "arbre de l'harmonie", "note": ""},
-    {"ar": "七海", "fr": "Nanami", "sens": "sept mers", "note": ""}
+    {
+      "ar": "光",
+      "fr": "Hikari",
+      "sens": "lumière",
+      "note": "Thème récurrent dans les mangas shôjo : clarté, espoir."
+    },
+    {
+      "ar": "桜",
+      "fr": "Sakura",
+      "sens": "fleur de cerisier",
+      "note": "Porté par Sakura Haruno, personnage principal du manga Naruto."
+    },
+    {
+      "ar": "雪",
+      "fr": "Yuki",
+      "sens": "neige (ou « bonheur » selon un autre kanji possible, 幸)",
+      "note": ""
+    },
+    {
+      "ar": "陽翔",
+      "fr": "Haruto",
+      "sens": "envol, s'élever haut",
+      "note": "L'un des prénoms masculins les plus donnés au Japon depuis les années 2010."
+    },
+    {
+      "ar": "空",
+      "fr": "Sora",
+      "sens": "ciel",
+      "note": "Prénom mixte, apprécié pour son évocation du ciel et de la liberté."
+    },
+    {
+      "ar": "蓮",
+      "fr": "Ren",
+      "sens": "lotus",
+      "note": ""
+    },
+    {
+      "ar": "結",
+      "fr": "Yui",
+      "sens": "lien, attache",
+      "note": ""
+    },
+    {
+      "ar": "明",
+      "fr": "Akira",
+      "sens": "clair, brillant",
+      "note": "Prénom rendu célèbre à l'international par le film d'animation Akira (1988)."
+    },
+    {
+      "ar": "海斗",
+      "fr": "Kaito",
+      "sens": "voler porté par la mer/le vent",
+      "note": "Très populaire chez les garçons japonais depuis les années 2000."
+    },
+    {
+      "ar": "陸",
+      "fr": "Riku",
+      "sens": "terre, continent",
+      "note": ""
+    },
+    {
+      "ar": "花",
+      "fr": "Hana",
+      "sens": "fleur",
+      "note": ""
+    },
+    {
+      "ar": "彩花",
+      "fr": "Ayaka",
+      "sens": "fleur aux couleurs éclatantes",
+      "note": ""
+    },
+    {
+      "ar": "健二",
+      "fr": "Kenji",
+      "sens": "deuxième enfant robuste et sage",
+      "note": ""
+    },
+    {
+      "ar": "武",
+      "fr": "Takeshi",
+      "sens": "vaillant, robuste",
+      "note": "Porté par de nombreuses figures publiques japonaises, dont le cinéaste Takeshi Kitano."
+    },
+    {
+      "ar": "悠人",
+      "fr": "Yuto",
+      "sens": "personne posée et tranquille",
+      "note": ""
+    },
+    {
+      "ar": "芽依",
+      "fr": "Mei",
+      "sens": "bourgeon, pousse",
+      "note": ""
+    },
+    {
+      "ar": "凛",
+      "fr": "Rin",
+      "sens": "digne, austère",
+      "note": "Porté par plusieurs héroïnes d'anime, notamment dans Fate/stay night et Blue Exorcist."
+    },
+    {
+      "ar": "奏太",
+      "fr": "Sota",
+      "sens": "grande personne pleine d'harmonie",
+      "note": ""
+    },
+    {
+      "ar": "葵",
+      "fr": "Aoi",
+      "sens": "fleur de mauve (ou « bleu » selon un autre kanji possible)",
+      "note": ""
+    },
+    {
+      "ar": "恵美",
+      "fr": "Emi",
+      "sens": "sourire bienveillant",
+      "note": ""
+    },
+    {
+      "ar": "大樹",
+      "fr": "Daiki",
+      "sens": "grand arbre",
+      "note": ""
+    },
+    {
+      "ar": "遥",
+      "fr": "Haruka",
+      "sens": "lointain(e)",
+      "note": "Prénom mixte porté par plusieurs héroïnes d'anime, notamment dans Free! et Sailor Moon."
+    },
+    {
+      "ar": "弓美",
+      "fr": "Yumi",
+      "sens": "beauté gracieuse comme un arc",
+      "note": ""
+    },
+    {
+      "ar": "和樹",
+      "fr": "Kazuki",
+      "sens": "arbre de l'harmonie",
+      "note": ""
+    },
+    {
+      "ar": "七海",
+      "fr": "Nanami",
+      "sens": "sept mers",
+      "note": ""
+    }
   ],
-
   "grammaire": [
-    {"titre": "は・が", "regle": "は marque le thème de la phrase, が marque le sujet grammatical précis.", "exemple_natif": "猫はかわいい", "exemple_lecture": "neko wa kawaii", "exemple_fr": "Le chat est mignon.", "surligne_natif": "は", "surligne_fr": "chat", "astuce": "Pense à は comme un projecteur braqué sur le sujet dont on parle."},
-    {"titre": "を", "regle": "を marque le complément d'objet direct : ce que subit l'action du verbe.", "exemple_natif": "パンを食べる", "exemple_lecture": "pan wo taberu", "exemple_fr": "Je mange du pain.", "surligne_natif": "を", "surligne_fr": "mange", "astuce": "を s'écrit avec le kana « wo » mais se prononce « o »."},
-    {"titre": "に", "regle": "に marque une destination, une heure précise, ou l'endroit où se trouve quelque chose.", "exemple_natif": "七時に寝る", "exemple_lecture": "shichiji ni neru", "exemple_fr": "Je me couche à sept heures.", "surligne_natif": "に", "surligne_fr": "sept heures", "astuce": "Devant une heure précise, に se traduit souvent par « à »."},
-    {"titre": "で", "regle": "で marque le lieu où se déroule une action, ou le moyen utilisé pour la faire.", "exemple_natif": "電車で行く", "exemple_lecture": "densha de iku", "exemple_fr": "J'y vais en train.", "surligne_natif": "で", "surligne_fr": "train", "astuce": "で répond à « où ça se passe » ou « avec quoi »."},
-    {"titre": "と", "regle": "と relie deux noms pour dire « et », ou indique « avec » pour une personne.", "exemple_natif": "友達と話す", "exemple_lecture": "tomodachi to hanasu", "exemple_fr": "Je parle avec un ami.", "surligne_natif": "と", "surligne_fr": "avec", "astuce": ""},
-    {"titre": "も", "regle": "も remplace は ou が pour dire « aussi ».", "exemple_natif": "私も学生", "exemple_lecture": "watashi mo gakusei", "exemple_fr": "Moi aussi, je suis étudiant.", "surligne_natif": "も", "surligne_fr": "aussi", "astuce": ""},
-    {"titre": "の", "regle": "の relie deux noms, souvent pour marquer la possession, comme « de » en français.", "exemple_natif": "私の本", "exemple_lecture": "watashi no hon", "exemple_fr": "Mon livre.", "surligne_natif": "の", "surligne_fr": "Mon", "astuce": ""},
-    {"titre": "か", "regle": "か placé en fin de phrase transforme une affirmation en question, sans rien changer à l'ordre des mots.", "exemple_natif": "元気ですか", "exemple_lecture": "genki desu ka", "exemple_fr": "Ça va ?", "surligne_natif": "か", "surligne_fr": "", "astuce": ""},
-    {"titre": "です・ます", "regle": "です et ます rendent une phrase polie : です suit un nom ou un adjectif, ます suit la base d'un verbe.", "exemple_natif": "学生です", "exemple_lecture": "gakusei desu", "exemple_fr": "Je suis étudiant.", "surligne_natif": "です", "surligne_fr": "", "astuce": ""},
-    {"titre": "ています", "regle": "Verbe en forme -te + います décrit une action en cours ou un état qui dure.", "exemple_natif": "今、食べています", "exemple_lecture": "ima, tabete imasu", "exemple_fr": "Je suis en train de manger.", "surligne_natif": "ています", "surligne_fr": "en train de", "astuce": ""},
-    {"titre": "形容詞の否定", "regle": "Pour nier un adjectif en い, on remplace le い final par くない.", "exemple_natif": "高くない", "exemple_lecture": "takakunai", "exemple_fr": "Ce n'est pas cher.", "surligne_natif": "くない", "surligne_fr": "pas", "astuce": ""},
-    {"titre": "な形容詞", "regle": "Les adjectifs en な prennent な juste avant un nom, mais pas devant です.", "exemple_natif": "静かな部屋", "exemple_lecture": "shizuka na heya", "exemple_fr": "Une pièce calme.", "surligne_natif": "な", "surligne_fr": "calme", "astuce": ""},
-    {"titre": "たい形", "regle": "Base du verbe (forme ます sans ます) + たい exprime l'envie de faire quelque chose.", "exemple_natif": "水が飲みたい", "exemple_lecture": "mizu ga nomitai", "exemple_fr": "J'ai envie de boire de l'eau.", "surligne_natif": "たい", "surligne_fr": "envie", "astuce": ""},
-    {"titre": "ましょう", "regle": "Base ます + ましょう propose de faire une action ensemble, comme « allons-y ».", "exemple_natif": "一緒に行きましょう", "exemple_lecture": "issho ni ikimashou", "exemple_fr": "Allons-y ensemble.", "surligne_natif": "ましょう", "surligne_fr": "Allons-y", "astuce": ""},
-    {"titre": "ないでください", "regle": "Forme négative -nai + でください demande poliment de ne pas faire quelque chose.", "exemple_natif": "写真を撮らないでください", "exemple_lecture": "shashin wo toranaide kudasai", "exemple_fr": "Veuillez ne pas prendre de photo.", "surligne_natif": "ないでください", "surligne_fr": "ne pas", "astuce": ""},
-    {"titre": "これ・それ・あれ", "regle": "これ = proche de moi, それ = proche de toi, あれ = loin de nous deux.", "exemple_natif": "これは本です", "exemple_lecture": "kore wa hon desu", "exemple_fr": "Ceci est un livre.", "surligne_natif": "これ", "surligne_fr": "Ceci", "astuce": ""},
-    {"titre": "から・まで", "regle": "から marque le point de départ (« depuis »), まで marque le point d'arrivée (« jusqu'à »).", "exemple_natif": "九時から五時まで", "exemple_lecture": "kuji kara goji made", "exemple_fr": "De neuf heures à cinq heures.", "surligne_natif": "から", "surligne_fr": "De", "astuce": ""},
-    {"titre": "ましょうか", "regle": "ましょう + か propose poliment une aide, en laissant le choix à l'autre personne.", "exemple_natif": "手伝いましょうか", "exemple_lecture": "tetsudaimashou ka", "exemple_fr": "Voulez-vous que je vous aide ?", "surligne_natif": "ましょうか", "surligne_fr": "aide", "astuce": ""}
+    {
+      "titre": "は・が",
+      "regle": "は marque le thème de la phrase, が marque le sujet grammatical précis.",
+      "exemple_natif": "猫はかわいい",
+      "exemple_lecture": "neko wa kawaii",
+      "exemple_fr": "Le chat est mignon.",
+      "surligne_natif": "は",
+      "surligne_fr": "chat",
+      "astuce": "Pense à は comme un projecteur braqué sur le sujet dont on parle."
+    },
+    {
+      "titre": "を",
+      "regle": "を marque le complément d'objet direct : ce que subit l'action du verbe.",
+      "exemple_natif": "パンを食べる",
+      "exemple_lecture": "pan wo taberu",
+      "exemple_fr": "Je mange du pain.",
+      "surligne_natif": "を",
+      "surligne_fr": "mange",
+      "astuce": "を s'écrit avec le kana « wo » mais se prononce « o »."
+    },
+    {
+      "titre": "に",
+      "regle": "に marque une destination, une heure précise, ou l'endroit où se trouve quelque chose.",
+      "exemple_natif": "七時に寝る",
+      "exemple_lecture": "shichiji ni neru",
+      "exemple_fr": "Je me couche à sept heures.",
+      "surligne_natif": "に",
+      "surligne_fr": "sept heures",
+      "astuce": "Devant une heure précise, に se traduit souvent par « à »."
+    },
+    {
+      "titre": "で",
+      "regle": "で marque le lieu où se déroule une action, ou le moyen utilisé pour la faire.",
+      "exemple_natif": "電車で行く",
+      "exemple_lecture": "densha de iku",
+      "exemple_fr": "J'y vais en train.",
+      "surligne_natif": "で",
+      "surligne_fr": "train",
+      "astuce": "で répond à « où ça se passe » ou « avec quoi »."
+    },
+    {
+      "titre": "と",
+      "regle": "と relie deux noms pour dire « et », ou indique « avec » pour une personne.",
+      "exemple_natif": "友達と話す",
+      "exemple_lecture": "tomodachi to hanasu",
+      "exemple_fr": "Je parle avec un ami.",
+      "surligne_natif": "と",
+      "surligne_fr": "avec",
+      "astuce": ""
+    },
+    {
+      "titre": "も",
+      "regle": "も remplace は ou が pour dire « aussi ».",
+      "exemple_natif": "私も学生",
+      "exemple_lecture": "watashi mo gakusei",
+      "exemple_fr": "Moi aussi, je suis étudiant.",
+      "surligne_natif": "も",
+      "surligne_fr": "aussi",
+      "astuce": ""
+    },
+    {
+      "titre": "の",
+      "regle": "の relie deux noms, souvent pour marquer la possession, comme « de » en français.",
+      "exemple_natif": "私の本",
+      "exemple_lecture": "watashi no hon",
+      "exemple_fr": "Mon livre.",
+      "surligne_natif": "の",
+      "surligne_fr": "Mon",
+      "astuce": ""
+    },
+    {
+      "titre": "か",
+      "regle": "か placé en fin de phrase transforme une affirmation en question, sans rien changer à l'ordre des mots.",
+      "exemple_natif": "元気ですか",
+      "exemple_lecture": "genki desu ka",
+      "exemple_fr": "Ça va ?",
+      "surligne_natif": "か",
+      "surligne_fr": "",
+      "astuce": ""
+    },
+    {
+      "titre": "です・ます",
+      "regle": "です et ます rendent une phrase polie : です suit un nom ou un adjectif, ます suit la base d'un verbe.",
+      "exemple_natif": "学生です",
+      "exemple_lecture": "gakusei desu",
+      "exemple_fr": "Je suis étudiant.",
+      "surligne_natif": "です",
+      "surligne_fr": "",
+      "astuce": ""
+    },
+    {
+      "titre": "ています",
+      "regle": "Verbe en forme -te + います décrit une action en cours ou un état qui dure.",
+      "exemple_natif": "今、食べています",
+      "exemple_lecture": "ima, tabete imasu",
+      "exemple_fr": "Je suis en train de manger.",
+      "surligne_natif": "ています",
+      "surligne_fr": "en train de",
+      "astuce": ""
+    },
+    {
+      "titre": "形容詞の否定",
+      "regle": "Pour nier un adjectif en い, on remplace le い final par くない.",
+      "exemple_natif": "高くない",
+      "exemple_lecture": "takakunai",
+      "exemple_fr": "Ce n'est pas cher.",
+      "surligne_natif": "くない",
+      "surligne_fr": "pas",
+      "astuce": ""
+    },
+    {
+      "titre": "な形容詞",
+      "regle": "Les adjectifs en な prennent な juste avant un nom, mais pas devant です.",
+      "exemple_natif": "静かな部屋",
+      "exemple_lecture": "shizuka na heya",
+      "exemple_fr": "Une pièce calme.",
+      "surligne_natif": "な",
+      "surligne_fr": "calme",
+      "astuce": ""
+    },
+    {
+      "titre": "たい形",
+      "regle": "Base du verbe (forme ます sans ます) + たい exprime l'envie de faire quelque chose.",
+      "exemple_natif": "水が飲みたい",
+      "exemple_lecture": "mizu ga nomitai",
+      "exemple_fr": "J'ai envie de boire de l'eau.",
+      "surligne_natif": "たい",
+      "surligne_fr": "envie",
+      "astuce": ""
+    },
+    {
+      "titre": "ましょう",
+      "regle": "Base ます + ましょう propose de faire une action ensemble, comme « allons-y ».",
+      "exemple_natif": "一緒に行きましょう",
+      "exemple_lecture": "issho ni ikimashou",
+      "exemple_fr": "Allons-y ensemble.",
+      "surligne_natif": "ましょう",
+      "surligne_fr": "Allons-y",
+      "astuce": ""
+    },
+    {
+      "titre": "ないでください",
+      "regle": "Forme négative -nai + でください demande poliment de ne pas faire quelque chose.",
+      "exemple_natif": "写真を撮らないでください",
+      "exemple_lecture": "shashin wo toranaide kudasai",
+      "exemple_fr": "Veuillez ne pas prendre de photo.",
+      "surligne_natif": "ないでください",
+      "surligne_fr": "ne pas",
+      "astuce": ""
+    },
+    {
+      "titre": "これ・それ・あれ",
+      "regle": "これ = proche de moi, それ = proche de toi, あれ = loin de nous deux.",
+      "exemple_natif": "これは本です",
+      "exemple_lecture": "kore wa hon desu",
+      "exemple_fr": "Ceci est un livre.",
+      "surligne_natif": "これ",
+      "surligne_fr": "Ceci",
+      "astuce": ""
+    },
+    {
+      "titre": "から・まで",
+      "regle": "から marque le point de départ (« depuis »), まで marque le point d'arrivée (« jusqu'à »).",
+      "exemple_natif": "九時から五時まで",
+      "exemple_lecture": "kuji kara goji made",
+      "exemple_fr": "De neuf heures à cinq heures.",
+      "surligne_natif": "から",
+      "surligne_fr": "De",
+      "astuce": ""
+    },
+    {
+      "titre": "ましょうか",
+      "regle": "ましょう + か propose poliment une aide, en laissant le choix à l'autre personne.",
+      "exemple_natif": "手伝いましょうか",
+      "exemple_lecture": "tetsudaimashou ka",
+      "exemple_fr": "Voulez-vous que je vous aide ?",
+      "surligne_natif": "ましょうか",
+      "surligne_fr": "aide",
+      "astuce": ""
+    }
   ],
-
   "conjugaison": [
-    {"verbe_natif": "食べる", "verbe_lecture": "taberu", "verbe_fr": "manger", "forme": "forme polie présent", "conjugue_natif": "食べます", "conjugue_lecture": "tabemasu", "regle": "Verbes en -ru : on retire る et on ajoute ます.", "exemple_natif": "朝ご飯を食べます", "exemple_fr": "Je mange le petit-déjeuner."},
-    {"verbe_natif": "飲む", "verbe_lecture": "nomu", "verbe_fr": "boire", "forme": "forme polie présent", "conjugue_natif": "飲みます", "conjugue_lecture": "nomimasu", "regle": "Verbes en -u : le son final passe en -i avant ます (む → み).", "exemple_natif": "水を飲みます", "exemple_fr": "Je bois de l'eau."},
-    {"verbe_natif": "行く", "verbe_lecture": "iku", "verbe_fr": "aller", "forme": "forme polie présent", "conjugue_natif": "行きます", "conjugue_lecture": "ikimasu", "regle": "Verbes en -u : く devient き avant ます.", "exemple_natif": "学校に行きます", "exemple_fr": "Je vais à l'école."},
-    {"verbe_natif": "話す", "verbe_lecture": "hanasu", "verbe_fr": "parler", "forme": "forme polie négative", "conjugue_natif": "話しません", "conjugue_lecture": "hanashimasen", "regle": "On remplace ます par ません pour la forme négative polie.", "exemple_natif": "英語を話しません", "exemple_fr": "Je ne parle pas anglais."},
-    {"verbe_natif": "見る", "verbe_lecture": "miru", "verbe_fr": "regarder", "forme": "forme polie passé", "conjugue_natif": "見ました", "conjugue_lecture": "mimashita", "regle": "On remplace ます par ました pour le passé poli.", "exemple_natif": "映画を見ました", "exemple_fr": "J'ai regardé un film."},
-    {"verbe_natif": "買う", "verbe_lecture": "kau", "verbe_fr": "acheter", "forme": "forme polie passé négatif", "conjugue_natif": "買いませんでした", "conjugue_lecture": "kaimasendeshita", "regle": "On remplace ます par ませんでした pour le passé négatif poli.", "exemple_natif": "何も買いませんでした", "exemple_fr": "Je n'ai rien acheté."},
-    {"verbe_natif": "する", "verbe_lecture": "suru", "verbe_fr": "faire", "forme": "forme polie présent (irrégulier)", "conjugue_natif": "します", "conjugue_lecture": "shimasu", "regle": "する est irrégulier : sa forme polie est simplement します.", "exemple_natif": "勉強をします", "exemple_fr": "J'étudie."},
-    {"verbe_natif": "来る", "verbe_lecture": "kuru", "verbe_fr": "venir", "forme": "forme polie présent (irrégulier)", "conjugue_natif": "来ます", "conjugue_lecture": "kimasu", "regle": "来る est irrégulier : sa forme polie 来ます se lit « kimasu », le kanji 来 change de lecture.", "exemple_natif": "明日、来ます", "exemple_fr": "Je viens demain."},
-    {"verbe_natif": "食べる", "verbe_lecture": "taberu", "verbe_fr": "manger", "forme": "forme en -te", "conjugue_natif": "食べて", "conjugue_lecture": "tabete", "regle": "Verbes en -ru : on remplace る par て pour enchaîner des actions.", "exemple_natif": "食べて、寝る", "exemple_fr": "Je mange, puis je dors."},
-    {"verbe_natif": "飲む", "verbe_lecture": "nomu", "verbe_fr": "boire", "forme": "forme en -te", "conjugue_natif": "飲んで", "conjugue_lecture": "nonde", "regle": "Les verbes en -む, -ぶ, -ぬ prennent la terminaison -んで à la forme -te.", "exemple_natif": "お茶を飲んで休む", "exemple_fr": "Je bois du thé puis je me repose."},
-    {"verbe_natif": "書く", "verbe_lecture": "kaku", "verbe_fr": "écrire", "forme": "forme en -te", "conjugue_natif": "書いて", "conjugue_lecture": "kaite", "regle": "Les verbes en -く prennent la terminaison -いて à la forme -te.", "exemple_natif": "名前を書いてください", "exemple_fr": "Veuillez écrire votre nom."},
-    {"verbe_natif": "待つ", "verbe_lecture": "matsu", "verbe_fr": "attendre", "forme": "forme en -te", "conjugue_natif": "待って", "conjugue_lecture": "matte", "regle": "Les verbes en -つ, -る, -う prennent la terminaison -って à la forme -te.", "exemple_natif": "ここで待ってください", "exemple_fr": "Veuillez attendre ici."},
-    {"verbe_natif": "行く", "verbe_lecture": "iku", "verbe_fr": "aller", "forme": "forme en -te (exception)", "conjugue_natif": "行って", "conjugue_lecture": "itte", "regle": "行く est une exception : sa forme -te est 行って, et non 行いて.", "exemple_natif": "行ってきます", "exemple_fr": "Je pars, à tout à l'heure !"},
-    {"verbe_natif": "休む", "verbe_lecture": "yasumu", "verbe_fr": "se reposer", "forme": "forme polie + envie", "conjugue_natif": "休みたいです", "conjugue_lecture": "yasumitai desu", "regle": "Base ます + たいです exprime poliment l'envie de faire quelque chose.", "exemple_natif": "少し休みたいです", "exemple_fr": "J'aimerais me reposer un peu."},
-    {"verbe_natif": "起きる", "verbe_lecture": "okiru", "verbe_fr": "se lever", "forme": "forme polie négative", "conjugue_natif": "起きません", "conjugue_lecture": "okimasen", "regle": "Verbes en -ru : on retire る et on ajoute ません pour la négation polie.", "exemple_natif": "早く起きません", "exemple_fr": "Je ne me lève pas tôt."},
-    {"verbe_natif": "読む", "verbe_lecture": "yomu", "verbe_fr": "lire", "forme": "forme polie passé", "conjugue_natif": "読みました", "conjugue_lecture": "yomimashita", "regle": "On remplace ます par ました pour exprimer le passé poli.", "exemple_natif": "本を読みました", "exemple_fr": "J'ai lu un livre."},
-    {"verbe_natif": "働く", "verbe_lecture": "hataraku", "verbe_fr": "travailler", "forme": "forme progressive polie", "conjugue_natif": "働いています", "conjugue_lecture": "hataraite imasu", "regle": "Forme -te (働いて) + います décrit une action en cours.", "exemple_natif": "今、働いています", "exemple_fr": "Je suis en train de travailler."},
-    {"verbe_natif": "する", "verbe_lecture": "suru", "verbe_fr": "faire", "forme": "forme progressive (irrégulier)", "conjugue_natif": "しています", "conjugue_lecture": "shite imasu", "regle": "La forme -te de する est irrégulière : して, pas する+て.", "exemple_natif": "宿題をしています", "exemple_fr": "Je suis en train de faire mes devoirs."}
+    {
+      "verbe_natif": "食べる",
+      "verbe_lecture": "taberu",
+      "verbe_fr": "manger",
+      "forme": "forme polie présent",
+      "conjugue_natif": "食べます",
+      "conjugue_lecture": "tabemasu",
+      "regle": "Verbes en -ru : on retire る et on ajoute ます.",
+      "exemple_natif": "朝ご飯を食べます",
+      "exemple_fr": "Je mange le petit-déjeuner."
+    },
+    {
+      "verbe_natif": "飲む",
+      "verbe_lecture": "nomu",
+      "verbe_fr": "boire",
+      "forme": "forme polie présent",
+      "conjugue_natif": "飲みます",
+      "conjugue_lecture": "nomimasu",
+      "regle": "Verbes en -u : le son final passe en -i avant ます (む → み).",
+      "exemple_natif": "水を飲みます",
+      "exemple_fr": "Je bois de l'eau."
+    },
+    {
+      "verbe_natif": "行く",
+      "verbe_lecture": "iku",
+      "verbe_fr": "aller",
+      "forme": "forme polie présent",
+      "conjugue_natif": "行きます",
+      "conjugue_lecture": "ikimasu",
+      "regle": "Verbes en -u : く devient き avant ます.",
+      "exemple_natif": "学校に行きます",
+      "exemple_fr": "Je vais à l'école."
+    },
+    {
+      "verbe_natif": "話す",
+      "verbe_lecture": "hanasu",
+      "verbe_fr": "parler",
+      "forme": "forme polie négative",
+      "conjugue_natif": "話しません",
+      "conjugue_lecture": "hanashimasen",
+      "regle": "On remplace ます par ません pour la forme négative polie.",
+      "exemple_natif": "英語を話しません",
+      "exemple_fr": "Je ne parle pas anglais."
+    },
+    {
+      "verbe_natif": "見る",
+      "verbe_lecture": "miru",
+      "verbe_fr": "regarder",
+      "forme": "forme polie passé",
+      "conjugue_natif": "見ました",
+      "conjugue_lecture": "mimashita",
+      "regle": "On remplace ます par ました pour le passé poli.",
+      "exemple_natif": "映画を見ました",
+      "exemple_fr": "J'ai regardé un film."
+    },
+    {
+      "verbe_natif": "買う",
+      "verbe_lecture": "kau",
+      "verbe_fr": "acheter",
+      "forme": "forme polie passé négatif",
+      "conjugue_natif": "買いませんでした",
+      "conjugue_lecture": "kaimasendeshita",
+      "regle": "On remplace ます par ませんでした pour le passé négatif poli.",
+      "exemple_natif": "何も買いませんでした",
+      "exemple_fr": "Je n'ai rien acheté."
+    },
+    {
+      "verbe_natif": "する",
+      "verbe_lecture": "suru",
+      "verbe_fr": "faire",
+      "forme": "forme polie présent (irrégulier)",
+      "conjugue_natif": "します",
+      "conjugue_lecture": "shimasu",
+      "regle": "する est irrégulier : sa forme polie est simplement します.",
+      "exemple_natif": "勉強をします",
+      "exemple_fr": "J'étudie."
+    },
+    {
+      "verbe_natif": "来る",
+      "verbe_lecture": "kuru",
+      "verbe_fr": "venir",
+      "forme": "forme polie présent (irrégulier)",
+      "conjugue_natif": "来ます",
+      "conjugue_lecture": "kimasu",
+      "regle": "来る est irrégulier : sa forme polie 来ます se lit « kimasu », le kanji 来 change de lecture.",
+      "exemple_natif": "明日、来ます",
+      "exemple_fr": "Je viens demain."
+    },
+    {
+      "verbe_natif": "食べる",
+      "verbe_lecture": "taberu",
+      "verbe_fr": "manger",
+      "forme": "forme en -te",
+      "conjugue_natif": "食べて",
+      "conjugue_lecture": "tabete",
+      "regle": "Verbes en -ru : on remplace る par て pour enchaîner des actions.",
+      "exemple_natif": "食べて、寝る",
+      "exemple_fr": "Je mange, puis je dors."
+    },
+    {
+      "verbe_natif": "飲む",
+      "verbe_lecture": "nomu",
+      "verbe_fr": "boire",
+      "forme": "forme en -te",
+      "conjugue_natif": "飲んで",
+      "conjugue_lecture": "nonde",
+      "regle": "Les verbes en -む, -ぶ, -ぬ prennent la terminaison -んで à la forme -te.",
+      "exemple_natif": "お茶を飲んで休む",
+      "exemple_fr": "Je bois du thé puis je me repose."
+    },
+    {
+      "verbe_natif": "書く",
+      "verbe_lecture": "kaku",
+      "verbe_fr": "écrire",
+      "forme": "forme en -te",
+      "conjugue_natif": "書いて",
+      "conjugue_lecture": "kaite",
+      "regle": "Les verbes en -く prennent la terminaison -いて à la forme -te.",
+      "exemple_natif": "名前を書いてください",
+      "exemple_fr": "Veuillez écrire votre nom."
+    },
+    {
+      "verbe_natif": "待つ",
+      "verbe_lecture": "matsu",
+      "verbe_fr": "attendre",
+      "forme": "forme en -te",
+      "conjugue_natif": "待って",
+      "conjugue_lecture": "matte",
+      "regle": "Les verbes en -つ, -る, -う prennent la terminaison -って à la forme -te.",
+      "exemple_natif": "ここで待ってください",
+      "exemple_fr": "Veuillez attendre ici."
+    },
+    {
+      "verbe_natif": "行く",
+      "verbe_lecture": "iku",
+      "verbe_fr": "aller",
+      "forme": "forme en -te (exception)",
+      "conjugue_natif": "行って",
+      "conjugue_lecture": "itte",
+      "regle": "行く est une exception : sa forme -te est 行って, et non 行いて.",
+      "exemple_natif": "行ってきます",
+      "exemple_fr": "Je pars, à tout à l'heure !"
+    },
+    {
+      "verbe_natif": "休む",
+      "verbe_lecture": "yasumu",
+      "verbe_fr": "se reposer",
+      "forme": "forme polie + envie",
+      "conjugue_natif": "休みたいです",
+      "conjugue_lecture": "yasumitai desu",
+      "regle": "Base ます + たいです exprime poliment l'envie de faire quelque chose.",
+      "exemple_natif": "少し休みたいです",
+      "exemple_fr": "J'aimerais me reposer un peu."
+    },
+    {
+      "verbe_natif": "起きる",
+      "verbe_lecture": "okiru",
+      "verbe_fr": "se lever",
+      "forme": "forme polie négative",
+      "conjugue_natif": "起きません",
+      "conjugue_lecture": "okimasen",
+      "regle": "Verbes en -ru : on retire る et on ajoute ません pour la négation polie.",
+      "exemple_natif": "早く起きません",
+      "exemple_fr": "Je ne me lève pas tôt."
+    },
+    {
+      "verbe_natif": "読む",
+      "verbe_lecture": "yomu",
+      "verbe_fr": "lire",
+      "forme": "forme polie passé",
+      "conjugue_natif": "読みました",
+      "conjugue_lecture": "yomimashita",
+      "regle": "On remplace ます par ました pour exprimer le passé poli.",
+      "exemple_natif": "本を読みました",
+      "exemple_fr": "J'ai lu un livre."
+    },
+    {
+      "verbe_natif": "働く",
+      "verbe_lecture": "hataraku",
+      "verbe_fr": "travailler",
+      "forme": "forme progressive polie",
+      "conjugue_natif": "働いています",
+      "conjugue_lecture": "hataraite imasu",
+      "regle": "Forme -te (働いて) + います décrit une action en cours.",
+      "exemple_natif": "今、働いています",
+      "exemple_fr": "Je suis en train de travailler."
+    },
+    {
+      "verbe_natif": "する",
+      "verbe_lecture": "suru",
+      "verbe_fr": "faire",
+      "forme": "forme progressive (irrégulier)",
+      "conjugue_natif": "しています",
+      "conjugue_lecture": "shite imasu",
+      "regle": "La forme -te de する est irrégulière : して, pas する+て.",
+      "exemple_natif": "宿題をしています",
+      "exemple_fr": "Je suis en train de faire mes devoirs."
+    }
   ]
 }

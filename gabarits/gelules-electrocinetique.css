@@ -1,0 +1,24 @@
+/* Électrocinétique : palette « gélules » du domaine, dérivée de la charte Slack.
+   Ne redéfinit que des couleurs, la structure vit dans structure-gelules.css.
+   Générée par faire_palettes.py : ne pas modifier à la main, modifier la
+   couleur de base du domaine dans ce script. */
+
+@import url("structure-gelules.css");
+
+:root {
+  --aubergine:       #0c4f3a;
+  --aubergine-press: #106a4e;
+  --aubergine-tint:  #0c6348;
+  --accent:          #0c4f3a;
+  --accent-on-fonce: #bcdcd2;
+  --cream:           #f4ede4;
+  --lavender:        #f1fbf8;
+  --mute-on-aub:     #bcdcd2;
+  --mesh-a:          rgba(168, 230, 210, 0.22);
+  --mesh-b:          rgba(203, 235, 225, 0.24);
+  --mesh-c:          rgba(152, 205, 188, 0.16);
+  --wash:            rgba(244, 237, 228, .85);
+  /* papier quadrillé sur les slides claires :
+     décommenter pour l'activer */
+  /* --grille: rgba(34, 119, 92, 0.05); */
+}

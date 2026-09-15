@@ -1,10 +1,11 @@
 #!/usr/bin/env python3
 """
-Génération des slides @maths.prepa — carrousel de 7 slides maximum.
+Génération des slides des niches scientifiques (maths, physique).
+Carrousel de 8 slides maximum.
 
 Pourquoi un moteur différent de generer.py (Pillow) : les autres niches
 n'affichent que du texte court. Ici il faut des fractions, intégrales,
-racines, indices — Pillow ne sait pas composer de mathématiques. Le rendu
+racines, indices, et Pillow ne sait pas composer de mathématiques. Le rendu
 passe donc par Chromium (Playwright) sur un document HTML qui compose le
 LaTeX avec KaTeX. Tout est embarqué dans le dépôt (vendor/katex,
 vendor/inter) : aucun appel réseau au rendu, donc résultat identique en
@@ -12,7 +13,7 @@ local et sur GitHub Actions.
 
 Structure d'un carrousel :
     slide 1        : énoncé + étoiles de difficulté
-    slides 2..n-1  : étapes de résolution (5 slides disponibles au maximum)
+    slides 2..n-1  : étapes de résolution (6 slides disponibles au maximum)
     slide n        : CTA
 
 Aucun appel à un modèle de langage. Déterministe à l'exception du choix
@@ -26,7 +27,7 @@ import json
 import re
 from pathlib import Path
 
-MAX_SLIDES = 7
+MAX_SLIDES = 8
 LARGEUR, HAUTEUR = 1080, 1350
 
 # bornes de l'auto-ajustement typographique (voir --fit dans le CSS)
@@ -45,6 +46,13 @@ def _poids(etape: dict) -> int:
             p += 180 + len(v)
         elif b["type"] == "astuce":
             p += 90 + len(v)
+        elif b["type"] == "schema":
+            p += 260 + len(str(b.get("legende", "")))
+        elif b["type"] == "poser":
+            lignes = b.get("lignes", [])
+            p += 30 * len(lignes) + sum(
+                len(str(l.get("cle", ""))) + len(str(l.get("valeur", "")))
+                for l in lignes)
         else:
             p += len(v)
     return p
@@ -182,10 +190,86 @@ def verifier_latex(valeur: str, ou: str, brut: bool = True) -> list[str]:
     return pbs
 
 
-def verifier_exercice(exo: dict) -> list[str]:
-    """Contrôles structurels et LaTeX sur un exercice, avant tout rendu."""
+_MATHRM = re.compile(r"\\mathrm\{([^{}]*(?:\{[^{}]*\}[^{}]*)*)\}")
+_UNITES_COLLEES = re.compile(r"[A-Za-z\}](?:\\,|\\;|\\ |~|\s)+[A-Za-z\\]")
+
+
+def verifier_unites(valeur: str, ou: str, brut: bool = True) -> list[str]:
+    """Les unités composées se séparent par un point de multiplication, jamais
+    par une espace : on écrit \\mathrm{m\\cdot s^{-1}} et non \\mathrm{m\\,s^{-1}}.
+    Une unité lue « m s-1 » se confond avec un produit de variables."""
+    pbs = []
+    for src in _segments_latex(valeur, brut):
+        for m in _MATHRM.finditer(src):
+            # \cdot est la séparation attendue : on la neutralise avant de
+            # chercher une séparation fautive.
+            contenu = m.group(1)
+            if _UNITES_COLLEES.search(contenu.replace("\\cdot", "·")):
+                pbs.append(f"{ou} : unités « {contenu} » séparées par une espace ; "
+                           f"utilise \\cdot entre chaque unité.")
+    return pbs
+
+
+def verifier_typo(valeur: str, ou: str) -> list[str]:
+    """Interdits typographiques. Le tiret cadratin est banni de toutes les
+    productions, quelle que soit la niche : on écrit une virgule, un
+    deux-points, une parenthèse ou une phrase de plus."""
+    pbs = []
+    if "—" in valeur:
+        pbs.append(f"{ou} : tiret cadratin « — » interdit.")
+    return pbs
+
+
+def _sans_accent(t: str) -> str:
+    import unicodedata
+    return "".join(c for c in unicodedata.normalize("NFD", t.lower())
+                   if unicodedata.category(c) != "Mn").strip()
+
+
+def verifier_mise_en_place(exo: dict, niche: dict | None) -> list[str]:
+    """La méthode ne dépend pas de la bonne volonté du rédacteur : si la niche
+    déclare des domaines, le chapitre doit en être un, et la première étape
+    doit porter un bloc « poser » contenant les lignes imposées par ce
+    domaine (en mécanique : système, référentiel, bilan des forces)."""
+    if not niche or not niche.get("domaines"):
+        return []
     pbs = []
     ident = exo.get("id", "?")
+    chapitre = exo.get("chapitre", "")
+    domaine = niche["domaines"].get(chapitre)
+    if domaine is None:
+        pbs.append(f"{ident} : chapitre « {chapitre} » inconnu. Valeurs admises : "
+                   + ", ".join(niche["domaines"]) + ".")
+        return pbs
+    if domaine.get("schema_obligatoire"):
+        schemas = [b for e in exo.get("etapes", []) for b in e.get("blocs", [])
+                   if b.get("type") == "schema"]
+        if not schemas:
+            pbs.append(f"{ident} : aucun schéma. Un post de physique est une carte de "
+                       f"révision : il lui faut au moins un bloc « schema ».")
+    attendues = domaine.get("mise_en_place", [])
+    if not attendues:
+        return pbs
+    etapes = exo.get("etapes", [])
+    blocs = etapes[0].get("blocs", []) if etapes else []
+    poser = next((b for b in blocs if b.get("type") == "poser"), None)
+    if poser is None:
+        pbs.append(f"{ident} : la première étape doit commencer par un bloc "
+                   f"« poser » (mise en place) avec : " + ", ".join(attendues) + ".")
+        return pbs
+    presentes = {_sans_accent(str(l.get("cle", ""))) for l in poser.get("lignes", [])}
+    for cle in attendues:
+        if _sans_accent(cle) not in presentes:
+            pbs.append(f"{ident} : mise en place incomplète, ligne « {cle} » manquante.")
+    return pbs
+
+
+def verifier_exercice(exo: dict, niche: dict | None = None) -> list[str]:
+    """Contrôles structurels, LaTeX, typographiques et de méthode, avant tout
+    rendu. `niche` active les contrôles de domaine et de mise en place."""
+    pbs = []
+    ident = exo.get("id", "?")
+    pbs += verifier_mise_en_place(exo, niche)
 
     for champ in ("id", "niveau", "chapitre", "titre", "enonce", "etapes"):
         if not exo.get(champ):
@@ -204,17 +288,45 @@ def verifier_exercice(exo: dict) -> list[str]:
     for i, e in enumerate(exo.get("etapes", []), start=1):
         sections.append((f"étape {i}", e.get("blocs", [])))
         pbs += verifier_latex(e.get("titre", ""), f"{ident}, titre étape {i}", brut=False)
+        pbs += verifier_typo(e.get("titre", ""), f"{ident}, titre étape {i}")
 
     for nom, blocs in sections:
         for j, b in enumerate(blocs, start=1):
             t = b.get("type")
-            if t not in {"texte", "question", "formule", "astuce", "filet"}:
+            if t not in {"texte", "question", "formule", "astuce", "filet", "poser", "schema"}:
                 pbs.append(f"{ident}, {nom}, bloc {j} : type « {t} » inconnu.")
-            pbs += verifier_latex(str(b.get("valeur", "")),
-                                  f"{ident}, {nom}, bloc {j}", brut=(t == "formule"))
+            ou = f"{ident}, {nom}, bloc {j}"
+            if t == "schema":
+                svg = str(b.get("svg", ""))
+                if "<svg" not in svg:
+                    pbs.append(f"{ou} : bloc « schema » sans balise <svg>.")
+                if "viewBox" not in svg:
+                    pbs.append(f"{ou} : le <svg> doit porter un viewBox (mise à l'échelle).")
+                if "http" in svg or "<image" in svg:
+                    pbs.append(f"{ou} : le <svg> doit être autonome, sans ressource externe.")
+                pbs += verifier_typo(str(b.get("legende", "")), ou)
+            elif t == "poser":
+                if not b.get("lignes"):
+                    pbs.append(f"{ou} : bloc « poser » sans « lignes ».")
+                for k, l in enumerate(b.get("lignes", []), start=1):
+                    if not l.get("cle"):
+                        pbs.append(f"{ou}, ligne {k} : « cle » manquante.")
+                    pbs += verifier_latex(str(l.get("valeur", "")),
+                                          f"{ou}, ligne {k}", brut=False)
+                    pbs += verifier_unites(str(l.get("valeur", "")),
+                                           f"{ou}, ligne {k}", brut=False)
+                    pbs += verifier_typo(str(l.get("valeur", "")), f"{ou}, ligne {k}")
+                    pbs += verifier_typo(str(l.get("cle", "")), f"{ou}, ligne {k}")
+            else:
+                pbs += verifier_latex(str(b.get("valeur", "")), ou, brut=(t == "formule"))
+                pbs += verifier_unites(str(b.get("valeur", "")), ou, brut=(t == "formule"))
+                pbs += verifier_typo(str(b.get("valeur", "")), ou)
+            pbs += verifier_typo(str(b.get("marque", "")), ou)
 
     pbs += verifier_latex(exo.get("conclusion", ""), f"{ident}, conclusion", brut=False)
     pbs += verifier_latex(exo.get("titre", ""), f"{ident}, titre", brut=False)
+    for champ in ("titre", "conclusion", "accroche", "chapitre", "hashtags_extra"):
+        pbs += verifier_typo(str(exo.get(champ, "")), f"{ident}, {champ}")
     return pbs
 
 
@@ -234,6 +346,26 @@ def _bloc(b: dict) -> str:
         classe = "formule formule--cle" if b.get("cle") else "formule"
         return (f'<div class="{classe}">'
                 f'<span data-tex-display="{html.escape(v, quote=True)}"></span></div>')
+
+    if t == "schema":
+        # Un schéma est un SVG écrit à la main dans le JSON : aucune dépendance
+        # réseau, aucune police externe, et il suit la couleur de la slide par
+        # currentColor. Ces posts sont des cartes de révision, la figure fait
+        # partie de la méthode et non de la décoration.
+        legende = (f'<figcaption class="schema-legende">{_txt(str(b.get("legende", "")))}</figcaption>'
+                   if b.get("legende") else "")
+        return f'<figure class="schema">{b.get("svg", "")}{legende}</figure>'
+
+    if t == "poser":
+        # Mise en place d'un exercice de mécanique : une ligne par élément de
+        # méthode (système, référentiel, bilan des forces…), jamais un
+        # paragraphe compact. La méthode doit se voir au premier coup d'œil.
+        lignes = "".join(
+            f'<div class="poser-l"><span class="poser-cle">{_esc(str(l.get("cle", "")))}</span>'
+            f'<span>{_txt(str(l.get("valeur", "")))}</span></div>'
+            for l in b.get("lignes", [])
+        )
+        return f'<div class="poser">{lignes}</div>'
 
     if t == "astuce":
         marque = _esc(b.get("marque", "Astuce"))
@@ -352,23 +484,48 @@ _SCRIPT = """
     try { katex.render(n.getAttribute('data-tex-display'), n, { throwOnError: true, displayMode: true }); }
     catch (e) { erreurs.push(n.getAttribute('data-tex-display') + ' :: ' + e.message); }
   });
+  window.__erreurs = erreurs;
 
-  // 2. auto-ajustement : on réduit --fit tant qu'un contenu dépasse
-  var FIT_MIN = %FIT_MIN%, FIT_PAS = %FIT_PAS%;
-  var rapport = [];
-  document.querySelectorAll('.slide').forEach(function (s, i) {
-    var fit = 1, deborde = function () {
-      var c = s.querySelector('.corps') || s.querySelector('.cta-corps');
-      return s.scrollHeight > s.clientHeight + 1 ||
-             (c && c.scrollHeight > c.clientHeight + 1);
-    };
-    while (deborde() && fit > FIT_MIN + 1e-9) {
-      fit = Math.round((fit - FIT_PAS) * 1000) / 1000;
-      s.style.setProperty('--fit', fit);
-    }
-    rapport.push({ slide: i + 1, fit: fit, deborde: deborde() });
-  });
-  window.__rapport = { erreurs: erreurs, slides: rapport };
+  // 2. auto-ajustement, appelé par Python APRÈS chargement des polices.
+  //    Mesurer avant, c'est mesurer une police de repli plus étroite : une
+  //    formule paraît tenir puis sort du cadre une fois KaTeX chargé. C'est
+  //    ce qui a coupé l'exposant d'une unité sur un post.
+  window.__ajuster = function (FIT_MIN, FIT_PAS) {
+    var rapport = [];
+    document.querySelectorAll('.slide').forEach(function (s, i) {
+      var fit = 1, deborde = function () {
+        var c = s.querySelector('.corps') || s.querySelector('.cta-corps');
+        if (s.scrollHeight > s.clientHeight + 1) { return true; }
+        if (c && c.scrollHeight > c.clientHeight + 1) { return true; }
+        // largeur : une formule ne s'enroule pas, elle sort du cadre sans
+        // changer la hauteur, et centrée elle déborde des deux côtés.
+        var r = s.getBoundingClientRect(), st = getComputedStyle(s);
+        var gauche = r.left + parseFloat(st.paddingLeft) - 1;
+        var droite = r.right - parseFloat(st.paddingRight) + 1;
+        var large = false;
+        s.querySelectorAll('.katex, .texte, .astuce, .question, .poser-l, .titre-exo, .titre-etape')
+         .forEach(function (e) {
+           var b = e.getBoundingClientRect();
+           if (b.width > 0 && (b.left < gauche || b.right > droite)) { large = true; }
+         });
+        // largeur seulement : la hauteur de .katex dépasse toujours un peu
+        // (étais internes de KaTeX) sans que rien ne soit coupé, le contrôle
+        // de hauteur se fait sur la slide et son corps.
+        s.querySelectorAll('.formule, .katex-display, .katex, .poser-l, .astuce, .texte, .question')
+         .forEach(function (e) {
+           if (e.scrollWidth > e.clientWidth + 2) { large = true; }
+         });
+        return large;
+      };
+      while (deborde() && fit > FIT_MIN + 1e-9) {
+        fit = Math.round((fit - FIT_PAS) * 1000) / 1000;
+        s.style.setProperty('--fit', fit);
+      }
+      rapport.push({ slide: i + 1, fit: fit, deborde: deborde() });
+    });
+    return { erreurs: window.__erreurs, slides: rapport };
+  };
+  window.__pret = true;
 })();
 </script>
 """
@@ -390,7 +547,10 @@ def construire_html(exo: dict, niche: dict, racine: Path) -> tuple[str, int]:
     # Le gabarit visuel est un simple fichier CSS, choisi par niche.
     # Les classes HTML ne changent pas : changer de charte graphique, c'est
     # changer cette seule valeur dans niches/config.json.
-    gabarit = niche.get("gabarit", "gelules-aubergine.css")
+    # Une couleur par domaine : le chapitre de l'exercice choisit la palette,
+    # la clé "gabarit" de la niche ne sert plus que de repli.
+    domaine = (niche.get("domaines") or {}).get(exo.get("chapitre", ""), {})
+    gabarit = domaine.get("gabarit") or niche.get("gabarit", "gelules-aubergine.css")
     if not (racine / "gabarits" / gabarit).exists():
         raise ValueError(f"Gabarit introuvable : gabarits/{gabarit}")
 
@@ -416,7 +576,7 @@ def creer_post(exo: dict, dossier_sortie, niche: dict, racine) -> list[Path]:
     dossier_sortie = Path(dossier_sortie)
     dossier_sortie.mkdir(parents=True, exist_ok=True)
 
-    pbs = verifier_exercice(exo)
+    pbs = verifier_exercice(exo, niche)
     if pbs:
         raise ValueError("Exercice invalide :\n  - " + "\n  - ".join(pbs))
 
@@ -436,17 +596,28 @@ def creer_post(exo: dict, dossier_sortie, niche: dict, racine) -> list[Path]:
             pg = nav.new_page(viewport={"width": LARGEUR, "height": HAUTEUR},
                               device_scale_factor=1)
             pg.goto(tmp.as_uri())
-            pg.wait_for_function("window.__rapport !== undefined", timeout=30000)
-            rapport = pg.evaluate("window.__rapport")
+            pg.wait_for_function("window.__pret === true", timeout=30000)
+            # les polices d'abord, les mesures ensuite : cet ordre n'est pas
+            # négociable, voir le commentaire dans _SCRIPT.
+            pg.evaluate("() => document.fonts.ready")
+            pg.wait_for_timeout(200)
+            rapport = pg.evaluate("([a, b]) => window.__ajuster(a, b)",
+                                  [FIT_MIN, FIT_PAS])
 
             if rapport["erreurs"]:
                 raise ValueError("LaTeX invalide :\n  - "
                                  + "\n  - ".join(rapport["erreurs"]))
+            # Un débordement n'est jamais toléré : mieux vaut un rendu qui
+            # échoue qu'un post publié avec du texte hors cadre.
+            hors_cadre = [s["slide"] for s in rapport["slides"] if s["deborde"]]
+            if hors_cadre:
+                raise ValueError(
+                    "Contenu hors cadre sur la ou les slides "
+                    + ", ".join(str(n) for n in hors_cadre)
+                    + f" : la typo est déjà réduite au minimum (--fit={FIT_MIN}). "
+                      "Allège le texte, scinde l'étape ou raccourcis la formule.")
             for s in rapport["slides"]:
-                if s["deborde"]:
-                    print(f"    /!\\ slide {s['slide']} déborde encore à "
-                          f"--fit={s['fit']} : allège le contenu.")
-                elif s["fit"] < 1:
+                if s["fit"] < 1:
                     print(f"    (slide {s['slide']} réduite à --fit={s['fit']})")
 
             for i, el in enumerate(pg.query_selector_all(".slide"), start=1):
@@ -466,7 +637,7 @@ def creer_post(exo: dict, dossier_sortie, niche: dict, racine) -> list[Path]:
 def construire_legende(niche: dict, exo: dict) -> str:
     etoiles = "★" * int(exo.get("niveau", 1)) + "☆" * (4 - int(exo.get("niveau", 1)))
     lignes = [
-        f"{exo.get('titre', 'Exercice')} — {etoiles}",
+        f"{exo.get('titre', 'Exercice')}  {etoiles}",
         "",
         f"📐 {exo.get('chapitre', '')}",
         "",
@@ -489,36 +660,63 @@ def construire_legende(niche: dict, exo: dict) -> str:
 
 if __name__ == "__main__":
     import argparse
+    import tempfile
 
-    ap = argparse.ArgumentParser(description="Rendu d'un exercice maths-prépa")
+    ap = argparse.ArgumentParser(
+        description="Rendu et contrôle des niches scientifiques (maths, physique)")
+    ap.add_argument("--niche", default="maths-prepa",
+                    help="id de la niche (défaut : maths-prepa)")
     ap.add_argument("--exercice", help="id de l'exercice (défaut : le premier)")
     ap.add_argument("--sortie", default=None)
     ap.add_argument("--valider", action="store_true",
                     help="contrôle tout exercices.json sans rien rendre")
+    ap.add_argument("--controle", action="store_true",
+                    help="rend chaque exercice en mémoire et refuse tout "
+                         "contenu hors cadre. À passer avant toute publication.")
     a = ap.parse_args()
 
     racine = Path(__file__).parent
     cfg = json.loads((racine / "niches" / "config.json").read_text(encoding="utf-8"))
-    niche = next(n for n in cfg["niches"] if n["id"] == "maths-prepa")
+    niche = next(n for n in cfg["niches"] if n["id"] == a.niche)
     base = racine / niche["dossier"]
     exos = json.loads((base / "exercices.json").read_text(encoding="utf-8"))["exercices"]
 
     if a.valider:
         total = 0
         for e in exos:
-            pbs = verifier_exercice(e)
+            pbs = verifier_exercice(e, niche)
             total += len(pbs)
             etat = "OK" if not pbs else f"{len(pbs)} anomalie(s)"
-            print(f"[{etat:>14}] {e['id']} — {e.get('titre','')}")
+            print(f"[{etat:>14}] {e['id']} : {e.get('titre','')}")
             for p in pbs:
                 print(f"                 · {p}")
         print(f"\n{len(exos)} exercice(s), {total} anomalie(s).")
         raise SystemExit(1 if total else 0)
 
+    if a.controle:
+        ko = 0
+        for e in exos:
+            pbs = verifier_exercice(e, niche)
+            if pbs:
+                ko += 1
+                print(f"[CONTRÔLE] {e['id']} :")
+                for p in pbs:
+                    print(f"     · {p}")
+                continue
+            with tempfile.TemporaryDirectory() as d:
+                try:
+                    creer_post(e, Path(d), niche, racine)
+                    print(f"[     OK ] {e['id']}")
+                except ValueError as err:
+                    ko += 1
+                    print(f"[  RENDU ] {e['id']} : {err}")
+        print(f"\n{len(exos)} exercice(s), {ko} en échec.")
+        raise SystemExit(1 if ko else 0)
+
     exo = (next(e for e in exos if e["id"] == a.exercice) if a.exercice else exos[0])
     sortie = Path(a.sortie) if a.sortie else base / "sortie"
 
-    print(f"Exercice : {exo['id']} — {exo.get('titre')}")
+    print(f"Exercice : {exo['id']} : {exo.get('titre')}")
     for p in creer_post(exo, sortie, niche, racine):
         print("  ", p)
     print("\n--- LÉGENDE ---")

@@ -171,13 +171,21 @@ def choisir(niche, hist):
 def construire_legende(niche, type_post, e):
     tags = niche["hashtags_base"]
 
+    nom_langue = {
+        "arabe": "en arabe",
+        "coreen": "en coréen",
+        "japonais": "en japonais",
+        "maths-prepa": "en maths",
+        "physique-prepa": "en physique",
+    }.get(niche["id"], f"en {niche['id']}")
+
     if type_post == "mot":
         corps = (
             f"✨ {e['ar']} : {e['fr'].capitalize()}\n\n"
             f"📖 Exemple d'utilisation :\n"
             f"{e['phrase_ar']}\n"
             f"« {e['phrase_fr']} »\n\n"
-            "💡 Un mot par jour, et dans 3 mois tu lis tes premières phrases en arabe ! 🚀\n\n"
+            f"💡 Un mot par jour, et dans 3 mois tu lis tes premières phrases {nom_langue} ! 🚀\n\n"
             f"👉 Tag un ami qui {niche['langue_phrase']} avec toi !\n\n"
             "📚 Retrouve l'ebook interactif complet dans le lien en bio !"
         )
@@ -191,11 +199,17 @@ def construire_legende(niche, type_post, e):
         )
         tags += " #etymologie"
     elif type_post == "prenom":
+        question_prenom = {
+            "arabe": "👇 Ton prénom est-il d'origine arabe ? Dis-le-moi en commentaire et je te donne sa signification ! ✨\n\n",
+            "coreen": "👇 Tu veux connaître la signification d'un prénom coréen ? Dis-le-moi en commentaire ! ✨\n\n",
+            "japonais": "👇 Tu veux connaître la signification d'un prénom japonais ? Dis-le-moi en commentaire ! ✨\n\n",
+        }.get(niche["id"], "👇 Dis-moi ton prénom en commentaire ! ✨\n\n")
+
         corps = (
             f"✨ Prénom : {e['ar']} ({e['fr']})\n\n"
             f"🤍 Signification : « {e['sens']} »\n\n"
             f"{e['note']}\n\n"
-            "👇 Ton prénom est-il d'origine arabe ? Dis-le-moi en commentaire et je te donne sa signification ! ✨\n\n"
+            f"{question_prenom}"
             f"👉 Tag un ami qui {niche['langue_phrase']} avec toi !\n\n"
             "📚 Ebook interactif complet disponible en bio !"
         )
@@ -372,6 +386,12 @@ def traiter(niche, dry_run=False):
         print(f"[1] {type_post} → {etiquette}   fond : {fond.name}")
         slides = list(generer.creer_post(type_post, entree, fond, sortie, niche, RACINE))
         legende = construire_legende(niche, type_post, entree)
+    # Garde-fou typographique, toutes niches confondues : le tiret cadratin
+    # est banni de nos productions. Mieux vaut refuser la publication que
+    # laisser passer un « — » dans une légende.
+    if "—" in legende:
+        raise ValueError("Légende refusée : elle contient un tiret cadratin « — ».")
+
     print(f"[2] {len(slides)} slides générées")
 
     if dry_run:
