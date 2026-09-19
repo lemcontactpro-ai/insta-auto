@@ -1639,11 +1639,11 @@
       "surligne_fr": "vinaigre"
     },
     {
-      "ar": "صُوص",
+      "ar": "صَلْصَة",
       "fr": "Sauce",
-      "phrase_ar": "الصُّوصُ يُطَعِّمُ الطَّعَامَ",
+      "phrase_ar": "الصَّلْصَةُ تُطَعِّمُ الطَّعَامَ",
       "phrase_fr": "La sauce assaisonne la nourriture",
-      "surligne_ar": "الصُّوصُ",
+      "surligne_ar": "الصَّلْصَةُ",
       "surligne_fr": "sauce"
     },
     {
@@ -2143,11 +2143,11 @@
       "surligne_fr": "gymnastique"
     },
     {
-      "ar": "حَمَّامَات",
+      "ar": "سِبَاحَة",
       "fr": "Natation",
-      "phrase_ar": "الحَمَّامَاتُ فِي الفَصْلِ الصَّيْفِيِّ",
+      "phrase_ar": "السِّبَاحَةُ فِي الفَصْلِ الصَّيْفِيِّ",
       "phrase_fr": "La baignade est en été",
-      "surligne_ar": "الحَمَّامَاتُ",
+      "surligne_ar": "السِّبَاحَةُ",
       "surligne_fr": "natation"
     },
     {
